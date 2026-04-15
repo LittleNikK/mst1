@@ -83,8 +83,8 @@ const headings = [
 
 const stats = [
   { label: 'Finality', value: 400, suffix: 'ms', active: true },
-  { label: 'Active Nodes', value: 12400, suffix: '+', active: false },
-  { label: 'Total Value', value: 4.2, prefix: '$', suffix: 'B+', active: false }
+  { label: 'Active Nodes', value: 12400, suffix: '+', active: true },
+  { label: 'Total Value', value: 4.2, prefix: '$', suffix: 'B+', active: true }
 ];
 
 // 🔥 LOGOS
@@ -212,7 +212,7 @@ export default function HeroSection() {
                 pause,
               });
               return (
-                <h1 className="text-4xl md:text-6xl leading-tight tracking-tight text-black font-extrabold uppercase">
+                <h1 className="bungee-regular text-4xl md:text-6xl leading-tight tracking-tight text-black font-extrabold uppercase">
                   {typewriter.format(headings[typewriter.index])}
                   <span className="inline-block w-[4px] h-12 md:h-12 mb-1.5 bg-black align-middle animate-pulse ml-1" style={{verticalAlign:'middle',opacity:1}} />
                 </h1>
@@ -222,15 +222,15 @@ export default function HeroSection() {
 
           {/* BUTTONS */}
           <div className="mt-6 sm:mt-8 grid grid-cols-2 sm:flex gap-2 sm:gap-4 w-full max-w-md">
-            <Link
-              href="#"
-              className="text-center px-4 sm:px-8 py-2.5 sm:py-3 bg-black text-white text-[9px] sm:text-[11px] font-bold uppercase tracking-wide sm:tracking-widest rounded-full hover:bg-[#EA3446] transition-all shadow-md sm:shadow-lg shadow-black/10"
+            <a
+              href="#ProductShowcase"
+              className="text-center px-4 sm:px-8 py-2.5 sm:py-3 bg-black text-white text-[9px] sm:text-[11px] font-bold uppercase tracking-wide sm:tracking-widest rounded-full hover:bg-red-500 transition-all shadow-md sm:shadow-lg shadow-black/10"
             >
-              Get Started
-            </Link>
+             Products
+            </a>
 
             <Link
-              href="#"
+              href="https://docs.mstblockchain.com/"
               className="text-center px-4 sm:px-8 py-2.5 sm:py-3 border border-black/10 bg-white/50 backdrop-blur-sm text-black text-[9px] sm:text-[11px] font-bold uppercase tracking-wide sm:tracking-widest rounded-full hover:border-[#FF2D2D] transition-all"
             >
               Documentation
@@ -242,9 +242,9 @@ export default function HeroSection() {
             {stats.map((stat) => (
               <div
                 key={stat.label}
-                className="group  p-2 sm:p-4 bg-white/60 border border-black/5 rounded-lg sm:rounded-2xl backdrop-blur-md hover:border-[#FF2D2D]/40 transition-all text-left"
+                className="group  p-2 sm:p-4 bg-white/60 border border-black/10 rounded-lg sm:rounded-2xl backdrop-blur-md hover:border-[#FF2D2D]/40 transition-all text-left"
               >
-                <p className="text-[8px] sm:text-[10px] uppercase tracking-wide text-black/40 flex items-center gap-1">
+                <p className="text-[8px] sm:text-[10px] uppercase tracking-wide text-black/80 flex items-center gap-1">
                   {stat.active && (
                     <span className="h-1 w-1 rounded-full bg-[#FF2D2D] animate-ping" />
                   )}

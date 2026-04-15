@@ -3,6 +3,8 @@
 import { motion } from 'framer-motion';
 import { Blocks, Cpu, Share2 } from 'lucide-react';
 import MSTCard from './MSTCard';
+import { link } from 'framer-motion/client';
+
 
 const cards = [
   {
@@ -10,7 +12,7 @@ const cards = [
     description:
       'SARAL Protocol is a non-custodial key management solution designed to deliver a seamless user experience—much like OAuth does for Web2. By leveraging Multi-Party Computation (MPC), SARAL empowers developers to securely manage blockchain transactions and Web3 authentication without compromising user control or privacy.',
     ctaText: 'Explore',
-    href: '#',
+    link: '/Protocol',
     icon: Blocks
   },
   {
@@ -104,7 +106,7 @@ export default function WhatIsMST() {
 
       <div className="relative z-10 mx-auto w-full max-w-[90rem] px-4 py-12 sm:px-5 lg:px-6">
        
-        <h2 className="mt-4  text-4xl font-extrabold tracking-[-0.03em] text-black sm:text-5xl md:text-6xl">
+        <h2 className="bungee-regular text-4xl md:text-6xl leading-tight tracking-tight text-black font-extrabold uppercase">
           What is <span className='text-transparent bg-clip-text bg-red-500'> MST?</span>
         </h2>
 

@@ -29,26 +29,25 @@ const navItems = [
 ];
 
 const usecases = [
-  { id: '01', title: 'Supply Chain Logistics', link: '/usecases/supply-chain' },
-  { id: '02', title: 'Real Estate Tokenization', link: '/usecases/real-estate' },
-  { id: '03', title: 'DeFi Liquidity', link: '/usecases/defi-liquidity' },
-  { id: '04', title: 'Secure Healthcare', link: '/usecases/healthcare' },
-  { id: '05', title: 'Metaverse Gaming', link: '/usecases/metaverse' },
-  { id: '06', title: 'Digital Identity', link: '/usecases/digital-identity' },
-  { id: '07', title: 'Yield Aggregators', link: '/usecases/yield' },
-  { id: '08', title: 'Carbon Credits', link: '/usecases/carbon' },
-  { id: '09', title: 'Cross-border Pay', link: '/usecases/cross-border' },
-  { id: '10', title: 'Asset Management', link: '/usecases/asset-management' },
-  { id: '11', title: 'Oracle Networks', link: '/usecases/oracles' },
-  { id: '12', title: 'DAO Governance', link: '/usecases/dao' },
-  { id: '13', title: 'Privacy Layers', link: '/usecases/privacy' },
-  { id: '14', title: 'Escrow Services', link: '/usecases/escrow' },
-  { id: '15', title: 'Insurance Claims', link: '/usecases/insurance' },
-  { id: '16', title: 'NFT Marketplace', link: '/usecases/nft' },
-  { id: '17', title: 'Staking Protocols', link: '/usecases/staking' },
-  { id: '18', title: 'Token Vesting', link: '/usecases/vesting' },
-  { id: '19', title: 'ZK Proofs', link: '/usecases/zk' },
-  { id: '20', title: 'Lending Pools', link: '/usecases/lending' }
+  { id: '01', title: 'Carbon Credit Tracking', link: '/usecase-pages/Carbon-Credit-Tracking' },
+  { id: '02', title: 'Charity & Donations', link: '/usecase-pages/Charity-&-Donations' },
+  { id: '03', title: 'Decentralized Social Platforms', link: '/usecase-pages/Decentralized-Social-Platforms' },
+  { id: '04', title: 'Decentralized Voting', link: '/usecase-pages/Decentralized-Voting' },
+  { id: '05', title: 'Digital Asset Exchange', link: '/usecase-pages/Digital-Asset-Exchange' },
+  { id: '06', title: 'Digital Identity KYC', link: '/usecase-pages/Digital-Identity-KYC' },
+  { id: '07', title: 'Education Credentials', link: '/usecase-pages/Education-Credentials' },
+  { id: '08', title: 'Enterprise Workflow Automation', link: '/usecase-pages/Enterprise-Workflow-Automation' },
+  { id: '09', title: 'Freelance Marketplace', link: '/usecase-pages/Freelance-Marketplace' },
+  { id: '10', title: 'Gaming Asset Ownership', link: '/usecase-pages/Gaming-Asset-Ownership' },
+  { id: '11', title: 'Gold Commodity Tokenization', link: '/usecase-pages/Gold-Commodity-Tokenization' },
+  { id: '12', title: 'Healthcare Records', link: '/usecase-pages/Healthcare-Records' },
+  { id: '13', title: 'Insurance Automation', link: '/usecase-pages/Insurance-Automation' },
+  { id: '14', title: 'Land Records', link: '/usecase-pages/Land-Records' },
+  { id: '15', title: 'Loyalty Rewards', link: '/usecase-pages/Loyalty-Rewards' },
+  { id: '16', title: 'NFT Ticketing', link: '/usecase-pages/NFT-Ticketing' },
+  { id: '17', title: 'On-Chain Certificate', link: '/usecase-pages/On-Chain-Certificate' },
+  { id: '18', title: 'Supply Chain Transparency', link: '/usecase-pages/Supply-Chain-Transparency' },
+  { id: '19', title: 'Tokenized Real Estate', link: '/usecase-pages/Tokenized-Real-Estate' }
 ];
 
 const buildResources = [
@@ -65,8 +64,8 @@ const buildResources = [
     title: 'SUPPORT & PROGRAMS',
     items: [
       { label: 'Grant Program', href: '/learn/grant' },
-      { label: 'Developer Support Forum', href: '#' },
-      { label: 'Personalized Dev Support', href: '#' }
+      { label: 'Developer Support Forum', href: 'https://future.forem.com/mst-chain' },
+      { label: 'Personalized Dev Support', href: 'https://docs.google.com/forms/d/110LC2GOehrGDeeCPFgOn6486kZLekhhZIJd8X7nINO8/viewform?edit_requested=true' }
     ]
   }
 ];
@@ -93,7 +92,7 @@ function useLatestTweet() {
       try {
         const res = await fetch("https://widget-data.service.elfsight.com/api/twitter/profile?username=MasterStrokeTec", {
           headers: {
-            "x-widget-token": "YOUR_TOKEN"
+            "x-widget-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjExLCJ0eXBlIjoiYWRtaW4iLCJpYXQiOjE3NzYyMjk0MTYsImV4cCI6MTc3NjMxNTgxNn0.aLsTEd892z9RdbyWHuEeis3Zd40gdHnm9EVbnhQOeoo"
           }
         });
         const data = await res.json();
@@ -122,7 +121,8 @@ const productsResources = [
   {
     name: 'MST Acadmey',
     description: 'Seamless Web3 payments',
-    href: 'https://www.youtube.com/channel/UCHXMPioA5ETDiHnNlCbIbrg'
+    href: 'https://masterstroke.academy/',
+    icon: FiLock
   }
 ];
 
@@ -441,9 +441,9 @@ export default function Navbar() {
   };
 
   const productIconByName = {
-    BridgeKey: FiLink,
-    'MST Buddy': FiTool,
-    ChainPay: FiLock
+    BridgeKey: FiLink,           // Link for bridging
+    'MST Buddy': FiUsers,        // Users for buddy/assistant
+    'MST Acadmey': FiBookOpen    // BookOpen for academy/education
   };
 
   const navLinkClass = (active) =>
@@ -587,24 +587,21 @@ export default function Navbar() {
       <div
         className="relative rounded-2xl border border-white/10 bg-[#0b0b0b] p-[1px] shadow-[0_8px_26px_rgba(0,0,0,0.28)] transition-all duration-300"
       >
-        <div className="relative overflow-visible rounded-2xl bg-black/90 backdrop-blur-[12px] group/nav">
+        <div className="relative overflow-visible rounded-2xl bg-black/90  group/nav">
           <div className="pointer-events-none absolute inset-0 bg-black/20" />
 
           <nav className="relative z-20 flex h-16 w-full items-center justify-between px-4 lg:px-8">
            <Link href="/" className="-ml-1 flex items-center gap-2 group">
-  <motion.div
-    whileHover={{ rotate: 10, scale: 1.08 }}
-    transition={{ duration: 0.3, ease: "easeInOut" }}
-    className="flex items-center justify-center"
-  >
+
     <img
       src="https://ik.imagekit.io/avboeabnm1/images/logo.png"
       alt="MST logo"
-      width={70}
-      height={70}
-      className="h-[40px] w-auto object-contain transition-all duration-300 group-hover:drop-shadow-xl"
+      width={100}
+      height={100}
+      className="h-[40px] w-auto object-contain transition-all duration-300 group-hover:drop-shadow-xl" 
+      loading='lazy'
     />
-  </motion.div>
+
 </Link>
 
             <ul className="hidden items-center gap-10 lg:flex">
@@ -691,8 +688,8 @@ export default function Navbar() {
   <div className="hidden lg:block relative group">
     <div className="absolute inset-0 rounded-full bg-[#ff2d2d] opacity-20 blur-md transition-opacity duration-300 group-hover:opacity-50" />
     
-    <Link
-      href="#"
+    <a
+      href="#ecosystemSection"
       className="relative inline-flex items-center space-x-2 rounded-full mb-3
       bg-gradient-to-r from-[#ff2d2d] to-[#ff4d4d] mb-2
       px-6 py-2.5 text-[11px] font-extrabold uppercase tracking-[0.15em] text-white
@@ -709,7 +706,7 @@ export default function Navbar() {
       >
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M14 5l7 7m0 0l-7 7m7-7H3" />
       </svg>
-    </Link>
+    </a>
   </div>
 
   {/* Get Started Button */}

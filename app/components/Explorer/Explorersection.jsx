@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
+import DotGrid from '../productSection/DotGrid';
 
 const MAX_ROWS = 4;
 
@@ -105,19 +106,40 @@ export default function MSTExplorerFull() {
       <motion.div
         animate={{ rotate: [360, 0] }}
         transition={{ duration: 60, repeat: Infinity, ease: 'linear' }}
-        className="absolute top-[0%] -left-[35%] w-[110%] h-[110%] border-[0.5px] border-red-300 rounded-full hidden lg:flex items-center justify-center pointer-events-none z-0"
+        className="absolute top-[10%] left-[20%] w-[60%] h-[60%] border-[0.5px] border-red-300 rounded-full hidden lg:flex items-center justify-center pointer-events-none z-0"
       >
-        <div className="absolute w-[6px] h-[6px] bg-red-600 rounded-full bottom-[18%] right-[8%] shadow-[0_0_10px_#ff2d2d]" />
+        <div className="absolute w-[4px] h-[4px] bg-red-600 rounded-full bottom-[18%] right-[8%] shadow-[0_0_6px_#ff2d2d]" />
       </motion.div>
-
+         <motion.div
+        animate={{ y: [-15, 15, -15], x: [-10, 10, -10], rotate: [0, 90, 0] }}
+        transition={{ duration: 8, repeat: Infinity, ease: 'linear' }}
+        className="absolute -top-5 -left-10 w-24 h-24 border border-red-500 rounded-full flex items-center justify-center opacity-60 z-0"
+      >
+        <div className="w-16 h-16 border border-red-500 rounded-full" />
+        <div className="absolute w-1.5 h-1.5 bg-accent rounded-full shadow-[0_0_10px_#ff2d2d] top-0" />
+      </motion.div>
+      {/* DotGrid Animated Background - behind card content */}
+      <div className="absolute inset-0 w-full h-full z-0 pointer-events-none rounded-2xl overflow-hidden">
+        <DotGrid
+          dotSize={2}
+          gap={15}
+          baseColor="#000000a1"
+          activeColor="#ff2727"
+          proximity={180}
+          shockRadius={50}
+          shockStrength={5}
+          resistance={750}
+          returnDuration={1.5}
+        />
+      </div>
       <div className="relative z-10 max-w-6xl mx-auto">
 
         {/* HEADER */}
         <div className="flex flex-col items-center text-center mb-16">
-          <h2 className="text-4xl md:text-6xl font-extrabold mb-4">
+          <h2 className="bungee-regular text-6xl bg-white md:text-6xl leading-tight  text-black font-extrabold uppercase">
             MST <span className="text-transparent bg-clip-text bg-red-500">EXPLORER</span>
           </h2>
-          <p className="text-gray-600 max-w-md text-lg">
+          <p className="text-gray-600 max-w-md bg-white text-lg">
             Real-time visualization of the MST mainnet ledger and transaction flow.
           </p>
         </div>
@@ -134,7 +156,16 @@ export default function MSTExplorerFull() {
             VIEW ALL ACTIVITY
           </button>
         </div>
+           <motion.div
+        animate={{ y: [-15, 15, -15], x: [-10, 10, -10], rotate: [0, 90, 0] }}
+        transition={{ duration: 8, repeat: Infinity, ease: 'linear' }}
+        className="absolute -top-5 -left-10 w-24 h-24 border border-red-500 rounded-full flex items-center justify-center opacity-60 z-0"
+      >
+        <div className="w-16 h-16 border border-red-500 rounded-full" />
+        <div className="absolute w-1.5 h-1.5 bg-accent rounded-full shadow-[0_0_10px_#ff2d2d] top-0" />
+      </motion.div>
       </div>
+
     </section>
   );
 }
@@ -142,9 +173,8 @@ export default function MSTExplorerFull() {
 function DataCard({ title, items, type, formatTime }) {
   return (
     <div className="relative group">
-      <div className="absolute -inset-0.5 bg-gradient-to-b from-red-500/20 to-transparent rounded-2xl blur opacity-0 group-hover:opacity-100 transition duration-1000" />
-
-      <div className="relative bg-white/80 backdrop-blur-xl border border-gray-200 rounded-2xl p-6 h-full">
+      
+      <div className="relative bg-white/80 backdrop-blur-xl border border-gray-200 rounded-2xl p-6 h-full z-10">
 
         <div className="flex justify-between items-center mb-8">
           <h3 className="text-sm font-bold tracking-widest text-gray-500 uppercase">{title}</h3>
@@ -166,9 +196,8 @@ function DataCard({ title, items, type, formatTime }) {
                   animate={{ opacity: isEmpty ? 0.4 : 1, x: 0 }}
                   exit={{ opacity: 0, scale: 0.95 }}
                   transition={{ type: "spring", stiffness: 400, damping: 30 }}
-                  className={`flex items-center justify-between p-4 rounded-xl bg-gray-50 border border-gray-100 ${
-                    !isEmpty ? 'hover:border-red-500/30 hover:bg-gray-100' : 'pointer-events-none'
-                  } transition-colors`}
+                  className={`flex items-center justify-between p-4 rounded-xl bg-gray-50 border border-gray-100 ${!isEmpty ? 'hover:border-red-500/30 hover:bg-gray-100' : 'pointer-events-none'
+                    } transition-colors`}
                 >
                   <div className="flex items-center gap-4">
 

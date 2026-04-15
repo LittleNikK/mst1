@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee&display=swap');
+@import "tailwindcss";
 @font-face {
   font-family: 'Poppins';
   src: url('/fonts/Poppins-Regular.ttf') format('truetype');
@@ -8,12 +10,11 @@ p {
   font-family: 'Poppins', Arial, Helvetica, sans-serif !important;
   font-weight: 400;
 }
-@import "tailwindcss";
-@font-face {
-  font-family: 'Montserrat';
-  src: url('/fonts/Montserrat-ExtraBold.ttf') format('truetype');
-  font-weight: 800;
-  font-style: normal;
+
+.bungee-regular, h1.bungee-regular, h2.bungee-regular, h3.bungee-regular, h4.bungee-regular, h5.bungee-regular, h6.bungee-regular {
+  font-family: "Bungee", sans-serif !important;
+  font-weight: 400 !important;
+  font-style: normal !important;
 }
 :root {
   --background: #ffffff;

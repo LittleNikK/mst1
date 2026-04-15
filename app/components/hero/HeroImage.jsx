@@ -95,7 +95,7 @@ export default function HeroImage() {
           className="absolute bottom-[20%] left-[10%] flex items-center gap-2 opacity-50"
         >
           <span className="relative inline-flex rounded-full h-1 w-1 bg-black"></span>
-          <span className="text-[8px] font-bold tracking-[0.25em] text-red-300 whitespace-nowrap">POSA Consensus</span>
+          <span className="text-[8px] font-bold tracking-[0.25em] text-red-500 whitespace-nowrap">MasterStroke</span>
         </motion.div>
       </motion.div>
 
@@ -128,8 +128,8 @@ export default function HeroImage() {
           style={{ transformStyle: 'preserve-3d' }}
           className="w-full h-full origin-center"
         >
-          <div className="relative overflow-hidden rounded-[2rem] border border-accent/10 bg-gradient-to-br from-white/90 via-white to-zinc-100/90 p-3 shadow-glow [transform:rotateX(13deg)_rotateY(-16deg)] transition-transform duration-700 ease-in-out hover:[transform:rotateX(0deg)_rotateY(0deg)] hover:shadow-[0_0_120px_rgba(255,45,45,0.25)]" style={{ boxShadow: '0 0 90px rgba(255, 45, 45, 0.15), 0 34px 76px rgba(0, 0, 0, 0.25)' }}>
-            <div className="relative w-[180px] h-[360px] sm:w-[220px] sm:h-[440px] overflow-hidden rounded-[1.5rem] border border-black/10 bg-black/5 mx-auto flex items-center justify-center">
+          <div className="relative overflow-hidden rounded-[2rem] border border-accent/10 bg-gradient-to-br from-white/90 via-white to-zinc-100/90 p-2 mr-20 mb-10 shadow-glow [transform:rotateX(13deg)_rotateY(-16deg)] transition-transform duration-700 ease-in-out hover:[transform:rotateX(0deg)_rotateY(0deg)] hover:shadow-[0_0_120px_rgba(255,45,45,0.25)]" style={{ boxShadow: '0 0 90px rgba(255, 45, 45, 0.15), 0 34px 76px rgba(0, 0, 0, 0.25)', transformOrigin: '50% 50%' }}>
+            <div className="relative w-[195px] h-[360px] sm:w-[300px] sm:h-[480px] overflow-hidden rounded-[1.5rem] border border-black/10 bg-black/5 mx-auto flex items-center justify-center">
             <AnimatePresence mode="wait">
               <motion.div
                 key={slides[activeIndex].src}

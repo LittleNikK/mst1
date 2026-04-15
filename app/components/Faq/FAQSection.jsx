@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { ChevronDown, MessageCircle } from "lucide-react";
+import DotGrid from "../productSection/DotGrid";
 
 const faqs = [
   { q: "What is MST Blockchain?", a: "MST is a high-performance Layer-1 blockchain designed for institutional-grade security and sub-second finality." },
@@ -22,13 +23,14 @@ export default function FAQSection() {
   const showLess = () => setVisibleCount(4);
 
   return (
-    <section className="relative bg-white py-24 px-6 overflow-hidden">
+            
+    <section className="relative  py-24 px-6 overflow-hidden">
       
       {/* Soft Red Glow */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-96 bg-red-500/10 blur-[120px] rounded-full" />
       
-      <div className="max-w-4xl mx-auto relative z-10">
-        
+      <div className="max-w-4xl mx-auto relative z-0">
+       
         {/* Header */}
         <div className="text-center mb-20">
          
@@ -45,6 +47,7 @@ export default function FAQSection() {
 
         {/* FAQ Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          
           {faqs.slice(0, visibleCount).map((item, i) => (
             <div 
               key={i} 

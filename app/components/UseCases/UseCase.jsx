@@ -116,6 +116,7 @@ const Card = ({ item, index }) => {
         backgroundSize: "60px",
         backgroundPosition: "center 30%",
         backgroundRepeat: "no-repeat",
+        borderColor: "black",
       }}
     >
       {/* Subtle Gradient Overlay for non-hover state to keep text readable */}
@@ -131,7 +132,7 @@ const Card = ({ item, index }) => {
       <div className="relative z-10 w-full">
         <div className="flex flex-col">
           <h3 className={`
-            font-bold leading-tight transition-colors duration-300
+            font-semibold leading-tight transition-colors duration-300
             ${isHovered ? "text-white text-sm" : "text-zinc-900 text-[13px]"}
             uppercase tracking-wider
           `}>
@@ -173,7 +174,7 @@ const UseCases = () => {
           >
             Capabilities
           </motion.span>
-          <h2 className="text-6xl uppercase font-black mb-20 text-center font-montserrat" style={{ fontFamily: 'Montserrat, Arial, Helvetica, sans-serif', fontWeight: 800 }}>
+          <h2 className="bungee-regular text-6xl md:text-6xl leading-tight tracking-tight text-black font-extrabold uppercase ">
             Use <span className="text-red-600">case</span>
           </h2>
         </header>

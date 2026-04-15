@@ -9,10 +9,10 @@ export default function Footer() {
       <footer className="relative bg-gradient-to-br from-white via-[#fafafa] to-[#fff5f5] pt-20 pb-10 rounded-t-[60px] md:rounded-t-[100px] border-t border-red-200 font-sans">
 
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-12">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-8 sm:gap-10 lg:gap-10 items-start">
+          <div className="grid grid-cols-2 lg:grid-cols-12 gap-8 sm:gap-10 lg:gap-10 items-start">
             
             {/* BRAND */}
-            <div className="col-span-1 sm:col-span-1 lg:col-span-3 mb-10 sm:mb-0">
+            <div className="col-span-2 lg:col-span-3">
               <div className="flex items-center gap-3 mb-6">
                 <img 
                   src="1.png" 
@@ -31,9 +31,9 @@ export default function Footer() {
             </div>
 
             {/* ECOSYSTEM */}
-            <div className="col-span-1 sm:col-span-1 lg:col-span-3 mb-10 sm:mb-0">
+            <div className="col-span-1 lg:col-span-3">
               <h4 className="text-black font-bold mb-6" style={{ fontFamily: 'Montserrat', fontWeight: 800 }}>Ecosystem</h4>
-              <ul className="space-y-4 text-gray-600 text-sm">
+              <ul className="space-y-4 text-black font-bold text-sm">
                 <li className="hover:text-red-500 cursor-pointer transition" style={{ fontFamily: 'Poppins', fontWeight: 400 }}>Build</li>
                 <li className="hover:text-red-500 cursor-pointer transition" style={{ fontFamily: 'Poppins', fontWeight: 400 }}>Validators</li>
                 <li className="hover:text-red-500 cursor-pointer transition" style={{ fontFamily: 'Poppins', fontWeight: 400 }}>Governance</li>
@@ -44,9 +44,9 @@ export default function Footer() {
             </div>
 
             {/* USE CASES */}
-            <div className="col-span-1 sm:col-span-1 lg:col-span-3 mb-10 sm:mb-0">
+            <div className="col-span-1 lg:col-span-3">
               <h4 className="text-black font-bold mb-6" style={{ fontFamily: 'Montserrat', fontWeight: 800 }}>Use Cases</h4>
-              <ul className="space-y-4 text-gray-600 text-sm">
+              <ul className="space-y-4 text-black text-sm">
                 <li className="hover:text-red-500 cursor-pointer transition" style={{ fontFamily: 'Poppins', fontWeight: 400 }}>Supply Chain</li>
                 <li className="hover:text-red-500 cursor-pointer transition" style={{ fontFamily: 'Poppins', fontWeight: 400 }}>Real Estate Tokenization</li>
                 <li className="hover:text-red-500 cursor-pointer transition" style={{ fontFamily: 'Poppins', fontWeight: 400 }}>DeFi Liquidity</li>
@@ -57,9 +57,9 @@ export default function Footer() {
             </div>
 
             {/* RESOURCES */}
-            <div className="col-span-1 sm:col-span-1 lg:col-span-3 mb-10 sm:mb-0">
+            <div className="col-span-2 lg:col-span-3">
               <h4 className="text-black font-bold mb-6" style={{ fontFamily: 'Montserrat', fontWeight: 800 }}>Resources</h4>
-              <ul className="space-y-4 text-gray-600 text-sm">
+              <ul className="space-y-4 text-black text-sm">
                 <li className="hover:text-red-500 cursor-pointer transition" style={{ fontFamily: 'Poppins', fontWeight: 400 }}>Whitepaper</li>
                 <li className="hover:text-red-500 cursor-pointer transition" style={{ fontFamily: 'Poppins', fontWeight: 400 }}>Docs</li>
                 <li className="hover:text-red-500 cursor-pointer transition" style={{ fontFamily: 'Poppins', fontWeight: 400 }}>GitHub</li>
@@ -70,38 +70,41 @@ export default function Footer() {
             </div>
 
             {/* NEWSLETTER + CONTACT */}
-            <div className="col-span-1 sm:col-span-2 lg:col-span-12">
+            <div className="col-span-2 lg:col-span-12">
               <h4 className="text-black font-bold mb-4" style={{ fontFamily: 'Montserrat', fontWeight: 800 }}>Newsletter</h4>
 
-              <div className="flex flex-col md:flex-row items-center justify-between gap-6 w-full">
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start lg:items-center w-full">
                 {/* LEFT SIDE (INPUT GROUP) */}
-                <div className="flex flex-col sm:flex-row items-center gap-3 w-full max-w-md">
+                <div className="lg:col-span-6 xl:col-span-5">
+                  <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full max-w-xl">
                   <input
                     type="email"
                     placeholder="YOUR EMAIL"
-                    className="rounded-full px-5 py-3 border border-red-300 bg-white flex-1 text-black outline-none placeholder:text-gray-400 focus:border-red-500 transition"
+                    className="rounded-full px-5 py-3 border border-red-300 bg-white w-full text-black outline-none placeholder:text-gray-400 focus:border-red-500 transition"
                     style={{ fontFamily: 'Poppins', fontWeight: 400 }}
                   />
 
                   <button
                     type="button"
-                    className="bg-red-500 text-white px-6 py-3 rounded-full hover:bg-red-600 transition flex-shrink-0"
+                    className="bg-red-500 text-white px-6 py-3 rounded-full hover:bg-red-600 transition whitespace-nowrap"
                   >
                     SUBMIT 
                   </button>
                 </div>
+                </div>
 
                 {/* RIGHT SIDE (CONTACT + ICONS) */}
-                <div className="flex items-center gap-4 flex-shrink-0 ml-0 md:ml-auto md:pl-10 mt-6 md:mt-0">
+                <div className="lg:col-span-6 xl:col-span-7 lg:justify-self-end">
+                  <div className="flex flex-col sm:flex-row sm:items-center gap-4">
                   <a
                     href="mailto:support@mstblockchain.in"
-                    className="text-gray-600 text-sm whitespace-nowrap"
+                    className="text-gray-600 text-sm break-all sm:break-normal"
                     style={{ fontFamily: 'Poppins', fontWeight: 400 }}
                   >
                     support@mstblockchain.in
                   </a>
 
-                  <div className="flex items-center gap-4 whitespace-nowrap">
+                    <div className="flex items-center flex-wrap gap-3">
                     <a
                       href="https://x.com/MSTBlockchain"
                       target="_blank"
@@ -158,6 +161,7 @@ export default function Footer() {
                     </a>
                   </div>
                 </div>
+                </div>
               </div>
             </div>
 
@@ -169,7 +173,7 @@ export default function Footer() {
               © 2024 MST PROTOCOL. ALL RIGHTS RESERVED. STRUCTURAL PURITY IS THE STANDARD.
             </p>
 
-            <div className="flex gap-8 text-xs text-gray-500" style={{ fontFamily: 'Poppins', fontWeight: 400 }}>
+            <div className="flex flex-wrap justify-center md:justify-end gap-x-8 gap-y-2 text-xs text-gray-500" style={{ fontFamily: 'Poppins', fontWeight: 400 }}>
               <span className="hover:text-red-500 cursor-pointer transition">Privacy Policy</span>
               <span className="hover:text-red-500 cursor-pointer transition">Terms of Service</span>
             </div>

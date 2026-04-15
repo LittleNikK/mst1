@@ -82,7 +82,7 @@ export default function AmbassadorPage() {
               </p>
             </div>
 
-            <button className="group bg-slate-900 text-white px-8 py-4 rounded-2xl hover:bg-red-600 transition-all duration-300 font-bold flex items-center gap-2 shadow-xl shadow-slate-200">
+            <button className="group bg-red-900 text-white px-8 py-4 rounded-2xl hover:bg-red-600 transition-all duration-300 font-bold flex items-center gap-2 shadow-xl shadow-slate-200">
               Apply as a City Ambassador <ChevronRight className="group-hover:translate-x-1 transition-transform" />
             </button>
           </motion.div>

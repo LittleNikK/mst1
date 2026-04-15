@@ -64,7 +64,7 @@ export default function MSTBlogSection() {
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="text-5xl md:text-7xl font-extrabold leading-none"
+            className="bungee-regular text-6xl md:text-6xl leading-tight tracking-tight text-black font-extrabold uppercase"
           >
             LATEST{" "}
             <span className="text-red-500">
@@ -80,7 +80,7 @@ export default function MSTBlogSection() {
         </div>
 
         {/* BLOG GRID */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 ">
           {BLOGS.map((post, idx) => (
             <BlogCard key={post.id} post={post} index={idx} />
           ))}
@@ -113,7 +113,7 @@ function BlogCard({ post, index }) {
 
       {/* META */}
       <div className="flex items-center gap-3 mb-4">
-        <span className="text-red-600  text-xs font-bold tracking-[0.2em]">
+        <span className="text-red-600  text-xs tracking-[0.2em]">
           {post.category}
         </span>
         <div className="h-1 w-1 rounded-full bg-black/20" />
@@ -121,14 +121,14 @@ function BlogCard({ post, index }) {
           {post.date}
         </span>
       </div>
-
+{/* bungee-regular text-6xl md:text-6xl leading-tight tracking-tight text-black font-extrabold uppercase */}
       {/* TITLE */}
-      <h3 className="text-2xl font-bold mb-4 tracking-tight group-hover:text-red-500 transition-colors duration-300 leading-[1.1]">
+      <h3 className=" bungee-regular text-3xl font-bold mb-4 tracking-tight group-hover:text-red-500 transition-colors duration-300 leading-[1.1]">
         {post.title}
       </h3>
 
       {/* EXCERPT */}
-      <p className="text-gray-600 text-sm leading-relaxed mb-8 line-clamp-2 ">
+      <p className="text-gray-700 text-sm leading-relaxed mb-8 line-clamp-2  ">
         {post.excerpt}
       </p>
 
@@ -138,7 +138,7 @@ function BlogCard({ post, index }) {
           href="#"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
-          className="inline-block px-6 py-3 rounded-full bg-black text-white font-bold uppercase tracking-wider shadow-lg hover:brightness-110  transition-all duration-300"
+          className="inline-block px-6 py-3 rounded-full bg-black text-white font-bold uppercase tracking-wider shadow-lg hover:brightness-110  transition-all duration-300 hover:bg-red-500"
         >
           Read More
         </motion.a>

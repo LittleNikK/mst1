@@ -1,6 +1,8 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence, useMotionValue, useSpring, useTransform } from "framer-motion";
+import DotGrid from './DotGrid';
+
 
 const logos = [
   {
@@ -25,7 +27,7 @@ const logos = [
     description:
       "Educational gateway for blockchain mastery, certification, and Web3 developer tours.",
     stats: { students: "12K+", courses: "45", certifications: "8.5K" },
-    link: "/academy",
+    link: "https://masterstroke.academy/",
   },
 ];
 
@@ -89,6 +91,7 @@ const LogoFlipSection = () => {
 
   return (
     <div
+      id="productSection"
       ref={containerRef}
       style={{
         height: `${logos.length * 100}vh`,
@@ -96,9 +99,12 @@ const LogoFlipSection = () => {
       }}
       className="relative text-black"
     >
-      <div className="sticky top-0 h-screen flex items-center overflow-hidden">
+
+      <div className="sticky top-0 h-screen flex items-center overflow-hidden ">
+
         <div className="container mx-auto px-6 lg:px-16 relative z-10">
           <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+            
             
             {/* LEFT → ATTRACTIVE & INTERACTIVE 3D LOGO AREA */}
             <div className="w-full lg:w-1/2 flex justify-center perspective-[1200px]">
@@ -171,15 +177,15 @@ const LogoFlipSection = () => {
                   exit={{ opacity: 0, y: -20 }}
                 >
                   {/* TITLE */}
-                  <h1 className="text-5xl font-black uppercase mb-4">
-                    <span className="bg-black text-white px-2 mr-2">
+                  <h1 className="bungee-regular text-4xl md:text-6xl leading-tight tracking-tight text-black font-extrabold uppercase">
+                    <span className="bg-black rounded-xl text-white px-2 mr-2">
                       {firstWord}
                     </span>
                     <span className="text-red-600">{secondWord}</span>
                   </h1>
 
                   {/* DESCRIPTION */}
-                  <p className="text-xl text-gray-600 mb-8 max-w-md">
+                  <p className="text-xl mt-5 font-semibold text-gray-900 mb-8 max-w-md">
                     {current.description}
                   </p>
 
@@ -188,12 +194,12 @@ const LogoFlipSection = () => {
                     {Object.entries(current.stats).map(([key, value]) => (
                       <div
                         key={key}
-                        className="border-l-2 border-red-600 pl-4"
+                        className="border-l-5 border-red-600 pl-4"
                       >
-                        <p className="text-xs uppercase tracking-widest text-gray-400 font-bold">
+                        <p className="text-xs uppercase tracking-widest text-gray-600 font-bold">
                           {key.replace("_", " ")}
                         </p>
-                        <p className="text-2xl font-black text-black">
+                        <p className="text-2xl bungee-regular font-mono text-black">
                           {value}
                         </p>
                       </div>
@@ -228,8 +234,9 @@ const LogoFlipSection = () => {
             </div>
           </div>
         </div>
+        </div>
       </div>
-    </div>
+   
   );
 };
 
