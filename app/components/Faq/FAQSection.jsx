@@ -24,7 +24,7 @@ export default function FAQSection() {
 
   return (
             
-    <section className="relative  py-24 px-6 overflow-hidden">
+    <section className="relative  py-20 px-6 overflow-hidden">
       
       {/* Soft Red Glow */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-96 bg-red-500/10 blur-[120px] rounded-full" />
@@ -35,12 +35,12 @@ export default function FAQSection() {
         <div className="text-center mb-20">
          
 
-          <h2 className="mt-4 text-4xl md:text-6xl font-extrabold text-black tracking-tight">
+          <h2 className="bungee-regular text-6xl md:text-6xl leading-tight text-black font-extrabold uppercase">
             Frequently Asked{" "}
             <span className="text-red-500">Questions</span>
           </h2>
 
-          <p className="mt-6 text-gray-600 text-lg max-w-xl mx-auto">
+          <p className="mt-6 text-gray-800 text-lg max-w-xl mx-auto">
             Everything you need to know about the MST ecosystem. Can’t find it? Ask our community.
           </p>
         </div>
@@ -90,7 +90,7 @@ export default function FAQSection() {
           {visibleCount < faqs.length ? (
             <button
               onClick={showMore}
-              className="px-8 py-4 bg-red-500 text-white font-bold rounded-full transition-all hover:scale-105 active:scale-95 shadow-lg hover:bg-red-600"
+              className="px-8 py-4 bg-red-500 text-white text-sm font-semibold tracking-wide  rounded-full transition-all hover:scale-105 active:scale-95 shadow-lg hover:bg-red-600"
             >
               Load More Questions
             </button>

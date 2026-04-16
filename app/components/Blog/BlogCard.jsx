@@ -67,7 +67,7 @@ export default function MSTBlogSection() {
             className="bungee-regular text-6xl md:text-6xl leading-tight tracking-tight text-black font-extrabold uppercase"
           >
             LATEST{" "}
-            <span className="text-red-500">
+            <span className="text-red-600">
               BLOGS
             </span>
           </motion.h2>

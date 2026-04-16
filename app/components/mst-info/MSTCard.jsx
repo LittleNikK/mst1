@@ -23,12 +23,12 @@ export default function MSTCard({ icon: Icon, title, description, ctaText, href 
         </motion.div>
       ) : null}
 
-      <h3 className="font-[var(--font-space-grotesk)] text-xl font-bold uppercase tracking-[-0.01em] text-black">{title}</h3>
+      <h3 className="bungee-regular text-2xl md:text-2xl leading-tight tracking-tight text-red-500 font-extrabold uppercase">{title}</h3>
 
       <p className="mt-4 flex-1 text-sm leading-relaxed text-black/68">{description}</p>
 
       <div className="mt-8 border-t border-black/10 pt-4">
-        <Link href={href} className="inline-flex items-center gap-2 px-6 py-2 rounded-full bg-black text-white text-xs font-semibold uppercase tracking-[0.13em] transition-all hover:bg-accent">
+        <Link href={href} className="inline-flex items-center gap-2 px-6 py-2 rounded-full bg-black text-white text-xs font-semibold uppercase tracking-[0.13em] transition-all hover:bg-red-500">
           {ctaText}
           <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
         </Link>

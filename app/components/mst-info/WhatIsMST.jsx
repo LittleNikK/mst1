@@ -21,14 +21,15 @@ const cards = [
       'WASMify enables real-world applications and blockchain networks to communicate seamlessly and securely. By leveraging zero-knowledge (ZK) technology, it ensures data privacy and trustless execution—bringing strong guarantees of security to every interaction.',
     ctaText: 'Explore',
     href: '#',
-    icon: Share2,
-    isActive: true
+    link: '/Protocol',
+    isActive: true,
+    icon: Share2
   },
   {
     title: 'Post-quantum',
     description:
       'Post-quantum cryptography (PQC) protocols are cryptographic algorithms designed to secure digital communications against future, powerful quantum computers, which are expected to break current public-key encryption methods like RSA and ECC. These protocols are primarily being standardized by the National Institute of Standards and Technology (NIST) and are designed to run on classical hardware while resisting quantum-based attacks.',
-    href: '#',
+    link: '/Protocol',
      ctaText: 'Explore',
     icon: Cpu
   }
@@ -57,7 +58,7 @@ export default function WhatIsMST() {
             className="absolute left-[10%] top-[10%] flex items-center gap-2"
           >
             <span className="relative flex h-1.5 w-1.5"><span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-75"></span><span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-accent"></span></span>
-            <span className="whitespace-nowrap text-[9px] font-black tracking-[0.2em] text-red-300">Use Cases</span>
+            <span className="whitespace-nowrap text-[9px] font-black tracking-[0.2em] text-red-300">Post-quantum</span>
           </motion.div>
         </motion.div>
 
@@ -75,7 +76,7 @@ export default function WhatIsMST() {
           >
             <div className="h-px w-8 bg-gradient-to-r from-transparent via-accent to-red-200" />
             <span className="relative flex h-2 w-2"><span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-75"></span><span className="relative inline-flex h-2 w-2 rounded-full bg-accent"></span></span>
-            <span className="whitespace-nowrap text-[10px] font-black tracking-[0.2em] text-red-400">9+ Active Nodes</span>
+            <span className="whitespace-nowrap text-[9px] font-black tracking-[0.2em] text-red-400">WASMify</span>
           </motion.div>
         </motion.div>
 
@@ -90,7 +91,7 @@ export default function WhatIsMST() {
             className="absolute bottom-[20%] left-[10%] flex items-center gap-2 opacity-50"
           >
             <span className="relative inline-flex h-1 w-1 rounded-full bg-black"></span>
-            <span className="whitespace-nowrap text-[8px] font-bold tracking-[0.25em] text-red-300">POSA Consensus</span>
+            <span className="whitespace-nowrap text-[8px] font-bold tracking-[0.25em] text-red-300">SARAL Protocol</span>
           </motion.div>
         </motion.div>
 
@@ -107,7 +108,7 @@ export default function WhatIsMST() {
       <div className="relative z-10 mx-auto w-full max-w-[90rem] px-4 py-12 sm:px-5 lg:px-6">
        
         <h2 className="bungee-regular text-4xl md:text-6xl leading-tight tracking-tight text-black font-extrabold uppercase">
-          What is <span className='text-transparent bg-clip-text bg-red-500'> MST?</span>
+          What is <span className='text-transparent bg-clip-text bg-red-600'> MST?</span>
         </h2>
 
         <p className="mt-6 max-w-2xl text-base leading-relaxed text-black/70 md:text-lg">
@@ -135,7 +136,7 @@ export default function WhatIsMST() {
               title={card.title}
               description={card.description}
               ctaText={card.ctaText}
-              href={card.href}
+              href={card.link || card.href}
               icon={card.icon}
               isActive={card.isActive}
             />

@@ -212,9 +212,9 @@ export default function HeroSection() {
                 pause,
               });
               return (
-                <h1 className="bungee-regular text-4xl md:text-6xl leading-tight tracking-tight text-black font-extrabold uppercase">
+                <h1 className="bungee-regular text-4xl md:text-7xl w-full tracking-tight text-black font-extrabold uppercase">
                   {typewriter.format(headings[typewriter.index])}
-                  <span className="inline-block w-[4px] h-12 md:h-12 mb-1.5 bg-black align-middle animate-pulse ml-1" style={{verticalAlign:'middle',opacity:1}} />
+                  <span className="inline-block w-[4px] h-12 md:h-12 mb-2 bg-black align-middle animate-pulse ml-2" style={{verticalAlign:'middle',opacity:1}} />
                 </h1>
               );
             })()}
@@ -229,12 +229,14 @@ export default function HeroSection() {
              Products
             </a>
 
-            <Link
+            <a
               href="https://docs.mstblockchain.com/"
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-center px-4 sm:px-8 py-2.5 sm:py-3 border border-black/10 bg-white/50 backdrop-blur-sm text-black text-[9px] sm:text-[11px] font-bold uppercase tracking-wide sm:tracking-widest rounded-full hover:border-[#FF2D2D] transition-all"
             >
               Documentation
-            </Link>
+            </a>
           </div>
 
           {/* STATS */}
@@ -272,7 +274,7 @@ export default function HeroSection() {
       </div>
 
       {/* 🔥 PERFECT MARQUEE */}
-      <div className="absolute bottom-0 w-full py-4 sm z-10 overflow-hidden">
+      <div className="absolute bottom-0 w-full py-2 sm z-10 overflow-hidden">
 
         <PartnerMarquee/>
 

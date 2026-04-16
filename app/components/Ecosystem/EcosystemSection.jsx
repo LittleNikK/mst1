@@ -103,7 +103,7 @@ export default function EcosystemSection() {
       <div className="relative max-w-7xl mx-auto z-10">
         <div className="mb-16 text-center">
           <h2 className="bungee-regular text-6xl md:text-6xl leading-tight bg-white text-black font-extrabold uppercase ">
-            JOIN OUR <span className="text-red-500">ECOSYSTEM.</span>
+            JOIN OUR <span className="text-red-600">ECOSYSTEM.</span>
           </h2>
         </div>
 

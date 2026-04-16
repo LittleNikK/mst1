@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence, useMotionValue, useSpring, useTransform } from "framer-motion";
+import Link from 'next/link';
 import DotGrid from './DotGrid';
 
 
@@ -130,7 +131,7 @@ const LogoFlipSection = () => {
                 <motion.div 
                   animate={{ rotate: -360 }}
                   transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
-                  className="absolute inset-10 border-[1.5px] border-red-100 rounded-full opacity-60" 
+                  className="absolute inset-10 border-[1.5px] border-red-500 rounded-full opacity-60" 
                 />
 
                 {/* Main Logo with Scroll Flip */}
@@ -224,12 +225,23 @@ const LogoFlipSection = () => {
 
               {/* BUTTON */}
               <div className="mt-10 flex justify-center lg:justify-start">
-                <a
-                  href={current.link}
-                  className="px-6 py-3 bg-red-600 text-white text-xs font-bold uppercase tracking-widest rounded-full hover:bg-black transition-all duration-300 inline-block shadow-lg shadow-red-600/20 hover:shadow-black/30"
-                >
-                  Learn More
-                </a>
+                {current.link && current.link.startsWith('http') ? (
+                  <a
+                    href={current.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-6 py-3 bg-red-600 text-white text-xs font-bold uppercase tracking-widest rounded-full hover:bg-black transition-all duration-300 inline-block shadow-lg shadow-red-600/20 hover:shadow-black/30"
+                  >
+                    Learn More
+                  </a>
+                ) : (
+                  <Link
+                    href={current.link || '#'}
+                    className="px-6 py-3 bg-red-600 text-white text-xs font-bold uppercase tracking-widest rounded-full hover:bg-black transition-all duration-300 inline-block shadow-lg shadow-red-600/20 hover:shadow-black/30"
+                  >
+                    Learn More
+                  </Link>
+                )}
               </div>
             </div>
           </div>

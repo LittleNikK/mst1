@@ -86,13 +86,13 @@ export default function MSTInstitutional() {
 
         {/* LEFT CONTENT */}
         <div className="relative z-10 max-w-xl">
-          <h2 className="text-3xl md:text-5xl font-extrabold text-black leading-tight mb-6">
-             Join Our Validator Program 
+          <h2 className="bungee-regular text-6xl md:text-6xl leading-tight tracking-tight text-black font-extrabold uppercase">
+             Join Our <span className="text-red-500">Validator</span> Program 
           </h2>
 
          
 
-          <p className="text-gray-700 text-sm md:text-base leading-relaxed mb-8">
+          <p className="text-gray-800 text-sm md:text-base leading-relaxed mb-8">
             Help secure the most performant network in existence. Stake MST and
             run professional-grade infrastructure designed for high-throughput,
             reliability, and institutional-level performance.

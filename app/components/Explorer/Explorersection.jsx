@@ -137,7 +137,7 @@ export default function MSTExplorerFull() {
         {/* HEADER */}
         <div className="flex flex-col items-center text-center mb-16">
           <h2 className="bungee-regular text-6xl bg-white md:text-6xl leading-tight  text-black font-extrabold uppercase">
-            MST <span className="text-transparent bg-clip-text bg-red-500">EXPLORER</span>
+            MST <span className="text-transparent bg-clip-text bg-red-600">EXPLORER</span>
           </h2>
           <p className="text-gray-600 max-w-md bg-white text-lg">
             Real-time visualization of the MST mainnet ledger and transaction flow.
@@ -152,9 +152,12 @@ export default function MSTExplorerFull() {
 
         {/* BUTTON */}
         <div className="mt-16 flex justify-center">
-          <button className="group relative px-10 py-4 font-bold bg-black text-white rounded-xl transition-all duration-300 hover:bg-red-500 border border-black/20 hover:border-red-600">
+          <a
+            href="https://mstscan.com/"
+            className="group relative px-10 py-4 font-bold bg-black text-white rounded-xl transition-all duration-300 hover:bg-red-500 border border-black/20 hover:border-red-600 text-center"
+          >
             VIEW ALL ACTIVITY
-          </button>
+          </a>
         </div>
            <motion.div
         animate={{ y: [-15, 15, -15], x: [-10, 10, -10], rotate: [0, 90, 0] }}

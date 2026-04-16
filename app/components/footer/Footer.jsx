@@ -1,18 +1,95 @@
 "use client";
+
 import React from "react";
+import { motion } from "framer-motion";
 import { Send, MessageCircle } from "lucide-react";
 import { FaInstagram, FaTwitter, FaLinkedin, FaFacebook, FaYoutube, FaTelegram } from "react-icons/fa";
 
 export default function Footer() {
   return (
     <div className="bg-white pt-24">
-      <footer className="relative bg-gradient-to-br from-white via-[#fafafa] to-[#fff5f5] pt-20 pb-10 rounded-t-[60px] md:rounded-t-[100px] border-t border-red-200 font-sans">
-
+      <footer className="relative bg-white pt-20 pb-10 rounded-t-[60px] md:rounded-t-[100px] border-t border-red-200 font-sans overflow-hidden">
+            {/* 🔴 Background Glow */}
+                <div className="absolute inset-0 pointer-events-none">
+                  <div className="absolute w-[400px] h-[400px] bg-red-500/20 blur-[120px] top-[-100px] left-[-100px]" />
+                  <div className="absolute w-[400px] h-[400px] bg-red-500/10 blur-[120px] bottom-[-100px] right-[-100px]" />
+                </div>
+        
+                {/* 🛰️ ORBITAL ANIMATIONS (Background Layer) */}
+                <div className="absolute inset-0 pointer-events-none overflow-hidden z-0">
+                  
+                  {/* Orbit 1: Inner Solid Ring */}
+                  <motion.div
+                    animate={{ rotate: [360, 0] }}
+                    transition={{ duration: 60, repeat: Infinity, ease: 'linear' }}
+                    className="absolute -top-[10%] -left-[20%] w-[100%] h-[120%] border-[0.5px] border-red-500/20 rounded-full hidden lg:flex items-center justify-center"
+                  >
+                    <div className="absolute w-[6px] h-[6px] bg-red-600 rounded-full bottom-[18%] right-[8%] shadow-[0_0_10px_#ff2d2d]" />
+                    <motion.div
+                      animate={{ rotate: [-360, 0] }}
+                      transition={{ duration: 60, repeat: Infinity, ease: 'linear' }}
+                      className="absolute top-[15%] left-[15%] flex items-center gap-2"
+                    >
+                      <span className="relative flex h-1.5 w-1.5">
+                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-500 opacity-75"></span>
+                        <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-red-500"></span>
+                      </span>
+                      <span className="text-[9px] font-black tracking-[0.2em] text-red-400/60 uppercase whitespace-nowrap">Use Cases</span>
+                    </motion.div>
+                  </motion.div>
+        
+                  {/* Orbit 2: Middle Dashed Ring */}
+                  <motion.div
+                    animate={{ rotate: [0, 360] }}
+                    transition={{ duration: 45, repeat: Infinity, ease: 'linear' }}
+                    className="absolute -top-[20%] -left-[30%] w-[120%] h-[140%] border-[0.5px] border-black/10 rounded-full border-dashed hidden lg:flex items-center justify-center"
+                  >
+                    <div className="absolute w-2 h-2 bg-red-500 rounded-full top-[12%] shadow-[0_0_15px_#ff2d2d]" />
+                    <motion.div
+                      animate={{ rotate: [360, 0] }}
+                      transition={{ duration: 45, repeat: Infinity, ease: 'linear' }}
+                      className="absolute -left-[5px] top-[50%] -translate-y-1/2 flex items-center gap-2 pr-4 bg-white/60 backdrop-blur-[2px] rounded-full p-1 border border-black/10"
+                    >
+                      <div className="h-px w-8 bg-gradient-to-r from-transparent to-red-500" />
+                      <span className="relative flex h-2 w-2">
+                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-500 opacity-75"></span>
+                        <span className="relative inline-flex rounded-full h-2 w-2 bg-red-500"></span>
+                      </span>
+                      <span className="text-[10px] font-black tracking-[0.2em] text-black whitespace-nowrap">9+ Active Nodes</span>
+                    </motion.div>
+                  </motion.div>
+        
+                  {/* Orbit 3: Outer Faint Ring */}
+                  <motion.div
+                    animate={{ rotate: [0, 360] }}
+                    transition={{ duration: 90, repeat: Infinity, ease: 'linear' }}
+                    className="absolute -top-[30%] -left-[40%] w-[150%] h-[160%] border-[0.5px] border-black/10 rounded-full hidden lg:flex items-center justify-center"
+                  >
+                    <motion.div
+                      animate={{ rotate: [360, 0] }}
+                      transition={{ duration: 90, repeat: Infinity, ease: 'linear' }}
+                      className="absolute bottom-[25%] left-[15%] flex items-center gap-2 opacity-40"
+                    >
+                      <span className="relative inline-flex rounded-full h-1 w-1 bg-red-400"></span>
+                      <span className="text-[8px] font-bold tracking-[0.25em] text-red-400 whitespace-nowrap uppercase">POSA Consensus</span>
+                    </motion.div>
+                  </motion.div>
+        
+                  {/* Small floating local elements */}
+                  <motion.div
+                    animate={{ y: [-15, 15, -15], x: [-10, 10, -10], rotate: [0, 90, 0] }}
+                    transition={{ duration: 8, repeat: Infinity, ease: 'linear' }}
+                    className="absolute top-10 right-20 w-24 h-24 border border-red-500/20 rounded-full flex items-center justify-center opacity-40"
+                  >
+                    <div className="w-16 h-16 border border-red-500/10 rounded-full" />
+                    <div className="absolute w-1.5 h-1.5 bg-red-500 rounded-full shadow-[0_0_10px_#ff2d2d] top-0" />
+                  </motion.div>
+                </div>
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-12">
-          <div className="grid grid-cols-2 lg:grid-cols-12 gap-8 sm:gap-10 lg:gap-10 items-start">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-8 sm:gap-10 lg:gap-10 items-start">
             
             {/* BRAND */}
-            <div className="col-span-2 lg:col-span-3">
+            <div className="col-span-1 sm:col-span-1 lg:col-span-3 mb-10 sm:mb-0">
               <div className="flex items-center gap-3 mb-6">
                 <img 
                   src="1.png" 
@@ -21,8 +98,8 @@ export default function Footer() {
                 />
               </div>
 
-              <h3 className="text-black font-bold text-lg mb-3" style={{ fontFamily: 'Montserrat', fontWeight: 800 }}>
-                MST Protocol
+              <h3 className="bungee-regular text-lg md:text-lg leading-tight tracking-tight text-black font-extrabold uppercase mb-6" >
+                MST Blockchain
               </h3>
 
               <p className="text-gray-600 text-sm leading-relaxed max-w-[260px]" style={{ fontFamily: 'Poppins', fontWeight: 400 }}>
@@ -31,80 +108,76 @@ export default function Footer() {
             </div>
 
             {/* ECOSYSTEM */}
-            <div className="col-span-1 lg:col-span-3">
-              <h4 className="text-black font-bold mb-6" style={{ fontFamily: 'Montserrat', fontWeight: 800 }}>Ecosystem</h4>
-              <ul className="space-y-4 text-black font-bold text-sm">
-                <li className="hover:text-red-500 cursor-pointer transition" style={{ fontFamily: 'Poppins', fontWeight: 400 }}>Build</li>
-                <li className="hover:text-red-500 cursor-pointer transition" style={{ fontFamily: 'Poppins', fontWeight: 400 }}>Validators</li>
-                <li className="hover:text-red-500 cursor-pointer transition" style={{ fontFamily: 'Poppins', fontWeight: 400 }}>Governance</li>
-                <li className="hover:text-red-500 cursor-pointer transition" style={{ fontFamily: 'Poppins', fontWeight: 400 }}>Grants</li>
-                <li className="hover:text-red-500 cursor-pointer transition" style={{ fontFamily: 'Poppins', fontWeight: 400 }}>Events</li>
-                <li className="hover:text-red-500 cursor-pointer transition" style={{ fontFamily: 'Poppins', fontWeight: 400 }}>Openings</li>
+            <div className="col-span-1 sm:col-span-1 lg:col-span-3 mb-10 sm:mb-0 text-center">
+              <h4 className="bungee-regular text-lg md:text-lg leading-tight tracking-tight text-black font-extrabold uppercase mb-6" >Ecosystem</h4>
+              <ul className="space-y-4  text-gray-600 text-sm">
+                <li className="hover:text-red-500 cursor-pointer transition" style={{ fontFamily: 'Aeonik', fontWeight: 400 }}>Build</li>
+                <li className="hover:text-red-500 cursor-pointer transition" style={{ fontFamily: 'Aeonik', fontWeight: 400 }}>Validators</li>
+                <li className="hover:text-red-500 cursor-pointer transition" style={{ fontFamily: 'Aeonik', fontWeight: 400 }}>Governance</li>
+                <li className="hover:text-red-500 cursor-pointer transition" style={{ fontFamily: 'Aeonik', fontWeight: 400 }}>Grants</li>
+                <li className="hover:text-red-500 cursor-pointer transition" style={{ fontFamily: 'Aeonik', fontWeight: 400 }}>Events</li>
+                <li className="hover:text-red-500 cursor-pointer transition" style={{ fontFamily: 'Aeonik', fontWeight: 400 }}>Openings</li>
               </ul>
             </div>
 
             {/* USE CASES */}
-            <div className="col-span-1 lg:col-span-3">
-              <h4 className="text-black font-bold mb-6" style={{ fontFamily: 'Montserrat', fontWeight: 800 }}>Use Cases</h4>
-              <ul className="space-y-4 text-black text-sm">
-                <li className="hover:text-red-500 cursor-pointer transition" style={{ fontFamily: 'Poppins', fontWeight: 400 }}>Supply Chain</li>
-                <li className="hover:text-red-500 cursor-pointer transition" style={{ fontFamily: 'Poppins', fontWeight: 400 }}>Real Estate Tokenization</li>
-                <li className="hover:text-red-500 cursor-pointer transition" style={{ fontFamily: 'Poppins', fontWeight: 400 }}>DeFi Liquidity</li>
-                <li className="hover:text-red-500 cursor-pointer transition" style={{ fontFamily: 'Poppins', fontWeight: 400 }}>Secure Healthcare</li>
-                <li className="hover:text-red-500 cursor-pointer transition" style={{ fontFamily: 'Poppins', fontWeight: 400 }}>Digital Identity</li>
-                <li className="hover:text-red-500 cursor-pointer transition" style={{ fontFamily: 'Poppins', fontWeight: 400 }}>Lending Pools</li>
+            <div className="col-span-1 sm:col-span-1 lg:col-span-3 mb-10 sm:mb-0 text-center">
+              <h4 className="bungee-regular text-lg md:text-lg leading-tight tracking-tight text-black font-extrabold uppercase mb-6" style={{ fontFamily: 'Montserrat', fontWeight: 800 }}>Use Cases</h4>
+              <ul className="space-y-4 text-gray-600 text-sm">
+                <li className="hover:text-red-500 cursor-pointer transition" style={{ fontFamily: 'Aeonik', fontWeight: 400 }}>Supply Chain</li>
+                <li className="hover:text-red-500 cursor-pointer transition" style={{ fontFamily: 'Aeonik', fontWeight: 400 }}>Real Estate Tokenization</li>
+                <li className="hover:text-red-500 cursor-pointer transition" style={{ fontFamily: 'Aeonik', fontWeight: 400 }}>DeFi Liquidity</li>
+                <li className="hover:text-red-500 cursor-pointer transition" style={{ fontFamily: 'Aeonik', fontWeight: 400 }}>Secure Healthcare</li>
+                <li className="hover:text-red-500 cursor-pointer transition" style={{ fontFamily: 'Aeonik', fontWeight: 400 }}>Digital Identity</li>
+                <li className="hover:text-red-500 cursor-pointer transition" style={{ fontFamily: 'Aeonik', fontWeight: 400 }}>Lending Pools</li>
               </ul>
             </div>
 
             {/* RESOURCES */}
-            <div className="col-span-2 lg:col-span-3">
-              <h4 className="text-black font-bold mb-6" style={{ fontFamily: 'Montserrat', fontWeight: 800 }}>Resources</h4>
-              <ul className="space-y-4 text-black text-sm">
-                <li className="hover:text-red-500 cursor-pointer transition" style={{ fontFamily: 'Poppins', fontWeight: 400 }}>Whitepaper</li>
-                <li className="hover:text-red-500 cursor-pointer transition" style={{ fontFamily: 'Poppins', fontWeight: 400 }}>Docs</li>
-                <li className="hover:text-red-500 cursor-pointer transition" style={{ fontFamily: 'Poppins', fontWeight: 400 }}>GitHub</li>
-                <li className="hover:text-red-500 cursor-pointer transition" style={{ fontFamily: 'Poppins', fontWeight: 400 }}>Support</li>
-                <li className="hover:text-red-500 cursor-pointer transition" style={{ fontFamily: 'Poppins', fontWeight: 400 }}>Careers</li>
-                <li className="hover:text-red-500 cursor-pointer transition" style={{ fontFamily: 'Poppins', fontWeight: 400 }}>Sitemap</li>
+            <div className="col-span-1 sm:col-span-1 lg:col-span-3 mb-10 sm:mb-0 text-center">
+              <h4 className="bungee-regular text-lg md:text-lg leading-tight tracking-tight text-black font-extrabold uppercase mb-6">Resources</h4>
+              <ul className="space-y-4 text-gray-600 text-sm">
+                <li className="hover:text-red-500 cursor-pointer transition" style={{ fontFamily: 'Aeonik', fontWeight: 400 }}>Whitepaper</li>
+                <li className="hover:text-red-500 cursor-pointer transition" style={{ fontFamily: 'Aeonik', fontWeight: 400 }}>Docs</li>
+                <li className="hover:text-red-500 cursor-pointer transition" style={{ fontFamily: 'Aeonik', fontWeight: 400 }}>GitHub</li>
+                <li className="hover:text-red-500 cursor-pointer transition" style={{ fontFamily: 'Aeonik', fontWeight: 400 }}>Support</li>
+                <li className="hover:text-red-500 cursor-pointer transition" style={{ fontFamily: 'Aeonik', fontWeight: 400 }}>Careers</li>
+                <li className="hover:text-red-500 cursor-pointer transition" style={{ fontFamily: 'Aeonik', fontWeight: 400 }}>Sitemap</li>
               </ul>
             </div>
 
             {/* NEWSLETTER + CONTACT */}
-            <div className="col-span-2 lg:col-span-12">
-              <h4 className="text-black font-bold mb-4" style={{ fontFamily: 'Montserrat', fontWeight: 800 }}>Newsletter</h4>
-
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start lg:items-center w-full">
+            <div className="col-span-1 sm:col-span-2 lg:col-span-12">
+    
+              <div className="flex flex-col md:flex-row items-center justify-between gap-6 w-full">
                 {/* LEFT SIDE (INPUT GROUP) */}
-                <div className="lg:col-span-6 xl:col-span-5">
-                  <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full max-w-xl">
+                <div className="flex flex-col sm:flex-row items-center gap-3 w-full max-w-md">
                   <input
                     type="email"
                     placeholder="YOUR EMAIL"
-                    className="rounded-full px-5 py-3 border border-red-300 bg-white w-full text-black outline-none placeholder:text-gray-400 focus:border-red-500 transition"
+                    className="rounded-full px-5 py-3 border border-red-300 bg-white flex-1 text-black outline-none placeholder:text-gray-400 focus:border-red-500 transition"
                     style={{ fontFamily: 'Poppins', fontWeight: 400 }}
                   />
 
                   <button
                     type="button"
-                    className="bg-red-500 text-white px-6 py-3 rounded-full hover:bg-red-600 transition whitespace-nowrap"
+                    className="bg-red-500 text-white px-6 py-3 rounded-full hover:bg-red-600 transition flex-shrink-0"
                   >
                     SUBMIT 
                   </button>
                 </div>
-                </div>
 
                 {/* RIGHT SIDE (CONTACT + ICONS) */}
-                <div className="lg:col-span-6 xl:col-span-7 lg:justify-self-end">
-                  <div className="flex flex-col sm:flex-row sm:items-center gap-4">
+                <div className="flex items-center gap-4 flex-shrink-0 ml-0 md:ml-auto md:pl-10 mt-6 md:mt-0">
                   <a
-                    href="mailto:support@mstblockchain.in"
-                    className="text-gray-600 text-sm break-all sm:break-normal"
+                    href="mailto:support@mstblockchain.com"
+                    className="text-gray-600 text-sm whitespace-nowrap"
                     style={{ fontFamily: 'Poppins', fontWeight: 400 }}
                   >
-                    support@mstblockchain.in
+                    support@mstblockchain.com
                   </a>
 
-                    <div className="flex items-center flex-wrap gap-3">
+                  <div className="flex items-center gap-4 whitespace-nowrap">
                     <a
                       href="https://x.com/MSTBlockchain"
                       target="_blank"
@@ -161,7 +234,6 @@ export default function Footer() {
                     </a>
                   </div>
                 </div>
-                </div>
               </div>
             </div>
 
@@ -173,7 +245,7 @@ export default function Footer() {
               © 2024 MST PROTOCOL. ALL RIGHTS RESERVED. STRUCTURAL PURITY IS THE STANDARD.
             </p>
 
-            <div className="flex flex-wrap justify-center md:justify-end gap-x-8 gap-y-2 text-xs text-gray-500" style={{ fontFamily: 'Poppins', fontWeight: 400 }}>
+            <div className="flex gap-8 text-xs text-gray-500" style={{ fontFamily: 'Poppins', fontWeight: 400 }}>
               <span className="hover:text-red-500 cursor-pointer transition">Privacy Policy</span>
               <span className="hover:text-red-500 cursor-pointer transition">Terms of Service</span>
             </div>

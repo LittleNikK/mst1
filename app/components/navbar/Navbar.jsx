@@ -447,7 +447,7 @@ export default function Navbar() {
   };
 
   const navLinkClass = (active) =>
-    `group relative text-sm font-medium lowercase tracking-tight transition-colors ${active ? 'text-white' : 'text-white/50 hover:text-white'}`;
+    `group relative text-sm font-medium  tracking-tight transition-colors ${active ? 'text-white' : 'text-white/50 hover:text-white'}`;
 
   const renderBuildDropdown = () => (
     <MegaMenu

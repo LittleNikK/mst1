@@ -93,7 +93,7 @@ function EventCard({ event, variant }) {
 
   return (
     <motion.div
-      className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-black/50 shadow-[0_10px_30px_rgba(0,0,0,0.35)] backdrop-blur-xl"
+      className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-zinc-800 hover:bg-black/95 shadow-[0_10px_30px_rgba(0,0,0,0.35)] backdrop-blur-xl"
       animate={{ y: [0, -2, 0] }}
       transition={{ duration: 5.5, repeat: Infinity, ease: 'easeInOut' }}
       whileHover={{ scale: 1.02 }}
@@ -125,7 +125,7 @@ function EventCard({ event, variant }) {
             <span className=" text-xs text-white">{event.time}</span>
           </div>
 
-          <h3 className="text-xl font-bold leading-tight text-black transition-colors duration-300 group-hover:text-red-500" style={{ fontFamily: 'Montserrat', fontWeight: 700 }}>
+          <h3 className="bungee-regular text-xl font-bold leading-tight tracking-tighter  transition-colors duration-300 text-red-500">
             {event.title}
           </h3>
 
@@ -263,7 +263,7 @@ export default function MSTEventSection() {
       <div className="relative z-10 mx-auto max-w-[1200px] px-4 sm:px-6">
         {/* Header */}
         <div className="mb-8 sm:mb-10">
-          <h2 className="text-3xl font-bold leading-tight sm:text-4xl md:text-5xl break-words" style={{ fontFamily: 'Montserrat', fontWeight: 700 }}>
+          <h2 className="bungee-regular text-6xl md:text-6xl leading-tight tracking-tight text-black font-extrabold uppercase">
             ALL <span className="text-red-500">EVENTS</span>
           </h2>
           <p className="mt-4 max-w-2xl text-sm text-black/60" style={{ fontFamily: 'Poppins', fontWeight: 400 }}>
@@ -273,8 +273,8 @@ export default function MSTEventSection() {
 
         {/* Two-column dynamic layout */}
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-6">
-          <RotatingEventPanel title="Past Events" events={pastEvents} variant="past" />
           <RotatingEventPanel title="Upcoming Events" events={upcomingEvents} variant="upcoming" />
+          <RotatingEventPanel title="Past Events" events={pastEvents} variant="past" />
         </div>
       </div>
     </section>
