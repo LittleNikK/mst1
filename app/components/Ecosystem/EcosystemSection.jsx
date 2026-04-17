@@ -1,4 +1,5 @@
 'use client';
+import { useEffect } from 'react';
 
 import React from 'react';
 import { motion } from 'framer-motion';
@@ -24,6 +25,11 @@ const Icons = {
 };
 
 export default function EcosystemSection() {
+    useEffect(() => {
+      if (typeof window !== 'undefined') {
+        window.sessionStorage.setItem('fromEcosystem', 'true');
+      }
+    }, []);
   return (
     <section id="ecosystemSection" className="relative bg-white text-gray-900 py-24 px-6 overflow-hidden">
       

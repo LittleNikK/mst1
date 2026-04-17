@@ -130,11 +130,13 @@ const itemVariants = {
 };
 
 function MegaMenuItem({ href, label, description, icon: Icon, prefix }) {
+  const isExternal = href?.startsWith('http');
   return (
     <motion.li variants={itemVariants}>
       <Link
         href={href}
         className="group flex items-start justify-between gap-4 rounded-xl px-3 py-2.5 text-left text-sm font-medium text-white transition-all duration-300 hover:bg-red-500/10 hover:text-red-400"
+        {...(isExternal ? { target: "_blank", rel: "noopener noreferrer" } : {})}
       >
         <span className="flex min-w-0 items-start gap-3">
           {Icon ? (
@@ -175,13 +177,15 @@ function MegaMenuItem({ href, label, description, icon: Icon, prefix }) {
 function HighlightCard({ highlight }) {
   if (!highlight) return null;
 
+  const isExternal = highlight.href?.startsWith('http');
   const CardWrapper = highlight.href ? Link : 'div';
   const HighlightIcon = highlight.icon;
 
-  return (
-    <CardWrapper
-      {...(highlight.href ? { href: highlight.href } : {})}
+  return highlight.href ? (
+    <Link
+      href={highlight.href}
       className="group block rounded-2xl border border-red-500/20 bg-gradient-to-b from-red-900/25 to-black/95 p-5 shadow-[0_0_40px_rgba(255,0,0,0.12)] transition-all duration-300 hover:border-red-500/35 hover:bg-gradient-to-b hover:from-red-900/35 hover:to-black"
+      {...(isExternal ? { target: "_blank", rel: "noopener noreferrer" } : {})}
     >
       <div className="flex items-start justify-between gap-4">
         <div className="min-w-0">
@@ -207,7 +211,34 @@ function HighlightCard({ highlight }) {
           <span className="text-white/40 transition-transform duration-300 group-hover:translate-x-1">→</span>
         </div>
       ) : null}
-    </CardWrapper>
+    </Link>
+  ) : (
+    <div className="group block rounded-2xl border border-red-500/20 bg-gradient-to-b from-red-900/25 to-black/95 p-5 shadow-[0_0_40px_rgba(255,0,0,0.12)] transition-all duration-300 hover:border-red-500/35 hover:bg-gradient-to-b hover:from-red-900/35 hover:to-black">
+      <div className="flex items-start justify-between gap-4">
+        <div className="min-w-0">
+          <p className="text-[10px] font-extrabold uppercase tracking-[0.22em] text-red-500">
+            {highlight.eyebrow}
+          </p>
+          <p className="mt-2 text-sm font-extrabold text-white">{highlight.title}</p>
+          {highlight.description ? (
+            <p className="mt-2 text-xs leading-relaxed text-white/65">{highlight.description}</p>
+          ) : null}
+        </div>
+
+        {HighlightIcon ? (
+          <span className="inline-flex h-9 w-9 flex-none items-center justify-center rounded-xl border border-white/10 bg-white/5 text-red-400/90 transition-all duration-300 group-hover:bg-red-500/10">
+            <HighlightIcon className="h-5 w-5" />
+          </span>
+        ) : null}
+      </div>
+
+      {highlight.cta ? (
+        <div className="mt-4 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.18em] text-white/80 transition-colors duration-300 group-hover:text-white">
+          <span className="transition-transform duration-300 group-hover:translate-x-0.5">{highlight.cta}</span>
+          <span className="text-white/40 transition-transform duration-300 group-hover:translate-x-1">→</span>
+        </div>
+      ) : null}
+    </div>
   );
 }
 

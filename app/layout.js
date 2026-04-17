@@ -33,8 +33,26 @@ function Loading({ onEnd }) {
   );
 }
 
+import { useEffect } from "react";
+
 export default function RootLayout({ children }) {
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(() => {
+    if (typeof window !== "undefined") {
+      // Don't show loader if coming back from Ecosystem
+      if (window.sessionStorage.getItem("fromEcosystem")) {
+        window.sessionStorage.removeItem("fromEcosystem");
+        return false;
+      }
+      return !window.sessionStorage.getItem("hasLoadedOnce");
+    }
+    return true;
+  });
+
+  useEffect(() => {
+    if (!loading) {
+      window.sessionStorage.setItem("hasLoadedOnce", "true");
+    }
+  }, [loading]);
 
   return (
     <html

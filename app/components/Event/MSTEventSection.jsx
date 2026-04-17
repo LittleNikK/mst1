@@ -91,6 +91,14 @@ function DotIndicators({ count, activeIndex, onSelect, className = '' }) {
 function EventCard({ event, variant }) {
   const isUpcoming = variant === 'upcoming';
 
+  // Determine the correct explore link based on event type and title
+  let exploreHref = '#';
+  if (isUpcoming) {
+    exploreHref = '/upcoming-events';
+  } else {
+    exploreHref = '/past-event';
+  }
+
   return (
     <motion.div
       className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-zinc-800 hover:bg-black/95 shadow-[0_10px_30px_rgba(0,0,0,0.35)] backdrop-blur-xl"
@@ -144,7 +152,7 @@ function EventCard({ event, variant }) {
           </a>
 
           <a
-            href={event.href ?? '#'}
+            href={exploreHref}
             className="inline-flex min-w-[160px] flex-1 items-center justify-center rounded-xl border border-red-500/40 bg-transparent px-4 py-3 text-[10px] font-bold uppercase tracking-[0.2em] text-white/90 transition-all duration-300 hover:border-red-500/60 hover:bg-red-500/10 hover:text-white hover:shadow-[0_0_22px_rgba(255,45,45,0.24)] active:scale-[0.99]"
             style={{ fontFamily: 'Montserrat', fontWeight: 700 }}
           >
