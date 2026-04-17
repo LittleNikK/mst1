@@ -128,12 +128,12 @@ export default function CareersPage() {
             Join the Revolution
           </span>
 
-          <h1 className="text-5xl md:text-7xl font-black tracking-tight leading-tight">
+          <h1 className="bungee-regular text-6xl md:text-6xl leading-tight tracking-tight text-black font-extrabold uppercase">
             Build your <span className="text-transparent bg-clip-text bg-red-500">career</span> in <br />
-            the Web3 world
+            the  <span className="text-transparent bg-clip-text bg-red-500">Web3</span> world
           </h1>
 
-          <p className="text-slate-500 mt-8 text-xl max-w-2xl mx-auto leading-relaxed">
+          <p className="font-aeonik font-normal text-slate-500 mt-8 text-xl max-w-2xl mx-auto leading-relaxed">
             We’re looking for innovators, dreamers, and builders to help us shape the future of blockchain technology.
           </p>
         </div>
@@ -143,7 +143,7 @@ export default function CareersPage() {
       <main className="max-w-7xl mx-auto px-6 pb-24 grid lg:grid-cols-12 gap-12 relative z-10">
         {/* LEFT: HR Info */}
         <div className="lg:col-span-4 space-y-6">
-          <h2 className="text-2xl font-bold flex items-center gap-3">
+          <h2 className="bungee-regular text-2xl md:text-2xl leading-tight tracking-tight text-black font-extrabold uppercase flex items-center gap-3">
             <Users className="text-rose-500 w-6 h-6" />
             Talent Acquisition
           </h2>
@@ -153,23 +153,23 @@ export default function CareersPage() {
               <a
                 key={i}
                 href={item.href}
-                className="group flex items-center p-5 bg-white border border-slate-100 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300"
+                className="group flex items-center p-5 bg-white border border-slate-300 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300"
               >
-                <div className={`p-4 rounded-xl mr-5 ${item.color}`}>{item.icon}</div>
+                <div className={`p-4  rounded-xl mr-5 ${item.color}`}>{item.icon}</div>
                 <div>
-                  <p className="text-[11px] font-bold uppercase tracking-wider text-slate-400">{item.label}</p>
-                  <p className="font-semibold text-slate-700 group-hover:text-rose-600 transition-colors">{item.text}</p>
+                  <p className="font-aeonik font-normal text-[11px] font-semibold uppercase tracking-wider text-black">{item.label}</p>
+                  <p className="font-aeonik font-normal font-semibold text-slate-700 group-hover:text-rose-600 transition-colors">{item.text}</p>
                 </div>
               </a>
             ))}
           </div>
 
-          <div className="p-6 bg-white border border-slate-100 rounded-2xl shadow-sm">
+          <div className="p-6 bg-white border border-slate-300 rounded-2xl shadow-sm">
             <div className="flex items-center gap-3 mb-3 text-slate-800">
               <MapPin className="text-rose-500 w-5 h-5" />
-              <span className="font-bold">Work Location</span>
+              <span className="font-aeonik font-normal font-semibold">Work Location</span>
             </div>
-            <p className="text-sm leading-relaxed text-slate-500">
+            <p className="font-aeonik font-normal text-sm leading-relaxed text-slate-500">
               Pimpri, Pune, India. <br />
               <span className="text-rose-600 font-medium mt-2 block underline">Hybrid & Remote options available.</span>
             </p>
@@ -177,71 +177,71 @@ export default function CareersPage() {
         </div>
 
         {/* RIGHT: Application Form */}
-        <div className="lg:col-span-8 bg-white p-8 md:p-12 rounded-[2rem] shadow-sm border border-slate-100">
+        <div className="lg:col-span-8 bg-white p-8 md:p-12 rounded-[2rem] shadow-sm border border-black/50">
           <div className="mb-8">
-            <h3 className="text-2xl font-bold">Quick Application</h3>
-            <p className="text-slate-400 text-sm">Tell us who you are and what you're passionate about.</p>
+            <h3 className="bungee-regular text-2xl md:text-2xl leading-tight tracking-tight text-black font-extrabold uppercase mb-2">Quick Application</h3>
+            <p className="font-aeonik font-normal text-slate-400 text-sm">Tell us who you are and what you're passionate about.</p>
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="grid md:grid-cols-2 gap-6">
               <div className="space-y-2">
-                <label className="text-sm font-bold text-slate-700 ml-1">Full Name</label>
+                <label className="font-aeonik font-normal text-sm font-bold text-slate-700 ml-1">Full Name</label>
                 <input
                   name="name"
                   value={form.name}
                   onChange={handleChange}
                   placeholder="Your Name"
-                  className="w-full border border-slate-200 p-4 rounded-2xl focus:ring-4 focus:ring-rose-500/5 focus:border-rose-500 outline-none transition-all"
+                  className="w-full border font-aeonik font-normal border-slate-200 p-4 rounded-2xl focus:ring-4 focus:ring-rose-500/5 focus:border-rose-500 outline-none transition-all"
                 />
               </div>
 
               <div className="space-y-2">
-                <label className="text-sm font-bold text-slate-700 ml-1">Email Address</label>
+                <label className="font-aeonik font-normal text-sm font-bold text-slate-700 ml-1">Email Address</label>
                 <input
                   name="email"
                   value={form.email}
                   onChange={handleChange}
                   placeholder="yourname@example.com"
                   type="email"
-                  className="w-full border border-slate-200 p-4 rounded-2xl focus:ring-4 focus:ring-rose-500/5 focus:border-rose-500 outline-none transition-all"
+                  className="w-full border font-aeonik font-normal border-slate-200 p-4 rounded-2xl focus:ring-4 focus:ring-rose-500/5 focus:border-rose-500 outline-none transition-all"
                 />
               </div>
             </div>
 
             <div className="grid md:grid-cols-2 gap-6">
               <div className="space-y-2">
-                <label className="text-sm font-bold text-slate-700 ml-1">Position</label>
+                <label className="font-aeonik font-normal text-sm font-bold text-slate-700 ml-1">Position</label>
                 <input
                   name="position"
                   value={form.position}
                   onChange={handleChange}
                   placeholder="e.g. Full-Stack Engineer"
-                  className="w-full border border-slate-200 p-4 rounded-2xl focus:ring-4 focus:ring-rose-500/5 focus:border-rose-500 outline-none transition-all"
+                  className="w-full border font-aeonik font-normal border-slate-200 p-4 rounded-2xl focus:ring-4 focus:ring-rose-500/5 focus:border-rose-500 outline-none transition-all"
                 />
               </div>
 
               <div className="space-y-2">
-                <label className="text-sm font-bold text-slate-700 ml-1">Portfolio/LinkedIn URL</label>
+                <label className="font-aeonik font-normal text-sm font-bold text-slate-700 ml-1">Portfolio/LinkedIn URL</label>
                 <input
                   name="portfolio"
                   value={form.portfolio}
                   onChange={handleChange}
                   placeholder="https://..."
-                  className="w-full border border-slate-200 p-4 rounded-2xl focus:ring-4 focus:ring-rose-500/5 focus:border-rose-500 outline-none transition-all"
+                  className="w-full border font-aeonik font-normal border-slate-200 p-4 rounded-2xl focus:ring-4 focus:ring-rose-500/5 focus:border-rose-500 outline-none transition-all"
                 />
               </div>
             </div>
 
             <div className="space-y-2">
-              <label className="text-sm font-bold text-slate-700 ml-1">About You / Message</label>
+              <label className="font-aeonik font-normal text-sm font-bold text-slate-700 ml-1">About You / Message</label>
               <textarea
                 name="message"
                 value={form.message}
                 onChange={handleChange}
                 placeholder="Briefly describe your experience and why you want to join MST..."
                 rows={4}
-                className="w-full border border-slate-200 p-4 rounded-2xl focus:ring-4 focus:ring-rose-500/5 focus:border-rose-500 outline-none transition-all resize-none"
+                className="w-full border font-aeonik font-normal border-slate-200 p-4 rounded-2xl focus:ring-4 focus:ring-rose-500/5 focus:border-rose-500 outline-none transition-all resize-none"
               />
             </div>
 

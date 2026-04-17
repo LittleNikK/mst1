@@ -203,7 +203,7 @@ export default function HeroSection() {
             {(() => {
               // Typewriter config
               const typingSpeed = 15; // ms per character
-              const deletingSpeed = 25; // ms per character
+              const deletingSpeed = 15; // ms per character
               const pause = 1400; // ms pause at end of word
               const typewriter = useTypewriter({
                 texts: headings,

@@ -2,6 +2,7 @@
 import { Geist, Geist_Mono, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/navbar/Navbar";
+import MstBuddy from "./components/MstBuddy/BuddyPanel";
 import Footer from "./components/footer/Footer";
 // import { useState } from "react";
 
@@ -32,6 +33,7 @@ export default function RootLayout({ children }) {
       <body suppressHydrationWarning className="min-h-full flex flex-col">
         <Navbar />
         {children}
+        <MstBuddy/>
         <Footer />
       </body>
     </html>
