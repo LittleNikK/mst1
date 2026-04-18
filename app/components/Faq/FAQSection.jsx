@@ -107,9 +107,11 @@ export default function FAQSection() {
             <MessageCircle className="w-4 h-4 text-red-500" />
             <span>
               Still stuck?{" "}
+            <a href="https://buddy.mstblockchain.com/chat" target="_blank" rel="noopener noreferrer" className="hover:underline">
               <button className="text-black font-medium hover:underline">
                 Chat with us
               </button>
+              </a>
             </span>
           </div>
         </div>

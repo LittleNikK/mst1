@@ -98,13 +98,20 @@ export default function MSTInstitutional() {
             reliability, and institutional-level performance.
           </p>
 
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="px-7 py-3 rounded-full bg-red-500 text-white text-sm font-semibold tracking-wide hover:bg-red-600 transition"
+          <a
+            href="https://mstblockchain.com/portal/"
+            target="_blank"
+            rel="noopener noreferrer"
           >
-            JOIN THE SYSTEM
-          </motion.button>
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="px-7 py-3 rounded-full bg-red-500 text-white text-sm font-semibold tracking-wide hover:bg-red-600 transition"
+              type="button"
+            >
+              JOIN THE SYSTEM
+            </motion.button>
+          </a>
         </div>
 
         {/* RIGHT LOGO */}

@@ -156,44 +156,77 @@ const itemVariants = {
 };
 
 function MegaMenuItem({ href, label, description, icon: Icon, prefix }) {
+  // Use <a> for external links, <Link> for internal
+  const isExternal = href?.startsWith('http');
+  const commonProps = {
+    className: "group flex items-start justify-between gap-4 rounded-xl px-3 py-2.5 text-left text-sm font-medium text-white transition-all duration-300 hover:bg-red-500/10 hover:text-red-400",
+    ...(isExternal ? { target: "_blank", rel: "noopener noreferrer" } : {})
+  };
   return (
     <motion.li variants={itemVariants}>
-      <Link
-        href={href}
-        className="group flex items-start justify-between gap-4 rounded-xl px-3 py-2.5 text-left text-sm font-medium text-white transition-all duration-300 hover:bg-red-500/10 hover:text-red-400"
-      >
-        <span className="flex min-w-0 items-start gap-3">
-          {Icon ? (
-            <span className="mt-0.5 inline-flex h-7 w-7 flex-none items-center justify-center rounded-lg border border-white/10 bg-white/5 text-red-500/90 transition-colors duration-300 group-hover:text-red-400">
-              <Icon className="h-4 w-4" />
-            </span>
-          ) : null}
-
-          <span className="min-w-0">
-            <span className="flex items-center gap-2">
-              {prefix ? (
-                <span className="text-[10px] font-extrabold uppercase tracking-[0.18em] text-red-500/90">
-                  {prefix}
-                </span>
-              ) : null}
-              <span className="block truncate transition-transform duration-300 group-hover:translate-x-1">
-                {label}
-              </span>
-            </span>
-
-            {description ? (
-              <span className="mt-1 block text-xs font-normal text-white/55 transition-transform duration-300 group-hover:translate-x-1 group-hover:text-white/70">
-                {description}
+      {isExternal ? (
+        <a href={href} {...commonProps}>
+          <span className="flex min-w-0 items-start gap-3">
+            {Icon ? (
+              <span className="mt-0.5 inline-flex h-7 w-7 flex-none items-center justify-center rounded-lg border border-white/10 bg-white/5 text-red-500/90 transition-colors duration-300 group-hover:text-red-400">
+                <Icon className="h-4 w-4" />
               </span>
             ) : null}
+            <span className="min-w-0">
+              <span className="flex items-center gap-2">
+                {prefix ? (
+                  <span className="text-[10px] font-extrabold uppercase tracking-[0.18em] text-red-500/90">
+                    {prefix}
+                  </span>
+                ) : null}
+                <span className="block truncate transition-transform duration-300 group-hover:translate-x-1">
+                  {label}
+                </span>
+              </span>
+              {description ? (
+                <span className="mt-1 block text-xs font-normal text-white/55 transition-transform duration-300 group-hover:translate-x-1 group-hover:text-white/70">
+                  {description}
+                </span>
+              ) : null}
+            </span>
           </span>
-        </span>
-
-        <ChevronRight
-          size={16}
-          className="mt-0.5 flex-none text-white/25 transition-all duration-300 group-hover:translate-x-1 group-hover:text-red-400"
-        />
-      </Link>
+          <ChevronRight
+            size={16}
+            className="mt-0.5 flex-none text-white/25 transition-all duration-300 group-hover:translate-x-1 group-hover:text-red-400"
+          />
+        </a>
+      ) : (
+        <Link href={href} {...commonProps}>
+          <span className="flex min-w-0 items-start gap-3">
+            {Icon ? (
+              <span className="mt-0.5 inline-flex h-7 w-7 flex-none items-center justify-center rounded-lg border border-white/10 bg-white/5 text-red-500/90 transition-colors duration-300 group-hover:text-red-400">
+                <Icon className="h-4 w-4" />
+              </span>
+            ) : null}
+            <span className="min-w-0">
+              <span className="flex items-center gap-2">
+                {prefix ? (
+                  <span className="text-[10px] font-extrabold uppercase tracking-[0.18em] text-red-500/90">
+                    {prefix}
+                  </span>
+                ) : null}
+                <span className="block truncate transition-transform duration-300 group-hover:translate-x-1">
+                  {label}
+                </span>
+              </span>
+              {description ? (
+                <span className="mt-1 block text-xs font-normal text-white/55 transition-transform duration-300 group-hover:translate-x-1 group-hover:text-white/70">
+                  {description}
+                </span>
+              ) : null}
+            </span>
+          </span>
+          <ChevronRight
+            size={16}
+            className="mt-0.5 flex-none text-white/25 transition-all duration-300 group-hover:translate-x-1 group-hover:text-red-400"
+          />
+        </Link>
+      )}
     </motion.li>
   );
 }

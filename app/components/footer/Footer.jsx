@@ -3,6 +3,7 @@
 
 
 import React from "react";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { Send, MessageCircle } from "lucide-react";
 import { FaInstagram, FaTwitter, FaLinkedin, FaFacebook, FaYoutube, FaTelegram } from "react-icons/fa";
@@ -113,12 +114,20 @@ export default function Footer() {
             <div className="col-span-1 sm:col-span-1 lg:col-span-3 mb-10 sm:mb-0 text-center">
               <h4 className="bungee-regular text-lg md:text-lg leading-tight tracking-tight text-red-600 font-extrabold uppercase mb-6" >Ecosystem</h4>
               <ul className="space-y-4  text-gray-600 text-sm">
-                <li className="hover:text-red-500 cursor-pointer transition font-aeonik font-normal">Build</li>
-                <li className="hover:text-red-500 cursor-pointer transition font-aeonik font-normal">Validators</li>
-                <li className="hover:text-red-500 cursor-pointer transition font-aeonik font-normal">Governance</li>
-                <li className="hover:text-red-500 cursor-pointer transition font-aeonik font-normal">Grants</li>
-                <li className="hover:text-red-500 cursor-pointer transition font-aeonik font-normal">Events</li>
-                <li className="hover:text-red-500 cursor-pointer transition font-aeonik font-normal">Openings</li>
+                <li><Link href="/validator" className="hover:text-red-500 cursor-pointer transition font-aeonik font-normal">Validators</Link></li>
+                <li><Link href="/learn/grant" className="hover:text-red-500 cursor-pointer transition font-aeonik font-normal">Grants</Link></li>
+                <li>
+                  <a
+                    href="https://future.forem.com/mst-chain"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-red-500 cursor-pointer transition font-aeonik font-normal"
+                  >
+                    Developer Support Forum
+                  </a>
+                </li>
+                <li><Link href="/events-page/pastevents" className="hover:text-red-500 cursor-pointer transition font-aeonik font-normal">Events</Link></li>
+                <li><Link href="/Career" className="hover:text-red-500 cursor-pointer transition font-aeonik font-normal">Openings</Link></li>
               </ul>
             </div>
 
@@ -126,12 +135,12 @@ export default function Footer() {
             <div className="col-span-1 sm:col-span-1 lg:col-span-3 mb-10 sm:mb-0 text-center">
               <h4 className="bungee-regular text-lg md:text-lg leading-tight tracking-tight text-red-600 font-extrabold uppercase mb-6" style={{ fontFamily: 'Montserrat', fontWeight: 800 }}>Use Cases</h4>
               <ul className="space-y-4 text-gray-600 text-sm">
-                <li className="hover:text-red-500 cursor-pointer transition font-aeonik font-normal">Supply Chain</li>
-                <li className="hover:text-red-500 cursor-pointer transition font-aeonik font-normal">Real Estate Tokenization</li>
-                <li className="hover:text-red-500 cursor-pointer transition font-aeonik font-normal">DeFi Liquidity</li>
-                <li className="hover:text-red-500 cursor-pointer transition font-aeonik font-normal">Secure Healthcare</li>
-                <li className="hover:text-red-500 cursor-pointer transition font-aeonik font-normal">Digital Identity</li>
-                <li className="hover:text-red-500 cursor-pointer transition font-aeonik font-normal">Lending Pools</li>
+                <li><Link href="/usecase-pages/Supply-Chain-Transparency" className="hover:text-red-500 cursor-pointer transition font-aeonik font-normal">Supply Chain</Link></li>
+                <li><Link href="/usecase-pages/Tokenized-Real-Estate" className="hover:text-red-500 cursor-pointer transition font-aeonik font-normal">Real Estate Tokenization</Link></li>
+                <li><Link href="/defi" className="hover:text-red-500 cursor-pointer transition font-aeonik font-normal">DeFi Liquidity</Link></li>
+                <li><Link href="/usecase-pages/Healthcare-Records" className="hover:text-red-500 cursor-pointer transition font-aeonik font-normal">Secure Healthcare</Link></li>
+                <li><Link href="/usecase-pages/Digital-Identity-KYC" className="hover:text-red-500 cursor-pointer transition font-aeonik font-normal">Digital Identity</Link></li>
+                <li><Link href="/lending" className="hover:text-red-500 cursor-pointer transition font-aeonik font-normal">Lending Pools</Link></li>
               </ul>
             </div>
 
@@ -139,12 +148,36 @@ export default function Footer() {
             <div className="col-span-1 sm:col-span-1 lg:col-span-3 mb-10 sm:mb-0 text-center">
               <h4 className="bungee-regular text-lg md:text-lg leading-tight tracking-tight text-red-600 font-extrabold uppercase mb-6">Resources</h4>
               <ul className="space-y-4 text-gray-600 text-sm">
-                <li className="hover:text-red-500 cursor-pointer transition font-aeonik font-normal">Whitepaper</li>
-                <li className="hover:text-red-500 cursor-pointer transition font-aeonik font-normal">Docs</li>
-                <li className="hover:text-red-500 cursor-pointer transition font-aeonik font-normal">GitHub</li>
-                <li className="hover:text-red-500 cursor-pointer transition font-aeonik font-normal">Support</li>
-                <li className="hover:text-red-500 cursor-pointer transition font-aeonik font-normal">Careers</li>
-                <li className="hover:text-red-500 cursor-pointer transition font-aeonik font-normal">Sitemap</li>
+                <li>
+                  <a
+                    href="https://github.com/mst-chain/whitepaper/blob/main/WHITEPAPER.md"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-red-500 cursor-pointer transition font-aeonik font-normal"
+                  >
+                    Whitepaper
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://docs.mstblockchain.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-red-500 cursor-pointer transition font-aeonik font-normal"
+                  >
+                    Docs
+                  </a>
+                </li>
+                <li><Link href="/contact" className="hover:text-red-500 cursor-pointer transition font-aeonik font-normal">Support</Link></li>
+                <li>
+                  <Link href="/about" className="hover:text-red-500 cursor-pointer transition font-aeonik font-normal">About Us</Link>
+                </li>
+                <li>
+                  <Link href="/contact" className="hover:text-red-500 cursor-pointer transition font-aeonik font-normal">Contact Us</Link>
+                </li>
+                <li>
+                  <Link href="/Career" className="hover:text-red-500 cursor-pointer transition font-aeonik font-normal">Careers</Link>
+                </li>
               </ul>
             </div>
 

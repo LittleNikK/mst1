@@ -10,7 +10,7 @@ import PartnerMarquee from './PartnerMarquee';
 
 
 // --- Typewriter Hook ---
-function useTypewriter({ texts, typingSpeed = 20, deletingSpeed = 20, pause = 1500 }) {
+function useTypewriter({ texts, typingSpeed = 1, deletingSpeed = 1, pause = 1500 }) {
   const [index, setIndex] = useState(0);
   const [displayed, setDisplayed] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
@@ -202,8 +202,8 @@ export default function HeroSection() {
           <div className="h-[160px] md:h-[200px] mb-20 flex  justify-center lg:justify-start">
             {(() => {
               // Typewriter config
-              const typingSpeed = 15; // ms per character
-              const deletingSpeed = 15; // ms per character
+              const typingSpeed = 5; // ms per character (faster)
+              const deletingSpeed = 5; // ms per character (faster)
               const pause = 1400; // ms pause at end of word
               const typewriter = useTypewriter({
                 texts: headings,

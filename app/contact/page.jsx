@@ -12,13 +12,7 @@ const contactInfo = [
     href: "mailto:support@mstblockchain.com",
     color: "bg-blue-50 text-blue-600",
   },
-  {
-    icon: <Phone className="w-5 h-5" />,
-    label: "Call Us",
-    text: "+91 89832 74544",
-    href: "tel:+918983274544",
-    color: "bg-green-50 text-green-600",
-  },
+
 ];
 
 export default function Contacts() {
@@ -131,7 +125,7 @@ export default function Contacts() {
         <span className="px-4 py-1 text-sm font-semibold text-red-600 bg-red-50 rounded-full">
           Support Center
         </span>
-        <h1 className="text-4xl md:text-6xl font-extrabold mt-6">
+        <h1 className="bungee-regular text-6xl md:text-6xl leading-tight tracking-tight text-black font-extrabold uppercase mt-6">
           Let’s build the{" "}
           <span className="bg-gradient-to-r from-red-600 to-rose-500 bg-clip-text text-transparent">
             future
@@ -143,9 +137,9 @@ export default function Contacts() {
       </section>
 
       {/* --- MAIN --- */}
-      <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-3 gap-8 relative z-10">
+      <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-3 gap-6 relative z-10">
         {/* LEFT */}
-        <div>
+        <div className="flex flex-col gap-2 border-[1px] border-gray-200 shadow rounded-2xl p-4">
           <h2 className="text-xl font-bold mb-4 flex items-center gap-2">
             <MessageCircle className="text-red-500" />
             Get in Touch
@@ -155,7 +149,7 @@ export default function Contacts() {
             <a
               key={i}
               href={item.href}
-              className="flex items-center p-4 bg-white rounded-xl shadow mb-4 hover:shadow-md"
+              className="flex items-center p-6 bg-white rounded-2xl border-[1px] border-gray-200 shadow mb-4 hover:shadow-md"
             >
               <div className={`p-3 rounded-lg mr-4 ${item.color}`}>{item.icon}</div>
               <div>
@@ -165,10 +159,10 @@ export default function Contacts() {
             </a>
           ))}
 
-          <div className="bg-black text-white p-6 rounded-xl">
+          <div className="bg-black text-white p-6 rounded-2xl border-[1px] border-gray-200 mb-2">
             <MapPin className="text-red-400 mb-2" />
             <p className="text-sm text-gray-300">
-              Kohinoor World Towers, Unit no. 403, Tower 3, 4th Floor, Old Pune-Mumbai Highway, Opposite Ranka Jewellers, Pimpri, Pune, India, 411018
+               Pune, India, 411018
             </p>
           </div>
 
@@ -176,7 +170,7 @@ export default function Contacts() {
             href="https://support.mstvalidator.com/portal/en/signin"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center p-4 bg-red-600 rounded-xl shadow mb-4 mt-4 hover:bg-red-700 transition-colors duration-300"
+            className="flex items-center p-6 bg-red-600 rounded-2xl border-[1px] border-gray-200 shadow mb-4 mt-4 hover:bg-red-700 transition-colors duration-300"
           >
             <FiCheckCircle className="text-white w-6 h-6 mr-3" />
             <div>
@@ -187,7 +181,7 @@ export default function Contacts() {
         </div>
 
         {/* RIGHT FORM */}
-        <div className="lg:col-span-2 bg-white p-8 rounded-2xl shadow relative z-10">
+        <div className="lg:col-span-2 bg-white p-8 rounded-2xl border-[1px] border-gray-200 shadow relative z-10">
           <form onSubmit={handleSubmit} className="grid md:grid-cols-2 gap-6">
             <input
               name="name"
