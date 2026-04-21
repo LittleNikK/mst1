@@ -207,10 +207,11 @@ export default function Page() {
         {/* HEADER */}
         <div className="header">
           <motion.h1
-            className="main-title"
+            className="bungee-regular text-6xl md:text-6xl leading-tight tracking-tight text-black font-extrabold uppercase"
             variants={titleContainer}
             initial="hidden"
             animate="visible"
+            style={{margin:0,padding:0}}
           >
             {title.split('').map((char, index) => (
               <motion.span
@@ -242,7 +243,7 @@ export default function Page() {
           </div>
 
           <div>
-            <h2>initGrant()</h2>
+            <h2 className="bungee-regular text-4xl md:text-4xl leading-tight tracking-tight text-black font-extrabold uppercase" style={{margin:0,padding:0}}>initGrant()</h2>
             <p className="red-text">Up to $50,000</p>
             <p>
               Designed for <span className="red-text">early-stage innovators</span> and developers exploring
@@ -262,7 +263,7 @@ export default function Page() {
         <div className="grid">
 
           <div>
-            <h2>buildGrant()</h2>
+            <h2 className="bungee-regular text-4xl md:text-4xl leading-tight tracking-tight text-black font-extrabold uppercase" style={{margin:0,padding:0}}>buildGrant()</h2>
             <p className="red-text">Up to $100,000</p>
             <p>
               Tailored for <span className="red-text">active development</span> and
@@ -304,7 +305,7 @@ export default function Page() {
           </div>
 
           <div>
-            <h2>scaleGrant()</h2>
+            <h2 className="bungee-regular text-4xl md:text-4xl leading-tight tracking-tight text-black font-extrabold uppercase" style={{margin:0,padding:0}}>scaleGrant()</h2>
             <p className="red-text">Up to $500,000</p>
             <p>
               Built for <span className="red-text">high-growth startups</span> and

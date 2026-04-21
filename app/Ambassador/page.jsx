@@ -2,7 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { Globe, School, Briefcase, ChevronRight, Award, Zap, Users, Rocket } from "lucide-react";
+import { Globe, School, Briefcase, ChevronRight, Award, Zap, Users, Lightbulb } from "lucide-react";
 
 /* ================= ANIMATIONS ================= */
 const fadeInUp = {
@@ -35,9 +35,9 @@ export default function AmbassadorPage() {
             <span className="inline-block px-4 py-1.5 mb-6 text-xs font-bold tracking-widest text-red-600 uppercase bg-red-50 rounded-full border border-red-100">
               Join the Movement
             </span>
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tight leading-tight">
+            <h1 className="bungee-regular text-6xl md:text-6xl leading-tight  text-black font-extrabold uppercase m-0 p-0">
               Become the Voice of MST in <br />
-              <span className="bg-gradient-to-r from-red-600 via-pink-500 to-red-500 bg-clip-text text-transparent">
+              <span className="text-red-600">
                 Your World
               </span>
             </h1>
@@ -53,7 +53,7 @@ export default function AmbassadorPage() {
       </section>
 
       {/* ================= CITY ================= */}
-      <section className="py-24">
+      <section className="py-20">
         <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-20 items-center">
 
           <motion.div variants={fadeLeft} initial="hidden" whileInView="visible" viewport={{ once: true }}>
@@ -61,13 +61,13 @@ export default function AmbassadorPage() {
               <div className="p-3 bg-red-50 text-red-600 rounded-xl">
                 <Globe size={28} />
               </div>
-              <h2 className="text-4xl font-black tracking-tight">City Ambassadors</h2>
+              <h2 className="bungee-regular text-4xl md:text-4xl leading-tight tracking-tight text-black font-extrabold uppercase m-0 p-0">City <span className="text-red-600">Ambassadors</span></h2>
             </div>
 
             <div className="flex gap-4 mb-8">
-              <div className="w-1.5 h-10 bg-red-600 rounded-full"></div>
-              <p className="text-2xl font-bold text-slate-800 leading-tight">
-                Lead your city into the future of blockchain.
+              <div className="w-1.5 h-15 bg-red-600 rounded-full"></div>
+              <p className=" bungee-regular text-2xl text-slate-800 leading-tight">
+                Lead your city into the future of <span className="text-red-600">blockchain</span>.
               </p>
             </div>
 
@@ -75,14 +75,14 @@ export default function AmbassadorPage() {
               Host meetups, workshops, and events that introduce MST to local developers, businesses, and enthusiasts.
             </p>
 
-            <div className="bg-white border border-slate-100 p-6 rounded-2xl shadow-sm mb-10">
+            <div className="bg-white border border-black/20 p-6 rounded-2xl shadow-sm mb-10">
                <p className="text-slate-600">
                 <span className="text-red-600 font-bold uppercase text-sm tracking-wider mr-2">You’ll Get:</span> 
                 Recognition as a City Ambassador, event support, networking with global leaders, and early access to MST updates.
               </p>
             </div>
 
-            <button className="group bg-red-900 text-white px-8 py-4 rounded-2xl hover:bg-red-600 transition-all duration-300 font-bold flex items-center gap-2 shadow-xl shadow-slate-200">
+            <button className="group bg-black text-white px-8 py-4 rounded-2xl hover:bg-red-600 transition-all duration-300 font-bold flex items-center gap-2 shadow-xl shadow-slate-200">
               Apply as a City Ambassador <ChevronRight className="group-hover:translate-x-1 transition-transform" />
             </button>
           </motion.div>
@@ -113,13 +113,13 @@ export default function AmbassadorPage() {
               <div className="p-3 bg-red-50 text-red-600 rounded-xl">
                 <School size={28} />
               </div>
-              <h2 className="text-4xl font-black tracking-tight">Campus Ambassadors</h2>
+              <h2 className="bungee-regular text-4xl md:text-4xl leading-tight  text-black font-extrabold uppercase m-0 p-0">Campus <span className="text-red-600">Ambassadors</span></h2>
             </div>
 
             <div className="flex gap-4 mb-8">
               <div className="w-1.5 h-10 bg-red-600 rounded-full"></div>
-              <p className="text-2xl font-bold text-slate-800 leading-tight">
-                Bring MST to your university.
+              <p className=" bungee-regular text-2xl text-slate-800 leading-tight">
+                Bring <span className="text-red-600">MST</span> to your university.
               </p>
             </div>
 
@@ -127,14 +127,14 @@ export default function AmbassadorPage() {
               Start a student club, host hackathons, and teach your peers how to build on MST Testnet.
             </p>
 
-            <div className="bg-white border border-slate-100 p-6 rounded-2xl shadow-sm mb-10">
+            <div className="bg-white border border-black/20 p-6 rounded-2xl shadow-sm mb-10">
               <p className="text-slate-600">
                 <span className="text-red-600 font-bold uppercase text-sm tracking-wider mr-2">You’ll Get:</span> 
                 Official certificate, mentorship opportunities, access to grants, and exclusive learning sessions.
               </p>
             </div>
 
-            <button className="group bg-slate-900 text-white px-8 py-4 rounded-2xl hover:bg-red-600 transition-all duration-300 font-bold flex items-center gap-2 shadow-xl shadow-slate-200">
+            <button className="group bg-black text-white px-8 py-4 rounded-2xl hover:bg-red-600 transition-all duration-300 font-bold flex items-center gap-2 shadow-xl shadow-slate-200">
               Apply as a Campus Ambassador <ChevronRight className="group-hover:translate-x-1 transition-transform" />
             </button>
           </motion.div>
@@ -151,13 +151,13 @@ export default function AmbassadorPage() {
               <div className="p-3 bg-red-50 text-red-600 rounded-xl">
                 <Briefcase size={28} />
               </div>
-              <h2 className="text-4xl font-black tracking-tight">Industry Ambassadors</h2>
+              <h2 className="bungee-regular text-4xl md:text-4xl leading-tight tracking-tight text-black font-extrabold uppercase m-0 p-0">Industry <span className="text-red-600">Ambassadors</span></h2>
             </div>
 
             <div className="flex gap-4 mb-8">
               <div className="w-1.5 h-10 bg-red-600 rounded-full"></div>
-              <p className="text-2xl font-bold text-slate-800 leading-tight">
-                Bring MST to your industry.
+              <p className=" bungee-regular text-2xl text-slate-800 leading-tight">
+                Bring <span className="text-red-600">MST</span> to your industry.
               </p>
             </div>
 
@@ -165,14 +165,14 @@ export default function AmbassadorPage() {
               Integrate MST into your professional network, showcase real-world use cases, and lead enterprise adoption.
             </p>
 
-            <div className="bg-white border border-slate-100 p-6 rounded-2xl shadow-sm mb-10">
+            <div className="bg-white border border-black/20 p-6 rounded-2xl shadow-sm mb-10">
               <p className="text-slate-600">
                 <span className="text-red-600 font-bold uppercase text-sm tracking-wider mr-2">You’ll Get:</span> 
                 Official certificate, mentorship opportunities, access to grants, and exclusive learning sessions.
               </p>
             </div>
 
-            <button className="group bg-slate-900 text-white px-8 py-4 rounded-2xl hover:bg-red-600 transition-all duration-300 font-bold flex items-center gap-2 shadow-xl shadow-slate-200">
+            <button className="group bg-black text-white px-8 py-4 rounded-2xl hover:bg-red-600 transition-all duration-300 font-bold flex items-center gap-2 shadow-xl shadow-slate-200">
               Apply as an Industry Ambassador <ChevronRight className="group-hover:translate-x-1 transition-transform" />
             </button>
           </motion.div>
@@ -188,13 +188,11 @@ export default function AmbassadorPage() {
       </section>
 
       {/* ================= WHY JOIN ================= */}
-      <section className="py-32 bg-slate-950 text-white overflow-hidden relative">
+      <section className=" bg-red-800 text-white overflow-hidden relative">
         <div className="absolute top-0 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10 pointer-events-none"></div>
         
-        <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <h2 className="text-5xl md:text-6xl font-black mb-16 tracking-tight">
-            Why Join?
-          </h2>
+        <div className="max-w-7xl mx-auto px-6 py-6 relative z-10">
+          <h2 className="bungee-regular text-4xl md:text-6xl leading-tight tracking-tight text-white font-extrabold uppercase mb-16 m-0 p-0">Why Join?</h2>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
@@ -216,7 +214,7 @@ export default function AmbassadorPage() {
               {
                 text: "Shape the future of blockchain adoption.",
                 img: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=800",
-                icon: <Rocket className="text-red-400" />
+                icon: <Lightbulb className="text-red-400" />
               }
             ].map((item, i) => (
               <motion.div
@@ -224,11 +222,11 @@ export default function AmbassadorPage() {
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.15 }}
-                className="group relative h-[450px] rounded-[2.5rem] overflow-hidden border border-white/10 bg-white/5 backdrop-blur-sm"
+                className="group relative h-[450px] rounded-[2.5rem] overflow-hidden border border-black/20 bg-white/5 backdrop-blur-sm"
               >
-                <div className="h-[60%] p-8 flex flex-col justify-end bg-gradient-to-b from-red-600/90 via-red-700/90 to-black">
-                  <div className="mb-4">{item.icon}</div>
-                  <p className="text-white font-bold text-xl leading-snug">
+                <div className="h-[60%] p-8 flex flex-col items-center bg-gradient-to-b from-red-600/90 via-red-700/90 to-black">
+                  <div className="mb-4 flex justify-center items-center w-16 h-16 shadow-lg">{item.icon}</div>
+                  <p className="bungee-regular text-white text-xl text-center">
                     {item.text}
                   </p>
                 </div>
@@ -244,13 +242,11 @@ export default function AmbassadorPage() {
       {/* ================= HOW IT WORKS ================= */}
       <section className="py-32 bg-white">
         <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-5xl md:text-6xl font-black mb-20 tracking-tight text-slate-900">
-            How It Works
-          </h2>
+          <h2 className="bungee-regular text-4xl md:text-4xl leading-tight tracking-tight text-black font-extrabold uppercase mb-20 m-0 p-0">How It Works</h2>
 
           <div className="relative">
             {/* Connection Line */}
-            <div className="absolute top-12 left-0 w-full h-[2px] bg-slate-100 hidden md:block"></div>
+            <div className="absolute top-12 left-0 w-full h-[1px] bg-black/20 hidden md:block"></div>
 
             <div className="grid grid-cols-1 md:grid-cols-4 gap-12 relative">
               {[
@@ -269,10 +265,10 @@ export default function AmbassadorPage() {
                   <div className="relative flex flex-col items-center md:items-start text-center md:text-left">
                     {/* Circle Step */}
                     <div className="w-24 h-24 rounded-3xl bg-white border border-slate-100 shadow-xl shadow-slate-100 flex items-center justify-center mb-8 group-hover:bg-red-600 group-hover:text-white transition-all duration-300">
-                      <span className="text-3xl font-black">0{i + 1}</span>
+                      <span className="text-3xl bungee-regular">0{i + 1}</span>
                     </div>
                     
-                    <h3 className="text-red-600 font-black uppercase tracking-widest text-sm mb-4">Step {i + 1}</h3>
+                    <h3 className="bungee-regular text-2xl md:text-2xl leading-tight tracking-tight text-red-600 font-extrabold uppercase m-0 p-0 mb-4">Step {i + 1}</h3>
                     <p className="text-slate-600 text-lg leading-relaxed font-medium px-4 md:px-0">
                       {text}
                     </p>

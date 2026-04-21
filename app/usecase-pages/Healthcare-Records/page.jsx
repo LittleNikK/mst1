@@ -8,64 +8,64 @@ import FormModal from "@/app/components/form/FormModal";
 
 const featureItems = [
   {
-    title: 'Real Ownership — Not a Licence',
-    description: 'Every item on MST is a verifiable blockchain asset in the player/s own wallet. The game company cannot take it away, modify its properties, or delete it — the player/s ownership is cryptographic.',
+    title: 'Your Data, Your Control',
+    description: 'Only you decide who can access your medical records. You grant access, you revoke it — no hospital or third party controls this on your behalf.',
     icon: CheckCircle2
   },
   {
-    title: 'Rarity That is Mathematically Provable',
-    description: 'Scarcity is enforced by MST smart contracts. Rarity claims are verifiable on the blockchain explorer — players know for certain how many of an item exist, with no hidden minting by developers.',
+    title: 'Complete Accountability',
+    description: 'Every time someone accesses your records, it is permanently logged on the blockchain. You can see the full history of who viewed your data and when.',
     icon: ShieldCheck
   },
   {
-    title: 'Developers Earn on Every Resale',
-    description: 'MST smart contracts automatically pay developer royalties on every secondary market sale. Developers build thriving economies where they earn ongoing revenue — not just initial sales.',
+    title: 'Faster, Better Care',
+    description: 'Authorised doctors get your complete and accurate medical history instantly — no delays, no repeated tests, no decisions based on incomplete information.',
     icon: Database
   }
 ];
 
 const proofItems = [
   {
-    title: 'Collectible Character Assets',
-    description: 'Limited-edition game characters minted as unique blockchain assets with verifiable rarity and permanently transferable ownership.',
+    title: 'International Health Card',
+    description: 'MST delivers real-time proof of patient identity and medical history for International Health Care Card holders — accessible globally.',
     image: '/img3.jpeg',
     alt: 'National car manufacturer supply chain'
   },
   {
-    title: 'In-Game Item Marketplace',
-    description: 'Peer-to-peer item trading with smart contract escrow, automatic royalty payment, and full transaction transparency.',
+    title: 'Medicare Health Card',
+    description: 'Medicare card verification secured on blockchain — eliminating billing fraud, stolen services, and administrative complications.',
     image: '/1.png',
     alt: 'Express shipping supply chain'
   },
   {
-    title: 'Achievement & Badge Tokens',
-    description: 'In-game achievements anchored on-chain as verifiable credentials — portable across compatible game platforms.',
+    title: 'Laboratory Test Reports',
+    description: 'Blood and diagnostic reports verified for authenticity as they move between labs, doctors, specialists, and insurers.',
     image: '/hero-visual-1.svg',
     alt: 'Food and agriculture supply chain'
   }
 ];
 
 const creatorSteps = [
-  'Developer mints the asset collection on MST with defined rarity tiers and utility rules',
-  'Smart contract governs transfer conditions, secondary market royalties, and any burn mechanics',
-  'Assets are linked to player accounts through an integrated game wallet or profile system',
-  'Players earn or buy assets — ownership is recorded on the blockchain the moment of acquisition',
-  'Developer dashboard tracks distribution, market activity, and automatic royalty accrual in real time'
+  "Healthcare provider issues a record reference and integrity proof to the patient's MST   profile",
+  'Patient receives a secure notification and sets their own access permissions',
+  'Smart contract manages who has access, for how long, and with what level of detail',
+  'WASMify connects existing hospital software systems to the blockchain permission layer',
+  'Every access event and record interaction is permanently logged for accountability'
 ];
 
 const verifierSteps = [
-  'Player views their owned assets in the in-game inventory or their blockchain wallet',
-  'They check item rarity, full provenance history, and the complete previous ownership chain',
-  'They list the item on a marketplace or initiate a direct peer-to-peer transfer',
-  'Buyer confirms the purchase — smart contract executes the transfer and pays the developer royalty',
-  'Both parties receive cryptographic confirmation; the full record is permanently logged on MST'
+  'Patient opens their health app and sees their complete medical profile',
+  'They grant access to a specific doctor for a defined treatment period',
+  'The doctor requests access and the system verifies their identity and logs the interaction',
+  'The doctor views authorized records through their existing clinical software',
+  'Access automatically expires after the defined period; patient can review the full access history'
 ];
 
 const stats = [
-  { label: 'Market Disrupted', value: '$3.7B' },
-  { label: 'Player Ownership', value: 'True' },
-  { label: 'Rarity Enforcement', value: 'Proven' },
-  { label: 'Platform Lock-In', value: 'Open' }
+  { label: 'Record Access', value: 'Real-Time' },
+  { label: 'Access Accountability', value: '100%' },
+  { label: 'Controlled Permissions', value: 'Patient' },
+  { label: 'Unauthorized Exposure', value: 'Zero ' }
 ];
 
 function SectionFade({ children, className = '' }) {
@@ -160,17 +160,13 @@ const [formType, setFormType] = useState("General Enquiry");
             <div className="relative inline-block">
               <h1 className="bungee-regular text-6xl md:text-6xl leading-tight tracking-tight text-black font-extrabold uppercase mb-5">
                 <span className="block">
-                 Gaming Asset
- 
- <span className="text-[#ff2d2d]"> Ownership</span>
+                  Healthcare
+                  <span className="text-[#ff2d2d]"> Records</span>
                 </span>
-                {/* <span className="mt-2 block text-[#ff2d2d]">
-                 Certificate
-                </span> */}
               </h1>
             </div>
             <p className="max-w-2xl text-base leading-relaxed text-black/68 sm:text-lg">
-           Your sword. Your skin. Your character. Actually yours — on the blockchain.
+              Patients control their medical data. Doctors get what they need instantly.
             </p>
           </div>
 
@@ -266,11 +262,11 @@ const [formType, setFormType] = useState("General Enquiry");
       <section className="mx-auto grid w-full max-w-[90rem] grid-cols-1 gap-10 px-6 py-16 md:px-16 lg:grid-cols-2 lg:items-center">
         <SectionFade className="space-y-5">
           <h2 className="bungee-regular text-4xl md:text-4xl leading-tight tracking-tight text-black font-extrabold uppercase mb-5">
-         What is Blockchain Gaming Asset Ownership?
+         What are Blockchain Healthcare Records?
 
           </h2>
           <p className="max-w-2xl text-base leading-8 text-black/70">
-         In every traditional game, the items you earn or buy belong to the game company — not you. They exist in that company's database. If the game shuts down, a server goes offline, or your account gets banned, everything is gone. Blockchain gaming changes this completely. When game assets are minted on MST Blockchain, they are yours — truly, permanently. They live in your wallet, not in a company's database. You can sell them, trade them, or hold them across any game that supports them.
+         Imagine if all your medical records — from every hospital, clinic, and lab you have ever visited — were available in one secure place that only you control. You decide who can see them. Your doctor can access your complete history in seconds instead of waiting days for faxes and phone calls. MST Blockchain makes this possible by creating a secure permission layer — a digital gatekeeper that ensures only the right people see your records at the right time.
           </p>
         </SectionFade>
 

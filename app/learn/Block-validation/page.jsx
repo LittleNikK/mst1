@@ -148,7 +148,7 @@ export default function BlockValidationPage() {
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.8, delay: 0.2 }}
                 >
-                  <h1 className="text-4xl sm:text-5xl md:text-6xl xl:text-7xl  font-extrabold leading-[1.08] tracking-tight mb-6">
+                  <h1 className="bungee-regular text-6xl md:text-6xl leading-tight tracking-tight text-black font-extrabold uppercase mb-5">
                     <span className="text-extrabold text-black">How Blocks Are</span> <br />
                     <span className="relative">
                       <span className="relative z-10 text-red-500">
@@ -214,7 +214,7 @@ export default function BlockValidationPage() {
                 viewport={{ once: true, margin: "-100px" }}
               >
                 <motion.h2
-                  className="text-5xl md:text-6xl font-extrabold mb-8 tracking-tight text-gray-700"
+                  className="bungee-regular text-4xl md:text-4xl leading-tight tracking-tight text-black font-extrabold uppercase mb-5"
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
                   transition={{ duration: 0.6 }}
@@ -278,7 +278,7 @@ export default function BlockValidationPage() {
               variants={fadeUp}
               viewport={{ once: true, margin: "-100px" }}
             >
-              <h2 className="text-5xl md:text-6xl font-bold tracking-tight mb-4">
+              <h2 className="bungee-regular text-4xl md:text-4xl leading-tight tracking-tight text-black font-extrabold uppercase mb-5">
                 <span className="text-gray-700">Proof of</span>{" "}
                 <span className="text-red-500">Staked Authority</span>
               </h2>
@@ -332,7 +332,7 @@ export default function BlockValidationPage() {
               variants={fadeUp}
               viewport={{ once: true, margin: "-100px" }}
             >
-              <h2 className="text-5xl md:text-6xl font-bold tracking-tight">
+              <h2 className="bungee-regular text-4xl md:text-4xl leading-tight tracking-tight text-black font-extrabold uppercase mb-5">
                 <span className="text-gray-700">Step-by-Step: How a</span>{" "}
                 <span className="text-red-500">Block is Born</span>
               </h2>
@@ -392,7 +392,7 @@ export default function BlockValidationPage() {
                       </div>
 
                       <div className="flex-1 pt-1">
-                        <h3 className="text-xl md:text-2xl font-semibold text-gray-800 group-hover:text-white transition-colors duration-500 leading-tight">
+                        <h3 className="bungee-regular text-2xl md:text-2xl leading-tight tracking-tight text-black font-extrabold uppercase mb-5 group-hover:text-white transition-colors duration-500">
                           {item.step}
                         </h3>
                         <p className="mt-2 text-sm md:text-base text-gray-600 group-hover:text-gray-200 transition-colors duration-500 leading-relaxed">
@@ -417,7 +417,7 @@ export default function BlockValidationPage() {
               variants={fadeUp}
               viewport={{ once: true, margin: "-100px" }}
             >
-              <h2 className="text-5xl md:text-6xl font-bold tracking-tight mb-4">
+              <h2 className="bungee-regular text-4xl md:text-4xl leading-tight tracking-tight text-black font-extrabold uppercase mb-5">
                 <span className="text-black">Why</span>{" "}
                 <span className="text-red-500">Validators</span>{" "}
                 <span className="text-black">Participate</span>
@@ -462,7 +462,7 @@ export default function BlockValidationPage() {
 
                   <div className="relative z-10">
                     <div className="text-4xl mb-4">{item.icon}</div>
-                    <h3 className="text-2xl font-bold text-white mb-3">
+                    <h3 className="bungee-regular text-3xl md:text-3xl leading-tight tracking-tight text-black font-extrabold uppercase mb-5 text-white">
                       {item.title}
                     </h3>
                     <p className="text-gray-300 leading-relaxed">
@@ -496,7 +496,7 @@ export default function BlockValidationPage() {
               variants={fadeUp}
               viewport={{ once: true, margin: "-100px" }}
             >
-              <h2 className="text-5xl md:text-6xl font-bold tracking-tight mb-4">
+              <h2 className="bungee-regular text-4xl md:text-4xl leading-tight tracking-tight text-black font-extrabold uppercase mb-5">
                 <span className="text-black">Trust is Built Into</span> <br />
                 <span className="text-red-500">Every Block</span>
               </h2>

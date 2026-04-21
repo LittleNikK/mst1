@@ -102,11 +102,11 @@ export default function BlockValidationPage() {
         <div className="relative z-10">
           
           {/* 1. HERO SECTION */}
-          <section className="min-h-screen flex items-center justify-center px-6 pt-32 pb-20">
+          <section className="min-h-screen flex items-center justify-center px-2 pt-16 pb-8">
             <div className="max-w-7xl mx-auto w-full">
               <div className="grid lg:grid-cols-2 gap-16 items-center">
                 <motion.div initial="hidden" animate="visible" variants={fadeUp}>
-                  <h1 className="text-5xl md:text-7xl font-extrabold leading-[1.1] tracking-tight mb-6">
+                  <h1 className="bungee-regular text-6xl md:text-6xl leading-tight tracking-tight text-black font-extrabold uppercase mb-5">
                     DAO Governance <br />
                     <span className="text-red-500">MST Chain</span>
                   </h1>
@@ -114,7 +114,7 @@ export default function BlockValidationPage() {
                     The MST Blockchain for Grant Program transparent. DAO Governance lets the community shape the future of the network.
                   </p>
                   <div className="mt-10">
-                    <button className="px-8 py-4 bg-red-500 text-white rounded-xl font-bold shadow-xl hover:bg-red-600 transition-all hover:scale-105">
+                    <button className="px-4 py-2 bg-red-500 text-white rounded-xl font-bold shadow-xl hover:bg-red-600 transition-all hover:scale-105">
                       Learn More
                     </button>
                   </div>
@@ -130,7 +130,7 @@ export default function BlockValidationPage() {
           </section>
 
           {/* 2. BACKBONE SECTION */}
-          <section className="py-24 px-6 bg-gray-50/50 backdrop-blur-md">
+          <section className="py-12 px-2 bg-gray-50/50 backdrop-blur-md">
             <div className="max-w-7xl mx-auto">
               <div className="grid md:grid-cols-2 gap-16 items-center">
                 <motion.div 
@@ -143,7 +143,7 @@ export default function BlockValidationPage() {
                 </motion.div>
 
                 <div>
-                  <h2 className="text-4xl md:text-6xl font-bold mb-10 text-gray-800">
+                  <h2 className="bungee-regular text-4xl md:text-4xl leading-tight tracking-tight text-black font-extrabold uppercase mb-5">
                     Decentralized <span className="text-red-500">Autonomous</span> Organization
                   </h2>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -152,7 +152,7 @@ export default function BlockValidationPage() {
                         <div className="w-12 h-12 mb-4 flex items-center justify-center rounded-xl bg-red-50 text-red-500">
                           <item.icon size={22} />
                         </div>
-                        <h3 className="font-bold mb-2">{item.title}</h3>
+                        <h3 className="bungee-regular text-2xl md:text-2xl leading-tight tracking-tight text-black font-extrabold uppercase mb-5">{item.title}</h3>
                         <p className="text-sm text-gray-500">{item.desc}</p>
                       </motion.div>
                     ))}
@@ -163,10 +163,10 @@ export default function BlockValidationPage() {
           </section>
 
           {/* 3. PROOF SECTION */}
-          <section className="py-24 px-6">
+          <section className="py-12 px-2">
             <div className="max-w-7xl mx-auto">
               <div className="text-center mb-16">
-                <h2 className="text-5xl font-bold mb-4">Governance <span className="text-red-500">Built</span> Into The <span className="text-red-500">Blockchain</span></h2>
+                <h2 className="bungee-regular text-4xl md:text-4xl leading-tight tracking-tight text-black font-extrabold uppercase mb-5">Governance <span className="text-red-500">Built</span> Into The <span className="text-red-500">Blockchain</span></h2>
                 <p className="text-gray-400">The consensus mechanism that powers MST Blockchain</p>
               </div>
               <div className="grid md:grid-cols-4 gap-6">
@@ -186,9 +186,9 @@ export default function BlockValidationPage() {
           </section>
 
           {/* 4. STEP FLOW (How it works) */}
-          <section className="py-24 px-6 bg-white/40 backdrop-blur-sm">
+          <section className="py-12 px-2 bg-white/40 backdrop-blur-sm">
             <div className="max-w-7xl mx-auto">
-              <h2 className="text-center text-4xl md:text-5xl font-bold mb-16">How DAO Works on <span className="text-red-500">MST Chain</span></h2>
+              <h2 className="bungee-regular text-4xl md:text-4xl leading-tight tracking-tight text-black font-extrabold uppercase mb-5 text-center">How DAO Works on <span className="text-red-500">MST Chain</span></h2>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 {[
                   { step: "Proposal Creation", desc: "A member submits a change idea." },
@@ -198,7 +198,7 @@ export default function BlockValidationPage() {
                 ].map((item, i) => (
                   <div key={i} className="p-6 rounded-2xl border border-gray-100 bg-white shadow-lg hover:shadow-red-500/10 transition-all group">
                     <div className="w-10 h-10 rounded-lg bg-red-500 text-white flex items-center justify-center font-bold mb-4">{i+1}</div>
-                    <h3 className="font-bold text-lg mb-2">{item.step}</h3>
+                    <h3 className="bungee-regular text-2xl md:text-2xl leading-tight tracking-tight text-black font-extrabold uppercase mb-5">{item.step}</h3>
                     <p className="text-sm text-gray-500">{item.desc}</p>
                   </div>
                 ))}
@@ -207,9 +207,9 @@ export default function BlockValidationPage() {
           </section>
 
           {/* 5. WHY DECENTRALIZATION */}
-          <section className="py-24 px-6 bg-[#111] text-white rounded-[3rem] mx-4 my-10">
+          <section className="py-12 px-2 bg-[#111] text-white rounded-[2rem] mx-2 my-4">
             <div className="max-w-7xl mx-auto">
-              <h2 className="text-center text-4xl md:text-5xl font-bold mb-16"><span className="text-red-500">Decentralization</span> Matters</h2>
+              <h2 className="bungee-regular text-4xl md:text-4xl leading-tight tracking-tight text-red-500 font-extrabold uppercase mb-5 text-center">Decentralization Matters</h2>
               <div className="grid md:grid-cols-4 gap-8">
                 {[
                   { title: "Transparency", icon: <FaGem />, desc: "Every decision is public." },
@@ -219,7 +219,7 @@ export default function BlockValidationPage() {
                 ].map((item, i) => (
                   <div key={i} className="p-8 rounded-2xl bg-white/5 border border-white/10 text-center hover:bg-white/10 transition-all group">
                     <div className="text-4xl text-red-500 mb-4 flex justify-center group-hover:scale-110 transition-transform">{item.icon}</div>
-                    <h3 className="text-xl font-bold mb-2">{item.title}</h3>
+                    <h3 className="bungee-regular text-2xl md:text-2xl leading-tight tracking-tight text-white font-extrabold uppercase mb-5">{item.title}</h3>
                     <p className="text-gray-400 text-sm">{item.desc}</p>
                   </div>
                 ))}
@@ -228,9 +228,9 @@ export default function BlockValidationPage() {
           </section>
 
           {/* 6. WHAT CAN BE DECIDED (Grid Cards) */}
-          <section className="py-24 px-6">
+          <section className="py-12 px-2">
             <div className="max-w-7xl mx-auto text-center">
-              <h2 className="text-4xl md:text-5xl font-bold mb-16">What Can Be Decided Through <span className="text-red-500">MST DAO?</span></h2>
+              <h2 className="bungee-regular text-4xl md:text-4xl leading-tight tracking-tight text-black font-extrabold uppercase mb-5">What Can Be Decided Through <span className="text-red-500">MST DAO?</span></h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
                 {[
                   { title: "Block Rewards", icon: <FaCoins /> },
@@ -249,10 +249,10 @@ export default function BlockValidationPage() {
           </section>
 
           {/* 7. YOUR VOTE SECTION */}
-          <section className="py-24 px-6 mb-20">
+          <section className="py-12 px-2 mb-8">
             <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
               <motion.div initial={{ opacity: 0, x: -50 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
-                <h2 className="text-5xl md:text-6xl font-bold mb-10">Your Vote,<br />Your Voice</h2>
+                <h2 className="bungee-regular text-4xl md:text-4xl leading-tight tracking-tight text-black font-extrabold uppercase mb-5">Your Vote,<br />Your Voice</h2>
                 <div className="space-y-6">
                   {["Hold MST tokens.", "Connect your wallet.", "View active proposals.", "Cast your vote."].map((step, idx) => (
                     <div key={idx} className="flex items-center gap-4 group">

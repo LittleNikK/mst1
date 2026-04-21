@@ -54,12 +54,11 @@ export default function ProtocolPage() {
       <div className="w-[min(1120px,92%)] mx-auto">
 
         {/* HEADER */}
-        <div className="text-center mb-12 pt-8">
-          <h1 className="font-extrabold leading-none tracking-[-0.02em] text-[clamp(2.1rem,6vw,4.2rem)] text-[#ff2d2d]">
+        <div className="text-center mb-6 pt-4">
+          <h1 className="bungee-regular text-6xl md:text-6xl leading-tight tracking-tight text-red-600 font-extrabold uppercase m-0 p-0">
             PROTOCOLS.
           </h1>
-
-          <p className="mt-3 text-[clamp(0.95rem,2vw,1.1rem)] text-black/70">
+          <p className="mt-2 text-base md:text-lg text-black/70 m-0 p-0">
             Core technologies powering secure Web3 ecosystem.
           </p>
         </div>
@@ -84,7 +83,7 @@ export default function ProtocolPage() {
           </div>
 
           <div className="text-box">
-            <h2 className="font-extrabold text-[clamp(1.5rem,3vw,2.2rem)] tracking-[-0.01em] text-[#111] mb-2">
+            <h2 className="bungee-regular text-4xl md:text-4xl leading-tight tracking-tight text-red-600 font-extrabold uppercase m-0 p-0">
               SARAL Protocol
             </h2>
 
@@ -107,7 +106,7 @@ export default function ProtocolPage() {
         <div className="grid-section grid grid-cols-2 max-[900px]:grid-cols-1 gap-8 md:gap-x-16 items-center mb-12">
 
           <div className="text-box order-2 md:order-1">
-            <h2 className="font-extrabold text-[clamp(1.5rem,3vw,2.2rem)] tracking-[-0.01em] text-[#111] mb-2">
+            <h2 className="bungee-regular text-4xl md:text-4xl leading-tight tracking-tight text-red-600 font-extrabold uppercase m-0 p-0">
               WASMify
             </h2>
 
@@ -168,7 +167,7 @@ export default function ProtocolPage() {
           </div>
 
           <div className="text-box">
-            <h2 className="font-extrabold text-[clamp(1.5rem,3vw,2.2rem)] tracking-[-0.01em] text-[#111] mb-2">
+            <h2 className="bungee-regular text-4xl md:text-4xl leading-tight tracking-tight text-red-600 font-extrabold uppercase m-0 p-0">
               Post-quantum cryptography Protocol
             </h2>
 

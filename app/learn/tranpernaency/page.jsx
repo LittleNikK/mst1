@@ -87,9 +87,8 @@ export default function TransparencyPage() {
         {/* HERO */}
         <section className="pt-28 md:pt-32 pb-24 px-6 max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center min-h-[80vh]">
           <motion.div variants={fadeUp} initial="hidden" animate="visible">
-            <h1 className="text-4xl md:text-6xl font-extrabold leading-tight mb-6">
-              Transparency You Can Verify 
-              <span className="text-red-500"> Live on MST Chain</span>
+            <h1 className="bungee-regular text-6xl md:text-6xl leading-tight tracking-tight text-black font-extrabold uppercase m-0 p-0">
+              Transparency You Can Verify <span className="text-red-500">Live on MST Chain</span>
             </h1>
             <p className="text-gray-600 text-lg mb-8">
               Every coin, every wallet, every burn — verifiable on-chain in real time.
@@ -118,9 +117,9 @@ export default function TransparencyPage() {
         {/* COIN SUPPLY */}
         <section className="py-28 px-6 mt-12">
           <div className="max-w-7xl mx-auto">
-            <h3 className="text-red-500 mb-4 font-semibold">Coin Supply Overview</h3>
+            <h3 className="bungee-regular text-2xl md:text-2xl leading-tight tracking-tight text-black font-extrabold uppercase m-0 p-0 text-red-500">Coin Supply Overview</h3>
             <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold">
+              <h2 className="bungee-regular text-4xl md:text-4xl leading-tight tracking-tight text-black font-extrabold uppercase m-0 p-0">
                 Building Trust Through Transparent Coin Supply
               </h2>
               <p className="text-gray-600 text-lg">
@@ -154,8 +153,8 @@ export default function TransparencyPage() {
         {/* WALLETS */}
         <section className="py-16 px-6 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
           <div>
-            <h3 className="text-red-500 mb-4 font-semibold">Official Wallets</h3>
-            <h2 className="text-3xl md:text-5xl mb-8 font-bold leading-tight">Every Major Wallet — Trackable</h2>
+            <h3 className="bungee-regular text-2xl md:text-2xl leading-tight tracking-tight text-black font-extrabold uppercase m-0 p-0 text-red-500">Official Wallets</h3>
+            <h2 className="bungee-regular text-4xl md:text-4xl leading-tight tracking-tight text-black font-extrabold uppercase m-0 p-0">Every Major Wallet — Trackable</h2>
             <div className="p-6 bg-white/80 backdrop-blur-sm shadow-lg border rounded-2xl hover:shadow-xl transition-all">
               <h4 className="mb-2 font-semibold">Master Wallet</h4>
               <p className="text-gray-600 break-all text-sm">0xA93c8f6922159954E26C6C6011d3ED7dd166E25D</p>
@@ -173,7 +172,7 @@ export default function TransparencyPage() {
 
         {/* TABLE */}
         <section className="py-24 px-6">
-          <h2 className="text-center text-3xl md:text-4xl mb-12 font-bold">Live Node Status Table</h2>
+          <h2 className="bungee-regular text-4xl md:text-4xl leading-tight tracking-tight text-black font-extrabold uppercase m-0 p-0 text-center">Live Node Status Table</h2>
           <div className="overflow-x-auto max-w-7xl mx-auto bg-white/50 backdrop-blur-md rounded-xl border border-gray-200">
             <table className="min-w-full">
               <thead className="bg-gray-100/80">
@@ -200,11 +199,16 @@ export default function TransparencyPage() {
 
         {/* CTA */}
         <section className="py-32 text-center relative">
-          <h2 className="text-4xl md:text-5xl mb-6 font-bold">Verify Everything Yourself</h2>
+          <h2 className="bungee-regular text-4xl md:text-4xl leading-tight tracking-tight text-black font-extrabold uppercase m-0 p-0">Verify Everything Yourself</h2>
           <p className="text-gray-600 mb-10 text-lg">Check all data directly on-chain using MST Explorer.</p>
-          <button className="px-10 py-4 bg-red-500 text-white rounded-xl shadow-xl hover:bg-red-600 hover:scale-105 transition">
+          <a
+            href="https://mstscan.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block px-10 py-4 bg-red-500 text-white rounded-xl shadow-xl hover:bg-red-600 hover:scale-105 transition"
+          >
             Open MST Explorer
-          </button>
+          </a>
         </section>
       </div>
     </main>

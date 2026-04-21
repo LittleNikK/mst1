@@ -24,7 +24,7 @@ function WhyCard({ number, title, description }) {
   return (
     <div className="relative rounded-2xl border border-red-200/70 bg-white/70 backdrop-blur-sm shadow-lg overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-br from-red-50 via-white to-white" />
-      <div className="absolute -right-6 -bottom-10 text-[8rem] font-bold leading-none text-red-500/10 select-none">
+      <div className="absolute -right-6 -bottom-10 text-[5rem] font-bold leading-none text-red-500/20 select-none">
         {number}
       </div>
       <div className="relative p-6">
@@ -189,45 +189,15 @@ export default function ValidatorPage() {
         <div>
           <h1 className="bungee-regular text-6xl md:text-6xl leading-tight tracking-tight text-black font-extrabold uppercase mb-5">
             Own a Piece of <br />
-            <span className="text-red-500">MST Blockchain</span>
+            <span className="text-red-600">MST Blockchain</span>
           </h1>
 
           <p className="mt-6 text-gray-600 text-lg max-w-lg">
             Start receiving validator rewards by owning a fraction of a node — no hardware, no coding required.
           </p>
-
-          {/* <div className="mt-8 flex gap-4">
-            <button className="bg-black text-white px-6 py-3 rounded-full hover:bg-gray-800">
-              Get Started
-            </button>
-            <button className="border border-gray-300 px-6 py-3 rounded-full">
-              Documentation
-            </button>
-          </div> */}
-
-          {/* STATS */}
-          {/* <div className="flex gap-4 mt-10 flex-wrap">
-            <div className="bg-white shadow rounded-xl px-6 py-4">
-              <p className="text-gray-500 text-sm">FINALITY</p>
-              <h3 className="text-2xl font-bold">400ms</h3>
-            </div>
-
-            <div className="bg-white shadow rounded-xl px-6 py-4">
-              <p className="text-gray-500 text-sm">ACTIVE NODES</p>
-              <h3 className="text-2xl font-bold">12,400+</h3>
-            </div>
-
-            <div className="bg-white shadow rounded-xl px-6 py-4">
-              <p className="text-gray-500 text-sm">TOTAL VALUE</p>
-              <h3 className="text-2xl font-bold">$4.2B+</h3>
-            </div>
-          </div> */}
         </div>
 
-        {/* RIGHT VISUAL */}
-        {/* <div className="relative flex justify-center">
-          <div className="w-[260px] h-[500px] bg-white rounded-[40px] shadow-2xl rotate-[20deg] border border-gray-200"></div>
-        </div> */}
+   
       </section>
 
       {/* 🔴 STEPS SECTION */}
@@ -236,7 +206,7 @@ export default function ValidatorPage() {
       <section className="relative z-10 max-w-6xl mx-auto px-6 py-16 space-y-20">
         <h1 className="bungee-regular text-6xl md:text-6xl leading-tight tracking-tight text-black font-extrabold uppercase mb-5">
             From Sign-Up to<br />
-            <span className="text-red-500">Rewards in Minutes </span>
+            <span className="text-red-600">Rewards in Minutes </span>
           </h1>
 
         {steps.map(({ key, Icon, title, description, imageSrc, imageAlt }) => (

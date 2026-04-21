@@ -101,7 +101,7 @@ export default function SupplyChainPage() {
         </div>
 
         {/* 🔴 HERO */}
-        <section className="relative pt-32 pb-28 px-6">
+        <section className="relative pt-32 pb-2 px-6">
 
           <div className="relative z-10 max-w-7xl mx-auto grid md:grid-cols-[1fr_1.25fr] gap-12 items-center">
             <motion.div
@@ -110,7 +110,7 @@ export default function SupplyChainPage() {
               animate="visible"
               className="text-left"
             >
-              <h1 className="text-4xl md:text-6xl  font-extrabold tracking-tight leading-tight mb-6">
+              <h1 className="bungee-regular text-6xl md:text-6xl leading-tight tracking-tight text-black font-extrabold uppercase m-0 p-0">
                 Own a Piece of MST <span className="text-red-500">Blockchain</span>
               </h1>
 
@@ -144,21 +144,25 @@ export default function SupplyChainPage() {
         </section>
 
         {/* 🔴 PROCESS SECTION */}
-        <section className="py-24 px-6 max-w-6xl mx-auto">
-          <h2 className="text-3xl md:text-5xl  font-bold tracking-tight mb-16 md:-ml-8">
-            From Sign-Up to Rewards in Minutes
+        <section className="py-20 px-6 max-w-6xl mx-auto">
+          <h2 className="bungee-regular text-4xl md:text-4xl leading-tight tracking-tight text-black font-extrabold uppercase m-10 p-0">
+            From <span className="text-red-600">Sign-Up</span> to Rewards in Minutes
           </h2>
 
           {/* Step 1 */}
           <div className="grid md:grid-cols-2 gap-10 items-center mb-16">
-            <motion.div variants={fadeUp} initial="hidden" whileInView="visible">
-              <div className="w-14 h-14 flex items-center justify-center rounded-xl bg-black border border-red-500/40 mb-4">
-                <FaUserPlus className="text-red-400" />
+            <motion.div variants={fadeUp} initial="hidden" whileInView="visible" className="group">
+              <div className="w-14 h-14 flex items-center justify-center rounded-xl bg-black border border-red-500/40 mb-4 group-hover:bg-white">
+                <FaUserPlus className="text-red-400 group-hover:text-red-600 transition-colors duration-300" />
               </div>
-              <h3 className="text-2xl font-semibold mb-2">Create Account</h3>
-              <p className="text-gray-600">
-                Sign up on our portal and complete KYC verification.
-              </p>
+              <div className="rounded-xl p-4 transition-colors duration-300 group-hover:bg-red-600 group-hover:text-white">
+                <div className="rounded-xl border border-red-300 p-6 transition-all duration-300 group-hover:border-red-600">
+                  <h3 className="bungee-regular text-2xl md:text-2xl leading-tight tracking-tight text-black font-extrabold uppercase m-0 p-0 group-hover:text-white transition-colors duration-300">Create <span className="text-red-600 group-hover:text-white transition-colors duration-300">Account</span></h3>
+                  <p className="text-gray-600 group-hover:text-white transition-colors duration-300">
+                    Sign up on our portal and complete KYC <span className="text-red-600 group-hover:text-white transition-colors duration-300">verification</span>.
+                  </p>
+                </div>
+              </div>
             </motion.div>
 
             <motion.div
@@ -196,28 +200,36 @@ export default function SupplyChainPage() {
               variants={fadeUp}
               initial="hidden"
               whileInView="visible"
-              className="order-1 md:order-2"
+              className="order-1 md:order-2 group"
             >
-              <div className="w-14 h-14 flex items-center justify-center rounded-xl bg-black border border-red-500/40 mb-4">
-                <FaCreditCard className="text-red-400" />
+              <div className="w-14 h-14 flex items-center justify-center rounded-xl bg-black border border-red-500/40 mb-4 group-hover:bg-white">
+                <FaCreditCard className="text-red-400 group-hover:text-red-600 transition-colors duration-300" />
               </div>
-              <h3 className="text-2xl font-semibold mb-2">Make Payment</h3>
-              <p className="text-gray-600">
-                Pay securely in your preferred currency.
-              </p>
+              <div className="rounded-xl p-4 transition-colors duration-300 group-hover:bg-red-600 group-hover:text-white">
+                <div className="rounded-xl border border-red-300 p-6 transition-all duration-300 group-hover:border-red-600">
+                  <h3 className="bungee-regular text-2xl md:text-2xl leading-tight tracking-tight text-black font-extrabold uppercase m-0 p-0 group-hover:text-white transition-colors duration-300">Make <span className="text-red-600 group-hover:text-white transition-colors duration-300">Payment</span></h3>
+                  <p className="text-gray-600 group-hover:text-white transition-colors duration-300">
+                    Pay securely in your preferred <span className="text-red-600 group-hover:text-white transition-colors duration-300">currency</span>.
+                  </p>
+                </div>
+              </div>
             </motion.div>
           </div>
 
           {/* Step 3 */}
           <div className="grid md:grid-cols-2 gap-10 items-center">
-            <motion.div variants={fadeUp} initial="hidden" whileInView="visible">
-              <div className="w-14 h-14 flex items-center justify-center rounded-xl bg-black border border-red-500/40 mb-4">
-                <FaCube className="text-red-400" />
+            <motion.div variants={fadeUp} initial="hidden" whileInView="visible" className="group">
+              <div className="w-14 h-14 flex items-center justify-center rounded-xl bg-black border border-red-500/40 mb-4 group-hover:bg-white">
+                <FaCube className="text-red-400 group-hover:text-red-600 transition-colors duration-300" />
               </div>
-              <h3 className="text-2xl font-semibold mb-2">Own Your Fraction</h3>
-              <p className="text-gray-600">
-                Get on-chain ownership and start earning validator rewards instantly.
-              </p>
+              <div className="rounded-xl p-4 transition-colors duration-300 group-hover:bg-red-600 group-hover:text-white">
+                <div className="rounded-xl border border-red-300 p-6 transition-all duration-300 group-hover:border-red-600">
+                  <h3 className="bungee-regular text-2xl md:text-2xl leading-tight tracking-tight text-black font-extrabold uppercase m-0 p-0 group-hover:text-white transition-colors duration-300">Own Your <span className="text-red-600 group-hover:text-white transition-colors duration-300">Fraction</span></h3>
+                  <p className="text-gray-600 group-hover:text-white transition-colors duration-300">
+                    Get on-chain ownership and start earning validator rewards <span className="text-red-600 group-hover:text-white transition-colors duration-300">instantly</span>.
+                  </p>
+                </div>
+              </div>
             </motion.div>
 
             <motion.div
@@ -238,8 +250,8 @@ export default function SupplyChainPage() {
 
         {/* 🔴 WHY SECTION */}
         <section className="py-24 px-6 relative">
-          <h2 className="text-center text-3xl md:text-5xl font-bold mb-16">
-            Why Fractional <span className="text-red-500">Validators</span>?
+          <h2 className="bungee-regular text-4xl md:text-4xl leading-tight tracking-tight text-black font-extrabold uppercase text-center m-0 p-0">
+            Why Fractional <span className="text-red-600">Validators</span>?
           </h2>
 
           <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
@@ -268,8 +280,8 @@ export default function SupplyChainPage() {
         {/* 🔴 DASHBOARD SECTION */}
         <section className="py-24 px-6 max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
           <motion.div variants={fadeUp} initial="hidden" whileInView="visible">
-            <h2 className="text-3xl md:text-5xl mb-6 font-bold">
-              Blockchain Rewards Without Technical Barriers
+            <h2 className="bungee-regular text-4xl md:text-4xl leading-tight tracking-tight text-black font-extrabold uppercase m-0 p-0">
+              <span className="text-red-600">Blockchain</span> Rewards Without Technical Barriers
             </h2>
 
             <ul className="space-y-6 text-gray-600">
@@ -313,9 +325,9 @@ export default function SupplyChainPage() {
             variants={fadeUp}
             initial="hidden"
             whileInView="visible"
-            className="text-3xl md:text-5xl  font-extrabold tracking-tight mb-6"
+            className="bungee-regular text-6xl md:text-6xl leading-tight tracking-tight text-black font-extrabold uppercase mb-6"
           >
-            Secure Your Fraction Today
+            Secure Your <span className="text-red-600">Fraction</span> Today
           </motion.h2>
 
           <motion.p

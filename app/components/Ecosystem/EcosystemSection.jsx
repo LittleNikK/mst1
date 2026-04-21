@@ -86,7 +86,7 @@ export default function EcosystemSection() {
         <DotGrid
           dotSize={2}
           gap={15}
-          baseColor="#000000a1"
+          baseColor="#000000cd"
           activeColor="#ff2727"
           proximity={180}
           shockRadius={50}
@@ -170,24 +170,22 @@ function PartnerCard({ icon, title, description, className, tag }) {
   return (
     <motion.div 
       whileHover={{ y: -5 }}
-      className={`group relative bg-white border border-black/50 border-[1px] rounded-3xl p-8 transition-colors hover:border-red-500/50 ${className}`}
+      className={`group relative bg-white border border-black/50 border-[1px] rounded-3xl p-8 transition-colors hover:border-red-500/50 hover:bg-red-600 ${className}`}
     >
       <div className="flex justify-between items-start mb-12">
-        <div className="p-3 bg-red-100 text-red-600 rounded-2xl group-hover:bg-red-600 group-hover:text-white transition-all duration-300">
+        <div className="p-3 bg-red-100 text-red-600 rounded-2xl group-hover:bg-white/20 group-hover:text-white transition-all duration-300">
           {icon}
         </div>
-        <span className="text-[10px] font-mono font-bold text-gray-500 uppercase tracking-widest border border-gray-500 px-3 py-1 rounded-full">
+        <span className="text-[10px] font-mono font-bold text-gray-500 uppercase tracking-widest border border-gray-500 px-3 py-1 rounded-full group-hover:text-white group-hover:border-white group-hover:bg-red-500/40 transition-all duration-300">
           {tag}
         </span>
       </div>
-      
       <div>
-        <h3 className="bungee-regular text-lg md:text-2xl leading-tight text-red-500 font-extrabold uppercase">{title}</h3>
-        <p className="text-gray-700 leading-relaxed text-sm md:text-base">
+        <h3 className="bungee-regular text-lg md:text-2xl leading-tight text-red-500 font-extrabold uppercase group-hover:text-white transition-all duration-300">{title}</h3>
+        <p className="text-gray-700 leading-relaxed text-sm md:text-base group-hover:text-white transition-all duration-300">
           {description}
         </p>
       </div>
-
       <div className="absolute bottom-0 right-0 w-24 h-24 bg-red-600/10 blur-[40px] rounded-full opacity-0 group-hover:opacity-100 transition-opacity" />
     </motion.div>
   );

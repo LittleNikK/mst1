@@ -28,7 +28,10 @@ export default function MSTCard({ icon: Icon, title, description, ctaText, href 
       <p className="mt-4 flex-1 text-sm leading-relaxed text-black/68 group-hover:text-black/80 transition-colors duration-300">{description}</p>
 
       <div className="mt-8 border-t border-black/10 group-hover:border-accent pt-4 transition-colors duration-300">
-        <Link href={href} className="inline-flex items-center gap-2 px-6 py-2 rounded-full bg-black text-white text-xs font-semibold uppercase tracking-[0.13em] transition-all hover:bg-red-500 group-hover:bg-white group-hover:text-black hover:border hover:border-black">
+        <Link
+          href={href}
+          className="inline-flex items-center gap-2 px-6 py-2 rounded-full bg-white text-black text-xs font-semibold uppercase tracking-[0.13em] transition-all duration-300 border border-black hover:bg-black hover:text-white group-hover:bg-black group-hover:text-white"
+        >
           {ctaText}
           <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
         </Link>

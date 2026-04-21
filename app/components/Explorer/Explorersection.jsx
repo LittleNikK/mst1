@@ -123,7 +123,7 @@ export default function MSTExplorerFull() {
         <DotGrid
           dotSize={2}
           gap={15}
-          baseColor="#000000a1"
+          baseColor="#000000cd"
           activeColor="#ff2727"
           proximity={180}
           shockRadius={50}

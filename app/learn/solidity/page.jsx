@@ -97,7 +97,9 @@ export default function SolidityPage() {
               className="text-left"
             >
               <h1 className="text-4xl md:text-6xl font-extrabold">
-                Solidity <span className="text-red-500">Powering</span> Smart Contracts on MST Chain
+                <h1 className="bungee-regular text-6xl md:text-6xl leading-tight tracking-tight text-black font-extrabold uppercase m-0 p-0">
+                  Solidity <span className="text-red-500">Powering</span> Smart Contracts on MST Chain
+                </h1>
               </h1>
               <p className="text-gray-500 mt-6 text-lg">
                 The programming language that brings decentralized applications to life.
@@ -123,7 +125,9 @@ export default function SolidityPage() {
 
         {/* 🔴 ABOUT SOLIDITY */}
         <section className="py-24 px-6 max-w-7xl mx-auto">
-          <h2 className="text-4xl md:text-5xl mb-16">The Language of Smart Contracts</h2>
+          <h2 className="bungee-regular text-4xl md:text-4xl leading-tight tracking-tight text-black font-extrabold uppercase mb-8 m-0 p-0">
+            The Language of <span className="text-red-600">Smart Contracts</span> 
+          </h2>
           <div className="grid md:grid-cols-3 gap-8">
             {[
               "Solidity is the most widely used programming language for smart contracts.",
@@ -136,9 +140,9 @@ export default function SolidityPage() {
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
-                className="p-8 rounded-2xl border border-red-600 bg-red-500 hover:bg-red-600 transition"
+                className="p-8 rounded-2xl border border-red-600 bg-red-500 hover:bg-black hover:text-red-600 transition"
               >
-                <p className="text-white text-center font-medium">{text}</p>
+                <p className="text-white text-center font-medium group-hover:text-red-600 transition-colors">{text}</p>
               </motion.div>
             ))}
           </div>
@@ -147,7 +151,9 @@ export default function SolidityPage() {
         {/* 🔴 FEATURES */}
         <section className="py-24 px-6">
           <div className="max-w-7xl mx-auto">
-            <h2 className="text-4xl md:text-5xl mb-16">Familiar, Compatible, and Developer-Friendly</h2>
+            <h2 className="bungee-regular text-4xl md:text-4xl leading-tight tracking-tight text-black font-extrabold uppercase mb-8 m-0 p-0 transition-colors duration-300 hover:text-red-600">
+              Familiar, <span className="text-red-600">Compatible</span>, and Developer-Friendly
+            </h2>
             <div className="grid md:grid-cols-4 gap-8">
               {[
                 { title: "EVM Compatible", desc: "Ethereum contracts work on MST Chain." },
@@ -161,10 +167,10 @@ export default function SolidityPage() {
                   initial="hidden"
                   whileInView="visible"
                   viewport={{ once: true }}
-                  className="p-6 border border-red-600 rounded-xl bg-red-500 hover:bg-red-600 transition"
+                  className="p-6 border border-red-600 rounded-xl bg-red-500 hover:bg-black hover:text-white transition"
                 >
-                  <h4 className="mb-3 font-bold text-white">{item.title}</h4>
-                  <p className="text-red-100 text-sm">{item.desc}</p>
+                  <h4 className="mb-3 font-bold text-white group-hover:text-white transition-colors">{item.title}</h4>
+                  <p className="text-red-100 text-sm group-hover:text-white transition-colors">{item.desc}</p>
                 </motion.div>
               ))}
             </div>
@@ -173,7 +179,7 @@ export default function SolidityPage() {
 
         {/* 🔴 USE CASES */}
         <section className="py-24 px-6 max-w-7xl mx-auto">
-          <h2 className="text-4xl md:text-5xl mb-12">Let’s Redefine The Future</h2>
+          <h2 className="bungee-regular text-4xl md:text-4xl leading-tight tracking-tight text-black font-extrabold uppercase m-0 p-0">Let’s Redefine The Future</h2>
           <div className="grid md:grid-cols-2 gap-8">
             {[
               "Decentralized Finance (DeFi)",
@@ -186,7 +192,7 @@ export default function SolidityPage() {
                 key={i}
                 className="p-10 rounded-2xl border border-red-500/20 bg-red-500/10 hover:bg-black hover:text-white hover:border-black transition group"
               >
-                <h3 className="text-xl group-hover:text-red-500 transition-colors font-bold">{title}</h3>
+                <h3 className="bungee-regular text-2xl md:text-2xl leading-tight tracking-tight text-black font-extrabold uppercase m-0 p-0 group-hover:text-red-500 transition-colors">{title}</h3>
               </div>
             ))}
           </div>
@@ -194,7 +200,7 @@ export default function SolidityPage() {
 
         {/* 🔴 LEARNING RESOURCES */}
         <section className="py-24 px-6 max-w-7xl mx-auto">
-          <h2 className="text-4xl md:text-5xl mb-12">Start Your Smart Contract Journey</h2>
+          <h2 className="bungee-regular text-4xl md:text-4xl leading-tight tracking-tight text-black font-extrabold uppercase m-0 p-0">Start Your Smart Contract Journey</h2>
           <div className="grid md:grid-cols-2 gap-8 mb-12">
             {[
               "CryptoZombies",
@@ -206,13 +212,13 @@ export default function SolidityPage() {
                 key={i}
                 className="p-6 rounded-xl border border-gray-200 bg-gray-50 hover:bg-black hover:text-white hover:border-black transition cursor-pointer"
               >
-                <h4 className="font-semibold">{resource}</h4>
+                <h3 className="bungee-regular text-2xl md:text-2xl leading-tight tracking-tight text-black font-extrabold uppercase m-0 p-0">{resource}</h3>
               </div>
             ))}
           </div>
 
           <div className=" ">
-            <h2 className="text-4xl md:text-5xl mb-6">Deploy Your First Smart Contract</h2>
+            <h2 className="bungee-regular text-4xl md:text-4xl leading-tight tracking-tight text-black font-extrabold uppercase m-0 p-0">Deploy Your First Smart Contract</h2>
             <p className="text-gray-500 mb-8 max-w-2xl">
               MST Chain fully supports Solidity. You can use standard tools like Remix, Hardhat, or Truffle to build, test, and deploy.
             </p>

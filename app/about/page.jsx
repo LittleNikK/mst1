@@ -154,7 +154,7 @@ const staggerContainer = {
 const AboutUs = () => {
   return (
     <div className="bg-[#fffaff] text-gray-900 selection:bg-red-100 overflow-x-hidden">
-      
+
       {/* 1. HERO SECTION */}
         <section className="relative min-h-[90vh] flex items-center pt-20">
         {/* Animated Background Orbits */}
@@ -180,7 +180,7 @@ const AboutUs = () => {
             <span className="inline-block px-4 py-1.5 mb-6 text-sm font-bold tracking-widest text-red-600 uppercase bg-red-50 rounded-full">
               POWERING THE DECENTRALIZED FUTURE
             </span>
-            <h1 className="text-5xl lg:text-7xl font-black tracking-tight leading-[1.1]">
+            <h1 className="bungee-regular text-6xl md:text-6xl leading-tight tracking-tight text-black font-extrabold uppercase mb-5">
               About <span className="bg-clip-text text-transparent bg-gradient-to-r from-red-600 to-pink-500">MST Blockchain</span>
             </h1>
 
@@ -209,13 +209,14 @@ const AboutUs = () => {
         </div>
       </section>
 
+
       {/* 2. STATS SECTION */}
       <section className="px-4 sm:px-6 mt-2 sm:mt-0 relative z-20">
         <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 bg-white/90 backdrop-blur-2xl border border-white p-6 sm:p-8 md:p-10 rounded-3xl md:rounded-[3rem] shadow-2xl shadow-gray-200/50">
           {stats.map((item, i) => (
-            <div key={i} className="text-center border-b sm:border-b-0 sm:lg:border-r last:border-0 border-gray-100 py-4 flex flex-col items-center justify-center">
-              <h3 className="text-3xl sm:text-4xl font-black text-gray-900">{item.value}</h3>
-              <p className="text-xs sm:text-sm font-bold text-gray-400 uppercase tracking-widest mt-2">{item.label}</p>
+            <div key={i} className="text-center lg:border-r last:border-0 border-gray-100 py-2">
+              <h3 className="text-4xl font-black text-gray-900">{item.value}</h3>
+              <p className="text-xs font-bold text-gray-400 uppercase tracking-widest mt-2">{item.label}</p>
             </div>
           ))}
         </div>
@@ -245,7 +246,7 @@ const AboutUs = () => {
               className="p-12 rounded-[3rem] bg-white border border-gray-100 hover:border-red-100 shadow-sm hover:shadow-xl transition-all duration-500"
             >
               <div className="mb-6">{item.icon}</div>
-              <h3 className="text-3xl font-bold text-gray-900 mb-6">{item.title}</h3>
+              <h3 className="bungee-regular text-3xl md:text-3xl leading-tight tracking-tight text-black font-extrabold uppercase mb-5">{item.title}</h3>
               <p className="text-gray-500 text-lg leading-relaxed">{item.text}</p>
             </motion.div>
           ))}
@@ -256,7 +257,7 @@ const AboutUs = () => {
       <section className="py-24 bg-gray-50/50">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-20">
-            <h2 className="text-4xl md:text-5xl font-black mb-6">Core <span className="text-red-600">Infrastructure</span></h2>
+            <h2 className="bungee-regular text-4xl md:text-4xl leading-tight tracking-tight text-black font-extrabold uppercase mb-5">Core <span className="text-red-600">Infrastructure</span></h2>
             <p className="text-gray-500 max-w-2xl mx-auto text-lg">Designed for builders who require high-throughput and absolute reliability.</p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -276,6 +277,8 @@ const AboutUs = () => {
           </div>
         </div>
       </section>
+
+
 
       {/* 5. MEET THE TEAM (SCREENSHOT-STYLE) */}
       <section className="bg-gray-100">
@@ -439,7 +442,7 @@ const AboutUs = () => {
       {/* 6. WHY CHOOSE MST SECTION */}
       <section className="py-24">
         <div className="max-w-5xl mx-auto px-6 bg-gradient-to-br from-white to-red-50/30 border border-gray-100 rounded-[4rem] p-12 md:p-20 shadow-2xl shadow-red-100/20">
-          <h2 className="text-4xl font-black mb-12 text-center">Why Builders Choose <span className="text-red-600">MST</span></h2>
+          <h2 className="bungee-regular text-6xl md:text-6xl leading-tight tracking-tight text-black font-extrabold uppercase text-center">Why Builders Choose <span className="text-red-600">MST</span></h2>
           <div className="grid md:grid-cols-2 gap-8">
             {[
               "Lightning-fast (100k+ TPS)", "EVM Compatible ecosystem",
@@ -469,7 +472,7 @@ const AboutUs = () => {
           <div className="absolute bottom-0 left-0 w-96 h-96 bg-pink-600 rounded-full blur-[150px] opacity-10 -ml-32 -mb-32" />
 
           <div className="relative z-10">
-            <h2 className="text-4xl md:text-6xl font-black text-white mb-8">Ready to Build <br />the Future?</h2>
+            <h2 className="bungee-regular text-6xl md:text-6xl leading-tight tracking-tight text-white font-extrabold uppercase">Ready to Build <br />the Future?</h2>
             <p className="text-gray-400 text-lg md:text-xl mb-12 max-w-2xl mx-auto">
               Join thousands of developers and visionaries building on the world's most scalable blockchain protocol.
             </p>
