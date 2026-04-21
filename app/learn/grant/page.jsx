@@ -134,7 +134,7 @@ export default function Page() {
   }, []);
 
   return (
-    <section className="grant-section relative overflow-hidden">
+    <section className="grant-section relative overflow-hidden bg-white"> 
       <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden opacity-40">
         <motion.div
           animate={{ rotate: [360, 0] }}
@@ -234,8 +234,8 @@ export default function Page() {
           <div className="hero-wrapper">
             <div className="hero-card">
               <div className="hero-image-container">
-                <img src="https://plus.unsplash.com/premium_photo-1681400678259-255b10890b08?auto=format&fit=crop&w=1200&q=60" className="hero-img active" />
-                <img src="https://images.rawpixel.com/image_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIzLTEyL3Jhd3BpeGVsX29mZmljZV8zOF9waG90b19hbl9hYnN0cmFjdF92aXN1YWxpemF0aW9uX29mX2FfYmxvY2tjaF8yNzkxNDRlNC0zNGE3LTQxMmYtYmU2YS00MTY1ZGIyYjE1MmFfMS5qcGc.jpg" className="hero-img" />
+                <img src="/grant/init grant - Banner.jpg" className="hero-img active" />
+                <img src="/grant/init grant - Banner.jpg" className="hero-img" />
               </div>
               <div className="hero-glow-1"></div>
               <div className="hero-glow-2"></div>
@@ -280,8 +280,8 @@ export default function Page() {
           <div className="hero-wrapper">
             <div className="hero-card">
               <div className="hero-image-container">
-                <img src="https://images.rawpixel.com/image_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIzLTEyL3Jhd3BpeGVsX29mZmljZV8zOF9waG90b19hbl9hYnN0cmFjdF92aXN1YWxpemF0aW9uX29mX2FfYmxvY2tjaF8yNzkxNDRlNC0zNGE3LTQxMmYtYmU2YS00MTY1ZGIyYjE1MmFfMS5qcGc.jpg" className="hero-img active" />
-                <img src="https://plus.unsplash.com/premium_photo-1681400678259-255b10890b08?auto=format&fit=crop&w=1200&q=60" className="hero-img" />
+                <img src="/grant/Copy of Scale grant - Banner.jpg" className="hero-img active" />
+                <img src="/grant/Copy of Scale grant - Banner.jpg" className="hero-img" />
               </div>
               <div className="hero-glow-1"></div>
               <div className="hero-glow-2"></div>
@@ -296,8 +296,8 @@ export default function Page() {
           <div className="hero-wrapper">
             <div className="hero-card">
               <div className="hero-image-container">
-                <img src="https://plus.unsplash.com/premium_photo-1681400678259-255b10890b08?auto=format&fit=crop&w=1200&q=60" className="hero-img active" />
-                <img src="https://images.rawpixel.com/image_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIzLTEyL3Jhd3BpeGVl..." className="hero-img" />
+                <img src="/grant/Build grant-Banner (4).jpg" className="hero-img active" />
+                <img src="/grant/Build grant-Banner (4).jpg" className="hero-img" />
               </div>
               <div className="hero-glow-1"></div>
               <div className="hero-glow-2"></div>

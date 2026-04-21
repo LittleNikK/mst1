@@ -28,19 +28,19 @@ const proofItems = [
   {
     title: 'Multi-Department Purchase Approval',
     description: 'Procurement workflows with MST-recorded approvals at every level — automatic escalation on delays, complete audit trail from requisition to purchase order approval.',
-    image: '/img3.jpeg',
+    image: '/Enterprise-workflow/Multi-Department Purchase Approval.jpg',
     alt: 'National car manufacturer supply chain'
   },
   {
     title: 'Vendor Onboarding & Compliance',
     description: 'Vendor verification, legal review, compliance certification, and contract approval — all on MST with permanent records and automatic progression between stages.',
-    image: '/placeholder.png',
+    image: '/Enterprise-workflow/Vendor Onboarding & Compliance.jpg',
     alt: 'Express shipping supply chain'
   },
   {
     title: 'Cross-Organization Contract Management',
     description: 'Multi-party contract review, negotiation, and sign-off workflows with permanent on-chain records — replacing fragmented email chains with auditable, transparent process execution.',
-    image: '/hero-visual-1.svg',
+    image: '/Enterprise-workflow/Cross-Organization Contract Management.jpg',
     alt: 'Food and agriculture supply chain'
   }
 ];
@@ -203,7 +203,7 @@ const [formType, setFormType] = useState("General Enquiry");
               <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(255,255,255,0.04),transparent_40%,rgba(0,0,0,0.22))]" />
               <div className="relative h-full w-full overflow-hidden rounded-3xl border border-white/10">
                 <Image
-                  src="/imgbanner.jpg"
+                  src="/Enterprise-workflow/Enterprise Workflow Automation.jpg"
                   alt="Supply chain banner"
                   fill
                   priority
@@ -273,7 +273,7 @@ const [formType, setFormType] = useState("General Enquiry");
         <SectionFade className="group overflow-hidden rounded-3xl border border-black/10 bg-white p-2 shadow-[0_14px_36px_rgba(0,0,0,0.08)] transition-transform duration-300 hover:scale-[1.01]">
           <div className="relative h-[260px] overflow-hidden rounded-[1.35rem] bg-[linear-gradient(135deg,rgba(255,45,45,0.08),rgba(0,0,0,0.04))] sm:h-[330px]">
             <Image
-              src="/img1.webp"
+              src="/Enterprise-workflow/What is Blockchain Enterprise Workflow Automation on MST.jpg"
               alt="Supply chain intro"
               fill
               sizes="(max-width: 768px) 100vw, 50vw"
@@ -373,7 +373,7 @@ const [formType, setFormType] = useState("General Enquiry");
         <SectionFade className="group overflow-hidden rounded-3xl border border-black/10 bg-white p-2 shadow-[0_14px_36px_rgba(0,0,0,0.08)] transition-transform duration-300 hover:scale-[1.01]">
           <div className="relative h-[280px] overflow-hidden rounded-[1.35rem] bg-[linear-gradient(135deg,rgba(255,45,45,0.08),rgba(0,0,0,0.05))] sm:h-[340px]">
             <Image
-              src="/img2.jpg"
+              src="/Enterprise-workflow/Manual Enterprise Processes Cost $1.7 Trillion Annually.jpg"
               alt="Problem and solution visual"
               fill
               sizes="(max-width: 768px) 100vw, 50vw"

@@ -26,21 +26,21 @@ const featureItems = [
 
 const proofItems = [
   {
-    title: 'International Health Card',
-    description: 'MST delivers real-time proof of patient identity and medical history for International Health Care Card holders — accessible globally.',
-    image: '/img3.jpeg',
+    title: 'Collectible Character Assets',
+    description: 'Limited-edition game characters minted as unique blockchain assets with verifiable rarity and permanently transferable ownership.',
+    image: '/Healthcare-records/International Health Card.jpg',
     alt: 'National car manufacturer supply chain'
   },
   {
-    title: 'Medicare Health Card',
-    description: 'Medicare card verification secured on blockchain — eliminating billing fraud, stolen services, and administrative complications.',
-    image: '/1.png',
+    title: 'In-Game Item Marketplace',
+    description: 'Peer-to-peer item trading with smart contract escrow, automatic royalty payment, and full transaction transparency.',
+    image: '/Healthcare-records/Medicare Health Card.jpg',
     alt: 'Express shipping supply chain'
   },
   {
-    title: 'Laboratory Test Reports',
-    description: 'Blood and diagnostic reports verified for authenticity as they move between labs, doctors, specialists, and insurers.',
-    image: '/hero-visual-1.svg',
+    title: 'Achievement & Badge Tokens',
+    description: 'In-game achievements anchored on-chain as verifiable credentials — portable across compatible game platforms.',
+    image: '/Healthcare-records/Laboratory Test Reports.jpg',
     alt: 'Food and agriculture supply chain'
   }
 ];
@@ -201,7 +201,7 @@ const [formType, setFormType] = useState("General Enquiry");
               <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(255,255,255,0.04),transparent_40%,rgba(0,0,0,0.22))]" />
               <div className="relative h-full w-full overflow-hidden rounded-3xl border border-white/10">
                 <Image
-                  src="/imgbanner.jpg"
+                  src="/Healthcare-records/Healthcare Records.jpg"
                   alt="Supply chain banner"
                   fill
                   priority
@@ -273,7 +273,7 @@ const [formType, setFormType] = useState("General Enquiry");
         <SectionFade className="group overflow-hidden rounded-3xl border border-black/10 bg-white p-2 shadow-[0_14px_36px_rgba(0,0,0,0.08)] transition-transform duration-300 hover:scale-[1.01]">
           <div className="relative h-[260px] overflow-hidden rounded-[1.35rem] bg-[linear-gradient(135deg,rgba(255,45,45,0.08),rgba(0,0,0,0.04))] sm:h-[330px]">
             <Image
-              src="/img1.webp"
+              src="/Healthcare-records/What are Blockchain Healthcare Records_.jpg"
               alt="Supply chain intro"
               fill
               sizes="(max-width: 768px) 100vw, 50vw"
@@ -373,7 +373,7 @@ const [formType, setFormType] = useState("General Enquiry");
         <SectionFade className="group overflow-hidden rounded-3xl border border-black/10 bg-white p-2 shadow-[0_14px_36px_rgba(0,0,0,0.08)] transition-transform duration-300 hover:scale-[1.01]">
           <div className="relative h-[280px] overflow-hidden rounded-[1.35rem] bg-[linear-gradient(135deg,rgba(255,45,45,0.08),rgba(0,0,0,0.05))] sm:h-[340px]">
             <Image
-              src="/img2.jpg"
+              src="/Healthcare-records/Players Own Nothing.jpg"
               alt="Problem and solution visual"
               fill
               sizes="(max-width: 768px) 100vw, 50vw"

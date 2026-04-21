@@ -101,7 +101,15 @@ export default function SupplyChainPage() {
         </div>
 
         {/* 🔴 HERO */}
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
         <section className="relative pt-32 pb-2 px-6">
+=======
+        <section className="relative pt-32 pb-28 px-6 bg white">
+>>>>>>> Stashed changes
+=======
+        <section className="relative pt-32 pb-28 px-6 bg white">
+>>>>>>> Stashed changes
 
           <div className="relative z-10 max-w-7xl mx-auto grid md:grid-cols-[1fr_1.25fr] gap-12 items-center">
             <motion.div
@@ -133,7 +141,7 @@ export default function SupplyChainPage() {
               className="relative h-[360px] md:h-[420px] rounded-2xl border border-red-500/20 overflow-hidden"
             >
               <Image
-                src="/img2.jpg"
+                src="/fractional-validator/Piece of MST- Banner.png"
                 alt="Fractional validator"
                 fill
                 className="object-cover"
@@ -172,7 +180,7 @@ export default function SupplyChainPage() {
               className="relative rounded-xl border border-red-500/20 h-64 overflow-hidden"
             >
               <Image
-                src="/img3.jpeg"
+                src="/fractional-validator/Create Account-Banner.png"
                 alt="Create account"
                 fill
                 className="object-cover"
@@ -189,7 +197,7 @@ export default function SupplyChainPage() {
               className="relative rounded-xl border border-red-500/20 h-64 order-2 md:order-1 overflow-hidden"
             >
               <Image
-                src="/img1.webp"
+                src="/fractional-validator/Make Payment-Banner.jpg"
                 alt="Make payment"
                 fill
                 className="object-cover"
@@ -239,7 +247,7 @@ export default function SupplyChainPage() {
               className="relative rounded-xl border border-red-500/20 h-64 overflow-hidden"
             >
               <Image
-                src="/img2.jpg"
+                src="/fractional-validator/Own Fraction-Banner.jpg"
                 alt="Own your fraction"
                 fill
                 className="object-cover"
@@ -310,7 +318,7 @@ export default function SupplyChainPage() {
             className="relative h-80 rounded-xl border border-red-500/20 overflow-hidden"
           >
             <Image
-              src="/img1.webp"
+              src="/fractional-validator/Blockchain Rewards Dashboard.jpg"
               alt="Blockchain rewards dashboard"
               fill
               className="object-cover"

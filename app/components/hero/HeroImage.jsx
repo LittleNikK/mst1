@@ -6,13 +6,13 @@ import { useEffect, useState } from 'react';
 
 const slides = [
   {
-    src: '/img3.png',
+    src: "/hero/red-box-with-cubes.jpg",
     alt: 'Institutional Web3 data visualization',
     width: 1200,
     height: 900
   },
   {
-    src: '/img1.jpeg',
+    src: "/hero/Website imagess.jpg",
     alt: 'Web3 data visualization',
     width: 1200,
     height: 900

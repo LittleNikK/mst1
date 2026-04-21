@@ -83,7 +83,7 @@ const headings = [
 
 const stats = [
   { label: 'Finality', value: 400, suffix: 'ms', active: true },
-  { label: 'Active Nodes', value: 12400, suffix: '+', active: true },
+  { label: 'Active Validators', value: 70000, suffix: '+', active: true },
   { label: 'Total Value', value: 4.2, prefix: '$', suffix: 'B+', active: true }
 ];
 

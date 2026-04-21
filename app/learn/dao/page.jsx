@@ -122,7 +122,7 @@ export default function BlockValidationPage() {
 
                 <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.8 }}>
                   <div className="relative w-full h-[460px] rounded-3xl overflow-hidden shadow-2xl border border-red-100">
-                    <Image src="/img2.jpg" alt="DAO Hero" fill className="object-cover" priority />
+                    <Image src="/dao/DAO.jpg" alt="DAO Hero" fill className="object-cover" priority />
                   </div>
                 </motion.div>
               </div>
@@ -139,7 +139,7 @@ export default function BlockValidationPage() {
                   viewport={{ once: true }} 
                   className="relative h-[500px] rounded-3xl overflow-hidden shadow-2xl"
                 >
-                  <img src="/img3.jpeg" alt="Backbone" className="w-full h-full object-cover" />
+                  <img src="/dao/Decentralized Auto- Square.jpg" alt="Backbone" className="w-full h-full object-cover" />
                 </motion.div>
 
                 <div>

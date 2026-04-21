@@ -68,6 +68,60 @@ const stats = [
   { label: 'Donor Visibility', value: 'Real-Time' }
 ];
 
+const galleryItems = [
+  {
+    title: 'Program Launch Workshop',
+    subtitle: 'Team planning and campaign strategy in the office.',
+    image: '/img1.webp',
+    alt: 'Team reviewing charity program plans'
+  },
+  {
+    title: 'Milestone Verification',
+    subtitle: 'Smart contract goals are reviewed and verified by stakeholders.',
+    image: '/img2.jpg',
+    alt: 'Colleagues verifying milestones'
+  },
+  {
+    title: 'Field Coordination',
+    subtitle: 'Distribution and audit teams collaborate for transparency.',
+    image: '/img3.jpeg',
+    alt: 'Field coordination meeting'
+  },
+  {
+    title: 'Donor Reporting',
+    subtitle: 'Live dashboards and reporting sessions for fund transparency.',
+    image: '/1.png',
+    alt: 'Donor report dashboard'
+  },
+  {
+    title: 'Office Operations',
+    subtitle: 'The team supports every program end-to-end from the office.',
+    image: '/hero-visual-1.svg',
+    alt: 'Office team working together'
+  }
+];
+
+function GalleryCard({ title, subtitle, image, alt }) {
+  return (
+    <article className="group overflow-hidden rounded-[2rem] border border-black/10 bg-white shadow-[0_16px_40px_rgba(0,0,0,0.08)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_20px_48px_rgba(0,0,0,0.12)]">
+      <div className="relative h-64 overflow-hidden bg-slate-100">
+        <Image
+          src={image}
+          alt={alt}
+          fill
+          sizes="(max-width: 768px) 100vw, 33vw"
+          className="object-cover object-center transition-transform duration-500 group-hover:scale-105"
+        />
+      </div>
+      <div className="p-6">
+        <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#ff2d2d]">Program Gallery</p>
+        <h3 className="mt-3 text-xl font-bold text-black">{title}</h3>
+        <p className="mt-3 text-sm leading-6 text-black/70">{subtitle}</p>
+      </div>
+    </article>
+  );
+}
+
 function SectionFade({ children, className = '' }) {
   return (
     <motion.div
@@ -452,6 +506,33 @@ const [formType, setFormType] = useState("General Enquiry");
           {proofItems.map((item) => (
             <motion.div key={item.title} variants={{ hidden: { opacity: 0, y: 18 }, visible: { opacity: 1, y: 0 } }}>
               <ProofCard {...item} />
+            </motion.div>
+          ))}
+        </motion.div>
+      </section>
+
+      {/* PROGRAM & OFFICE PHOTO GALLERY */}
+      <section className="mx-auto w-full max-w-[90rem] px-6 py-16 md:px-16">
+        <SectionFade className="space-y-4">
+          <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#ff2d2d]">Office Gallery</p>
+          <h2 className="font-[var(--font-space-grotesk)] text-3xl font-bold tracking-[-0.03em] text-black sm:text-4xl">
+            See Our Programs and Office in Action
+          </h2>
+          <p className="max-w-3xl text-base leading-8 text-black/70">
+            A visual showcase of how MST supports every program stage — from planning and verification to field coordination and donor transparency.
+          </p>
+        </SectionFade>
+
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.18 }}
+          variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.12 } } }}
+          className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
+        >
+          {galleryItems.map((item) => (
+            <motion.div key={item.title} variants={{ hidden: { opacity: 0, y: 18 }, visible: { opacity: 1, y: 0 } }}>
+              <GalleryCard {...item} />
             </motion.div>
           ))}
         </motion.div>

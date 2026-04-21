@@ -105,7 +105,7 @@ export default function TransparencyPage() {
             className="relative h-96 rounded-2xl overflow-hidden border border-gray-200 shadow-2xl"
           >
             <Image
-              src="/img2.jpg"
+              src="/transperancy/transparency.jpg"
               alt="Transparency hero"
               fill
               className="object-cover hover:scale-105 transition duration-700"

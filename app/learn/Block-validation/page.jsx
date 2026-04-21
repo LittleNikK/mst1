@@ -189,7 +189,7 @@ export default function BlockValidationPage() {
               >
                 <div className="relative w-full max-w-[520px] sm:max-w-[640px] h-[460px] rounded-3xl border border-red-500/30 overflow-hidden bg-gradient-to-b from-[#fbe1e2] via-[#f7d7d9] to-[#f3cbce] shadow-[0_20px_50px_rgba(239,68,68,0.15)]">
                   <Image
-                    src="/img2.jpg"
+                    src="/block validation/How-Blocks-Validate.jpg"
                     alt="Block validation visual"
                     fill
                     className="object-cover"
@@ -256,7 +256,7 @@ export default function BlockValidationPage() {
                 viewport={{ once: true, margin: "-100px" }}
               >
                 <Image
-                  src="/img3.jpeg"
+                  src="/block-validation/Backbone-of-MST-Square.jpg"
                   alt="Backbone of MST Blockchain"
                   fill
                   className="object-cover"
