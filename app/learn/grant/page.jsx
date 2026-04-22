@@ -134,7 +134,7 @@ export default function Page() {
   }, []);
 
   return (
-    <section className="grant-section relative overflow-hidden bg-white"> 
+    <section className="grant-section relative overflow-hidden bg-white z-0 relative"> 
       <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden opacity-40">
         <motion.div
           animate={{ rotate: [360, 0] }}

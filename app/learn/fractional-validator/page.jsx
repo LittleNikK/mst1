@@ -24,9 +24,8 @@ const fadeUp = {
 export default function SupplyChainPage() {
   return (
     <>
-      <Navbar />
 
-      <main className="text-gray-900 overflow-hidden">
+      <main className="text-gray-900 overflow-hidden bg-white z-0 relative">
 
         {/* Global orbital animated background */}
         <div className="fixed inset-0 -z-10 pointer-events-none overflow-hidden">

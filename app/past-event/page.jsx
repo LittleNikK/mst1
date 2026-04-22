@@ -99,7 +99,7 @@ function HeroSection({ onExplore }) {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 0.8 }}
-          className="text-5xl md:text-7xl font-black mb-4 tracking-tight"
+          className="bungee-regular text-6xl md:text-6xl leading-tight text-black font-extrabold uppercase"
         >
           <span className="text-red-600">PAST</span>{' '}
           <span className="text-black">EVENTS</span>
@@ -108,7 +108,7 @@ function HeroSection({ onExplore }) {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6, duration: 0.7 }}
-          className="text-lg md:text-2xl text-black max-w-2xl mb-8"
+          className="text-lg md:text-xl text-black max-w-2xl mb-8"
         >
           Relive the moments that defined MST. Explore our premium event gallery and discover the energy of our community.
         </motion.p>
@@ -116,7 +116,7 @@ function HeroSection({ onExplore }) {
           whileHover={{ scale: 1.08 }}
           whileTap={{ scale: 0.97 }}
           onClick={onExplore}
-          className="px-8 py-3 rounded-full bg-black text-white font-bold text-lg shadow-lg hover:bg-red-600 hover:text-white hover:shadow-2xl transition"
+          className="px-6 py-3 rounded-full bg-black text-white bungee-regular text-lg shadow-lg hover:bg-red-600 hover:text-white hover:shadow-2xl transition"
         >
           Explore Gallery
         </motion.button>
@@ -214,8 +214,8 @@ function EventCard({ event, onClick }) {
       </div>
 
       {/* Title & subtitle centered over the bottom */}
-      <div className="absolute bottom-6 left-6 right-6 flex flex-col items-center text-center gap-1 pointer-events-none">
-        <div className="text-2xl md:text-3xl font-extrabold text-white tracking-tight leading-tight drop-shadow-lg">
+      <div className="absolute bottom-6 left-6 right-6 flex flex-col items-center text-center gap-1 pointer-events-none ">
+        <div className="text-xl md:text-2xl bungee-regular text-white tracking-tight leading-tight drop-shadow-lg ">
           {event.title}
         </div>
         <div className="text-sm md:text-base text-white/90 font-medium tracking-wide">
@@ -299,7 +299,7 @@ function CarouselModal({ open, event, index, onClose, onNavigate }) {
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm" onClick={onClose}>
       <motion.div
-        className="relative rounded-3xl overflow-hidden shadow-2xl bg-white border-4 border-black max-w-2xl w-[95vw] flex flex-col items-center"
+        className="relative rounded-3xl overflow-hidden shadow-2xl bg-white border-[1px] border-black max-w-2xl w-[95vw] flex flex-col items-center"
         initial={{ opacity: 0, scale: 0.96 }}
         animate={{ opacity: 1, scale: 1 }}
         exit={{ opacity: 0, scale: 0.96 }}
@@ -352,7 +352,7 @@ function CarouselModal({ open, event, index, onClose, onNavigate }) {
           </div>
         )}
         <div className="w-full px-8 py-6 bg-white flex flex-col items-center gap-2 border-t border-black">
-          <div className="text-2xl font-extrabold text-black text-center">{event.title || ''}</div>
+          <div className="text-2xl bungee-regular text-black text-center">{event.title || ''}</div>
           <div className="text-sm text-red-600 font-semibold">{event.date || ''}</div>
           <div className="text-base text-black/80 text-center line-clamp-3">{event.desc || ''}</div>
         </div>
@@ -380,7 +380,7 @@ function GallerySection() {
     <section className="relative bg-black min-h-[60vh] w-full flex flex-col items-center justify-center overflow-hidden font-serif">
       {/* 1. Background Title (Centered & Fixed to section) */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-0">
-        <h1 className="text-[12vw] font-bold tracking-tighter text-white/10 uppercase select-none whitespace-nowrap">
+        <h1 className="bungee-regular text-6xl md:text-6xl leading-tight tracking-tight text-black font-extrabold uppercase select-none whitespace-nowrap">
           Gallery
         </h1>
       </div>

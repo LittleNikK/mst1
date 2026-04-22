@@ -25,48 +25,48 @@ const navItems = [
   { label: 'Build', href: '#', active: true },
   { label: 'Learn', href: '#', active: false },
   { label: 'Products', href: '#', active: false },
-  { label: 'Usecases', href: '/usecases/supply-chain', active: false }
+  { label: 'Usecases', href: '#', active: false }
 ];
 
 const usecases = [
-  { id: '01', title: 'Supply Chain Logistics', link: '/usecases/supply-chain' },
-  { id: '02', title: 'Real Estate Tokenization', link: '/usecases/real-estate' },
-  { id: '03', title: 'DeFi Liquidity', link: '/usecases/defi-liquidity' },
-  { id: '04', title: 'Secure Healthcare', link: '/usecases/healthcare' },
-  { id: '05', title: 'Metaverse Gaming', link: '/usecases/metaverse' },
-  { id: '06', title: 'Digital Identity', link: '/usecases/digital-identity' },
-  { id: '07', title: 'Yield Aggregators', link: '/usecases/yield' },
-  { id: '08', title: 'Carbon Credits', link: '/usecases/carbon' },
-  { id: '09', title: 'Cross-border Pay', link: '/usecases/cross-border' },
-  { id: '10', title: 'Asset Management', link: '/usecases/asset-management' },
-  { id: '11', title: 'Oracle Networks', link: '/usecases/oracles' },
-  { id: '12', title: 'DAO Governance', link: '/usecases/dao' },
-  { id: '13', title: 'Privacy Layers', link: '/usecases/privacy' },
-  { id: '14', title: 'Escrow Services', link: '/usecases/escrow' },
-  { id: '15', title: 'Insurance Claims', link: '/usecases/insurance' },
-  { id: '16', title: 'NFT Marketplace', link: '/usecases/nft' },
-  { id: '17', title: 'Staking Protocols', link: '/usecases/staking' },
-  { id: '18', title: 'Token Vesting', link: '/usecases/vesting' },
-  { id: '19', title: 'ZK Proofs', link: '/usecases/zk' },
-  { id: '20', title: 'Lending Pools', link: '/usecases/lending' }
+  { id: '01', title: 'Carbon Credit Tracking', link: 'Carbon-Credit-Tracking' },
+  { id: '02', title: 'Charity & Donations', link: 'Charity-&-Donations' },
+  { id: '03', title: 'Decentralized Social Platforms', link: 'Decentralized-Social-Platforms' },
+  { id: '04', title: 'Decentralized Voting', link: 'Decentralized-Voting' },
+  { id: '05', title: 'Digital Asset Exchange', link: 'Digital-Asset-Exchange' },
+  { id: '06', title: 'Digital Identity KYC', link: 'Digital-Identity-KYC' },
+  { id: '07', title: 'Education Credentials', link: 'Education-Credentials' },
+  { id: '08', title: 'Enterprise Workflow Automation', link: 'Enterprise-Workflow-Automation' },
+  { id: '09', title: 'Freelance Marketplace', link: 'Freelance-Marketplace' },
+  { id: '10', title: 'Gaming Asset Ownership', link: 'Gaming-Asset-Ownership' },
+  { id: '11', title: 'Gold Commodity Tokenization', link: 'Gold-Commodity-Tokenization' },
+  { id: '12', title: 'Healthcare Records', link: 'Healthcare-Records' },
+  { id: '13', title: 'Insurance Automation', link: 'Insurance-Automation' },
+  { id: '14', title: 'Land Records', link: 'Land-Records' },
+  { id: '15', title: 'Loyalty Rewards', link: 'Loyalty-Rewards' },
+  { id: '16', title: 'NFT Ticketing', link: 'NFT-Ticketing' },
+  { id: '17', title: 'On-Chain Certificate', link: 'On-Chain-Certificate' },
+  { id: '18', title: 'Supply Chain Transparency', link: 'Supply-Chain-Transparency' },
+  { id: '19', title: 'Tokenized Real Estate', link: 'Tokenized-Real-Estate' }
 ];
+
 
 const buildResources = [
   {
     title: 'DEVELOPER RESOURCES',
     items: [
-      { label: 'Testnet', href: '#' },
-      { label: 'Faucet', href: '#' },
-      { label: 'Developer Docs', href: '#' },
-      { label: 'MST Explorer', href: '#' }
+      { label: 'Testnet', href: 'https://mstscan.com/' },
+      { label: 'Faucet', href: 'https://faucet.mstblockchain.com/' },
+      { label: 'Developer Docs', href: 'https://docs.mstblockchain.com/developer-docs' },
+      { label: 'MST Explorer', href: 'https://mstscan.com/' }
     ]
   },
   {
     title: 'SUPPORT & PROGRAMS',
     items: [
-      { label: 'Grant Program', href: '/grant' },
-      { label: 'Developer Support Forum', href: '#' },
-      { label: 'Personalized Dev Support', href: '#' }
+      { label: 'Grant Program', href: '/learn/grant' },
+      { label: 'Developer Support Forum', href: 'https://future.forem.com/mst-chain' },
+      { label: 'Personalized Dev Support', href: 'https://docs.google.com/forms/d/110LC2GOehrGDeeCPFgOn6486kZLekhhZIJd8X7nINO8/viewform?edit_requested=true' }
     ]
   }
 ];
@@ -75,11 +75,11 @@ const learnResources = [
   {
     title: 'BLOCKCHAIN',
     items: [
-      { label: 'Block Validation Process', href: '#' },
-      { label: 'DAO & MST Chain', href: '#' },
-      { label: 'No Code Fractional Validator', href: '#' },
-      { label: 'Solidity : EVM Programming Language', href: '#' },
-      { label: 'Transparency', href: '#' }
+      { label: 'Block Validation Process', href: '/learn/Block-validation' },
+      { label: 'DAO & MST Chain', href: '/learn/dao' },
+      { label: 'No Code Fractional Validator', href: '/learn/fractional-validator' },
+      { label: 'Solidity : EVM Programming Language', href: '/learn/solidity' },
+      { label: 'Transparency', href: '/learn/tranpernaency' }
     ]
   }
 ];
@@ -94,17 +94,17 @@ const productsResources = [
   {
     name: 'BridgeKey',
     description: 'Cross-chain asset bridging',
-    href: '#'
+    href: 'https://bridgekey.io/'
   },
   {
     name: 'MST Buddy',
     description: 'Developer assistant toolkit',
-    href: '#'
+    href: 'https://buddy.mstblockchain.com/'
   },
   {
-    name: 'ChainPay',
+    name: 'MasterStroke Accademy',
     description: 'Seamless Web3 payments',
-    href: '#'
+    href: 'https://masterstroke.academy/'
   }
 ];
 
@@ -323,9 +323,8 @@ function MegaMenu({
       >
         <div className="grid h-full min-h-0 grid-cols-1 gap-8 lg:grid-cols-3">
           <div
-            className={`grid min-h-0 gap-8 lg:col-span-2 ${
-              sections?.length > 1 ? 'sm:grid-cols-2' : 'sm:grid-cols-1'
-            } ${leftScrollable ? leftMaxHeightClass : 'max-h-full'} overflow-y-auto pr-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden`}
+            className={`grid min-h-0 gap-8 lg:col-span-2 ${sections?.length > 1 ? 'sm:grid-cols-2' : 'sm:grid-cols-1'
+              } ${leftScrollable ? leftMaxHeightClass : 'max-h-full'} overflow-y-auto pr-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden`}
           >
             {sections?.map((section) => (
               <div key={section.title} className="min-w-0">
@@ -599,21 +598,21 @@ export default function Navbar() {
           <div className="pointer-events-none absolute inset-0 bg-black/20" />
 
           <nav className="relative z-20 flex h-16 w-full items-center justify-between px-4 lg:px-8">
-           <Link href="/" className="-ml-1 flex items-center gap-2 group">
-  <motion.div
-    whileHover={{ rotate: 10, scale: 1.08 }}
-    transition={{ duration: 0.3, ease: "easeInOut" }}
-    className="flex items-center justify-center"
-  >
-    <img
-      src="https://ik.imagekit.io/avboeabnm1/images/logo.png"
-      alt="MST logo"
-      width={70}
-      height={70}
-      className="h-[40px] w-auto object-contain transition-all duration-300 group-hover:drop-shadow-xl"
-    />
-  </motion.div>
-</Link>
+            <Link href="/" className="-ml-1 flex items-center gap-2 group">
+              <motion.div
+                whileHover={{ rotate: 10, scale: 1.08 }}
+                transition={{ duration: 0.3, ease: "easeInOut" }}
+                className="flex items-center justify-center"
+              >
+                <img
+                  src="https://ik.imagekit.io/avboeabnm1/images/logo.png"
+                  alt="MST logo"
+                  width={70}
+                  height={70}
+                  className="h-[40px] w-auto object-contain transition-all duration-300 group-hover:drop-shadow-xl"
+                />
+              </motion.div>
+            </Link>
 
             <ul className="hidden items-center gap-10 lg:flex">
               {navItems.map((item) => (
@@ -626,7 +625,7 @@ export default function Navbar() {
                         onClick={() => toggleDesktopMenu('build')}
                         className={navLinkClass(true)}
                         aria-expanded={activeDesktopMenu === 'build'}
-                       
+
                       >
                         <span>Build</span>
                         <span className="absolute -bottom-1 left-0 h-[1.5px] w-full bg-[#ff2d2d]" />
@@ -683,9 +682,8 @@ export default function Navbar() {
                     <Link href={item.href} className={navLinkClass(item.active)}>
                       <span>{item.label}</span>
                       <span
-                        className={`absolute -bottom-1 left-0 h-[1.5px] bg-[#ff2d2d] transition-all duration-300 ${
-                          item.active ? 'w-full' : 'w-0 group-hover:w-full'
-                        }`}
+                        className={`absolute -bottom-1 left-0 h-[1.5px] bg-[#ff2d2d] transition-all duration-300 ${item.active ? 'w-full' : 'w-0 group-hover:w-full'
+                          }`}
                       />
                     </Link>
                   )}
@@ -694,58 +692,58 @@ export default function Navbar() {
             </ul>
 
             <div className="flex items-center gap-3 mt-4">
-  
-  {/* Explore Button */}
-  <div className="hidden lg:block relative group">
-    <div className="absolute inset-0 rounded-full bg-[#ff2d2d] opacity-20 blur-md transition-opacity duration-300 group-hover:opacity-50" />
-    
-    <Link
-      href="#"
-      className="relative inline-flex items-center space-x-2 rounded-full mb-3
+
+              {/* Explore Button */}
+              <div className="hidden lg:block relative group">
+                <div className="absolute inset-0 rounded-full bg-[#ff2d2d] opacity-20 blur-md transition-opacity duration-300 group-hover:opacity-50" />
+
+                <Link
+                  href="#"
+                  className="relative inline-flex items-center space-x-2 rounded-full mb-3
       bg-gradient-to-r from-[#ff2d2d] to-[#ff4d4d] mb-2
       px-6 py-2.5 text-[11px] font-extrabold uppercase tracking-[0.15em] text-white
       transition-all duration-300 ease-out
       hover:shadow-[0_6px_20px_rgba(255,45,45,0.4)]
       hover:scale-[1.05] active:scale-95"
-    >
-      <span>explore ecosystem</span>
-      <svg
-        className="h-3.5 w-3.5 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-      >
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-      </svg>
-    </Link>
-  </div>
+                >
+                  <span>explore ecosystem</span>
+                  <svg
+                    className="h-3.5 w-3.5 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                  </svg>
+                </Link>
+              </div>
 
-  {/* Get Started Button */}
-  <div className="hidden lg:block relative group">
-    <div className="absolute inset-0 rounded-full bg-white opacity-10 blur-md transition-opacity duration-300 group-hover:opacity-30" />
-    
-    <Link
-      href="#"
-      className="relative inline-flex items-center space-x-2 rounded-full mb-3
+              {/* Get Started Button */}
+              <div className="hidden lg:block relative group">
+                <div className="absolute inset-0 rounded-full bg-white opacity-10 blur-md transition-opacity duration-300 group-hover:opacity-30" />
+
+                <Link
+                  href="#"
+                  className="relative inline-flex items-center space-x-2 rounded-full mb-3
       bg-white px-6 py-2.5 text-[11px] font-extrabold uppercase tracking-[0.15em] text-black
       transition-all duration-300 ease-out
       hover:shadow-[0_6px_20px_rgba(255,255,255,0.2)]
       hover:scale-[1.05] active:scale-95"
-    >
-      <span>get started</span>
-      <svg
-        className="h-3.5 w-3.5 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-      >
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-      </svg>
-    </Link>
-  </div>
+                >
+                  <span>get started</span>
+                  <svg
+                    className="h-3.5 w-3.5 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                  </svg>
+                </Link>
+              </div>
 
-</div>
-            
+            </div>
+
 
             <button
               type="button"

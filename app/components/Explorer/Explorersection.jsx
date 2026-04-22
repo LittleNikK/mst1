@@ -154,6 +154,8 @@ export default function MSTExplorerFull() {
         <div className="mt-16 flex justify-center">
           <a
             href="https://mstscan.com/"
+            target="_blank"
+            rel="noopener noreferrer"
             className="group relative px-10 py-4 font-bold bg-black text-white rounded-xl transition-all duration-300 hover:bg-red-500 border border-black/20 hover:border-red-600 text-center"
           >
             VIEW ALL ACTIVITY

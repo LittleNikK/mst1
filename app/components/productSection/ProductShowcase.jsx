@@ -92,7 +92,7 @@ const LogoFlipSection = () => {
 
   return (
     <div
-      id="productSection"
+      id="ProductShowcase"
       ref={containerRef}
       style={{
         height: `${logos.length * 100}vh`,
@@ -101,47 +101,46 @@ const LogoFlipSection = () => {
       className="relative text-black"
     >
 
-      <div className="sticky top-0 h-screen flex items-center overflow-hidden ">
+      <div className="sticky top-0 h-screen items-center overflow-hidden ">
 
         <div className="container mx-auto px-6 lg:px-16 relative z-10">
           <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
-            
-            
+
             {/* LEFT → ATTRACTIVE & INTERACTIVE 3D LOGO AREA */}
             <div className="w-full lg:w-1/2 flex justify-center perspective-[1200px]">
               <motion.div
                 onMouseMove={handleMouseMove}
                 onMouseLeave={handleMouseLeave}
-                style={{ 
-                    rotateX: tiltX, 
-                    rotateY: tiltY,
-                    transformStyle: "preserve-3d" 
+                style={{
+                  rotateX: tiltX,
+                  rotateY: tiltY,
+                  transformStyle: "preserve-3d"
                 }}
                 className="relative w-72 h-72 lg:w-[500px] lg:h-[500px] flex items-center justify-center"
               >
                 {/* Visual Depth Elements */}
                 <div className="absolute inset-0 bg-red-500/10 rounded-full blur-3xl scale-75 animate-pulse" />
-                
+
                 {/* 3D Glass Orbit Rings */}
-                <motion.div 
+                <motion.div
                   animate={{ rotate: 360 }}
                   transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                  className="absolute inset-4 border-[1px] border-dashed border-red-500 rounded-full opacity-40" 
+                  className="absolute inset-4 border-[1px] border-dashed border-red-500 rounded-full opacity-40"
                 />
-                <motion.div 
+                <motion.div
                   animate={{ rotate: -360 }}
                   transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
-                  className="absolute inset-10 border-[1.5px] border-red-500 rounded-full opacity-60" 
+                  className="absolute inset-10 border-[1.5px] border-red-500 rounded-full opacity-60"
                 />
 
                 {/* Main Logo with Scroll Flip */}
                 <motion.div
                   className="relative z-10 w-full h-full flex items-center justify-center"
-                  animate={{ 
+                  animate={{
                     rotateY,
                     y: [0, -20, 0] // Continuous floating motion
                   }}
-                  transition={{ 
+                  transition={{
                     rotateY: { type: "spring", damping: 20, stiffness: 100 },
                     y: { duration: 5, repeat: Infinity, ease: "easeInOut" }
                   }}
@@ -155,13 +154,13 @@ const LogoFlipSection = () => {
                       transform: Math.floor(rotateY / 180) % 2 === 0 ? "translateZ(50px)" : "scaleX(-1) translateZ(50px)",
                     }}
                   />
-                  
+
                   {/* Under-glow that moves with the logo */}
                   <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-40 h-40 bg-red-600/10 blur-[80px] rounded-full" />
                 </motion.div>
 
                 {/* Dynamic Shadow on the floor */}
-                <motion.div 
+                <motion.div
                   className="absolute bottom-4 w-1/2 h-6 bg-black/5 blur-xl rounded-[100%]"
                   style={{ scale: useTransform(tiltX, [-15, 15], [0.8, 1.2]) }}
                 />
@@ -214,11 +213,10 @@ const LogoFlipSection = () => {
                 {logos.map((_, i) => (
                   <div
                     key={i}
-                    className={`h-3 rounded-full transition-all ${
-                      i === activeIndex
-                        ? "bg-red-600 w-8"
-                        : "bg-gray-300 w-3"
-                    }`}
+                    className={`h-3 rounded-full transition-all ${i === activeIndex
+                      ? "bg-red-600 w-8"
+                      : "bg-gray-300 w-3"
+                      }`}
                   />
                 ))}
               </div>
@@ -246,9 +244,9 @@ const LogoFlipSection = () => {
             </div>
           </div>
         </div>
-        </div>
       </div>
-   
+    </div>
+
   );
 };
 

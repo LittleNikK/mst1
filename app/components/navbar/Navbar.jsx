@@ -37,25 +37,25 @@ const navItems = [
 ];
 
 const usecases = [
-  { id: '01', title: 'Carbon Credit Tracking', link: '/usecase-pages/Carbon-Credit-Tracking' },
-  { id: '02', title: 'Charity & Donations', link: '/usecase-pages/Charity-&-Donations' },
-  { id: '03', title: 'Decentralized Social Platforms', link: '/usecase-pages/Decentralized-Social-Platforms' },
-  { id: '04', title: 'Decentralized Voting', link: '/usecase-pages/Decentralized-Voting' },
-  { id: '05', title: 'Digital Asset Exchange', link: '/usecase-pages/Digital-Asset-Exchange' },
-  { id: '06', title: 'Digital Identity KYC', link: '/usecase-pages/Digital-Identity-KYC' },
-  { id: '07', title: 'Education Credentials', link: '/usecase-pages/Education-Credentials' },
-  { id: '08', title: 'Enterprise Workflow Automation', link: '/usecase-pages/Enterprise-Workflow-Automation' },
-  { id: '09', title: 'Freelance Marketplace', link: '/usecase-pages/Freelance-Marketplace' },
-  { id: '10', title: 'Gaming Asset Ownership', link: '/usecase-pages/Gaming-Asset-Ownership' },
-  { id: '11', title: 'Gold Commodity Tokenization', link: '/usecase-pages/Gold-Commodity-Tokenization' },
-  { id: '12', title: 'Healthcare Records', link: '/usecase-pages/Healthcare-Records' },
-  { id: '13', title: 'Insurance Automation', link: '/usecase-pages/Insurance-Automation' },
-  { id: '14', title: 'Land Records', link: '/usecase-pages/Land-Records' },
-  { id: '15', title: 'Loyalty Rewards', link: '/usecase-pages/Loyalty-Rewards' },
-  { id: '16', title: 'NFT Ticketing', link: '/usecase-pages/NFT-Ticketing' },
-  { id: '17', title: 'On-Chain Certificate', link: '/usecase-pages/On-Chain-Certificate' },
-  { id: '18', title: 'Supply Chain Transparency', link: '/usecase-pages/Supply-Chain-Transparency' },
-  { id: '19', title: 'Tokenized Real Estate', link: '/usecase-pages/Tokenized-Real-Estate' }
+  { id: '01', title: 'Carbon Credit Tracking', link: 'Carbon-Credit-Tracking' },
+  { id: '02', title: 'Charity & Donations', link: 'Charity-&-Donations' },
+  { id: '03', title: 'Decentralized Social Platforms', link: 'Decentralized-Social-Platforms' },
+  { id: '04', title: 'Decentralized Voting', link: 'Decentralized-Voting' },
+  { id: '05', title: 'Digital Asset Exchange', link: 'Digital-Asset-Exchange' },
+  { id: '06', title: 'Digital Identity KYC', link: 'Digital-Identity-KYC' },
+  { id: '07', title: 'Education Credentials', link: 'Education-Credentials' },
+  { id: '08', title: 'Enterprise Workflow Automation', link: 'Enterprise-Workflow-Automation' },
+  { id: '09', title: 'Freelance Marketplace', link: 'Freelance-Marketplace' },
+  { id: '10', title: 'Gaming Asset Ownership', link: 'Gaming-Asset-Ownership' },
+  { id: '11', title: 'Gold Commodity Tokenization', link: 'Gold-Commodity-Tokenization' },
+  { id: '12', title: 'Healthcare Records', link: 'Healthcare-Records' },
+  { id: '13', title: 'Insurance Automation', link: 'Insurance-Automation' },
+  { id: '14', title: 'Land Records', link: 'Land-Records' },
+  { id: '15', title: 'Loyalty Rewards', link: 'Loyalty-Rewards' },
+  { id: '16', title: 'NFT Ticketing', link: 'NFT-Ticketing' },
+  { id: '17', title: 'On-Chain Certificate', link: 'On-Chain-Certificate' },
+  { id: '18', title: 'Supply Chain Transparency', link: 'Supply-Chain-Transparency' },
+  { id: '19', title: 'Tokenized Real Estate', link: 'Tokenized-Real-Estate' }
 ];
 
 const buildResources = [
@@ -119,7 +119,7 @@ const productsResources = [
   {
     name: 'BridgeKey',
     description: 'Cross-chain asset bridging',
-    link: 'https://bridgekey.io/'
+    href: 'https://bridgekey.io/'
   },
   {
     name: 'MST Buddy',
@@ -127,10 +127,9 @@ const productsResources = [
     href: 'https://buddy.mstblockchain.com/'
   },
   {
-    name: 'MST Acadmey',
+    name: 'MasterStroke Accademy',
     description: 'Seamless Web3 payments',
-    href: 'https://masterstroke.academy/',
-    icon: FiLock
+    href: 'https://masterstroke.academy/'
   }
 ];
 
@@ -198,7 +197,7 @@ function MegaMenuItem({ href = '#', label, description, icon: Icon, prefix }) {
       ) : (
         <Link href={href} {...commonProps}>
           <span className="flex min-w-0 items-center gap-3">
-            
+
             {Icon ? (
               <span className=" inline-flex h-7 w-7 flex-none items-center justify-center rounded-lg border border-white/10 bg-white/5 text-red-500/90 transition-colors duration-300 group-hover:text-red-400">
                 <Icon className="h-4 w-4" />
@@ -352,9 +351,8 @@ function MegaMenu({
       >
         <div className="grid h-full min-h-0 grid-cols-1 gap-8 lg:grid-cols-3">
           <div
-            className={`grid min-h-0 gap-8 lg:col-span-2 ${
-              sections?.length > 1 ? 'sm:grid-cols-2' : 'sm:grid-cols-1'
-            } ${leftScrollable ? leftMaxHeightClass : 'max-h-full'} overflow-y-auto pr-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden`}
+            className={`grid min-h-0 gap-8 lg:col-span-2 ${sections?.length > 1 ? 'sm:grid-cols-2' : 'sm:grid-cols-1'
+              } ${leftScrollable ? leftMaxHeightClass : 'max-h-full'} overflow-y-auto pr-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden`}
           >
             {sections?.map((section) => (
               <div key={section.title} className="min-w-0">
@@ -614,16 +612,16 @@ export default function Navbar() {
 
           <nav className="relative z-20 flex h-16 w-full items-center justify-between px-4 lg:px-8">
 
-          <a href="/" target="_blank" rel="noopener noreferrer" className="-ml-1 flex items-center gap-2 group">
-            <img
-              src="https://ik.imagekit.io/avboeabnm1/images/logo.png"
-              alt="MST logo"
-              width={100}
-              height={100}
-              className="h-[40px] w-auto object-contain transition-all duration-300 group-hover:drop-shadow-xl"
-              loading='lazy'
-            />
-          </a>
+            <a href="/" className="-ml-1 flex items-center gap-2 group">
+              <img
+                src="https://ik.imagekit.io/avboeabnm1/images/logo.png"
+                alt="MST logo"
+                width={100}
+                height={100}
+                className="h-[40px] w-auto object-contain transition-all duration-300 group-hover:drop-shadow-xl"
+                loading='lazy'
+              />
+            </a>
 
             <ul className="hidden items-center gap-10 lg:flex">
               {navItems.map((item) => (
@@ -636,7 +634,7 @@ export default function Navbar() {
                         onClick={() => toggleDesktopMenu('build')}
                         className={navLinkClass(true)}
                         aria-expanded={activeDesktopMenu === 'build'}
-                       
+
                       >
                         <span>Build</span>
                         <span className="absolute -bottom-1 left-0 h-[1.5px] w-full bg-[#ff2d2d]" />
@@ -699,18 +697,16 @@ export default function Navbar() {
                       >
                         <span>{item.label}</span>
                         <span
-                          className={`absolute -bottom-1 left-0 h-[1.5px] bg-[#ff2d2d] transition-all duration-300 ${
-                            item.active ? 'w-full' : 'w-0 group-hover:w-full'
-                          }`}
+                          className={`absolute -bottom-1 left-0 h-[1.5px] bg-[#ff2d2d] transition-all duration-300 ${item.active ? 'w-full' : 'w-0 group-hover:w-full'
+                            }`}
                         />
                       </a>
                     ) : (
                       <Link href={item.href} className={navLinkClass(item.active)}>
                         <span>{item.label}</span>
                         <span
-                          className={`absolute -bottom-1 left-0 h-[1.5px] bg-[#ff2d2d] transition-all duration-300 ${
-                            item.active ? 'w-full' : 'w-0 group-hover:w-full'
-                          }`}
+                          className={`absolute -bottom-1 left-0 h-[1.5px] bg-[#ff2d2d] transition-all duration-300 ${item.active ? 'w-full' : 'w-0 group-hover:w-full'
+                            }`}
                         />
                       </Link>
                     ))
@@ -720,62 +716,60 @@ export default function Navbar() {
             </ul>
 
             <div className="flex items-center gap-3 mt-4">
-  
-  {/* Explore Button */}
-  <div className="hidden lg:block relative group">
-    <div className="absolute inset-0 rounded-full bg-[#ff2d2d] opacity-20 blur-md transition-opacity duration-300 group-hover:opacity-50" />
-    
-    <a
-      href="#ecosystemSection"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="relative inline-flex items-center space-x-2 rounded-full mb-3
+
+              {/* Explore Button */}
+              <div className="hidden lg:block relative group">
+                <div className="absolute inset-0 rounded-full bg-[#ff2d2d] opacity-20 blur-md transition-opacity duration-300 group-hover:opacity-50" />
+
+                <a
+                  href="#ecosystemSection"
+                  className="relative inline-flex items-center space-x-2 rounded-full mb-3
       bg-gradient-to-r from-[#ff2d2d] to-[#ff4d4d] mb-2
       px-6 py-2.5 text-[11px] font-extrabold uppercase tracking-[0.15em] text-white
       transition-all duration-300 ease-out
       hover:shadow-[0_6px_20px_rgba(255,45,45,0.4)]
       hover:scale-[1.05] active:scale-95"
-    >
-      <span>explore ecosystem</span>
-      <svg
-        className="h-3.5 w-3.5 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-      >
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-      </svg>
-    </a>
-  </div>
+                >
+                  <span>explore ecosystem</span>
+                  <svg
+                    className="h-3.5 w-3.5 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                  </svg>
+                </a>
+              </div>
 
-  {/* Get Started Button */}
-  <div className="hidden lg:block relative group">
-    <div className="absolute inset-0 rounded-full bg-white opacity-10 blur-md transition-opacity duration-300 group-hover:opacity-30" />
-    
-    <a
-      href="#"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="relative inline-flex items-center space-x-2 rounded-full mb-3
+              {/* Get Started Button */}
+              <div className="hidden lg:block relative group">
+                <div className="absolute inset-0 rounded-full bg-white opacity-10 blur-md transition-opacity duration-300 group-hover:opacity-30" />
+
+                <a
+                  href="https://mstblockchain.com/portal/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="relative inline-flex items-center space-x-2 rounded-full mb-3
       bg-white px-6 py-2.5 text-[11px] font-extrabold uppercase tracking-[0.15em] text-black
       transition-all duration-300 ease-out
       hover:shadow-[0_6px_20px_rgba(255,255,255,0.2)]
       hover:scale-[1.05] active:scale-95"
-    >
-      <span>get started</span>
-      <svg
-        className="h-3.5 w-3.5 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-      >
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-      </svg>
-    </a>
-  </div>
+                >
+                  <span>get started</span>
+                  <svg
+                    className="h-3.5 w-3.5 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                  </svg>
+                </a>
+              </div>
 
-</div>
-            
+            </div>
+
 
             <button
               type="button"
@@ -944,39 +938,39 @@ export default function Navbar() {
                   >
                     <div className="space-y-2">
                       <p className="px-2 text-[10px] font-extrabold uppercase tracking-[0.22em] text-red-500">PRODUCTS</p>
-                          {productsResources.map((product, index) => (
-                            product.href && product.href.startsWith('http') ? (
-                              <a
-                                key={product.name}
-                                href={product.href}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                onClick={() => setIsOpen(false)}
-                                className={`block rounded-lg px-3 py-2 transition-all hover:bg-white/5 ${index !== productsResources.length - 1 ? 'border-b border-white/10' : ''}`}
-                              >
-                                <div className="text-xs font-bold text-white transition-all hover:text-red-400">
-                                  {product.name}
-                                </div>
-                                <div className="mt-1 text-[11px] text-white/55">
-                                  {product.description}
-                                </div>
-                              </a>
-                            ) : (
-                              <Link
-                                key={product.name}
-                                href={product.href}
-                                onClick={() => setIsOpen(false)}
-                                className={`block rounded-lg px-3 py-2 transition-all hover:bg-white/5 ${index !== productsResources.length - 1 ? 'border-b border-white/10' : ''}`}
-                              >
-                                <div className="text-xs font-bold text-white transition-all hover:text-red-400">
-                                  {product.name}
-                                </div>
-                                <div className="mt-1 text-[11px] text-white/55">
-                                  {product.description}
-                                </div>
-                              </Link>
-                            )
-                          ))}
+                      {productsResources.map((product, index) => (
+                        product.href && product.href.startsWith('http') ? (
+                          <a
+                            key={product.name}
+                            href={product.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            onClick={() => setIsOpen(false)}
+                            className={`block rounded-lg px-3 py-2 transition-all hover:bg-white/5 ${index !== productsResources.length - 1 ? 'border-b border-white/10' : ''}`}
+                          >
+                            <div className="text-xs font-bold text-white transition-all hover:text-red-400">
+                              {product.name}
+                            </div>
+                            <div className="mt-1 text-[11px] text-white/55">
+                              {product.description}
+                            </div>
+                          </a>
+                        ) : (
+                          <Link
+                            key={product.name}
+                            href={product.href}
+                            onClick={() => setIsOpen(false)}
+                            className={`block rounded-lg px-3 py-2 transition-all hover:bg-white/5 ${index !== productsResources.length - 1 ? 'border-b border-white/10' : ''}`}
+                          >
+                            <div className="text-xs font-bold text-white transition-all hover:text-red-400">
+                              {product.name}
+                            </div>
+                            <div className="mt-1 text-[11px] text-white/55">
+                              {product.description}
+                            </div>
+                          </Link>
+                        )
+                      ))}
                     </div>
                   </motion.div>
                 ) : null}
@@ -1051,7 +1045,7 @@ export default function Navbar() {
             </div>
             <div className="mt-4 px-2">
               <Link
-                href="#"
+                href="https://mstblockchain.com/portal/"
                 onClick={() => setIsOpen(false)}
                 className="flex w-full items-center justify-center gap-2 rounded-xl bg-white px-5 py-3.5 text-xs font-bold uppercase tracking-[0.15em] text-black shadow-[0_6px_20px_rgba(255,255,255,0.16)] transition-all hover:bg-white/90 active:scale-95"
               >

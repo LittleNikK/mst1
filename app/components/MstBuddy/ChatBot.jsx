@@ -42,7 +42,7 @@ export default function ChatBot() {
 
     let modelReady = false;
 
-    const chatbotUrl = "/MstBuddy/AI-Robotic.obj";
+    const chatbotUrl = "/MstBuddy/chatbot.glb";
 
     loader.load(
       chatbotUrl,

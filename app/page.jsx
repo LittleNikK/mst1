@@ -6,10 +6,10 @@ import HeroSection from './components/hero/HeroSection';
 import WhatIsMST from './components/mst-info/WhatIsMST';
 import MSTInstitutional from './components/MSTInstitutional/MSTInstitutional';
 import ProductShowcase from './components/productSection/ProductShowcase';
-
 import UseCases from './components/UseCases/UseCase';
 // import StructuralPurity from './components/Whitepaper/StructuralPurity';
 import FAQSection from './components/Faq/FAQSection';
+
 
 export default function HomePage() {
   return (
@@ -28,7 +28,6 @@ export default function HomePage() {
       <MSTEventSection/>
       <MSTInstitutional/>
       <FAQSection/>
-
     </main>
   );
 }

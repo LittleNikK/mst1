@@ -62,9 +62,8 @@ export default function BlockValidationPage() {
 
   return (
     <>
-      <Navbar />
 
-      <main className="relative text-black overflow-hidden bg-white">
+      <main className="relative text-black overflow-hidden bg-white z-0 relative">
         
         {/* 🔴 GLOBAL ORBITAL BACKGROUND (Fixed so it stays while scrolling) */}
         <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">

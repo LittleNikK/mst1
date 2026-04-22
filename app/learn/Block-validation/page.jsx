@@ -43,9 +43,8 @@ export default function BlockValidationPage() {
 
   return (
     <>
-      <Navbar />
 
-      <main className="text-white overflow-hidden">
+      <main className="text-white overflow-hidden bg-white z-0 relative">
         {/* Background gradient effects */}
         <div className="fixed inset-0 -z-10 pointer-events-none">
           <div className="absolute top-0 left-1/4 w-96 h-96 bg-red-600/5 rounded-full blur-3xl"></div>

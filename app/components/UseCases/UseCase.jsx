@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation";
 
 const useCases = [
   { id: "01", title: "On-Chain Certificate", desc: "Every certificate gets a unique fingerprint locked on the blockchain. Fraud becomes structurally impossible.", size: "tall", icon: "chain" },
-  { id: "02", title: "NFT Ticketing", desc:"Every ticket is a unique on-chain asset. No fakes. No scalping. No lost entry. Real ownership for every fan.", size: "medium", icon: "building" },
+  { id: "02", title: "NFT Ticketing", desc: "Every ticket is a unique on-chain asset. No fakes. No scalping. No lost entry. Real ownership for every fan.", size: "medium", icon: "building" },
   { id: "03", title: "Tokenized Real Estate", desc: "Real estate on MST blockchain — fractional, transparent, and permanently verifiable.", size: "small", icon: "droplet" },
   { id: "04", title: "Decentralized Voting", desc: "When votes live on the blockchain, results cannot be disputed, altered, or hidden.", size: "medium", icon: "shield" },
   { id: "05", title: "Healthcare Records", desc: "You control your medical records. Doctors get what they need instantly. MST is the secure bridge.", size: "tall", icon: "gamepad" },
@@ -85,7 +85,7 @@ const Card = ({ item, index }) => {
       "Decentralized Social Platforms": "Decentralized-Social-Platforms"
     };
     if (titleToFolder[item.title]) {
-      router.push(`/usecase-pages/${encodeURIComponent(titleToFolder[item.title])}`);
+      router.push(`/${encodeURIComponent(titleToFolder[item.title])}`);
       return;
     }
     // fallback to slug logic
@@ -106,12 +106,12 @@ const Card = ({ item, index }) => {
         relative group cursor-pointer overflow-hidden rounded-3xl border 
         p-6 flex flex-col justify-end transition-all duration-500 ease-out
         ${sizeMap[item.size]}
-        ${isHovered 
-          ? "bg-red-600 border-red-600 shadow-xl shadow-red-500/20 translate-y-[-4px]" 
+        ${isHovered
+          ? "bg-red-600 border-red-600 shadow-xl shadow-red-500/20 translate-y-[-4px]"
           : "bg-white border-zinc-200 shadow-sm"}
       `}
-      style={{ 
-        breakInside: "avoid", 
+      style={{
+        breakInside: "avoid",
         backgroundImage: !isHovered ? `url('/usecaselogos/${Number(item.id)}.png')` : 'none',
         backgroundSize: "60px",
         backgroundPosition: "center 30%",
@@ -138,7 +138,7 @@ const Card = ({ item, index }) => {
           `}>
             {item.title}
           </h3>
-          
+
           <AnimatePresence>
             {isHovered && (
               <motion.p
@@ -162,12 +162,12 @@ const UseCases = () => {
     <section className="w-full bg-[#f8f9fa] py-24 min-h-screen relative overflow-hidden font-poppins">
       {/* Background Orbits (Keeping your existing orbit code but lowering opacity for professionalism) */}
       <div className="absolute inset-0 opacity-40 pointer-events-none">
-          {/* ... (Insert your existing Orbit motion.divs here) ... */}
+        {/* ... (Insert your existing Orbit motion.divs here) ... */}
       </div>
 
       <div className="max-w-[1600px] mx-auto px-8 relative z-10">
         <header className="mb-20 text-center">
-          <motion.span 
+          <motion.span
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             className="text-red-600 font-bold tracking-[0.3em] text-xs uppercase mb-3 block"
