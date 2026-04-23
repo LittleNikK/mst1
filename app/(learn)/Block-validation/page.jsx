@@ -174,9 +174,20 @@ export default function BlockValidationPage() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.6 }}
                 >
-                  <div className="px-6 py-3 rounded-lg border border-red-500/40 bg-red-500/5 backdrop-blur-sm text-red-500 font-semibold hover:border-red-500/80 hover:bg-red-500/10 transition-all duration-300 cursor-pointer">
-                    Learn More
-                  </div>
+                  <motion.button
+                    whileHover={{ scale: 1.05, y: -2 }}
+                    whileTap={{ scale: 0.98 }}
+                    className="group relative px-8 py-4 rounded-xl border border-red-500/50 bg-gradient-to-br from-red-500/10 to-red-500/5 backdrop-blur-xl text-red-500 font-bold text-base transition-all duration-300 overflow-hidden"
+                  >
+                    <div className="absolute inset-0 bg-gradient-to-r from-red-500/0 via-red-500/20 to-red-500/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div className="absolute inset-0 rounded-xl shadow-lg shadow-red-500/0 group-hover:shadow-red-500/30 transition-shadow duration-300"></div>
+                    <span className="relative flex items-center gap-2">
+                      Learn More
+                      <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                      </svg>
+                    </span>
+                  </motion.button>
                 </motion.div>
               </motion.div>
 
@@ -236,10 +247,10 @@ export default function BlockValidationPage() {
                     <motion.div
                       key={i}
                       variants={itemVariants}
-                      className="relative pl-6 py-4"
+                      className="group relative pl-6 py-4 rounded-lg px-4 transition-all duration-300 hover:bg-red-500/5"
                     >
-                      <div className="absolute left-0 top-0 w-1.5 h-full bg-gradient-to-b from-red-500 to-transparent rounded-full"></div>
-                      <p className="text-gray-700 leading-relaxed">
+                      <div className="absolute left-0 top-0 w-1->5 h-full bg-gradient-to-b from-red-500 via-red-500 to-transparent rounded-full group-hover:shadow-lg group-hover:shadow-red-500/30 transition-shadow duration-300"></div>
+                      <p className="text-gray-700 leading-relaxed font-medium group-hover:text-gray-900 transition-colors duration-300">
                         {text}
                       </p>
                     </motion.div>
@@ -302,19 +313,21 @@ export default function BlockValidationPage() {
                 <motion.div
                   key={i}
                   variants={itemVariants}
-                  className="group relative p-6 rounded-2xl border border-red-500/20 bg-white hover:bg-white hover:border-red-500/60 transition-all duration-400"
-                  whileHover={{ y: -5 }}
+                  className="group relative p-8 rounded-2xl border border-red-500/30 bg-gradient-to-br from-white/90 to-white/70 backdrop-blur-xl hover:border-red-500/70 transition-all duration-500 overflow-hidden"
+                  whileHover={{ y: -8, scale: 1.02 }}
                 >
-                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-red-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400"></div>
+                  <div className="absolute inset-0 -z-10 rounded-2xl bg-gradient-to-br from-red-500/15 via-transparent to-red-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  <div className="absolute -top-10 -right-10 w-32 h-32 bg-red-500/20 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  
                   <div className="relative z-10">
-                    <div className="text-3xl font-bold text-red-500/60 group-hover:text-red-500 transition-colors duration-300 mb-4">
+                    <div className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-gradient-to-br from-red-500/30 to-red-500/10 text-2xl font-bold text-red-500 mb-5 group-hover:from-red-500/50 group-hover:to-red-500/20 transition-all duration-300">
                       {item.num}
                     </div>
-                    <p className="text-gray-700 leading-relaxed">
+                    <p className="text-gray-700 leading-relaxed font-medium group-hover:text-gray-900 transition-colors duration-300">
                       {item.text}
                     </p>
                   </div>
-                  <div className="absolute inset-0 rounded-2xl shadow-lg shadow-red-500/0 group-hover:shadow-red-500/30 transition-shadow duration-300"></div>
+                  <div className="absolute inset-0 rounded-2xl shadow-2xl shadow-red-500/0 group-hover:shadow-red-500/40 transition-shadow duration-400 pointer-events-none"></div>
                 </motion.div>
               ))}
             </motion.div>
@@ -349,17 +362,17 @@ export default function BlockValidationPage() {
                   {
                     step: "Transaction Submission",
                     desc: "User sends transaction → goes into pending list (mempool).",
-                    size: "sm:col-span-1 lg:col-span-2 h-[220px]"
+                    size: "sm:col-span-1 lg:col-span-2 h-[240px]"
                   },
                   {
                     step: "Validator Selection",
                     desc: "System picks the validator for this block.",
-                    size: "sm:col-span-1 lg:col-span-1 h-[220px]"
+                    size: "sm:col-span-1 lg:col-span-1 h-[240px]"
                   },
                   {
                     step: "Transaction Verification",
                     desc: "Validator checks balances, signatures, and smart contract results.",
-                    size: "sm:col-span-2 lg:col-span-1 lg:col-start-1 lg:row-start-2 h-[220px]"
+                    size: "sm:col-span-2 lg:col-span-1 lg:col-start-1 lg:row-start-2 h-[240px]"
                   },
                   {
                     step: "Block Creation",
@@ -380,25 +393,27 @@ export default function BlockValidationPage() {
                   <motion.div
                     key={i}
                     variants={itemVariants}
-                    className={`group relative rounded-2xl border border-red-500/25 bg-white/5 backdrop-blur-md p-5 md:p-6 transition-all duration-500 hover:bg-black hover:border-red-500/60 hover:shadow-[0_0_24px_rgba(239,68,68,0.18)] ${item.size}`}
-                    whileHover={{ scale: 1.02, y: -3 }}
+                    className={`group relative rounded-2xl border border-red-500/30 bg-gradient-to-br from-white/10 via-white/5 to-white/0 backdrop-blur-xl p-7 md:p-8 transition-all duration-500 hover:from-white/20 hover:via-white/15 hover:border-red-500/70 hover:shadow-[0_20px_40px_rgba(239,68,68,0.2)] overflow-hidden ${item.size}`}
+                    whileHover={{ scale: 1.03, y: -5 }}
                   >
-                    <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-red-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-red-500/15 via-transparent to-red-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+                    <div className="absolute -top-12 -right-12 w-40 h-40 bg-red-500/20 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
 
-                    <div className="relative z-10 h-full flex flex-col gap-5">
-                      <div className="h-10 w-10 rounded-xl border border-red-500/30 bg-red-500/10 text-red-500 font-bold text-sm flex items-center justify-center">
+                    <div className="relative z-10 h-full flex flex-col gap-6">
+                      <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl border border-red-500/40 bg-gradient-to-br from-red-500/30 to-red-500/10 text-red-500 font-bold text-sm group-hover:from-red-500/50 group-hover:to-red-500/30 group-hover:border-red-500/60 transition-all duration-300">
                         {String(i + 1).padStart(2, "0")}
                       </div>
 
                       <div className="flex-1 pt-1">
-                        <h3 className="bungee-regular text-2xl md:text-2xl leading-tight tracking-tight text-black font-extrabold uppercase mb-5 group-hover:text-white transition-colors duration-500">
+                        <h3 className="bungee-regular text-xl md:text-2xl leading-tight tracking-tight text-black font-extrabold uppercase mb-4 group-hover:text-red-500 transition-all duration-500">
                           {item.step}
                         </h3>
-                        <p className="mt-2 text-sm md:text-base text-gray-600 group-hover:text-gray-200 transition-colors duration-500 leading-relaxed">
+                        <p className="mt-2 text-sm md:text-base text-gray-600 group-hover:text-gray-800 transition-colors duration-500 leading-relaxed font-medium">
                           {item.desc}
                         </p>
                       </div>
                     </div>
+                    <div className="absolute inset-0 rounded-2xl shadow-2xl shadow-red-500/0 group-hover:shadow-red-500/50 transition-shadow duration-500 pointer-events-none"></div>
                   </motion.div>
                 ))}
               </motion.div>
@@ -453,24 +468,30 @@ export default function BlockValidationPage() {
                 <motion.div
                   key={i}
                   variants={itemVariants}
-                  className="group relative overflow-hidden rounded-3xl border border-red-500/30 bg-[#191919] hover:border-red-500/60 transition-all duration-400 p-8"
-                  whileHover={{ y: -8 }}
+                  className="group relative overflow-hidden rounded-3xl border border-red-500/40 bg-gradient-to-br from-slate-900 via-slate-900 to-slate-950 hover:border-red-500/80 transition-all duration-500 p-8 md:p-10"
+                  whileHover={{ y: -12, scale: 1.02 }}
                 >
-                  <div className="absolute inset-0 bg-gradient-to-br from-red-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400"></div>
-                  <div className="absolute top-0 right-0 w-32 h-32 bg-red-500/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  <div className="absolute inset-0 bg-gradient-to-br from-red-500/20 to-red-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  <div className="absolute top-0 right-0 w-40 h-40 bg-red-500/30 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 opacity-30 group-hover:opacity-60 transition-opacity duration-500"></div>
+                  <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-red-500/20 rounded-full blur-2xl opacity-0 group-hover:opacity-50 transition-opacity duration-500"></div>
 
                   <div className="relative z-10">
-                    <div className="text-4xl mb-4">{item.icon}</div>
-                    <h3 className="bungee-regular text-3xl md:text-3xl leading-tight tracking-tight text-black font-extrabold uppercase mb-5 text-white">
+                    <motion.div 
+                      className="text-5xl md:text-6xl mb-6 inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br from-red-500/30 to-red-500/10 group-hover:from-red-500/50 group-hover:to-red-500/30 transition-all duration-300"
+                      whileHover={{ rotate: 12, scale: 1.1 }}
+                    >
+                      {item.icon}
+                    </motion.div>
+                    <h3 className="bungee-regular text-2xl md:text-3xl leading-tight tracking-tight font-extrabold uppercase mb-4 text-white group-hover:text-red-300 transition-colors duration-300">
                       {item.title}
                     </h3>
-                    <p className="text-gray-300 leading-relaxed">
+                    <p className="text-gray-300 leading-relaxed group-hover:text-gray-100 transition-colors duration-300 font-medium">
                       {item.desc}
                     </p>
                   </div>
 
                   {/* Hover glow effect */}
-                  <div className="absolute inset-0 rounded-3xl shadow-lg shadow-red-500/0 group-hover:shadow-red-500/30 transition-shadow duration-300 pointer-events-none"></div>
+                  <div className="absolute inset-0 rounded-3xl shadow-2xl shadow-red-500/0 group-hover:shadow-red-500/50 transition-shadow duration-400 pointer-events-none"></div>
                 </motion.div>
               ))}
             </motion.div>
@@ -528,21 +549,27 @@ export default function BlockValidationPage() {
                 <motion.div
                   key={i}
                   variants={itemVariants}
-                  className="group relative overflow-hidden rounded-2xl border border-red-500/30 bg-white/3 backdrop-blur-sm p-8 hover:border-red-500/70 transition-all duration-400"
-                  whileHover={{ scale: 1.05, y: -8 }}
+                  className="group relative overflow-hidden rounded-2xl border border-red-500/40 bg-gradient-to-br from-white/15 via-white/10 to-white/5 backdrop-blur-xl p-10 hover:border-red-500/80 transition-all duration-500"
+                  whileHover={{ scale: 1.08, y: -12 }}
                 >
-                  <div className="absolute inset-0 bg-gradient-to-br from-red-500/15 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400"></div>
-                  <div className="absolute -top-8 -right-8 w-24 h-24 bg-red-500/20 rounded-full blur-2xl group-hover:bg-red-500/40 transition-colors duration-300"></div>
+                  <div className="absolute inset-0 bg-gradient-to-br from-red-500/25 via-transparent to-red-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  <div className="absolute -top-12 -right-12 w-32 h-32 bg-red-500/30 rounded-full blur-3xl opacity-20 group-hover:opacity-60 transition-opacity duration-500"></div>
+                  <div className="absolute -bottom-8 -left-8 w-28 h-28 bg-red-500/20 rounded-full blur-2xl opacity-0 group-hover:opacity-40 transition-opacity duration-500"></div>
 
                   <div className="relative z-10 text-center">
-                    <div className="text-5xl mb-4">{item.icon}</div>
-                    <p className="text-lg font-semibold text-black">
+                    <motion.div 
+                      className="text-6xl mb-6 inline-flex items-center justify-center w-20 h-20 rounded-2xl bg-gradient-to-br from-red-500/30 to-red-500/10 group-hover:from-red-500/50 group-hover:to-red-500/30 transition-all duration-300"
+                      whileHover={{ rotateZ: -10 }}
+                    >
+                      {item.icon}
+                    </motion.div>
+                    <p className="text-lg font-bold text-black group-hover:text-red-600 transition-colors duration-300 leading-snug">
                       {item.title}
                     </p>
                   </div>
 
                   {/* Depth shadow */}
-                  <div className="absolute inset-0 rounded-2xl shadow-2xl shadow-red-500/0 group-hover:shadow-red-500/40 transition-shadow duration-300 pointer-events-none"></div>
+                  <div className="absolute inset-0 rounded-2xl shadow-2xl shadow-red-500/0 group-hover:shadow-red-500/50 transition-shadow duration-500 pointer-events-none"></div>
                 </motion.div>
               ))}
             </motion.div>
