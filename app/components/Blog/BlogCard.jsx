@@ -10,34 +10,24 @@ const BLOG_API = `${CMS_URL}/api/blogs?populate=*&sort=createdAt:desc&pagination
 export default function MSTBlogSection() {
   const [blogs, setBlogs] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const ITEMS_PER_PAGE = 3;
 
   useEffect(() => {
     const fetchBlogs = async () => {
       try {
         const response = await fetch(BLOG_API, {
-          "headers": {
-            "accept": "application/json, text/plain, */*",
-            "accept-language": "en-US,en;q=0.9",
-            "sec-ch-ua": "\"Google Chrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"",
-            "sec-ch-ua-mobile": "?0",
-            "sec-ch-ua-platform": "\"Windows\"",
-            "sec-fetch-dest": "empty",
-            "sec-fetch-mode": "cors",
-            "sec-fetch-site": "same-site",
-            "cookie": "_ga=GA1.1.1522222999.1776424648; __admin__authToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjExLCJ0eXBlIjoiYWRtaW4iLCJpYXQiOjE3NzY4NTIzNDcsImV4cCI6MTc3NjkzODc0N30.I_iDoV6bsnVLLNeybbqX8U73LRTXBUDh_rTdECx4Nkg; __user__authToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjIwNDc0OSwidHlwZSI6InVzZXIiLCJyZWZlcnJlZEFzIjoiVXNlciIsImlhdCI6MTc3NjkyMjMyMywiZXhwIjoxNzc3MDA4NzIzfQ.her7xEB6--7v9lLlpU9nfaOuK2DztV_mNIahGfvSTjc; _ga_61XJ1MFXZB=GS2.1.s1776929410$o11$g1$t1776929438$j32$l0$h0",
-            "Referer": "https://mstblockchain.com/"
+          headers: {
+            "accept": "application/json",
           },
-          "body": null,
-          "method": "GET"
+          method: "GET"
         });
         const result = await response.json();
         
         if (result.data) {
-          const formattedBlogs = result.data.slice(0, 3).map(item => {
-            // Strapi 5 provides a flattened structure
+          const formattedBlogs = result.data.map(item => {
             const category = (item.category || 'TECH UPDATES').toUpperCase();
             
-            // Extract image URL from cardImage
             let imageUrl = 'https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&q=80&w=800';
             if (item.cardImage?.url) {
               imageUrl = `${CMS_URL}${item.cardImage.url}`;
@@ -66,6 +56,17 @@ export default function MSTBlogSection() {
 
     fetchBlogs();
   }, []);
+
+  const goLeft = () => {
+    setCurrentIndex((prev) => (prev > 0 ? prev - 1 : prev));
+  };
+
+  const goRight = () => {
+    setCurrentIndex((prev) => (prev + ITEMS_PER_PAGE < blogs.length ? prev + 1 : prev));
+  };
+
+  // Get current slice
+  const visibleBlogs = blogs.slice(currentIndex, currentIndex + ITEMS_PER_PAGE);
 
   return (
     <section id="blog" className="relative w-full overflow-hidden bg-white text-black py-24 px-6">
@@ -128,7 +129,7 @@ export default function MSTBlogSection() {
               </div>
             ))
           ) : (
-            blogs.map((post, idx) => (
+            visibleBlogs.map((post, idx) => (
               <BlogCard key={post.id} post={post} index={idx} />
             ))
           )}
