@@ -1,57 +1,74 @@
 'use client';
 
-import React, { useState, useRef, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import React, { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
 
-// ===== MOCK DATA =====
-const BLOGS = [
-  {
-    id: 1,
-    category: 'TECH UPDATES',
-    date: 'OCT 24',
-    title: 'SCALING STRUCTURAL PURITY',
-    excerpt: 'Discover how MST Network achieves unprecedented scalability while maintaining blockchain integrity through our unique consensus.',
-    image: 'https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&q=80&w=800',
-  },
-  {
-    id: 2,
-    category: 'VALIDATOR NEWS',
-    date: 'OCT 23',
-    title: 'INSTITUTIONAL VALIDATOR PROGRAM',
-    excerpt: 'Join our new institutional validator program with premium rewards and infrastructure support for early network adopters.',
-    image: 'https://images.unsplash.com/photo-1644088379091-d574269d422f?auto=format&fit=crop&q=80&w=800',
-  },
-  {
-    id: 3,
-    category: 'ECOSYSTEM',
-    date: 'OCT 22',
-    title: 'PARTNERSHIPS EXPAND ACROSS WEB3',
-    excerpt: 'MST announces strategic partnerships with leading protocols and infrastructure providers to drive global adoption.',
-    image: 'https://images.unsplash.com/photo-1620321023374-d1a68fbc720d?auto=format&fit=crop&q=80&w=800',
-  }
-];
+// ===== API CONFIG =====
+const CMS_URL = "https://cms.mstblockchain.com";
+const BLOG_API = `${CMS_URL}/api/blogs?populate=*&sort=createdAt:desc&pagination[start]=0&pagination[limit]=10000`;
 
 export default function MSTBlogSection() {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [isMobile, setIsMobile] = useState(false);
+  const [blogs, setBlogs] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const checkMobile = () => setIsMobile(window.innerWidth < 768);
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-    return () => window.removeEventListener('resize', checkMobile);
+    const fetchBlogs = async () => {
+      try {
+        const response = await fetch(BLOG_API, {
+          "headers": {
+            "accept": "application/json, text/plain, */*",
+            "accept-language": "en-US,en;q=0.9",
+            "sec-ch-ua": "\"Google Chrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"",
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": "\"Windows\"",
+            "sec-fetch-dest": "empty",
+            "sec-fetch-mode": "cors",
+            "sec-fetch-site": "same-site",
+            "cookie": "_ga=GA1.1.1522222999.1776424648; __admin__authToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjExLCJ0eXBlIjoiYWRtaW4iLCJpYXQiOjE3NzY4NTIzNDcsImV4cCI6MTc3NjkzODc0N30.I_iDoV6bsnVLLNeybbqX8U73LRTXBUDh_rTdECx4Nkg; __user__authToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjIwNDc0OSwidHlwZSI6InVzZXIiLCJyZWZlcnJlZEFzIjoiVXNlciIsImlhdCI6MTc3NjkyMjMyMywiZXhwIjoxNzc3MDA4NzIzfQ.her7xEB6--7v9lLlpU9nfaOuK2DztV_mNIahGfvSTjc; _ga_61XJ1MFXZB=GS2.1.s1776929410$o11$g1$t1776929438$j32$l0$h0",
+            "Referer": "https://mstblockchain.com/"
+          },
+          "body": null,
+          "method": "GET"
+        });
+        const result = await response.json();
+        
+        if (result.data) {
+          const formattedBlogs = result.data.slice(0, 3).map(item => {
+            // Strapi 5 provides a flattened structure
+            const category = (item.category || 'TECH UPDATES').toUpperCase();
+            
+            // Extract image URL from cardImage
+            let imageUrl = 'https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&q=80&w=800';
+            if (item.cardImage?.url) {
+              imageUrl = `${CMS_URL}${item.cardImage.url}`;
+            }
+
+            return {
+              id: item.id,
+              category: category,
+              date: item.createdAt 
+                ? new Date(item.createdAt).toLocaleDateString('en-US', { month: 'short', day: 'numeric' }).toUpperCase()
+                : 'OCT 24',
+              title: item.heading || 'SCALING STRUCTURAL PURITY',
+              excerpt: item.subHeading || 'Discover the latest updates from MST Network.',
+              image: imageUrl,
+              slug: item.slug
+            };
+          });
+          setBlogs(formattedBlogs);
+        }
+      } catch (error) {
+        console.error("Error fetching blogs:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchBlogs();
   }, []);
 
-  const goLeft = () => {
-    setCurrentIndex((prev) => (prev === 0 ? BLOGS.length - 1 : prev - 1));
-  };
-
-  const goRight = () => {
-    setCurrentIndex((prev) => (prev === BLOGS.length - 1 ? 0 : prev + 1));
-  };
-
   return (
-    <section className="relative w-full overflow-hidden bg-white text-black py-14 sm:py-18 md:py-24 px-4 sm:px-6">
+    <section id="blog" className="relative w-full overflow-hidden bg-white text-black py-24 px-6">
       
       {/* 🔴 BACKGROUND LAYER */}
       <motion.div
@@ -97,44 +114,25 @@ export default function MSTBlogSection() {
           </div>
         </div>
 
-        {/* MOBILE CAROUSEL */}
-        {isMobile ? (
-          <div className="relative overflow-hidden">
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={currentIndex}
-                initial={{ opacity: 0, x: 80 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: -80 }}
-                transition={{ duration: 0.35, ease: 'easeInOut' }}
-              >
-                <BlogCard post={BLOGS[currentIndex]} index={0} />
-              </motion.div>
-            </AnimatePresence>
-
-            {/* Dot Indicators */}
-            <div className="flex items-center justify-center gap-2 mt-6">
-              {BLOGS.map((_, i) => (
-                <button
-                  key={i}
-                  onClick={() => setCurrentIndex(i)}
-                  className={`rounded-full transition-all duration-300 ${
-                    i === currentIndex
-                      ? 'w-6 h-2 bg-red-500'
-                      : 'w-2 h-2 bg-gray-300 hover:bg-gray-400'
-                  }`}
-                />
-              ))}
-            </div>
-          </div>
-        ) : (
-          /* DESKTOP GRID */
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 md:gap-10">
-            {BLOGS.map((post, idx) => (
+        {/* BLOG GRID */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 ">
+          {loading ? (
+            // SKELETON LOADING
+            [1, 2, 3].map((n) => (
+              <div key={n} className="animate-pulse flex flex-col">
+                <div className="aspect-[16/10] w-full bg-gray-200 rounded-lg mb-8" />
+                <div className="h-4 w-24 bg-gray-200 rounded mb-4" />
+                <div className="h-8 w-full bg-gray-200 rounded mb-4" />
+                <div className="h-16 w-full bg-gray-200 rounded mb-8" />
+                <div className="h-12 w-32 bg-gray-200 rounded-full" />
+              </div>
+            ))
+          ) : (
+            blogs.map((post, idx) => (
               <BlogCard key={post.id} post={post} index={idx} />
-            ))}
-          </div>
-        )}
+            ))
+          )}
+        </div>
       </div>
     </section>
   );
@@ -151,19 +149,22 @@ function BlogCard({ post, index }) {
       className="group cursor-pointer flex flex-col"
     >
       {/* IMAGE */}
-      <div className="relative aspect-[16/10] w-full overflow-hidden mb-5 sm:mb-8 border border-black/5 rounded-lg">
+      <div className="relative aspect-[16/10] w-full overflow-hidden mb-8 border border-black/5 rounded-lg bg-gray-100">
         <div className="absolute inset-0 bg-red-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10" />
         <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-60 z-10" />
         <motion.img
           src={post.image}
           alt={post.title}
           className="object-cover w-full h-full grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-out rounded-lg"
+          onError={(e) => {
+            e.target.src = 'https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&q=80&w=800';
+          }}
         />
       </div>
 
       {/* META */}
       <div className="flex items-center gap-3 mb-4">
-        <span className="text-red-600  text-xs tracking-[0.2em]">
+        <span className="text-red-600  text-xs tracking-[0.2em] font-bold">
           {post.category}
         </span>
         <div className="h-1 w-1 rounded-full bg-black/20" />
@@ -173,7 +174,7 @@ function BlogCard({ post, index }) {
       </div>
 
       {/* TITLE */}
-      <h3 className="bungee-regular text-xl sm:text-2xl md:text-3xl font-bold mb-3 sm:mb-4 tracking-tight group-hover:text-red-500 transition-colors duration-300 leading-[1.1]">
+      <h3 className=" bungee-regular text-3xl font-bold mb-4 tracking-tight group-hover:text-red-500 transition-colors duration-300 leading-[1.1] line-clamp-2">
         {post.title}
       </h3>
 
@@ -185,7 +186,7 @@ function BlogCard({ post, index }) {
       {/* CTA BUTTON */}
       <div className="mt-auto">
         <motion.a
-          href="#"
+          href={`/blog/${post.slug || post.id}`}
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           className="inline-block px-5 sm:px-6 py-2.5 sm:py-3 rounded-full bg-black text-white text-sm font-bold uppercase tracking-wider shadow-lg hover:brightness-110 transition-all duration-300 hover:bg-red-500"
