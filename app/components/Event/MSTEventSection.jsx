@@ -1,14 +1,14 @@
 'use client';
 
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 
 // ===== MOCK DATA =====
-const EVENTS = [
+const UPCOMING_EVENTS = [
   {
     id: 1,
-    title: 'MAIN NETWORK LAUNCH',
-    date: 'APR 15, 2026',
+    title: 'Coming soon',
+    date: 'DEC 15, 2026',
     time: '10:00 AM UTC',
     description: 'Be part of the historic MST Mainnet launch event and explore new blockchain capabilities live.',
     image: 'https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&q=80&w=800',
@@ -16,7 +16,28 @@ const EVENTS = [
   },
   {
     id: 2,
-    title: 'COMMUNITY MEETUP',
+    title: 'upcoming test 2',
+    date: 'NOV 25, 2026',
+    time: '12:00 PM UTC',
+    description: 'We are thrilled to announce new ecosystem partnerships driving adoption across multiple chains.',
+    image: 'https://images.unsplash.com/photo-1620321023374-d1a68fbc720d?auto=format&fit=crop&q=80&w=800',
+    href: '#'
+  },
+  {
+    id: 3,
+    title: 'upcoming test 3',
+    date: 'OCT 10, 2026',
+    time: '09:00 AM UTC',
+    description: 'Compete with developers worldwide to build the next generation of decentralized applications.',
+    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800',
+    href: '#'
+  }
+];
+
+const PAST_EVENTS = [
+  {
+    id: 4,
+    title: 'past test 1',
     date: 'MAR 10, 2026',
     time: '04:00 PM UTC',
     description: 'Join our validator and developer community for discussions, demos, and networking.',
@@ -24,46 +45,24 @@ const EVENTS = [
     href: '#'
   },
   {
-    id: 3,
-    title: 'PARTNERSHIP ANNOUNCEMENT',
-    date: 'APR 25, 2026',
-    time: '12:00 PM UTC',
-    description: 'We are thrilled to announce new ecosystem partnerships driving adoption across multiple chains.',
-    image: 'https://images.unsplash.com/photo-1620321023374-d1a68fbc720d?auto=format&fit=crop&q=80&w=800',
-    href: '#'
-  },
-  {
-    id: 4,
-    title: 'VALIDATOR TRAINING',
+    id: 5,
+    title: 'past test 2',
     date: 'JAN 15, 2026',
     time: '03:00 PM UTC',
     description: 'Interactive training session for new validators to join the network efficiently and securely.',
     image: 'https://images.unsplash.com/photo-1604079621895-2081e95ddc31?auto=format&fit=crop&q=80&w=800',
     href: '#'
   },
-];
-
-const parseEventDate = (dateStr) => {
-  const parsed = new Date(dateStr);
-  return Number.isNaN(parsed.getTime()) ? new Date(0) : parsed;
-};
-
-const isUpcomingEvent = (dateStr) => parseEventDate(dateStr) >= new Date();
-
-function fillToMinimum(primary, pool, minCount = 2) {
-  const result = [...(primary ?? [])];
-  const usedIds = new Set(result.map((e) => e?.id));
-
-  for (const candidate of pool ?? []) {
-    if (result.length >= minCount) break;
-    if (!candidate) continue;
-    if (usedIds.has(candidate.id)) continue;
-    usedIds.add(candidate.id);
-    result.push(candidate);
+  {
+    id: 6,
+    title: 'past test 3',
+    date: 'DEC 05, 2025',
+    time: '02:00 PM UTC',
+    description: 'Detailed presentation of the MST ecosystem tokenomics and distribution model.',
+    image: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&q=80&w=800',
+    href: '#'
   }
-
-  return result;
-}
+];
 
 function DotIndicators({ count, activeIndex, onSelect, className = '' }) {
   if (!count || count <= 1) return null;
@@ -106,7 +105,7 @@ function EventCard({ event, variant }) {
       transition={{ duration: 5.5, repeat: Infinity, ease: 'easeInOut' }}
       whileHover={{ scale: 1.02 }}
     >
-      <div className="relative h-[210px] overflow-hidden sm:h-[230px]">
+      <div className="relative h-[180px] overflow-hidden sm:h-[230px]">
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-transparent" />
 
         <div
@@ -133,19 +132,19 @@ function EventCard({ event, variant }) {
             <span className=" text-xs text-white">{event.time}</span>
           </div>
 
-          <h3 className="bungee-regular text-xl font-bold leading-tight tracking-tighter  transition-colors duration-300 text-red-500">
+          <h3 className="bungee-regular text-xl font-bold leading-tight tracking-tighter transition-colors duration-300 text-red-500 line-clamp-2">
             {event.title}
           </h3>
 
-          <p className="mt-2 text-sm leading-relaxed text-white" style={{ fontFamily: 'Poppins', fontWeight: 400 }}>
+          <p className="mt-2 text-sm leading-relaxed text-white line-clamp-3" style={{ fontFamily: 'Poppins', fontWeight: 400 }}>
             {event.description}
           </p>
         </div>
 
-        <div className="mt-auto flex justify-center pt-5">
+        <div className="mt-auto flex justify-center pt-4 sm:pt-5 w-full">
           <a
             href={exploreHref}
-            className="inline-flex items-center justify-center rounded-xl bg-red-500 border-2 border-red-700 px-14 py-3 text-base font-bold uppercase tracking-wide text-white transition-all duration-300 hover:bg-red-600 hover:border-red-800 hover:shadow-lg active:scale-95"
+            className="inline-flex items-center justify-center rounded-xl bg-red-500 border-2 border-red-700 px-6 sm:px-14 py-2.5 sm:py-3 text-sm sm:text-base font-bold uppercase tracking-wide text-white transition-all duration-300 hover:bg-red-600 hover:border-red-800 hover:shadow-lg active:scale-95 w-full sm:w-fit max-w-[280px]"
             style={{ fontFamily: 'Montserrat', fontWeight: 700 }}
           >
             Explore
@@ -180,7 +179,7 @@ function RotatingEventPanel({ title, events, variant }) {
 
   return (
     <div
-      className="flex h-[520px] flex-col overflow-hidden rounded-3xl border border-red-500/20 bg-transparent px-4 pt-4 pb-5 shadow-[0_0_28px_rgba(255,45,45,0.10)] sm:h-[560px] sm:px-5 sm:pt-5"
+      className="flex h-auto min-h-[550px] flex-col overflow-hidden rounded-3xl border border-red-500/20 bg-transparent px-4 pt-4 pb-5 shadow-[0_0_28px_rgba(255,45,45,0.10)] sm:min-h-[560px] sm:px-5 sm:pt-5"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
       onTouchStart={() => setPaused(true)}
@@ -219,24 +218,6 @@ function RotatingEventPanel({ title, events, variant }) {
 }
 
 export default function MSTEventSection() {
-  const { upcomingEvents, pastEvents } = useMemo(() => {
-    const upcoming = EVENTS.filter((e) => isUpcomingEvent(e.date)).sort(
-      (a, b) => parseEventDate(a.date).getTime() - parseEventDate(b.date).getTime()
-    );
-    const past = EVENTS.filter((e) => !isUpcomingEvent(e.date)).sort(
-      (a, b) => parseEventDate(b.date).getTime() - parseEventDate(a.date).getTime()
-    );
-
-    // Guarantee both sides can rotate even when one bucket has only 0–1 items.
-    const upcomingFilled = fillToMinimum(upcoming, [...past, ...EVENTS], 2);
-    const pastFilled = fillToMinimum(past, [...upcoming, ...EVENTS], 2);
-
-    return {
-      upcomingEvents: upcomingFilled,
-      pastEvents: pastFilled
-    };
-  }, []);
-
   return (
     <section className="relative w-full overflow-hidden bg-white pt-12 pb-8 text-black sm:pt-16 sm:pb-10">
       {/* Hero-style background treatment centered behind panels */}
@@ -263,7 +244,7 @@ export default function MSTEventSection() {
       <div className="relative z-10 mx-auto max-w-[1200px] px-4 sm:px-6">
         {/* Header */}
         <div className="mb-8 sm:mb-10">
-          <h2 className="bungee-regular text-6xl md:text-6xl leading-tight tracking-tight text-black font-extrabold uppercase">
+          <h2 className="bungee-regular text-4xl sm:text-5xl md:text-6xl leading-tight tracking-tight text-black font-extrabold uppercase">
             ALL <span className="text-red-600">EVENTS</span>
           </h2>
           <p className="mt-4 max-w-2xl text-sm text-black/60" style={{ fontFamily: 'Poppins', fontWeight: 400 }}>
@@ -273,8 +254,8 @@ export default function MSTEventSection() {
 
         {/* Two-column dynamic layout */}
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-6">
-          <RotatingEventPanel title="Upcoming Events" events={upcomingEvents} variant="upcoming" />
-          <RotatingEventPanel title="Past Events" events={pastEvents} variant="past" />
+          <RotatingEventPanel title="Upcoming Events" events={UPCOMING_EVENTS} variant="upcoming" />
+          <RotatingEventPanel title="Past Events" events={PAST_EVENTS} variant="past" />
         </div>
       </div>
     </section>
