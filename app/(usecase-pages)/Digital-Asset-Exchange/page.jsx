@@ -28,7 +28,7 @@ const proofItems = [
   {
     title: 'MST Ecosystem Token Exchange',
     description: 'Native MST ecosystem tokens trade on-chain with fully transparent order books, smart contract matching, and instant FortunaX settlement.',
-    image: '/digital-asset/Mst Ecosystem Token Exchange.png',
+    image: '/digital-asset/MST Ecosystem Token Exchange.png',
     alt: 'National car manufacturer supply chain'
   },
   {

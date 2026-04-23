@@ -19,8 +19,13 @@ const featureItems = [
   },
   {
     title: 'Instant Onboarding',
+<<<<<<< Updated upstream
     description: 'New users verify in seconds instead of days. Platforms get compliance-ready confirmations instantly , without the overhead of running their own KYC.',
     icon: Home
+=======
+    description: 'New users verify in seconds instead of days. Platforms get compliance-ready confirmations instantly — without the overhead of running their own KYC.',
+    icon: Home  
+>>>>>>> Stashed changes
   }
 ];
 
@@ -211,7 +216,7 @@ export default function SupplyChainPage() {
               <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(255,255,255,0.04),transparent_40%,rgba(0,0,0,0.22))]" />
               <div className="relative h-full w-full overflow-hidden rounded-3xl border border-white/10">
                 <Image
-                  src="/Digital-identity-kyc/Digital identity & KYC.jpg"
+                  src="/Digital-identity-kyc/Digital Identity & KYC.jpg"
                   alt="Supply chain banner"
                   fill
                   priority

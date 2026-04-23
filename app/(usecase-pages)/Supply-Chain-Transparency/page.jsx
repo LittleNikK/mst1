@@ -214,7 +214,7 @@ export default function SupplyChainPage() {
               <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(255,255,255,0.04),transparent_40%,rgba(0,0,0,0.22))]" />
               <div className="relative h-full w-full overflow-hidden rounded-3xl border border-white/10">
                 <Image
-                  src="/supply-chain-transperancy/Supply chain Transparency.jpg"
+                  src="/supply-chain-transperancy/Supply Chain Transparency.jpg"
                   alt="Supply chain banner"
                   fill
                   priority

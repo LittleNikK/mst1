@@ -236,7 +236,7 @@ export default function SupplyChainPage() {
               <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(255,255,255,0.04),transparent_40%,rgba(0,0,0,0.22))]" />
               <div className="relative h-full w-full overflow-hidden rounded-3xl border border-white/10">
                 <Image
-                  src="/tokenized-estate/tokenized Real Estate.jpg"
+                  src="/tokenized-estate/Tokenized Real Estate.jpg"
                   alt="Supply chain banner"
                   fill
                   priority
@@ -307,7 +307,7 @@ export default function SupplyChainPage() {
         <SectionFade className="group overflow-hidden rounded-3xl border border-black/10 bg-white p-2 shadow-[0_14px_36px_rgba(0,0,0,0.08)] transition-transform duration-300 hover:scale-[1.01]">
           <div className="relative h-[260px] overflow-hidden rounded-[1.35rem] bg-[linear-gradient(135deg,rgba(255,45,45,0.08),rgba(0,0,0,0.04))] sm:h-[330px]">
             <Image
-              src="/tokenized-estate/What is tokenized Real.jpg"
+              src="/tokenized-estate/What is Tokenized Real.jpg"
               alt="Supply chain intro"
               fill
               sizes="(max-width: 768px) 100vw, 50vw"
