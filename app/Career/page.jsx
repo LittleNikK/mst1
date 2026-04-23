@@ -31,6 +31,10 @@ export default function CareersPage() {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
+  // APPS SCRIPT WEB APP URL BELOW
+  const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbztT6nLuAutIqZ_OyvLaY_b961l4Rk2MyEf3TOEgePQs_8-f7A9i_9qjWFftyXPX4Ab/exec";
+  
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!form.name || !form.email || !form.message) {
@@ -40,12 +44,30 @@ export default function CareersPage() {
 
     try {
       setLoading(true);
-      await new Promise((res) => setTimeout(res, 1500)); // Simulate API call
-      setSuccess("Application sent! Our HR team will reach out soon. 🚀");
-      setForm({ name: "", email: "", position: "", portfolio: "", message: "" });
-      setTimeout(() => setSuccess(""), 5000);
+      console.log("Working till now")
+      const response = await fetch(APPS_SCRIPT_URL, {
+        method: "POST",
+        headers: { "Content-Type": "text/plain" },
+        body: JSON.stringify({
+    name: form.name,
+    email: form.email,
+    position: form.position,
+    URL: form.portfolio,
+    message: form.message,
+  }),
+      });
+console.log("Working till now", response)
+      const result = await response.json();
+
+      if (result.status === "success") {
+        setSuccess("Application sent! Our HR team will reach out soon. 🚀");
+        setForm({ name: "", email: "", position: "", portfolio: "", message: "" });
+        setTimeout(() => setSuccess(""), 5000);
+      } else {
+        alert("Something went wrong: " + (result.message || "Unknown error"));
+      }
     } catch (err) {
-      alert("Something went wrong");
+      alert("Something went wrong. Please try again.");
     } finally {
       setLoading(false);
     }
