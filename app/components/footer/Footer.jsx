@@ -112,7 +112,7 @@ export default function Footer() {
 
             {/* ECOSYSTEM */}
             <div className="col-span-1 sm:col-span-1 lg:col-span-3 mb-10 sm:mb-0 text-start">
-              <h4 className="bungee-regular text-lg md:text-lg leading-tight tracking-tight text-red-600 font-extrabold uppercase mb-6" >Ecosystem</h4>
+              <h4 className="bungee-regular text-lg md:text-lg leading-tight tracking-tight text-red-600 font-extrabold uppercase mb-6" >Community</h4>
               <ul className="space-y-4  text-gray-600 text-sm">
                 <li><Link href="/validator" className="hover:text-red-500 cursor-pointer transition font-aeonik font-normal">Validators</Link></li>
                 <li><Link href="/learn/grant" className="hover:text-red-500 cursor-pointer transition font-aeonik font-normal">Grants</Link></li>
@@ -127,7 +127,7 @@ export default function Footer() {
                   </a>
                 </li>
                 <li><Link href="/events-page/pastevents" className="hover:text-red-500 cursor-pointer transition font-aeonik font-normal">Events</Link></li>
-                <li><Link href="/Career" className="hover:text-red-500 cursor-pointer transition font-aeonik font-normal">Openings</Link></li>
+                
               </ul>
             </div>
 
@@ -135,10 +135,11 @@ export default function Footer() {
             <div className="col-span-1 sm:col-span-1 lg:col-span-3 mb-10 sm:mb-0 text-start">
               <h4 className="bungee-regular text-lg md:text-lg leading-tight tracking-tight text-red-600 font-extrabold uppercase mb-6" style={{ fontFamily: 'Montserrat', fontWeight: 800 }}>Use Cases</h4>
               <ul className="space-y-4 text-gray-600 text-sm">
-                <li><Link href="/usecase-pages/Supply-Chain-Transparency" className="hover:text-red-500 cursor-pointer transition font-aeonik font-normal">Supply Chain</Link></li>
-                <li><Link href="/usecase-pages/Tokenized-Real-Estate" className="hover:text-red-500 cursor-pointer transition font-aeonik font-normal">Real Estate Tokenization</Link></li>
-                <li><Link href="/usecase-pages/Healthcare-Records" className="hover:text-red-500 cursor-pointer transition font-aeonik font-normal">Secure Healthcare</Link></li>
-                <li><Link href="/usecase-pages/Digital-Identity-KYC" className="hover:text-red-500 cursor-pointer transition font-aeonik font-normal">Digital Identity</Link></li>
+                <li className="hover:text-red-500 cursor-pointer transition font-aeonik font-normal">On Chain Certificate</li>
+                <li className="hover:text-red-500 cursor-pointer transition font-aeonik font-normal">Supply Chain Transparency</li>
+                <li className="hover:text-red-500 cursor-pointer transition font-aeonik font-normal">Tokenized Real Estate</li>
+                <li className="hover:text-red-500 cursor-pointer transition font-aeonik font-normal">Insurance Automation</li>
+                <li className="hover:text-red-500 cursor-pointer transition font-aeonik font-normal">NFT Ticketing</li>
 
               </ul>
             </div>
@@ -163,7 +164,7 @@ export default function Footer() {
                     Whitepaper
                   </a>
                 </li>
-                {/* <li>
+                <li>
                   <a
                     href="https://docs.mstblockchain.com/"
                     target="_blank"
@@ -172,7 +173,7 @@ export default function Footer() {
                   >
                     Docs
                   </a>
-                  </li> */}
+                  </li>
                 <li>
                   <Link href="/contact" className="hover:text-red-500 cursor-pointer transition font-aeonik font-normal">Contact Us</Link>
                 </li>

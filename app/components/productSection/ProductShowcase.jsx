@@ -10,7 +10,7 @@ const logos = [
     src: "/assets/logo-bridgekey.svg",
     title: "Bridge Key",
     description:
-      "Everything You Need in One Wallet. Bridgekey combines powerful features with elegant simplicity.",
+       "BridgeKey is a secure and powerful multi-chain wallet designed to simplify digital asset management. It enables seamless transactions, cross-chain transfers, and advanced security features, making it the perfect gateway for users entering the Web3 ecosystem.",
     stats: { users: "85K+", downloads: "120K", reliability: "99.9%" },
     link: "https://bridgekey.io/",
   },
@@ -18,20 +18,23 @@ const logos = [
     src: "/assets/buddy.png",
     title: "MST Buddy",
     description:
-      "AI-powered assistant platform acting as a 24/7 smart guide for the MST ecosystem.",
+      "MST Buddy is an AI-powered blockchain assistant that helps users explore, learn, and interact with the MST ecosystem effortlessly. It provides real-time insights, smart recommendations, and 24/7 guidance for developers and users.",
     stats: { queries: "1.2M", accuracy: "98%", active_nodes: "9+" },
     link: "https://buddy.mstblockchain.com/",
   },
   {
     src: "/assets/acadmey.png",
-    title: "MST Academy",
+    title: "MasterStroke \n Academy",
     description:
-      "Educational gateway for blockchain mastery, certification, and Web3 developer tours.",
-    stats: { students: "12K+", courses: "45", certifications: "8.5K" },
+     "MasterStroke Academy is a next-generation learning platform focused on blockchain and Web3 development. It offers hands-on training, real-world projects, and industry-focused learning paths to help individuals build decentralized applications and grow in the Web3 space.",
+    stats: {
+    "On-Chain Certificates": "",
+    "DApps Built": "",
+    "Web3 Builders": ""
+  },
     link: "https://masterstroke.academy/",
   },
 ];
-
 
 // ... (logos array remains exactly the same as your previous version)
 

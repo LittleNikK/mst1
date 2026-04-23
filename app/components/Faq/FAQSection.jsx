@@ -2,17 +2,16 @@
 import React, { useState } from "react";
 import { ChevronDown, MessageCircle } from "lucide-react";
 
-
 const faqs = [
   { q: "What is MST Blockchain?", a: "MST is a high-performance Layer-1 blockchain designed for institutional-grade security and sub-second finality." },
-  { q: "Is MST secure?", a: "Yes. Our protocol undergoes regular third-party audits and utilizes a multi-layered consensus mechanism to ensure asset safety." },
-  { q: "How do I create a wallet?", a: "Connect via MetaMask or any WalletConnect provider. Simply update your RPC settings to the MST Mainnet." },
-  { q: "What makes MST different?", a: "MST offers unmatched scalability with near-zero gas fees ($0.0001 per tx) while maintaining full EVM compatibility." },
-  { q: "Can I build dApps on MST?", a: "Absolutely. MST supports Solidity and familiar developer tools like Hardhat and Foundry for seamless deployment." },
-  { q: "What is the transaction speed?", a: "The network supports upwards of 10,000 TPS with block confirmation times averaging under 2 seconds." },
-  { q: "Gas fees?", a: "Optimized to be a fraction of a cent, making it ideal for high-frequency microtransactions." },
-  { q: "Open source?", a: "Yes, our node software and core protocols are fully transparent and available on GitHub." },
-  { q: "NFT support?", a: "MST supports ERC-721 and ERC-1155 standards for seamless digital asset management." },
+  { q: "Is MST secure?", a: "Yes. MST is built with a robust multi-layered architecture, including secure consensus mechanisms and regular smart contract audits to ensure maximum network and asset protection." },
+  { q: "How do I create a wallet?",  a: "You can easily connect using MetaMask or any WalletConnect-supported wallet by adding MST network RPC details and switching to the MST network."},
+  { q: "What makes MST different?", a: "MST stands out with its combination of high scalability, ultra-low transaction costs, and full EVM compatibility, enabling developers to build efficiently without compromising performance." },
+  { q: "Can I build dApps on MST?", a: "Yes. MST fully supports Solidity and popular development tools like Hardhat and Foundry, allowing developers to seamlessly deploy and scale decentralized applications." },
+  { q: "What is the transaction speed?", a: "MST delivers high throughput with fast block confirmations, enabling near real-time transaction processing suitable for scalable Web3 applications." },
+  { q: "Gas fees?", a: "Transaction fees on MST are extremely low, making it ideal for frequent transactions, micro-payments, and large-scale decentralized applications." },
+  { q: "Open source?", a: "Yes. MST promotes transparency by making its core infrastructure and tools accessible, allowing developers and contributors to explore and build within the ecosystem." },
+  { q: "NFT support?", a: "MST supports widely adopted NFT standards like ERC-721 and ERC-1155, enabling seamless creation, transfer, and management of digital assets." },
 ];
 
 export default function FAQSection() {

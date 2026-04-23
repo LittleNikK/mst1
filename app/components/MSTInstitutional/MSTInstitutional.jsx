@@ -93,7 +93,7 @@ export default function MSTInstitutional() {
          
 
           <p className="text-gray-800 text-sm md:text-base leading-relaxed mb-8">
-            Help secure the most performant network in existence. Stake MST and
+            Help secure the most performant network in existence. Stake MSTC and
             run professional-grade infrastructure designed for high-throughput,
             reliability, and institutional-level performance.
           </p>
@@ -109,7 +109,7 @@ export default function MSTInstitutional() {
               className="px-7 py-3 rounded-full bg-red-500 text-white text-sm font-semibold tracking-wide hover:bg-red-600 transition"
               type="button"
             >
-              JOIN THE SYSTEM
+              JOIN THE ECOSYSTEM
             </motion.button>
           </a>
         </div>
