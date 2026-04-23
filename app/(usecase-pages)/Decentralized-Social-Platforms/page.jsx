@@ -229,17 +229,17 @@ const [formType, setFormType] = useState("General Enquiry");
               <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,45,45,0.18),transparent_45%),radial-gradient(circle_at_bottom_right,rgba(255,255,255,0.08),transparent_50%)]" />
               <div className="relative">
                 <p className="text-3xl font-extrabold tracking-[-0.03em] sm:text-4xl">4.9B</p>
-                <p className="mt-2 text-sm font-medium text-white/70">Citizens Distrust Electronic Voting</p>
-                <p className="mt-1 text-xs italic text-white/50">MIT Election Lab 2024</p>
+                <p className="mt-2 text-sm font-medium text-white/70">Global Social Media Users 2024</p>
+                <p className="mt-1 text-xs italic text-white/50">We Are Social / Hootsuite</p>
               </div>
             </div>
 
             <div className="relative overflow-hidden rounded-xl border border-white/10 bg-[#0b1a36] px-5 py-6 text-center text-white shadow-[0_14px_36px_rgba(0,0,0,0.20)]">
               <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,45,45,0.18),transparent_45%),radial-gradient(circle_at_bottom_right,rgba(255,255,255,0.08),transparent_50%)]" />
               <div className="relative">
-                <p className="text-3xl font-extrabold tracking-[-0.03em] sm:text-4xl">$131Bs</p>
-                <p className="mt-2 text-sm font-medium text-white/70">Annual Cost of Election Administration</p>
-                <p className="mt-1 text-xs italic text-white/50">Brookings Institution</p>
+                <p className="text-3xl font-extrabold tracking-[-0.03em] sm:text-4xl">$131B</p>
+                <p className="mt-2 text-sm font-medium text-white/70">Social Media Advertising Market</p>
+                <p className="mt-1 text-xs italic text-white/50">Statista Digital Advertising</p>
               </div>
             </div>
 
@@ -247,8 +247,8 @@ const [formType, setFormType] = useState("General Enquiry");
               <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,45,45,0.18),transparent_45%),radial-gradient(circle_at_bottom_right,rgba(255,255,255,0.08),transparent_50%)]" />
               <div className="relative">
                 <p className="text-3xl font-extrabold tracking-[-0.03em] sm:text-4xl">0%</p>
-                <p className="mt-2 text-sm font-medium text-white/70">Countries with Reported Election Fraud Since 2020</p>
-                <p className="mt-1 text-xs italic text-white/50">Freedom House</p>
+                <p className="mt-2 text-sm font-medium text-white/70">Creator Revenue Share from Platform Ad Revenue</p>
+                <p className="mt-1 text-xs italic text-white/50">Platform Standard</p>
               </div>
             </div>
 
@@ -256,8 +256,8 @@ const [formType, setFormType] = useState("General Enquiry");
               <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,45,45,0.18),transparent_45%),radial-gradient(circle_at_bottom_right,rgba(255,255,255,0.08),transparent_50%)]" />
               <div className="relative">
                 <p className="text-3xl font-extrabold tracking-[-0.03em] sm:text-4xl">$0</p>
-                <p className="mt-2 text-sm font-medium text-white/70">Possible Ballot Alterations on MST</p>
-                <p className="mt-1 text-xs italic text-white/50">Blockchain by Design</p>
+                <p className="mt-2 text-sm font-medium text-white/70">Creator Receives Directly on MST</p>
+                <p className="mt-1 text-xs italic text-white/50">Smart Contract Monetization</p>
               </div>
             </div>
           </div>

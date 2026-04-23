@@ -1,39 +1,75 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 
-// ===== MOCK DATA =====
-const BLOGS = [
-  {
-    id: 1,
-    category: 'TECH UPDATES',
-    date: 'OCT 24',
-    title: 'SCALING STRUCTURAL PURITY',
-    excerpt: 'Discover how MST Network achieves unprecedented scalability while maintaining blockchain integrity through our unique consensus.',
-    image: 'https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&q=80&w=800',
-  },
-  {
-    id: 2,
-    category: 'VALIDATOR NEWS',
-    date: 'OCT 23',
-    title: 'INSTITUTIONAL VALIDATOR PROGRAM',
-    excerpt: 'Join our new institutional validator program with premium rewards and infrastructure support for early network adopters.',
-    image: 'https://images.unsplash.com/photo-1644088379091-d574269d422f?auto=format&fit=crop&q=80&w=800',
-  },
-  {
-    id: 3,
-    category: 'ECOSYSTEM',
-    date: 'OCT 22',
-    title: 'PARTNERSHIPS EXPAND ACROSS WEB3',
-    excerpt: 'MST announces strategic partnerships with leading protocols and infrastructure providers to drive global adoption.',
-    image: 'https://images.unsplash.com/photo-1620321023374-d1a68fbc720d?auto=format&fit=crop&q=80&w=800',
-  }
-];
+// ===== API CONFIG =====
+const CMS_URL = "https://cms.mstblockchain.com";
+const BLOG_API = `${CMS_URL}/api/blogs?populate=*&sort=createdAt:desc&pagination[start]=0&pagination[limit]=10000`;
 
 export default function MSTBlogSection() {
+  const [blogs, setBlogs] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const ITEMS_PER_PAGE = 3;
+
+  useEffect(() => {
+    const fetchBlogs = async () => {
+      try {
+        const response = await fetch(BLOG_API, {
+          headers: {
+            "accept": "application/json",
+          },
+          method: "GET"
+        });
+        const result = await response.json();
+        
+        if (result.data) {
+          const formattedBlogs = result.data.map(item => {
+            const category = (item.category || 'TECH UPDATES').toUpperCase();
+            
+            let imageUrl = 'https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&q=80&w=800';
+            if (item.cardImage?.url) {
+              imageUrl = `${CMS_URL}${item.cardImage.url}`;
+            }
+
+            return {
+              id: item.id,
+              category: category,
+              date: item.createdAt 
+                ? new Date(item.createdAt).toLocaleDateString('en-US', { month: 'short', day: 'numeric' }).toUpperCase()
+                : 'OCT 24',
+              title: item.heading || 'SCALING STRUCTURAL PURITY',
+              excerpt: item.subHeading || 'Discover the latest updates from MST Network.',
+              image: imageUrl,
+              slug: item.slug
+            };
+          });
+          setBlogs(formattedBlogs);
+        }
+      } catch (error) {
+        console.error("Error fetching blogs:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchBlogs();
+  }, []);
+
+  const goLeft = () => {
+    setCurrentIndex((prev) => (prev > 0 ? prev - 1 : prev));
+  };
+
+  const goRight = () => {
+    setCurrentIndex((prev) => (prev + ITEMS_PER_PAGE < blogs.length ? prev + 1 : prev));
+  };
+
+  // Get current slice
+  const visibleBlogs = blogs.slice(currentIndex, currentIndex + ITEMS_PER_PAGE);
+
   return (
-    <section className="relative w-full overflow-hidden bg-white text-black py-24 px-6">
+    <section id="blog" className="relative w-full overflow-hidden bg-white text-black py-24 px-6">
       
       {/* 🔴 BACKGROUND LAYER */}
       <motion.div
@@ -59,12 +95,12 @@ export default function MSTBlogSection() {
       <div className="max-w-7xl mx-auto relative z-10">
         
         {/* HEADER */}
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-6">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-10 sm:mb-12 md:mb-16 gap-4 sm:gap-6">
           <motion.h2
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="bungee-regular text-6xl md:text-6xl leading-tight tracking-tight text-black font-extrabold uppercase"
+            className="bungee-regular text-3xl sm:text-4xl md:text-6xl leading-tight tracking-tight text-black font-extrabold uppercase"
           >
             LATEST{" "}
             <span className="text-red-600">
@@ -74,16 +110,29 @@ export default function MSTBlogSection() {
 
           {/* NAV BUTTONS */}
           <div className="flex items-center gap-3">
-            <NavButton direction="left" />
-            <NavButton direction="right" />
+            <NavButton direction="left" onClick={goLeft} />
+            <NavButton direction="right" onClick={goRight} />
           </div>
         </div>
 
         {/* BLOG GRID */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 ">
-          {BLOGS.map((post, idx) => (
-            <BlogCard key={post.id} post={post} index={idx} />
-          ))}
+          {loading ? (
+            // SKELETON LOADING
+            [1, 2, 3].map((n) => (
+              <div key={n} className="animate-pulse flex flex-col">
+                <div className="aspect-[16/10] w-full bg-gray-200 rounded-lg mb-8" />
+                <div className="h-4 w-24 bg-gray-200 rounded mb-4" />
+                <div className="h-8 w-full bg-gray-200 rounded mb-4" />
+                <div className="h-16 w-full bg-gray-200 rounded mb-8" />
+                <div className="h-12 w-32 bg-gray-200 rounded-full" />
+              </div>
+            ))
+          ) : (
+            visibleBlogs.map((post, idx) => (
+              <BlogCard key={post.id} post={post} index={idx} />
+            ))
+          )}
         </div>
       </div>
     </section>
@@ -101,19 +150,22 @@ function BlogCard({ post, index }) {
       className="group cursor-pointer flex flex-col"
     >
       {/* IMAGE */}
-      <div className="relative aspect-[16/10] w-full overflow-hidden mb-8 border border-black/5 rounded-lg">
+      <div className="relative aspect-[16/10] w-full overflow-hidden mb-8 border border-black/5 rounded-lg bg-gray-100">
         <div className="absolute inset-0 bg-red-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10" />
         <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-60 z-10" />
         <motion.img
           src={post.image}
           alt={post.title}
           className="object-cover w-full h-full grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-out rounded-lg"
+          onError={(e) => {
+            e.target.src = 'https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&q=80&w=800';
+          }}
         />
       </div>
 
       {/* META */}
       <div className="flex items-center gap-3 mb-4">
-        <span className="text-red-600  text-xs tracking-[0.2em]">
+        <span className="text-red-600  text-xs tracking-[0.2em] font-bold">
           {post.category}
         </span>
         <div className="h-1 w-1 rounded-full bg-black/20" />
@@ -123,22 +175,22 @@ function BlogCard({ post, index }) {
       </div>
 
       {/* TITLE */}
-      <h3 className=" bungee-regular text-3xl font-bold mb-4 tracking-tight group-hover:text-red-500 transition-colors duration-300 leading-[1.1]">
+      <h3 className=" bungee-regular text-3xl font-bold mb-4 tracking-tight group-hover:text-red-500 transition-colors duration-300 leading-[1.1] line-clamp-2">
         {post.title}
       </h3>
 
       {/* EXCERPT */}
-      <p className="text-gray-700 text-sm leading-relaxed mb-8 line-clamp-2  ">
+      <p className="text-gray-700 text-sm leading-relaxed mb-5 sm:mb-8 line-clamp-2">
         {post.excerpt}
       </p>
 
       {/* CTA BUTTON */}
       <div className="mt-auto">
         <motion.a
-          href="#"
+          href={`/blog/${post.slug || post.id}`}
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
-          className="inline-block px-6 py-3 rounded-full bg-black text-white font-bold uppercase tracking-wider shadow-lg hover:brightness-110  transition-all duration-300 hover:bg-red-500"
+          className="inline-block px-5 sm:px-6 py-2.5 sm:py-3 rounded-full bg-black text-white text-sm font-bold uppercase tracking-wider shadow-lg hover:brightness-110 transition-all duration-300 hover:bg-red-500"
         >
           Read More
         </motion.a>
@@ -147,19 +199,20 @@ function BlogCard({ post, index }) {
   );
 }
 
-function NavButton({ direction }) {
+function NavButton({ direction, onClick }) {
   return (
     <motion.button
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
-      className="w-14 h-14 flex items-center justify-center border border-black/10 hover:border-red-600/50 hover:bg-red-600/5 transition-all group"
+      onClick={onClick}
+      className="w-10 h-10 sm:w-14 sm:h-14 flex items-center justify-center border border-black/10 hover:border-red-600/50 hover:bg-red-600/5 transition-all group"
     >
       {direction === 'left' ? (
-        <svg className="w-6 h-6 text-gray-500 group-hover:text-red-600 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg className="w-5 h-5 sm:w-6 sm:h-6 text-gray-500 group-hover:text-red-600 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7" />
         </svg>
       ) : (
-        <svg className="w-6 h-6 text-gray-500 group-hover:text-red-600 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg className="w-5 h-5 sm:w-6 sm:h-6 text-gray-500 group-hover:text-red-600 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
         </svg>
       )}

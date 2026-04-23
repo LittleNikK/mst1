@@ -2,17 +2,16 @@
 import React, { useState } from "react";
 import { ChevronDown, MessageCircle } from "lucide-react";
 
-
 const faqs = [
   { q: "What is MST Blockchain?", a: "MST is a high-performance Layer-1 blockchain designed for institutional-grade security and sub-second finality." },
-  { q: "Is MST secure?", a: "Yes. Our protocol undergoes regular third-party audits and utilizes a multi-layered consensus mechanism to ensure asset safety." },
-  { q: "How do I create a wallet?", a: "Connect via MetaMask or any WalletConnect provider. Simply update your RPC settings to the MST Mainnet." },
-  { q: "What makes MST different?", a: "MST offers unmatched scalability with near-zero gas fees ($0.0001 per tx) while maintaining full EVM compatibility." },
-  { q: "Can I build dApps on MST?", a: "Absolutely. MST supports Solidity and familiar developer tools like Hardhat and Foundry for seamless deployment." },
-  { q: "What is the transaction speed?", a: "The network supports upwards of 10,000 TPS with block confirmation times averaging under 2 seconds." },
-  { q: "Gas fees?", a: "Optimized to be a fraction of a cent, making it ideal for high-frequency microtransactions." },
-  { q: "Open source?", a: "Yes, our node software and core protocols are fully transparent and available on GitHub." },
-  { q: "NFT support?", a: "MST supports ERC-721 and ERC-1155 standards for seamless digital asset management." },
+  { q: "Is MST secure?", a: "Yes. MST is built with a robust multi-layered architecture, including secure consensus mechanisms and regular smart contract audits to ensure maximum network and asset protection." },
+  { q: "How do I create a wallet?",  a: "You can easily connect using MetaMask or any WalletConnect-supported wallet by adding MST network RPC details and switching to the MST network."},
+  { q: "What makes MST different?", a: "MST stands out with its combination of high scalability, ultra-low transaction costs, and full EVM compatibility, enabling developers to build efficiently without compromising performance." },
+  { q: "Can I build dApps on MST?", a: "Yes. MST fully supports Solidity and popular development tools like Hardhat and Foundry, allowing developers to seamlessly deploy and scale decentralized applications." },
+  { q: "What is the transaction speed?", a: "MST delivers high throughput with fast block confirmations, enabling near real-time transaction processing suitable for scalable Web3 applications." },
+  { q: "Gas fees?", a: "Transaction fees on MST are extremely low, making it ideal for frequent transactions, micro-payments, and large-scale decentralized applications." },
+  { q: "Open source?", a: "Yes. MST promotes transparency by making its core infrastructure and tools accessible, allowing developers and contributors to explore and build within the ecosystem." },
+  { q: "NFT support?", a: "MST supports widely adopted NFT standards like ERC-721 and ERC-1155, enabling seamless creation, transfer, and management of digital assets." },
 ];
 
 export default function FAQSection() {
@@ -24,7 +23,7 @@ export default function FAQSection() {
 
   return (
             
-    <section className="relative  py-20 px-6 overflow-hidden">
+    <section className="relative py-12 sm:py-16 md:py-20 px-4 sm:px-6 overflow-hidden">
       
       {/* Soft Red Glow */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-96 bg-red-500/10 blur-[120px] rounded-full" />
@@ -32,26 +31,26 @@ export default function FAQSection() {
       <div className="max-w-4xl mx-auto relative z-0">
        
         {/* Header */}
-        <div className="text-center mb-20">
+        <div className="text-center mb-10 sm:mb-14 md:mb-20">
          
 
-          <h2 className="bungee-regular text-6xl md:text-6xl leading-tight text-black font-extrabold uppercase">
+          <h2 className="bungee-regular text-3xl sm:text-4xl md:text-6xl leading-tight text-black font-extrabold uppercase">
             Frequently Asked{" "}
             <span className="text-red-600">Questions</span>
           </h2>
 
-          <p className="mt-6 text-gray-800 text-lg max-w-xl mx-auto">
+          <p className="mt-4 sm:mt-6 text-gray-800 text-base sm:text-lg max-w-xl mx-auto">
             Everything you need to know about the MST ecosystem. Can’t find it? Ask our community.
           </p>
         </div>
 
         {/* FAQ Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-start">
+        <div className="flex flex-col md:grid md:grid-cols-2 gap-3 sm:gap-4 items-start">
           
           {faqs.slice(0, visibleCount).map((item, i) => (
             <div 
               key={i} 
-              className={`group transition-all duration-300 border rounded-2xl p-6 ${
+              className={`group transition-all duration-300 border rounded-xl sm:rounded-2xl p-4 sm:p-6 ${
                 openIndex === i 
                 ? 'bg-red-50 border-red-500 shadow-md' 
                 : 'bg-white border-gray-200 hover:border-red-300'
@@ -61,7 +60,7 @@ export default function FAQSection() {
                 onClick={() => setOpenIndex(openIndex === i ? null : i)}
                 className="w-full flex items-center justify-between text-left outline-none"
               >
-                <span className={`font-semibold text-lg transition-colors ${
+                <span className={`font-semibold text-base sm:text-lg transition-colors ${
                   openIndex === i ? 'text-red-500' : 'text-black'
                 }`}>
                   {item.q}
