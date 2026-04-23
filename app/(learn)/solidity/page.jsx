@@ -113,7 +113,7 @@ export default function SolidityPage() {
               className="relative h-80 md:h-[420px] border border-red-500/20 rounded-xl overflow-hidden bg-white shadow-xl"
             >
               <Image
-                src="/solidity/solidity Hero-Banner.jpg"
+                src="/solidity/Solidity Hero-Banner.jpg"
                 alt="Solidity hero"
                 fill
                 className="object-cover"
