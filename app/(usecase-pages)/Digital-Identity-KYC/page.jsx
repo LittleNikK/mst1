@@ -19,13 +19,8 @@ const featureItems = [
   },
   {
     title: 'Instant Onboarding',
-<<<<<<< Updated upstream
-    description: 'New users verify in seconds instead of days. Platforms get compliance-ready confirmations instantly , without the overhead of running their own KYC.',
-    icon: Home
-=======
     description: 'New users verify in seconds instead of days. Platforms get compliance-ready confirmations instantly — without the overhead of running their own KYC.',
     icon: Home  
->>>>>>> Stashed changes
   }
 ];
 

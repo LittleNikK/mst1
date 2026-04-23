@@ -33,24 +33,14 @@ const proofItems = [
   },
   {
     title: 'Professional Certifications',
-<<<<<<< Updated upstream
-    description: 'Industry certifications for regulated sectors , verifiable, tamper-proof, accepted across borders without expensive third-party agencies.',
-    image: '/placeholder.png',
-=======
     description: 'Industry certifications for regulated sectors — verifiable, tamper-proof, accepted across borders without expensive third-party agencies.',
     image: '/onchain-usecase/Professional Certifications.png',
->>>>>>> Stashed changes
     alt: 'Express shipping supply chain'
   },
   {
     title: 'Training & Event Completion',
-<<<<<<< Updated upstream
-    description: 'Course completion and conference credentials issued as permanent on-chain records , as trusted as any institutional certificate.',
-    image: '/hero-visual-1.svg',
-=======
     description: 'Course completion and conference credentials issued as permanent on-chain records — as trusted as any institutional certificate.',
     image: '/onchain-usecase/Training & Event Completion.jpg',
->>>>>>> Stashed changes
     alt: 'Food and agriculture supply chain'
   }
 ];
