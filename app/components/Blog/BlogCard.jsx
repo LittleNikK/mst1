@@ -11,7 +11,16 @@ export default function MSTBlogSection() {
   const [blogs, setBlogs] = useState([]);
   const [loading, setLoading] = useState(true);
   const [currentIndex, setCurrentIndex] = useState(0);
-  const ITEMS_PER_PAGE = 3;
+  const [itemsPerPage, setItemsPerPage] = useState(3);
+
+  useEffect(() => {
+    const updateItemsPerPage = () => {
+      setItemsPerPage(window.innerWidth < 768 ? 1 : 3);
+    };
+    updateItemsPerPage();
+    window.addEventListener('resize', updateItemsPerPage);
+    return () => window.removeEventListener('resize', updateItemsPerPage);
+  }, []);
 
   useEffect(() => {
     const fetchBlogs = async () => {
@@ -23,11 +32,11 @@ export default function MSTBlogSection() {
           method: "GET"
         });
         const result = await response.json();
-        
+
         if (result.data) {
           const formattedBlogs = result.data.map(item => {
             const category = (item.category || 'TECH UPDATES').toUpperCase();
-            
+
             let imageUrl = 'https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&q=80&w=800';
             if (item.cardImage?.url) {
               imageUrl = `${CMS_URL}${item.cardImage.url}`;
@@ -36,7 +45,7 @@ export default function MSTBlogSection() {
             return {
               id: item.id,
               category: category,
-              date: item.createdAt 
+              date: item.createdAt
                 ? new Date(item.createdAt).toLocaleDateString('en-US', { month: 'short', day: 'numeric' }).toUpperCase()
                 : 'OCT 24',
               title: item.heading || 'SCALING STRUCTURAL PURITY',
@@ -62,15 +71,15 @@ export default function MSTBlogSection() {
   };
 
   const goRight = () => {
-    setCurrentIndex((prev) => (prev + ITEMS_PER_PAGE < blogs.length ? prev + 1 : prev));
+    setCurrentIndex((prev) => (prev + itemsPerPage < blogs.length ? prev + 1 : prev));
   };
 
   // Get current slice
-  const visibleBlogs = blogs.slice(currentIndex, currentIndex + ITEMS_PER_PAGE);
+  const visibleBlogs = blogs.slice(currentIndex, currentIndex + itemsPerPage);
 
   return (
     <section id="blog" className="relative w-full overflow-hidden bg-white text-black py-24 px-6">
-      
+
       {/* 🔴 BACKGROUND LAYER */}
       <motion.div
         animate={{ rotate: [0, 360] }}
@@ -93,7 +102,7 @@ export default function MSTBlogSection() {
 
       {/* CONTENT */}
       <div className="max-w-7xl mx-auto relative z-10">
-        
+
         {/* HEADER */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-10 sm:mb-12 md:mb-16 gap-4 sm:gap-6">
           <motion.h2
@@ -156,7 +165,9 @@ function BlogCard({ post, index }) {
         <motion.img
           src={post.image}
           alt={post.title}
-          className="object-cover w-full h-full grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-out rounded-lg"
+          width={500}
+          height={500}
+          className="object-cover w-full h-full md:grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-out rounded-lg"
           onError={(e) => {
             e.target.src = 'https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&q=80&w=800';
           }}

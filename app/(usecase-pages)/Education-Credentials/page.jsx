@@ -87,13 +87,13 @@ function FeatureCard({ title, description, icon: Icon }) {
     <motion.article
       whileHover={{ y: -6, scale: 1.01 }}
       transition={{ duration: 0.25 }}
-      className="group flex flex-col items-center justify-center rounded-2xl border border-white/10 bg-black/90 p-6 text-white shadow-[0_16px_40px_rgba(0,0,0,0.18)] backdrop-blur-md transition-all duration-300 hover:border-[#ff2d2d]/50 hover:bg-red-600 hover:shadow-[0_20px_48px_rgba(255,45,45,0.12)] w-full min-h-[260px] sm:min-h-[280px] md:min-h-[320px] lg:min-h-[340px]"
+      className="group flex flex-col items-start justify-start rounded-2xl border border-white/10 bg-black/90 p-6 text-white shadow-[0_16px_40px_rgba(0,0,0,0.18)] backdrop-blur-md transition-all duration-300 hover:border-[#ff2d2d]/50 hover:bg-red-600 hover:shadow-[0_20px_48px_rgba(255,45,45,0.12)] w-full min-h-[260px] sm:min-h-[280px] md:min-h-[320px] lg:min-h-[340px]"
     >
       <div className="group-hover:bg-black mb-4 inline-flex rounded-xl border border-[#ff2d2d]/20 bg-[#ff2d2d]/8 p-2.5">
         <Icon className="h-5 w-5 text-[#ff2d2d]" />
       </div>
-      <h3 className="bungee-regular text-2xl md:text-2xl leading-tight tracking-tight text-white font-extrabold uppercase mb-5 text-center w-full">{title}</h3>
-      <p className="mt-3 text-sm leading-relaxed text-white/68 text-center w-full">{description}</p>
+      <h3 className="bungee-regular text-2xl md:text-2xl leading-tight tracking-tight text-white font-extrabold uppercase mb-5 text-left w-full">{title}</h3>
+      <p className="mt-3 text-sm leading-relaxed text-white/68 text-left w-full">{description}</p>
     </motion.article>
   );
 }
@@ -157,9 +157,9 @@ export default function SupplyChainPage() {
         <SectionFade className="relative mx-auto max-w-[90rem] space-y-6">
           <div className="max-w-4xl space-y-5">
             <div className="relative inline-block">
-              <h1 className="bungee-regular text-6xl md:text-6xl leading-tight tracking-tight text-black font-extrabold uppercase mb-5">
+              <h1 className="bungee-regular text-3xl sm:text-5xl md:text-6xl leading-tight tracking-tight text-black font-extrabold uppercase mb-5">
                 <span className="block">
-                  Education Credentials
+                  Education <span className="text-[#ff2d2d]">Credentials</span>
                 </span>
               </h1>
             </div>
@@ -227,7 +227,7 @@ export default function SupplyChainPage() {
       {/* INTRO */}
       <section className="mx-auto grid w-full max-w-[90rem] grid-cols-1 gap-10 px-6 py-16 md:px-16 lg:grid-cols-2 lg:items-center">
         <SectionFade className="space-y-5">
-          <h2 className="bungee-regular text-4xl md:text-4xl leading-tight tracking-tight text-black font-extrabold uppercase mb-5">
+          <h2 className="bungee-regular text-2xl sm:text-3xl md:text-4xl leading-tight tracking-tight text-black font-extrabold uppercase mb-5">
             What are Blockchain Education Credentials?
           </h2>
           <p className="max-w-2xl text-base leading-8 text-black/70">
@@ -268,14 +268,14 @@ export default function SupplyChainPage() {
       {/* PROBLEM + SOLUTION */}
       <section className="mx-auto grid w-full max-w-[90rem] grid-cols-1 gap-10 px-6 py-16 md:px-16 lg:grid-cols-2 lg:items-center">
         <SectionFade className="space-y-5 border-l-2 border-[#ff2d2d] pl-5 md:pl-6">
-          <h2 className="font-[var(--font-space-grotesk)] text-3xl font-bold tracking-[-0.03em] text-black sm:text-4xl">
+          <h2 className="font-[var(--font-space-grotesk)] text-xl sm:text-2xl md:text-4xl font-bold tracking-[-0.03em] text-black">
             The Problem: Fake Qualifications are a Global Crisis
           </h2>
           <p className="text-base leading-8 text-black/70">
             Fraudulent academic credentials are a worldwide problem that affects employers, institutions, and honest graduates alike. Verifying qualifications manually is slow and expensive, particularly across borders. Even when institutions run verification services, the process can take days. Many employers simply cannot afford the time and skip proper checks , which is exactly what fraudsters rely on.
           </p>
 
-          <h3 className="bungee-regular text-3xl md:text-3xl leading-tight tracking-tight text-black font-extrabold uppercase mb-5 pt-2">How MST Fixes It</h3>
+          <h3 className="bungee-regular text-xl sm:text-2xl md:text-3xl leading-tight tracking-tight text-black font-extrabold uppercase mb-5 pt-2">How MST Fixes It</h3>
           <p className="text-base leading-8 text-black/70">
             MST enables institutions to issue credentials with a permanently locked blockchain verification record. Each credential gets a unique hash anchored on-chain and a QR code on the document. Anyone can scan to verify instantly. The institution does not need to maintain a separate verification hotline , the blockchain does the verification automatically, globally, and free of charge at the point of checking.
           </p>
@@ -298,7 +298,7 @@ export default function SupplyChainPage() {
       <section className="mx-auto w-full max-w-[90rem] px-6 py-16 md:px-16">
 
         <SectionFade className="space-y-3">
-          <h2 className="bungee-regular text-4xl md:text-4xl leading-tight tracking-tight text-black font-extrabold uppercase mb-5">Proofs of Concept</h2>
+          <h2 className="bungee-regular text-2xl sm:text-3xl md:text-4xl leading-tight tracking-tight text-black font-extrabold uppercase mb-5">Proofs of Concept</h2>
           <p className="max-w-2xl text-base leading-8 text-black/68">
             Real-world examples showing how this use case works in practice across different industries and regions.
           </p>
@@ -321,7 +321,7 @@ export default function SupplyChainPage() {
 
       {/* STEPS */}
       <section className='mx-auto text-center w-full max-w-[90rem] px-6 py-16 md:px-16'>
-        <h3 className="bungee-regular text-3xl md:text-3xl leading-tight tracking-tight text-black font-extrabold uppercase mb-5 pt-2">See How It Works Step by Step</h3>
+        <h3 className="bungee-regular text-xl sm:text-2xl md:text-3xl leading-tight tracking-tight text-black font-extrabold uppercase mb-5 pt-2">See How It Works Step by Step</h3>
         <p className="text-base leading-8 text-black/70">
           Two simple flows , one for whoever is issuing or creating, and one for whoever is verifying or using. Both powered by MST blockchain behind the scenes.
         </p>

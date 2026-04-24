@@ -87,13 +87,13 @@ function FeatureCard({ title, description, icon: Icon }) {
     <motion.article
       whileHover={{ y: -6, scale: 1.01 }}
       transition={{ duration: 0.25 }}
-      className="group flex flex-col items-center justify-center rounded-2xl border border-white/10 bg-black/90 p-6 text-white shadow-[0_16px_40px_rgba(0,0,0,0.18)] backdrop-blur-md transition-all duration-300 hover:border-[#ff2d2d]/50 hover:bg-red-600 hover:shadow-[0_20px_48px_rgba(255,45,45,0.12)] w-full min-h-[260px] sm:min-h-[280px] md:min-h-[320px] lg:min-h-[340px]"
+      className="group flex flex-col items-start justify-start rounded-2xl border border-white/10 bg-black/90 p-6 text-white shadow-[0_16px_40px_rgba(0,0,0,0.18)] backdrop-blur-md transition-all duration-300 hover:border-[#ff2d2d]/50 hover:bg-red-600 hover:shadow-[0_20px_48px_rgba(255,45,45,0.12)] w-full min-h-[260px] sm:min-h-[280px] md:min-h-[320px] lg:min-h-[340px]"
     >
       <div className="group-hover:bg-black mb-4 inline-flex rounded-xl border border-[#ff2d2d]/20 bg-[#ff2d2d]/8 p-2.5">
         <Icon className="h-5 w-5 text-[#ff2d2d]" />
       </div>
-      <h3 className="bungee-regular text-2xl md:text-2xl leading-tight tracking-tight text-white font-extrabold uppercase mb-5 text-center w-full">{title}</h3>
-      <p className="mt-3 text-sm leading-relaxed text-white/68 text-center w-full">{description}</p>
+      <h3 className="bungee-regular text-2xl md:text-2xl leading-tight tracking-tight text-white font-extrabold uppercase mb-5 text-left w-full">{title}</h3>
+      <p className="mt-3 text-sm leading-relaxed text-white/68 text-left w-full">{description}</p>
     </motion.article>
   );
 }
@@ -157,12 +157,9 @@ export default function SupplyChainPage() {
         <SectionFade className="relative mx-auto max-w-[90rem] space-y-6">
           <div className="max-w-4xl space-y-5">
             <div className="relative inline-block">
-              <h1 className="bungee-regular text-6xl md:text-6xl leading-tight tracking-tight text-black font-extrabold uppercase mb-5">
+              <h1 className="bungee-regular text-3xl sm:text-5xl md:text-6xl leading-tight tracking-tight text-black font-extrabold uppercase mb-5">
                 <span className="block">
-                  Freelance
-                </span>
-                <span className="mt-2 block text-[#ff2d2d]">
-                  Marketplace
+                  Freelance <span className="text-[#ff2d2d]">Marketplace</span>
                 </span>
               </h1>
             </div>
@@ -232,7 +229,7 @@ export default function SupplyChainPage() {
       {/* INTRO */}
       <section className="mx-auto grid w-full max-w-[90rem] grid-cols-1 gap-10 px-6 py-16 md:px-16 lg:grid-cols-2 lg:items-center">
         <SectionFade className="space-y-5">
-          <h2 className="bungee-regular text-4xl md:text-4xl leading-tight tracking-tight text-black font-extrabold uppercase mb-5">
+          <h2 className="bungee-regular text-2xl sm:text-3xl md:text-4xl leading-tight tracking-tight text-black font-extrabold uppercase mb-5">
             What is a Blockchain Freelance Marketplace?
           </h2>
           <p className="max-w-2xl text-base leading-8 text-black/70">
@@ -273,14 +270,14 @@ export default function SupplyChainPage() {
       {/* PROBLEM + SOLUTION */}
       <section className="mx-auto grid w-full max-w-[90rem] grid-cols-1 gap-10 px-6 py-16 md:px-16 lg:grid-cols-2 lg:items-center">
         <SectionFade className="space-y-5 border-l-2 border-[#ff2d2d] pl-5 md:pl-6">
-          <h2 className="font-[var(--font-space-grotesk)] text-3xl font-bold tracking-[-0.03em] text-black sm:text-4xl">
+          <h2 className="font-[var(--font-space-grotesk)] text-xl sm:text-2xl md:text-4xl font-bold tracking-[-0.03em] text-black">
             The Problem: Freelancers Often Do Not Get Paid , and Clients Often Get Burned Too
           </h2>
           <p className="text-base leading-8 text-black/70">
             The global freelance economy is enormous , but it runs on informal trust that frequently breaks down. Freelancers complete work and wait weeks for payment. Clients pay upfront and receive work that does not match what was agreed. Disputes spiral with no fair resolution mechanism. Existing platforms charge high fees to provide basic trust infrastructure , and still do not guarantee outcomes.
           </p>
 
-          <h3 className="bungee-regular text-3xl md:text-3xl leading-tight tracking-tight text-black font-extrabold uppercase mb-5 pt-2">How MST Fixes It </h3>
+          <h3 className="bungee-regular text-xl sm:text-2xl md:text-3xl leading-tight tracking-tight text-black font-extrabold uppercase mb-5 pt-2">How MST Fixes It </h3>
           <p className="text-base leading-8 text-black/70">
             On MST Blockchain, a client creates a project with clearly defined milestones and payment amounts for each. The total payment is locked into a smart contract escrow. As the freelancer completes each milestone and the client confirms it, the corresponding payment is automatically released , no delay, no argument, no invoice. If a dispute arises, the transparent on-chain record of exactly what was agreed and what was delivered provides a clear basis for fair resolution.
           </p>
@@ -302,7 +299,7 @@ export default function SupplyChainPage() {
       {/* PROOFS */}
       <section className="mx-auto w-full max-w-[90rem] px-6 py-16 md:px-16">
         <SectionFade className="space-y-3">
-          <h2 className="bungee-regular text-4xl md:text-4xl leading-tight tracking-tight text-black font-extrabold uppercase mb-5">Proofs of Concept</h2>
+          <h2 className="bungee-regular text-2xl sm:text-3xl md:text-4xl leading-tight tracking-tight text-black font-extrabold uppercase mb-5">Proofs of Concept</h2>
           <p className="max-w-2xl text-base leading-8 text-black/68">
             Real-world examples showing how this use case works in practice across different industries and regions.
           </p>

@@ -125,7 +125,7 @@ function CountUp({ value, prefix = '', suffix = '', decimals = 0 }) {
       {prefix && <span>{prefix}</span>}
       <motion.span>{formatted}</motion.span>
       {suffix && (
-        <span className="text-[10px] sm:text-[16px] font-bold ml-1 opacity-80 uppercase tracking-tight">
+        <span className="text-[8px] sm:text-[16px] font-bold ml-1 opacity-80 uppercase tracking-tight">
           {suffix.trim()}
         </span>
       )}
@@ -259,16 +259,16 @@ export default function HeroSection() {
           {stats.map((stat) => (
             <div
               key={stat.label}
-              className="group p-2 sm:p-4 bg-white/60 border border-black/10 rounded-lg sm:rounded-2xl backdrop-blur-md hover:border-[#FF2D2D]/40 transition-all text-left"
+              className="group p-2 sm:p-4 bg-white/60 border border-black/10 rounded-lg sm:rounded-2xl backdrop-blur-md hover:border-[#FF2D2D]/40 transition-all text-center sm:text-left flex flex-col items-center sm:items-start justify-center sm:justify-start"
             >
-              <p className="text-[8px] sm:text-[10px] uppercase tracking-wide text-black/80 flex items-center gap-1">
+              <p className="text-[7px] sm:text-[10px] uppercase tracking-wide text-black/95 flex items-center justify-center sm:justify-start gap-1 min-h-[20px] sm:min-h-0">
                 {stat.active && (
                   <span className="h-1 w-1 rounded-full bg-[#FF2D2D] animate-ping" />
                 )}
                 {stat.label}
               </p>
 
-              <p className="text-2xl sm:text-4xl font-extrabold mt-1 text-black group-hover:text-[#FF2D2D] transition-colors">
+              <p className="text-lg sm:text-4xl font-extrabold mt-1 text-black group-hover:text-[#FF2D2D] transition-colors leading-none">
                 <CountUp
                   value={stat.value}
                   prefix={stat.prefix}

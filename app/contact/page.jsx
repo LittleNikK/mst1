@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { Mail, Phone, MapPin, Send, MessageCircle } from "lucide-react";
 import { FiCheckCircle } from "react-icons/fi";
 import { motion } from "framer-motion";
+import { toast } from "react-toastify";
 
 const contactInfo = [
   {
@@ -36,7 +37,7 @@ export default function Contacts() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!form.name || !form.email || !form.message) {
-      alert("Please fill all required fields");
+      toast.error("Please fill all required fields");
       return;
     }
 
@@ -58,15 +59,14 @@ export default function Contacts() {
       console.log("Response:", result); // Log the response for debugging
 
       if (result.status === "success") {
-        setSuccess("Message sent successfully 🚀");
+        toast.success("Message sent successfully 🚀");
         setForm({ name: "", email: "", subject: "", message: "" });
-        setTimeout(() => setSuccess(""), 5000);
       } else {
-        alert("Something went wrong: " + (result.message || "Unknown error"));
+        toast.error("Something went wrong: " + (result.message || "Unknown error"));
       }
     } catch (err) {
       console.error("Error:", err); // Log the error for debugging
-      alert("Something went wrong. Please try again.");
+      toast.error("Something went wrong. Please try again.");
     } finally {
       setLoading(false);
     }
@@ -242,9 +242,6 @@ export default function Contacts() {
               {loading ? "Sending..." : "Send Message"}
               <Send size={16} />
             </button>
-            {success && (
-              <p className="text-green-600 md:col-span-2 text-center">{success}</p>
-            )}
           </form>
         </div>
       </div>

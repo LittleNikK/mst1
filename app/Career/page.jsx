@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { Mail, Briefcase, MapPin, Send, Users, Globe, ArrowRight } from "lucide-react";
 import { FiCheckCircle } from "react-icons/fi";
 import { motion } from "framer-motion";
+import { toast } from "react-toastify";
 
 const careerBenefits = [
   {
@@ -33,12 +34,12 @@ export default function CareersPage() {
 
   // APPS SCRIPT WEB APP URL BELOW
   const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbztT6nLuAutIqZ_OyvLaY_b961l4Rk2MyEf3TOEgePQs_8-f7A9i_9qjWFftyXPX4Ab/exec";
-  
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!form.name || !form.email || !form.message) {
-      alert("Please fill in your name, email, and a short intro.");
+      toast.error("Please fill in your name, email, and a short intro.");
       return;
     }
 
@@ -49,25 +50,24 @@ export default function CareersPage() {
         method: "POST",
         headers: { "Content-Type": "text/plain" },
         body: JSON.stringify({
-    name: form.name,
-    email: form.email,
-    position: form.position,
-    URL: form.portfolio,
-    message: form.message,
-  }),
+          name: form.name,
+          email: form.email,
+          position: form.position,
+          URL: form.portfolio,
+          message: form.message,
+        }),
       });
-console.log("Working till now", response)
+      console.log("Working till now", response)
       const result = await response.json();
 
       if (result.status === "success") {
-        setSuccess("Application sent! Our HR team will reach out soon. 🚀");
+        toast.success("Yoo Boyssss your Application sent! Our HR team will reach out soon.");
         setForm({ name: "", email: "", position: "", portfolio: "", message: "" });
-        setTimeout(() => setSuccess(""), 5000);
       } else {
-        alert("Something went wrong: " + (result.message || "Unknown error"));
+        toast.error("Something went wrong: " + (result.message || "Unknown error"));
       }
     } catch (err) {
-      alert("Something went wrong. Please try again.");
+      toast.error("Something went wrong. Please try again.");
     } finally {
       setLoading(false);
     }
@@ -291,13 +291,6 @@ console.log("Working till now", response)
                 </>
               )}
             </button>
-
-            {success && (
-              <div className="flex items-center justify-center gap-3 p-5 bg-green-50 border border-green-100 rounded-2xl text-green-700 font-bold">
-                <FiCheckCircle className="w-5 h-5" />
-                {success}
-              </div>
-            )}
           </form>
         </div>
       </main>

@@ -52,9 +52,9 @@ const icons = {
 // ... (keep the useCases and icons objects exactly as they are)
 
 const sizeMap = {
-  small: "min-h-[120px] sm:min-h-[140px]",
-  medium: "min-h-[160px] sm:min-h-[190px]",
-  tall: "min-h-[200px] sm:min-h-[250px]",
+  small: "min-h-[150px] sm:min-h-[140px]",
+  medium: "min-h-[180px] sm:min-h-[190px]",
+  tall: "min-h-[220px] sm:min-h-[250px]",
 };
 
 const Card = ({ item, index }) => {

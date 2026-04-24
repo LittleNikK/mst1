@@ -3,6 +3,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Globe, School, Briefcase, ChevronRight, Award, Zap, Users, Lightbulb } from "lucide-react";
+import { toast } from "react-toastify";
 
 /* ================= ANIMATIONS ================= */
 const fadeInUp = {
@@ -82,7 +83,10 @@ export default function AmbassadorPage() {
               </p>
             </div>
 
-            <button className="group bg-black text-white px-8 py-4 rounded-2xl hover:bg-red-600 transition-all duration-300 font-bold flex items-center gap-2 shadow-xl shadow-slate-200">
+            <button 
+              onClick={() => toast.info("Ambassador applications are coming soon! Stay tuned. 🚀")}
+              className="group bg-black text-white px-8 py-4 rounded-2xl hover:bg-red-600 transition-all duration-300 font-bold flex items-center gap-2 shadow-xl shadow-slate-200"
+            >
               Apply as a City Ambassador <ChevronRight className="group-hover:translate-x-1 transition-transform" />
             </button>
           </motion.div>
@@ -134,7 +138,10 @@ export default function AmbassadorPage() {
               </p>
             </div>
 
-            <button className="group bg-black text-white px-8 py-4 rounded-2xl hover:bg-red-600 transition-all duration-300 font-bold flex items-center gap-2 shadow-xl shadow-slate-200">
+            <button 
+              onClick={() => toast.info("Ambassador applications are coming soon! Stay tuned. 🚀")}
+              className="group bg-black text-white px-8 py-4 rounded-2xl hover:bg-red-600 transition-all duration-300 font-bold flex items-center gap-2 shadow-xl shadow-slate-200"
+            >
               Apply as a Campus Ambassador <ChevronRight className="group-hover:translate-x-1 transition-transform" />
             </button>
           </motion.div>
@@ -172,7 +179,10 @@ export default function AmbassadorPage() {
               </p>
             </div>
 
-            <button className="group bg-black text-white px-8 py-4 rounded-2xl hover:bg-red-600 transition-all duration-300 font-bold flex items-center gap-2 shadow-xl shadow-slate-200">
+            <button 
+              onClick={() => toast.info("Ambassador applications are coming soon! Stay tuned. 🚀")}
+              className="group bg-black text-white px-8 py-4 rounded-2xl hover:bg-red-600 transition-all duration-300 font-bold flex items-center gap-2 shadow-xl shadow-slate-200"
+            >
               Apply as an Industry Ambassador <ChevronRight className="group-hover:translate-x-1 transition-transform" />
             </button>
           </motion.div>
