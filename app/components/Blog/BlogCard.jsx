@@ -180,7 +180,7 @@ function BlogCard({ post, index }) {
           alt={post.title}
           width={500}
           height={500}
-          className="object-cover w-full h-full md:grayscale grayscale-0 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-out rounded-lg shadow-[0_0_15px_rgba(255,45,45,0.3)] md:shadow-none"
+          className="object-cover w-full h-full md:grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-out rounded-lg"
           onError={(e) => {
             e.target.src = 'https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&q=80&w=800';
           }}

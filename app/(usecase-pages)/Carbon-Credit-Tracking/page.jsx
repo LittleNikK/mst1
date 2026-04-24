@@ -292,7 +292,7 @@ export default function SupplyChainPage() {
       {/* PROOFS */}
       <section className="mx-auto w-full max-w-[90rem] px-6 py-16 md:px-16">
         <SectionFade className="space-y-3">
-          <h2 className="bungee-regular text-2xl sm:text-3xl md:text-4xl lg:text-6xl leading-tight tracking-tight text-black font-extrabold uppercase"> Proofs<span className="text-red-600"> of </span>Concept</h2>
+          <h2 className="bungee-regular text-2xl sm:text-3xl md:text-6xl leading-tight tracking-tight text-black font-extrabold uppercase"> Proofs<span className="text-red-600"> of </span>Concept</h2>
           <p className="max-w-2xl text-base leading-8 text-black/68">
             Real-world examples showing how this use case works in practice across different industries and regions.
           </p>

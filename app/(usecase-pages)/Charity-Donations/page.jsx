@@ -499,7 +499,7 @@ export default function SupplyChainPage() {
       <section className="mx-auto w-full max-w-[90rem] px-6 py-16 md:px-16">
         <SectionFade className="space-y-4">
           <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#ff2d2d]">Office Gallery</p>
-          <h2 className="font-[var(--font-space-grotesk)] text-2xl sm:text-3xl md:text-4xl font-bold tracking-[-0.03em] text-black">
+          <h2 className="font-[var(--font-space-grotesk)] text-xl sm:text-2xl md:text-4xl font-bold tracking-[-0.03em] text-black">
             See Our Programs and Office in Action
           </h2>
           <p className="max-w-3xl text-base leading-8 text-black/70">

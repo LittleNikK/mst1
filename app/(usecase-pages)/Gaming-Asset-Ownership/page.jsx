@@ -93,7 +93,7 @@ function FeatureCard({ title, description, icon: Icon }) {
       <div className="group-hover:bg-black mb-4 inline-flex rounded-xl border border-[#ff2d2d]/20 bg-[#ff2d2d]/8 p-2.5">
         <Icon className="h-5 w-5 text-[#ff2d2d]" />
       </div>
-      <h3 className="bungee-regular text-xl sm:text-2xl leading-tight tracking-tight text-white font-extrabold uppercase mb-5 text-left w-full">{title}</h3>
+      <h3 className="bungee-regular text-2xl md:text-2xl leading-tight tracking-tight text-white font-extrabold uppercase mb-5 text-left w-full">{title}</h3>
       <p className="mt-3 text-sm leading-relaxed text-white/68 text-left w-full">{description}</p>
     </motion.article>
   );

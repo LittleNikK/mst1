@@ -92,7 +92,7 @@ function FeatureCard({ title, description, icon: Icon }) {
       <div className="group-hover:bg-black mb-4 inline-flex rounded-xl border border-[#ff2d2d]/20 bg-[#ff2d2d]/8 p-2.5">
         <Icon className="h-5 w-5 text-[#ff2d2d]" />
       </div>
-      <h3 className="bungee-regular text-xl sm:text-2xl leading-tight tracking-tight text-white font-extrabold uppercase mb-5 text-left w-full">{title}</h3>
+      <h3 className="bungee-regular text-2xl md:text-2xl leading-tight tracking-tight text-white font-extrabold uppercase mb-5 text-left w-full">{title}</h3>
       <p className="mt-3 text-sm leading-relaxed text-white/68 text-left w-full">{description}</p>
     </motion.article>
   );
@@ -270,7 +270,7 @@ export default function SupplyChainPage() {
       {/* PROBLEM + SOLUTION */}
       <section className="mx-auto grid w-full max-w-[90rem] grid-cols-1 gap-10 px-6 py-16 md:px-16 lg:grid-cols-2 lg:items-center">
         <SectionFade className="space-y-5 border-l-2 border-[#ff2d2d] pl-5 md:pl-6">
-          <h2 className="bungee-regular text-2xl sm:text-3xl md:text-4xl leading-tight tracking-tight text-black font-extrabold uppercase mb-5">
+          <h2 className="font-[var(--font-space-grotesk)] text-xl sm:text-2xl md:text-4xl font-bold tracking-[-0.03em] text-black">
             The Problem: Freelancers Often Do Not Get Paid , and Clients Often Get Burned Too
           </h2>
           <p className="text-base leading-8 text-black/70">
