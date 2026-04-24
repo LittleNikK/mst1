@@ -7,8 +7,27 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { Send, MessageCircle } from "lucide-react";
 import { FaInstagram, FaTwitter, FaLinkedin, FaFacebook, FaYoutube, FaTelegram } from "react-icons/fa";
+import { toast } from "react-toastify";
+import { useState } from "react";
 
 export default function Footer() {
+  const [email, setEmail] = useState("");
+
+  const handleNewsletterSubmit = (e) => {
+    e.preventDefault();
+    if (!email) {
+      toast.error("Please enter your email address.");
+      return;
+    }
+    if (!/\S+@\S+\.\S+/.test(email)) {
+      toast.error("Please enter a valid email address.");
+      return;
+    }
+    // Simulate API call
+    toast.success("Thank you for subscribing to our newsletter! 🚀");
+    setEmail("");
+  };
+
   return (
     <div className="bg-white pt-24">
       <footer className="relative bg-white pt-20 pb-10 rounded-t-[60px] md:rounded-t-[100px] border-t border-red-500 font-sans overflow-hidden">
@@ -199,12 +218,15 @@ export default function Footer() {
                   <input
                     type="email"
                     placeholder="YOUR EMAIL"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
                     className="rounded-full px-5 py-2 border border-red-300 bg-white flex-1 text-black outline-none placeholder:text-gray-400 focus:border-red-500 transition"
                     style={{ fontFamily: 'aeonik', fontWeight: 400 }}
                   />
 
                   <button
                     type="button"
+                    onClick={handleNewsletterSubmit}
                     className="bg-red-500 text-white px-6 py-2 rounded-full hover:bg-red-600 transition flex-shrink-0"
                   >
                     SUBMIT
@@ -290,8 +312,8 @@ export default function Footer() {
             </p>
 
             <div className="flex gap-8 text-xs text-gray-500" style={{ fontFamily: 'Poppins', fontWeight: 400 }}>
-              <span className="hover:text-red-500 cursor-pointer transition">Privacy Policy</span>
-              <span className="hover:text-red-500 cursor-pointer transition">Terms of Service</span>
+              <Link href="/Privacy-Policy" className="hover:text-red-500 cursor-pointer transition">Privacy Policy</Link>
+              <Link href="/Terms-Of-Service" className="hover:text-red-500 cursor-pointer transition">Terms of Service</Link>
             </div>
           </div>
         </div>

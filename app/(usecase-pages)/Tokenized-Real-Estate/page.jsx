@@ -119,13 +119,13 @@ function FeatureCard({ title, description, icon: Icon }) {
     <motion.article
       whileHover={{ y: -6, scale: 1.01 }}
       transition={{ duration: 0.25 }}
-      className="group flex flex-col items-center justify-center rounded-2xl border border-white/10 bg-black/90 p-6 text-white shadow-[0_16px_40px_rgba(0,0,0,0.18)] backdrop-blur-md transition-all duration-300 hover:border-[#ff2d2d]/50 hover:bg-red-600 hover:shadow-[0_20px_48px_rgba(255,45,45,0.12)] w-full min-h-[260px] sm:min-h-[280px] md:min-h-[320px] lg:min-h-[340px]"
+      className="group flex flex-col items-start justify-start rounded-2xl border border-white/10 bg-black/90 p-6 text-white shadow-[0_16px_40_rgba(0,0,0,0.18)] backdrop-blur-md transition-all duration-300 hover:border-[#ff2d2d]/50 hover:bg-red-600 hover:shadow-[0_20px_48px_rgba(255,45,45,0.12)] w-full min-h-[260px] sm:min-h-[280px] md:min-h-[320px] lg:min-h-[340px]"
     >
       <div className="group-hover:bg-black mb-4 inline-flex rounded-xl border border-[#ff2d2d]/20 bg-[#ff2d2d]/8 p-2.5">
         <Icon className="h-5 w-5 text-[#ff2d2d]" />
       </div>
-      <h3 className="bungee-regular text-2xl md:text-2xl leading-tight tracking-tight text-white font-extrabold uppercase mb-5 text-center w-full">{title}</h3>
-      <p className="mt-3 text-sm leading-relaxed text-white/68 text-center w-full">{description}</p>
+      <h3 className="bungee-regular text-2xl md:text-2xl leading-tight tracking-tight text-white font-extrabold uppercase mb-5 text-left w-full">{title}</h3>
+      <p className="mt-3 text-sm leading-relaxed text-white/68 text-left w-full">{description}</p>
     </motion.article>
   );
 }
@@ -191,12 +191,9 @@ export default function SupplyChainPage() {
         <SectionFade className="relative mx-auto max-w-[90rem] space-y-6">
           <div className="max-w-4xl space-y-5">
             <div className="relative inline-block">
-              <h1 className="bungee-regular text-6xl md:text-6xl leading-tight tracking-tight text-black font-extrabold uppercase mb-5">
+              <h1 className="bungee-regular text-3xl sm:text-5xl md:text-6xl leading-tight tracking-tight text-black font-extrabold uppercase mb-5">
                 <span className="block">
-                  Tokenized
-                </span>
-                <span className="mt-2 block text-[#ff2d2d]">
-                  Real Estate
+                  Tokenized <span className="text-[#ff2d2d]">Estate</span>
                 </span>
               </h1>
             </div>
@@ -231,7 +228,7 @@ export default function SupplyChainPage() {
           </div>
 
           <div className="overflow-hidden rounded-3xl bg-black shadow-none">
-            <div className="relative flex h-[280px] items-center justify-center overflow-hidden rounded-3xl bg-[linear-gradient(135deg,rgba(255,45,45,0.22),rgba(0,0,0,0.7))] sm:h-[380px]">
+            <div className="relative flex aspect-video items-center justify-center overflow-hidden rounded-3xl bg-[linear-gradient(135deg,rgba(255,45,45,0.22),rgba(0,0,0,0.7))]">
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(255,255,255,0.12),transparent_28%),radial-gradient(circle_at_80%_30%,rgba(255,45,45,0.22),transparent_24%)]" />
               <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(255,255,255,0.04),transparent_40%,rgba(0,0,0,0.22))]" />
               <div className="relative h-full w-full overflow-hidden rounded-3xl border border-white/10">
@@ -296,7 +293,7 @@ export default function SupplyChainPage() {
       {/* INTRO */}
       <section className="mx-auto grid w-full max-w-[90rem] grid-cols-1 gap-10 px-6 py-16 md:px-16 lg:grid-cols-2 lg:items-center">
         <SectionFade className="space-y-5">
-          <h2 className="bungee-regular text-4xl md:text-4xl leading-tight tracking-tight text-black font-extrabold uppercase mb-5">
+          <h2 className="bungee-regular text-2xl sm:text-3xl md:text-4xl leading-tight tracking-tight text-black font-extrabold uppercase mb-5">
             What is Tokenized Real Estate on MST?
           </h2>
           <p className="max-w-2xl text-base leading-8 text-black/70">
@@ -305,7 +302,7 @@ export default function SupplyChainPage() {
         </SectionFade>
 
         <SectionFade className="group overflow-hidden rounded-3xl border border-black/10 bg-white p-2 shadow-[0_14px_36px_rgba(0,0,0,0.08)] transition-transform duration-300 hover:scale-[1.01]">
-          <div className="relative h-[260px] overflow-hidden rounded-[1.35rem] bg-[linear-gradient(135deg,rgba(255,45,45,0.08),rgba(0,0,0,0.04))] sm:h-[330px]">
+          <div className="relative aspect-video overflow-hidden rounded-[1.35rem] bg-[linear-gradient(135deg,rgba(255,45,45,0.08),rgba(0,0,0,0.04))]">
             <Image
               src="/tokenized-estate/What is Tokenized Real.jpg"
               alt="Supply chain intro"
@@ -336,7 +333,7 @@ export default function SupplyChainPage() {
 
       {/* MST vs Traditional Table */}
       <section className="mx-auto w-full max-w-[90rem] px-6 pt-10 pb-8 md:px-16">
-        <h2 className="bungee-regular text-4xl md:text-4xl leading-tight tracking-tight text-black font-extrabold uppercase mb-5 mb-2">
+        <h2 className="bungee-regular text-2xl sm:text-3xl md:text-4xl leading-tight tracking-tight text-black font-extrabold uppercase mb-5 mb-2">
           Why Build This on MST , Not the Traditional Way?
         </h2>
         <p className="text-base text-black/70 mb-7 max-w-2xl">
@@ -391,21 +388,21 @@ export default function SupplyChainPage() {
       {/* PROBLEM + SOLUTION */}
       <section className="mx-auto grid w-full max-w-[90rem] grid-cols-1 gap-10 px-6 py-16 md:px-16 lg:grid-cols-2 lg:items-center">
         <SectionFade className="space-y-5 border-l-2 border-[#ff2d2d] pl-5 md:pl-6">
-          <h2 className="bungee-regular text-4xl md:text-4xl leading-tight tracking-tight text-black font-extrabold uppercase mb-5">
+          <h2 className="bungee-regular text-2xl sm:text-3xl md:text-4xl leading-tight tracking-tight text-black font-extrabold uppercase mb-5">
             The Problem: India's Real Estate Market Has a Trust and Access Crisis
           </h2>
           <p className="text-base leading-8 text-black/70">
             Property transactions involve mountains of paperwork, expensive legal fees, and long waiting periods. Most Indians are completely locked out as investors. Land records in many states are still paper-based , duplicate titles, forged deeds, and ownership disputes drain courts and families alike. The World Bank estimates India loses $13 billion annually to land disputes.
           </p>
 
-          <h2 className="bungee-regular text-3xl md:text-3xl leading-tight tracking-tight text-black font-extrabold uppercase mb-5">How MST Specifically Solves It</h2>
+          <h3 className="bungee-regular text-xl sm:text-2xl md:text-3xl leading-tight tracking-tight text-black font-extrabold uppercase mb-5">How MST Specifically Solves It</h3>
           <p className="text-base leading-8 text-black/70">
             MST's FortunaX consensus makes duplicate titles technically impossible , the chain only accepts ownership records consistent with the existing verified history. mUSD stablecoin means rental distributions are stable in value , not subject to crypto price swings. Fractional node ownership on MST means even the validation of these property records is decentralized and not controlled by any single government or corporation.
           </p>
         </SectionFade>
 
         <SectionFade className="group overflow-hidden rounded-3xl border border-black/10 bg-white p-2 shadow-[0_14px_36px_rgba(0,0,0,0.08)] transition-transform duration-300 hover:scale-[1.01]">
-          <div className="relative h-[280px] overflow-hidden rounded-[1.35rem] bg-[linear-gradient(135deg,rgba(255,45,45,0.08),rgba(0,0,0,0.05))] sm:h-[340px]">
+          <div className="relative aspect-video overflow-hidden rounded-[1.35rem] bg-[linear-gradient(135deg,rgba(255,45,45,0.08),rgba(0,0,0,0.05))]">
             <Image
               src="/tokenized-estate/India's Real Estate Market.jpg"
               alt="Problem and solution visual"
@@ -470,7 +467,7 @@ export default function SupplyChainPage() {
       {/* PROOFS */}
       <section className="mx-auto w-full max-w-[90rem] px-6 py-16 md:px-16">
         <SectionFade className="space-y-3">
-          <h2 className="bungee-regular text-4xl md:text-4xl leading-tight tracking-tight text-black font-extrabold uppercase mb-5">Proofs of Concept</h2>
+          <h2 className="bungee-regular text-2xl sm:text-3xl md:text-4xl leading-tight tracking-tight text-black font-extrabold uppercase mb-5">Proofs of Concept</h2>
           <p className="max-w-2xl text-base leading-8 text-black/68">
             Real-world applications showing how MST blockchain delivers this use case across different industries and contexts.
           </p>

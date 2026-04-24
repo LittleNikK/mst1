@@ -26,22 +26,22 @@ const featureItems = [
 
 const proofItems = [
   {
-    title: 'Collectible Character Assets',
-    description: 'Limited-edition game characters minted as unique blockchain assets with verifiable rarity and permanently transferable ownership.',
+    title: 'International Health Pass',
+    description: 'Cross-border medical record sharing for travelers, allowing instant verification of vaccination status and health history globally.',
     image: '/Healthcare-records/International Health Card.jpg',
-    alt: 'National car manufacturer supply chain'
+    alt: 'International health card'
   },
   {
-    title: 'In-Game Item Marketplace',
-    description: 'Peer-to-peer item trading with smart contract escrow, automatic royalty payment, and full transaction transparency.',
+    title: 'Medicare Data Portability',
+    description: 'Enabling patients to transition between insurance providers while maintaining a single, immutable health profile they own.',
     image: '/Healthcare-records/Medicare Health Card.jpg',
-    alt: 'Express shipping supply chain'
+    alt: 'Medicare health card'
   },
   {
-    title: 'Achievement & Badge Tokens',
-    description: 'In-game achievements anchored on-chain as verifiable credentials , portable across compatible game platforms.',
+    title: 'Verified Lab Reports',
+    description: 'On-chain integrity proofs for diagnostic tests, preventing forgery and ensuring doctors receive untampered medical results.',
     image: '/Healthcare-records/Laboratory Test Reports.jpg',
-    alt: 'Food and agriculture supply chain'
+    alt: 'Laboratory test reports'
   }
 ];
 
@@ -62,10 +62,10 @@ const verifierSteps = [
 ];
 
 const stats = [
-  { label: 'Record Access', value: 'Real-Time' },
-  { label: 'Access Accountability', value: '100%' },
-  { label: 'Controlled Permissions', value: 'Patient' },
-  { label: 'Unauthorized Exposure', value: 'Zero ' }
+  { label: 'Patient Access', value: '100% Control' },
+  { label: 'Wait Times', value: 'Zero Delays' },
+  { label: 'Data Integrity', value: 'Immutable' },
+  { label: 'Privacy Status', value: 'Zero-Knowledge' }
 ];
 
 function SectionFade({ children, className = '' }) {
@@ -88,13 +88,13 @@ function FeatureCard({ title, description, icon: Icon }) {
     <motion.article
       whileHover={{ y: -6, scale: 1.01 }}
       transition={{ duration: 0.25 }}
-      className="group flex flex-col items-center justify-center rounded-2xl border border-white/10 bg-black/90 p-6 text-white shadow-[0_16px_40px_rgba(0,0,0,0.18)] backdrop-blur-md transition-all duration-300 hover:border-[#ff2d2d]/50 hover:bg-red-600 hover:shadow-[0_20px_48px_rgba(255,45,45,0.12)] w-full min-h-[260px] sm:min-h-[280px] md:min-h-[320px] lg:min-h-[340px]"
+      className="group flex flex-col items-start justify-start rounded-2xl border border-white/10 bg-black/90 p-6 text-white shadow-[0_16px_40px_rgba(0,0,0,0.18)] backdrop-blur-md transition-all duration-300 hover:border-[#ff2d2d]/50 hover:bg-red-600 hover:shadow-[0_20px_48px_rgba(255,45,45,0.12)] w-full min-h-[260px] sm:min-h-[280px] md:min-h-[320px] lg:min-h-[340px]"
     >
       <div className="group-hover:bg-black mb-4 inline-flex rounded-xl border border-[#ff2d2d]/20 bg-[#ff2d2d]/8 p-2.5">
         <Icon className="h-5 w-5 text-[#ff2d2d]" />
       </div>
-      <h3 className="bungee-regular text-2xl md:text-2xl leading-tight tracking-tight text-white font-extrabold uppercase mb-5 text-center w-full">{title}</h3>
-      <p className="mt-3 text-sm leading-relaxed text-white/68 text-center w-full">{description}</p>
+      <h3 className="bungee-regular text-xl sm:text-2xl leading-tight tracking-tight text-white font-extrabold uppercase mb-5 text-left w-full">{title}</h3>
+      <p className="mt-3 text-sm leading-relaxed text-white/68 text-left w-full">{description}</p>
     </motion.article>
   );
 }
@@ -117,7 +117,7 @@ function ProofCard({ title, description, image, alt }) {
         />
       </div>
       <div className="p-5">
-        <h3 className="bungee-regular text-2xl md:text-2xl leading-tight tracking-tight text-black font-extrabold uppercase mb-5">{title}</h3>
+        <h3 className="bungee-regular text-xl sm:text-2xl leading-tight tracking-tight text-black font-extrabold uppercase mb-5">{title}</h3>
         <p className="mt-2 text-sm leading-relaxed text-black/68">{description}</p>
         <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-[#ff2d2d] transition-transform duration-300 group-hover:translate-x-1">
           Read More <ArrowRight className="h-4 w-4" />
@@ -130,7 +130,7 @@ function ProofCard({ title, description, image, alt }) {
 function StepFlow({ title, steps, accent = false }) {
   return (
     <div className="flex h-full flex-col rounded-2xl border border-black/10 bg-white p-6 shadow-[0_14px_34px_rgba(0,0,0,0.05)]">
-      <h3 className="bungee-regular text-2xl md:text-2xl leading-tight tracking-tight text-black font-extrabold uppercase mb-5">{title}</h3>
+      <h3 className="bungee-regular text-xl sm:text-2xl leading-tight tracking-tight text-black font-extrabold uppercase mb-5">{title}</h3>
       <div className="mt-6 flex-1 space-y-4">
         {steps.map((step, index) => (
           <div key={step} className="flex items-start gap-3">
@@ -158,10 +158,9 @@ export default function HealthcarePage() {
         <SectionFade className="relative mx-auto max-w-[90rem] space-y-6">
           <div className="max-w-4xl space-y-5">
             <div className="relative inline-block">
-              <h1 className="bungee-regular text-6xl md:text-6xl leading-tight tracking-tight text-black font-extrabold uppercase mb-5">
+              <h1 className="bungee-regular text-3xl sm:text-5xl md:text-6xl leading-tight tracking-tight text-black font-extrabold uppercase mb-5">
                 <span className="block">
-                  Healthcare
-                  <span className="text-[#ff2d2d]"> Records</span>
+                  <span className="text-[#ff2d2d]">Healthcare</span> Records
                 </span>
               </h1>
             </div>
@@ -196,7 +195,7 @@ export default function HealthcarePage() {
           </div>
 
           <div className="overflow-hidden rounded-3xl bg-black shadow-none">
-            <div className="relative flex h-[280px] items-center justify-center overflow-hidden rounded-3xl bg-[linear-gradient(135deg,rgba(255,45,45,0.22),rgba(0,0,0,0.7))] sm:h-[380px]">
+            <div className="relative flex aspect-video items-center justify-center overflow-hidden rounded-3xl bg-[linear-gradient(135deg,rgba(255,45,45,0.22),rgba(0,0,0,0.7))]">
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(255,255,255,0.12),transparent_28%),radial-gradient(circle_at_80%_30%,rgba(255,45,45,0.22),transparent_24%)]" />
               <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(255,255,255,0.04),transparent_40%,rgba(0,0,0,0.22))]" />
               <div className="relative h-full w-full overflow-hidden rounded-3xl border border-white/10">
@@ -221,28 +220,28 @@ export default function HealthcarePage() {
             <div className="relative overflow-hidden rounded-xl border border-white/10 bg-[#0b1a36] px-5 py-6 text-center text-white shadow-[0_14px_36px_rgba(0,0,0,0.20)]">
               <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,45,45,0.18),transparent_45%),radial-gradient(circle_at_bottom_right,rgba(255,255,255,0.08),transparent_50%)]" />
               <div className="relative">
-                <p className="text-3xl font-extrabold tracking-[-0.03em] sm:text-4xl">$3.7B</p>
-                <p className="mt-2 text-sm font-medium text-white/70">Citizens Distrust Electronic Voting
+                <p className="text-3xl font-extrabold tracking-[-0.03em] sm:text-4xl">$450B</p>
+                <p className="mt-2 text-sm font-medium text-white/70">Cost of Healthcare Inefficiency
                 </p>
-                <p className="mt-1 text-xs italic text-white/50">MIT Election Lab 2024</p>
+                <p className="mt-1 text-xs italic text-white/50">WHO Report 2024</p>
               </div>
             </div>
 
             <div className="relative overflow-hidden rounded-xl border border-white/10 bg-[#0b1a36] px-5 py-6 text-center text-white shadow-[0_14px_36px_rgba(0,0,0,0.20)]">
               <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,45,45,0.18),transparent_45%),radial-gradient(circle_at_bottom_right,rgba(255,255,255,0.08),transparent_50%)]" />
               <div className="relative">
-                <p className="text-3xl font-extrabold tracking-[-0.03em] sm:text-4xl">$184B</p>
-                <p className="mt-2 text-sm font-medium text-white/70">In-Game Asset Market Size 2024</p>
-                <p className="mt-1 text-xs italic text-white/50">Newzoo Gaming Report</p>
+                <p className="text-3xl font-extrabold tracking-[-0.03em] sm:text-4xl">86%</p>
+                <p className="mt-2 text-sm font-medium text-white/70">Mistakes due to Miscommunication</p>
+                <p className="mt-1 text-xs italic text-white/50">Joint Commission Report</p>
               </div>
             </div>
 
             <div className="relative overflow-hidden rounded-xl border border-white/10 bg-[#0b1a36] px-5 py-6 text-center text-white shadow-[0_14px_36px_rgba(0,0,0,0.20)]">
               <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,45,45,0.18),transparent_45%),radial-gradient(circle_at_bottom_right,rgba(255,255,255,0.08),transparent_50%)]" />
               <div className="relative">
-                <p className="text-3xl font-extrabold tracking-[-0.03em] sm:text-4xl">87%</p>
-                <p className="mt-2 text-sm font-medium text-white/70">Players Believe They Should Own Assets</p>
-                <p className="mt-1 text-xs italic text-white/50">Mythical Games Survey 2024</p>
+                <p className="text-3xl font-extrabold tracking-[-0.03em] sm:text-4xl">72%</p>
+                <p className="mt-2 text-sm font-medium text-white/70">Patients Want Digital Control</p>
+                <p className="mt-1 text-xs italic text-white/50">Accenture Health Survey 2024</p>
               </div>
             </div>
 
@@ -250,7 +249,7 @@ export default function HealthcarePage() {
               <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,45,45,0.18),transparent_45%),radial-gradient(circle_at_bottom_right,rgba(255,255,255,0.08),transparent_50%)]" />
               <div className="relative">
                 <p className="text-3xl font-extrabold tracking-[-0.03em] sm:text-4xl">Zero</p>
-                <p className="mt-2 text-sm font-medium text-white/70">Compensation When Games Shut Down (Today)</p>
+                <p className="mt-2 text-sm font-medium text-white/70">Unauthorized Breaches on MST</p>
                 <p className="mt-1 text-xs italic text-white/50">Industry Standard</p>
               </div>
             </div>
@@ -261,9 +260,8 @@ export default function HealthcarePage() {
       {/* INTRO */}
       <section className="mx-auto grid w-full max-w-[90rem] grid-cols-1 gap-10 px-6 py-16 md:px-16 lg:grid-cols-2 lg:items-center">
         <SectionFade className="space-y-5">
-          <h2 className="bungee-regular text-4xl md:text-4xl leading-tight tracking-tight text-black font-extrabold uppercase mb-5">
-            What are Blockchain Healthcare Records?
-
+          <h2 className="bungee-regular text-2xl sm:text-3xl md:text-4xl leading-tight tracking-tight text-black font-extrabold uppercase mb-5">
+            What are <span className="text-[#ff2d2d]">Blockchain</span> Healthcare Records?
           </h2>
           <p className="max-w-2xl text-base leading-8 text-black/70">
             Imagine if all your medical records , from every hospital, clinic, and lab you have ever visited , were available in one secure place that only you control. You decide who can see them. Your doctor can access your complete history in seconds instead of waiting days for faxes and phone calls. MST Blockchain makes this possible by creating a secure permission layer , a digital gatekeeper that ensures only the right people see your records at the right time.
@@ -271,7 +269,7 @@ export default function HealthcarePage() {
         </SectionFade>
 
         <SectionFade className="group overflow-hidden rounded-3xl border border-black/10 bg-white p-2 shadow-[0_14px_36px_rgba(0,0,0,0.08)] transition-transform duration-300 hover:scale-[1.01]">
-          <div className="relative h-[260px] overflow-hidden rounded-[1.35rem] bg-[linear-gradient(135deg,rgba(255,45,45,0.08),rgba(0,0,0,0.04))] sm:h-[330px]">
+          <div className="relative aspect-video overflow-hidden rounded-[1.35rem] bg-[linear-gradient(135deg,rgba(255,45,45,0.08),rgba(0,0,0,0.04))]">
             <Image
               src="/Healthcare-records/What are Blockchain Healthcare Records_.jpg"
               alt="Supply chain intro"
@@ -302,8 +300,8 @@ export default function HealthcarePage() {
 
       {/* MST vs Traditional Table */}
       <section className="mx-auto w-full max-w-[90rem] px-6 pt-10 pb-8 md:px-16">
-        <h2 className="bungee-regular text-4xl md:text-4xl leading-tight tracking-tight text-black font-extrabold uppercase mb-5 mb-2">
-          Why Build This on MST , Not the Traditional Way?
+        <h2 className="bungee-regular text-2xl sm:text-3xl md:text-4xl leading-tight tracking-tight text-black font-extrabold uppercase mb-5 mb-2">
+          Why Build This on <span className="text-[#ff2d2d]">MST</span> , Not the Traditional Way?
         </h2>
         <p className="text-base text-black/70 mb-7 max-w-2xl">
           Solutions like this exist in Web2 today. Here is exactly why MST blockchain changes the outcome , and why MST specifically is the right choice.
@@ -319,34 +317,34 @@ export default function HealthcarePage() {
             <tbody className="align-top">
               <tr className="border-b border-[#f5eaea]">
                 <td className="px-6 py-5 text-[#1a2745] bg-[#f8fafd]">
-                  <span className="inline-flex items-center gap-2"><span className="text-[#ff2d2d] text-lg">✗</span> Players spend $3.7B on items they legally own nothing of , platform licence only</span>
+                  <span className="inline-flex items-center gap-2"><span className="text-[#ff2d2d] text-lg">✗</span> Records scattered across multiple providers with no central patient control</span>
                 </td>
                 <td className="px-6 py-5 bg-[#fff3f3] text-[#1a2745]">
-                  <span className="inline-flex items-center gap-2"><span className="text-[#ff2d2d] text-lg">✓</span> <span className="font-semibold">MST items are owned by the player, recorded permanently on blockchain , provably theirs</span></span>
+                  <span className="inline-flex items-center gap-2"><span className="text-[#ff2d2d] text-lg">✓</span> <span className="font-semibold">Patient controls a single source of truth for their entire medical history</span></span>
                 </td>
               </tr>
               <tr className="border-b border-[#f5eaea]">
                 <td className="px-6 py-5 text-[#1a2745] bg-[#f8fafd]">
-                  <span className="inline-flex items-center gap-2"><span className="text-[#ff2d2d] text-lg">✗</span>Game shutdown = total loss of all purchased items with no compensation possible</span>
+                  <span className="inline-flex items-center gap-2"><span className="text-[#ff2d2d] text-lg">✗</span>Accessing history during emergencies is slow and relies on manual faxing/calls</span>
                 </td>
                 <td className="px-6 py-5 bg-[#fff3f3] text-[#1a2745]">
-                  <span className="inline-flex items-center gap-2"><span className="text-[#ff2d2d] text-lg">✓</span> <span className="font-semibold">MST items exist on blockchain , independent of any game server or company decision</span></span>
+                  <span className="inline-flex items-center gap-2"><span className="text-[#ff2d2d] text-lg">✓</span> <span className="font-semibold">Emergency access granted instantly via secure, automated blockchain protocols</span></span>
                 </td>
               </tr>
               <tr className="border-b border-[#f5eaea]">
                 <td className="px-6 py-5 text-[#1a2745] bg-[#f8fafd]">
-                  <span className="inline-flex items-center gap-2"><span className="text-[#ff2d2d] text-lg">✗</span> Rarity claims unverifiable , developers can secretly mint more items of any type</span>
+                  <span className="inline-flex items-center gap-2"><span className="text-[#ff2d2d] text-lg">✗</span> No transparency on who accessed your sensitive data or why</span>
                 </td>
                 <td className="px-6 py-5 bg-[#fff3f3] text-[#1a2745]">
-                  <span className="inline-flex items-center gap-2"><span className="text-[#ff2d2d] text-lg">✓</span> <span className="font-semibold">Smart contract enforces total supply , no developer can mint beyond what was declared</span></span>
+                  <span className="inline-flex items-center gap-2"><span className="text-[#ff2d2d] text-lg">✓</span> <span className="font-semibold">Every access event is permanently logged on the immutable MST blockchain</span></span>
                 </td>
               </tr>
               <tr>
                 <td className="px-6 py-5 text-[#1a2745] bg-[#f8fafd] rounded-bl-2xl">
-                  <span className="inline-flex items-center gap-2"><span className="text-[#ff2d2d] text-lg">✗</span>Grey market trading exposes players to scams with zero purchase protection </span>
+                  <span className="inline-flex items-center gap-2"><span className="text-[#ff2d2d] text-lg">✗</span>High risk of data breaches in centralized hospital databases</span>
                 </td>
                 <td className="px-6 py-5 bg-[#fff3f3] text-[#1a2745] rounded-br-2xl">
-                  <span className="inline-flex items-center gap-2"><span className="text-[#ff2d2d] text-lg">✓</span> <span className="font-semibold">Smart contract escrow on MST , trades execute atomically with zero counterparty risk</span></span>
+                  <span className="inline-flex items-center gap-2"><span className="text-[#ff2d2d] text-lg">✓</span> <span className="font-semibold">Decentralized storage and permission layer eliminates single points of failure</span></span>
                 </td>
               </tr>
             </tbody>
@@ -357,21 +355,21 @@ export default function HealthcarePage() {
       {/* PROBLEM + SOLUTION */}
       <section className="mx-auto grid w-full max-w-[90rem] grid-cols-1 gap-10 px-6 py-16 md:px-16 lg:grid-cols-2 lg:items-center">
         <SectionFade className="space-y-5 border-l-2 border-[#ff2d2d] pl-5 md:pl-6">
-          <h2 className="bungee-regular text-4xl md:text-4xl leading-tight tracking-tight text-black font-extrabold uppercase mb-5">
-            The Problem: Players Own Nothing
+          <h2 className="bungee-regular text-2xl sm:text-3xl md:text-4xl leading-tight tracking-tight text-black font-extrabold uppercase mb-5">
+            The Problem: <span className="text-[#ff2d2d]">Fragmented</span> Data
           </h2>
           <p className="text-base leading-8 text-black/70">
-            The global gaming market generates hundreds of billions in revenue , much of it from players buying in-game items. But players own none of it. The items are just entries in a company's database. Game studios can modify item values, remove items entirely, or shut down the game with no compensation to players. Meanwhile, thriving grey markets of unregulated item trading expose players to fraud and scams with zero protection.
+            Medical records are currently trapped in "data silos" across different hospitals and clinics. When you visit a new doctor, they often don't have access to your previous tests or history, leading to repeated procedures and dangerous delays. Patients have zero visibility into who is accessing their records, and centralized hospital databases are prime targets for ransomware and data breaches.
           </p>
 
-          <h3 className="bungee-regular text-3xl md:text-3xl leading-tight tracking-tight text-black font-extrabold uppercase mb-5 pt-2">How MST Fixes It</h3>
+          <h3 className="bungee-regular text-xl sm:text-2xl md:text-3xl leading-tight tracking-tight text-black font-extrabold uppercase mb-5 pt-2">How <span className="text-[#ff2d2d]">MST</span> Fixes It</h3>
           <p className="text-base leading-8 text-black/70">
-            MST allows game developers to mint in-game items as blockchain assets. Rarity, utility, and transfer rules are defined in smart contracts. Once minted, ownership transfers to the player and is permanently recorded on the blockchain. Players can trade freely on open marketplaces. Developers earn programmable royalties on every secondary sale. When a game evolves, items can persist and carry value across compatible platforms.
+            MST provides a universal, patient-controlled permission layer. Instead of records being "stored" on the blockchain, the blockchain manages the "keys" to those records. Patients grant specific, time-limited access to providers. All interactions are logged on an immutable audit trail. This ensures that the right provider has the right data at the right time, while the patient remains the ultimate owner of their medical identity.
           </p>
         </SectionFade>
 
         <SectionFade className="group overflow-hidden rounded-3xl border border-black/10 bg-white p-2 shadow-[0_14px_36px_rgba(0,0,0,0.08)] transition-transform duration-300 hover:scale-[1.01]">
-          <div className="relative h-[280px] overflow-hidden rounded-[1.35rem] bg-[linear-gradient(135deg,rgba(255,45,45,0.08),rgba(0,0,0,0.05))] sm:h-[340px]">
+          <div className="relative aspect-video overflow-hidden rounded-[1.35rem] bg-[linear-gradient(135deg,rgba(255,45,45,0.08),rgba(0,0,0,0.05))]">
             <Image
               src="/Healthcare-records/Players Own Nothing.jpg"
               alt="Problem and solution visual"
@@ -390,7 +388,7 @@ export default function HealthcarePage() {
             <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,45,45,0.18),transparent_38%),radial-gradient(circle_at_bottom_right,rgba(255,255,255,0.10),transparent_40%),linear-gradient(to_bottom,rgba(0,0,0,0.0),rgba(0,0,0,0.22))]" />
 
             <div className="relative">
-              <h2 className="font-[var(--font-space-grotesk)] text-3xl font-extrabold tracking-[-0.03em] text-white sm:text-4xl">
+              <h2 className="bungee-regular text-2xl sm:text-3xl md:text-4xl leading-tight tracking-tight text-white font-extrabold uppercase mb-5">
                 What Makes MST the Right Blockchain for This
               </h2>
               <p className="mt-3 max-w-3xl text-base leading-8 text-white/70">
@@ -400,31 +398,31 @@ export default function HealthcarePage() {
               <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-3">
                 <div className="rounded-2xl border border-white/10 bg-white/5 p-7 backdrop-blur-sm">
                   <p className="text-[10px] font-bold uppercase tracking-[0.34em] text-[#ff2d2d]">WASMify Protocol</p>
-                  <h3 className="mt-3 font-[var(--font-space-grotesk)] text-xl font-bold tracking-[-0.01em] text-white">
-                    Any Game Language Can Mint Items
+                  <h3 className="bungee-regular text-xl sm:text-2xl leading-tight tracking-tight text-white font-extrabold uppercase mb-5 mt-3">
+                    Authorized Provider Access
                   </h3>
                   <p className="mt-3 text-sm leading-7 text-white/70">
-                    WASMify's multi-language WASM support means game developers in Unity, Unreal, or any engine can mint MST blockchain assets without learning Solidity or adopting a new tech stack.
+                    WASMify enables seamless integration with existing hospital management systems, allowing providers to securely interact with on-chain record permissions without rebuilding their core infrastructure.
                   </p>
                 </div>
 
                 <div className="rounded-2xl border border-white/10 bg-white/5 p-7 backdrop-blur-sm">
                   <p className="text-[10px] font-bold uppercase tracking-[0.34em] text-[#ff2d2d]">FortunaX Consensus</p>
-                  <h3 className="mt-3 font-[var(--font-space-grotesk)] text-xl font-bold tracking-[-0.01em] text-white">
-                    High-Frequency Gaming Transactions
+                  <h3 className="bungee-regular text-xl sm:text-2xl leading-tight tracking-tight text-white font-extrabold uppercase mb-5 mt-3">
+                    Sub-Second Record Verification
                   </h3>
                   <p className="mt-3 text-sm leading-7 text-white/70">
-                    Gaming requires thousands of item transactions per second. MST's FortunaX consensus handles high-throughput in-game economies at transaction fees so low that even ₹1 micro-items are viable.
+                    In emergency medical situations, every second counts. MST's FortunaX consensus provides near-instant verification of record permissions, ensuring doctors get the data they need when it matters most.
                   </p>
                 </div>
 
                 <div className="rounded-2xl border border-white/10 bg-white/5 p-7 backdrop-blur-sm">
                   <p className="text-[10px] font-bold uppercase tracking-[0.34em] text-[#ff2d2d]">Bridge-Key Wallet</p>
-                  <h3 className="mt-3 font-[var(--font-space-grotesk)] text-xl font-bold tracking-[-0.01em] text-white">
-                    Mainstream Players Onboard Instantly
+                  <h3 className="bungee-regular text-xl sm:text-2xl leading-tight tracking-tight text-white font-extrabold uppercase mb-5 mt-3">
+                    Klethesia Privacy Protection
                   </h3>
                   <p className="mt-3 text-sm leading-7 text-white/70">
-                    The Bridge-Key Wallet eliminates the Web3 onboarding barrier , mainstream players with no crypto experience can own, trade, and hold MST game assets from day one using familiar interfaces.
+                    Klethesia ensures that patient identity and sensitive medical data remain private on-chain. Only cryptographic proofs of permission are public, maintaining total HIPAA-compliant privacy.
                   </p>
                 </div>
               </div>
@@ -436,7 +434,7 @@ export default function HealthcarePage() {
       {/* PROOFS */}
       <section className="mx-auto w-full max-w-[110rem] px-6 py-16 md:px-16">
         <SectionFade className="space-y-3">
-          <h2 className="bungee-regular text-4xl md:text-4xl leading-tight tracking-tight text-black font-extrabold uppercase mb-5">Proofs of Concept</h2>
+          <h2 className="bungee-regular text-2xl sm:text-3xl md:text-4xl leading-tight tracking-tight text-black font-extrabold uppercase mb-5">Proofs of <span className="text-[#ff2d2d]">Concept</span></h2>
           <p className="max-w-2xl text-base leading-8 text-black/68">
             Real-world examples showing how this use case works in practice across different industries and regions.
 

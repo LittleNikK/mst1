@@ -130,26 +130,32 @@ export default function HeroImage() {
         >
           <div className="relative overflow-hidden rounded-[2rem] border border-accent/10 bg-gradient-to-br from-white/90 via-white to-zinc-100/90 p-2 lg:mr-20 lg:mb-10 shadow-glow lg:[transform:rotateX(13deg)_rotateY(-16deg)] transition-transform duration-700 ease-in-out hover:[transform:rotateX(0deg)_rotateY(0deg)] hover:shadow-[0_0_120px_rgba(255,45,45,0.25)]" style={{ boxShadow: '0 0 90px rgba(255, 45, 45, 0.15), 0 34px 76px rgba(0, 0, 0, 0.25)', transformOrigin: '50% 50%' }}>
             <div className="relative w-[195px] h-[360px] sm:w-[300px] sm:h-[480px] overflow-hidden rounded-[1.5rem] border border-black/10 bg-black/5 mx-auto flex items-center justify-center">
-            <AnimatePresence mode="wait">
+            {slides.map((slide, index) => (
               <motion.div
-                key={slides[activeIndex].src}
-                initial={{ opacity: 0.65, scale: 1.01 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0.65, scale: 0.99 }}
+                key={slide.src}
+                initial={{ opacity: index === 0 ? 1 : 0, scale: index === 0 ? 1 : 1.01 }}
+                animate={{ 
+                  opacity: activeIndex === index ? 1 : 0, 
+                  scale: activeIndex === index ? 1 : 1.01 
+                }}
                 transition={{ duration: 0.35, ease: 'easeInOut' }}
                 className="absolute inset-0"
+                style={{ 
+                  zIndex: activeIndex === index ? 10 : 0,
+                  pointerEvents: activeIndex === index ? 'auto' : 'none'
+                }}
               >
                 <Image
-                  src={slides[activeIndex].src}
-                  alt={slides[activeIndex].alt}
+                  src={slide.src}
+                  alt={slide.alt}
                   fill
                   className="object-cover"
                   style={{objectFit:'cover', width:'100%', height:'100%'}}
-                  priority={activeIndex === 0 || activeIndex === 1}
+                  priority={true}
                   sizes="(max-width: 1024px) 100vw, 50vw"
                 />
               </motion.div>
-            </AnimatePresence>
+            ))}
             <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/5 to-transparent pointer-events-none" />
 
             {/* Loop Progress Indicators */}

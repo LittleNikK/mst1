@@ -351,7 +351,7 @@ function MegaMenu({
         ref={panelRef}
         {...panelMotion}
         transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-        className={`${widthClass}h-[350px] rounded-3xl border border-red-500/20 bg-black/90 p-8 text-white shadow-[0_0_40px_rgba(255,0,0,0.2)] backdrop-blur-xl`}
+        className={`${widthClass} h-[350px] rounded-3xl border border-red-500/20 bg-black p-8 text-white shadow-[0_0_40px_rgba(255,0,0,0.2)] backdrop-blur-xl`}
       >
         <div className="grid h-full min-h-0 grid-cols-1 gap-8 lg:grid-cols-3">
           <div
@@ -505,7 +505,7 @@ export default function Navbar() {
   const renderLearnDropdown = () => (
     <MegaMenu
       menuId="learn"
-      widthClass="w-[1040px] h-full max-w-[calc(100vw-2rem)]"
+      widthClass="w-[1040px] max-w-[calc(100vw-2rem)]"
       anchorRef={learnButtonRef}
       positionStrategy="fixed"
       viewportMargin={16}
@@ -610,13 +610,21 @@ export default function Navbar() {
 
           <nav className="relative z-20 flex h-16 w-full items-center justify-between px-4 lg:px-8">
 
-            <Link href="/" className="-ml-5 flex items-center h-full group overflow-visible">
+            <Link href="/" className="lg:-ml-5 ml-0 flex items-center h-full group overflow-visible">
               <Image
                 src="/mstlogoo.png"
                 alt="MST logo"
                 width={250}
                 height={80}
-                className="h-[100px] w-auto object-contain transition-all duration-500 translate-y-1 group-hover:drop-shadow-[0_0_20px_rgba(255,45,45,0.4)] t-10"
+                className="hidden lg:block h-[100px] w-auto object-contain transition-all duration-500 translate-y-1 group-hover:drop-shadow-[0_0_20px_rgba(255,45,45,0.4)] t-10"
+                priority
+              />
+              <Image
+                src="/1.png"
+                alt="MST logo mobile"
+                width={150}
+                height={50}
+                className="block lg:hidden h-[60px] w-auto object-contain ml-2"
                 priority
               />
             </Link>
@@ -779,7 +787,7 @@ export default function Navbar() {
                 setMobileLearnOpen(false);
                 setMobileProductsOpen(false);
                 setMobileUseCasesOpen(false);
-                closeAllMenus();
+                setActiveDesktopMenu(null);
               }}
               className="group relative inline-flex h-9 w-9 flex-col items-center justify-center gap-1.5 rounded-full border border-white/10 bg-white/5 text-white lg:hidden"
             >

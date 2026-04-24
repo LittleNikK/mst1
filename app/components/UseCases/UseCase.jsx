@@ -7,7 +7,7 @@ import { useRouter } from "next/navigation";
 const useCases = [
   { id: "01", title: "On-Chain Certificate", desc: "Every certificate gets a unique fingerprint locked on the blockchain. Fraud becomes structurally impossible.", size: "tall", icon: "chain" },
   { id: "02", title: "NFT Ticketing", desc: "Every ticket is a unique on-chain asset. No fakes. No scalping. No lost entry. Real ownership for every fan.", size: "medium", icon: "building" },
-  { id: "03", title: "Tokenized Real Estate", desc: "Real estate on MST blockchain , fractional, transparent, and permanently verifiable.", size: "small", icon: "droplet" },
+  { id: "03", title: "Tokenized Real Estate", desc: "Real estate on MST blockchain , fractional, transparent, and permanently verifiable.", size: "medium", icon: "droplet" },
   { id: "04", title: "Decentralized Voting", desc: "When votes live on the blockchain, results cannot be disputed, altered, or hidden.", size: "medium", icon: "shield" },
   { id: "05", title: "Healthcare Records", desc: "You control your medical records. Doctors get what they need instantly. MST is the secure bridge.", size: "tall", icon: "gamepad" },
   { id: "06", title: "Loyalty & Rewards", desc: "Loyalty tokens with real value. Transparent rules. No expiry surprises. Spend across any partner brand.", size: "small", icon: "fingerprint" },
@@ -21,7 +21,7 @@ const useCases = [
   { id: "14", title: "Insurance Automation", desc: "MST smart contracts replace manual claims. When conditions are met, payment happens automatically.", size: "small", icon: "handshake" },
   { id: "15", title: "Freelance Marketplace", desc: "Work. Deliver. Get paid automatically. MST smart contracts replace informal trust in global freelancing.", size: "medium", icon: "umbrella" },
   { id: "16", title: "Carbon Credit Tracking", desc: "No double-counting. No greenwashing. Carbon offset claims that are actually mathematically provable.", size: "tall", icon: "diamond" },
-  { id: "17", title: "Enterprise Workflow Automation", desc: "MST smart contracts replace slow manual approvals with automated workflows and instant audit trails.", size: "small", icon: "coins" },
+  { id: "17", title: "Enterprise Workflow Automation", desc: "MST smart contracts replace slow manual approvals with automated workflows and instant audit trails.", size: "medium", icon: "coins" },
   { id: "18", title: "Digital Asset Exchange", desc: "Trade on MST with confidence , non-custodial, instant settlement, and every transaction permanently verifiable.", size: "medium", icon: "clock" },
   { id: "19", title: "Decentralized Social Platforms", desc: "Your identity. Your content. Your community. All on MST blockchain. All permanently yours.", size: "tall", icon: "eye" },
 ];
@@ -52,9 +52,9 @@ const icons = {
 // ... (keep the useCases and icons objects exactly as they are)
 
 const sizeMap = {
-  small: "min-h-[120px] sm:min-h-[140px]",
-  medium: "min-h-[160px] sm:min-h-[190px]",
-  tall: "min-h-[200px] sm:min-h-[250px]",
+  small: "min-h-[150px] sm:min-h-[140px]",
+  medium: "min-h-[180px] sm:min-h-[190px]",
+  tall: "min-h-[220px] sm:min-h-[250px]",
 };
 
 const Card = ({ item, index }) => {

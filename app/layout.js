@@ -4,6 +4,8 @@ import "./globals.css";
 import Navbar from "./components/navbar/Navbar";
 import MstBuddy from "./components/MstBuddy/BuddyPanel";
 import Footer from "./components/footer/Footer";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 // import { useState } from "react";
 
 const geistSans = Geist({
@@ -28,8 +30,20 @@ export default function RootLayout({ children }) {
       <body suppressHydrationWarning className="min-h-full flex flex-col">
         <Navbar />
         {children}
-        <MstBuddy/>
+        <MstBuddy />
         <Footer />
+        <ToastContainer
+          position="top-right pt-20"
+          autoClose={5000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="colored"
+        />
       </body>
     </html>
   );

@@ -760,7 +760,7 @@ export default function Navbar() {
                 setMobileLearnOpen(false);
                 setMobileProductsOpen(false);
                 setMobileUseCasesOpen(false);
-                closeAllMenus();
+                setActiveDesktopMenu(null);
               }}
               className="group relative inline-flex h-9 w-9 flex-col items-center justify-center gap-1.5 rounded-full border border-white/10 bg-white/5 text-white lg:hidden"
             >

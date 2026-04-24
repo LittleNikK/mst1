@@ -87,13 +87,13 @@ function FeatureCard({ title, description, icon: Icon }) {
     <motion.article
       whileHover={{ y: -6, scale: 1.01 }}
       transition={{ duration: 0.25 }}
-      className="group flex flex-col items-center justify-center rounded-2xl border border-white/10 bg-black/90 p-6 text-white shadow-[0_16px_40px_rgba(0,0,0,0.18)] backdrop-blur-md transition-all duration-300 hover:border-[#ff2d2d]/50 hover:bg-red-600 hover:shadow-[0_20px_48px_rgba(255,45,45,0.12)] w-full min-h-[260px] sm:min-h-[280px] md:min-h-[320px] lg:min-h-[340px]"
+      className="group flex flex-col items-start justify-start rounded-2xl border border-white/10 bg-black/90 p-6 text-white shadow-[0_16px_40px_rgba(0,0,0,0.18)] backdrop-blur-md transition-all duration-300 hover:border-[#ff2d2d]/50 hover:bg-red-600 hover:shadow-[0_20px_48px_rgba(255,45,45,0.12)] w-full min-h-[260px] sm:min-h-[280px] md:min-h-[320px] lg:min-h-[340px]"
     >
       <div className="group-hover:bg-black mb-4 inline-flex rounded-xl border border-[#ff2d2d]/20 bg-[#ff2d2d]/8 p-2.5">
         <Icon className="h-5 w-5 text-[#ff2d2d]" />
       </div>
-      <h3 className="bungee-regular text-2xl md:text-2xl leading-tight tracking-tight text-white font-extrabold uppercase mb-5 text-center w-full">{title}</h3>
-      <p className="mt-3 text-sm leading-relaxed text-white/68 text-center w-full">{description}</p>
+      <h3 className="bungee-regular text-xl sm:text-2xl leading-tight tracking-tight text-white font-extrabold uppercase mb-5 text-left w-full">{title}</h3>
+      <p className="mt-3 text-sm leading-relaxed text-white/68 text-left w-full">{description}</p>
     </motion.article>
   );
 }
@@ -116,7 +116,7 @@ function ProofCard({ title, description, image, alt }) {
         />
       </div>
       <div className="p-5 flex flex-col flex-1">
-        <h3 className="bungee-regular text-2xl md:text-2xl leading-tight tracking-tight text-black font-extrabold uppercase mb-5">{title}</h3>
+        <h3 className="bungee-regular text-xl sm:text-2xl leading-tight tracking-tight text-black font-extrabold uppercase mb-5">{title}</h3>
         <p className="mt-2 text-sm leading-relaxed text-black/68">{description}</p>
         <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-[#ff2d2d] transition-transform duration-300 group-hover:translate-x-1">
           Read More <ArrowRight className="h-4 w-4" />
@@ -129,7 +129,7 @@ function ProofCard({ title, description, image, alt }) {
 function StepFlow({ title, steps, accent = false }) {
   return (
     <div className="rounded-2xl border border-black/10 bg-white p-6 shadow-[0_14px_34px_rgba(0,0,0,0.05)] min-h-[340px] flex flex-col h-full">
-      <h3 className="bungee-regular text-2xl md:text-2xl leading-tight tracking-tight text-black font-extrabold uppercase mb-5">{title}</h3>
+      <h3 className="bungee-regular text-xl sm:text-2xl leading-tight tracking-tight text-black font-extrabold uppercase mb-5">{title}</h3>
       <div className="mt-6 space-y-4">
         {steps.map((step, index) => (
           <div key={step} className="flex items-start gap-3">
@@ -157,12 +157,9 @@ export default function SupplyChainPage() {
         <SectionFade className="relative mx-auto max-w-[90rem] space-y-6">
           <div className="max-w-4xl space-y-5">
             <div className="relative inline-block">
-              <h1 className="bungee-regular text-6xl md:text-6xl leading-tight tracking-tight text-black font-extrabold uppercase mb-5">
+              <h1 className="bungee-regular text-3xl sm:text-5xl md:text-6xl leading-tight tracking-tight text-black font-extrabold uppercase">
                 <span className="block">
-                  Gold & Commodity
-                </span>
-                <span className="mt-2 block text-[#ff2d2d]">
-                  Tokenization
+                  Gold & <span className="text-[#ff2d2d]">Commodity</span>
                 </span>
               </h1>
             </div>
@@ -173,7 +170,7 @@ export default function SupplyChainPage() {
 
 
           <div className="overflow-hidden rounded-3xl bg-black shadow-none">
-            <div className="relative flex h-[280px] items-center justify-center overflow-hidden rounded-3xl bg-[linear-gradient(135deg,rgba(255,45,45,0.22),rgba(0,0,0,0.7))] sm:h-[380px]">
+            <div className="relative flex aspect-video items-center justify-center overflow-hidden rounded-3xl bg-[linear-gradient(135deg,rgba(255,45,45,0.22),rgba(0,0,0,0.7))]">
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(255,255,255,0.12),transparent_28%),radial-gradient(circle_at_80%_30%,rgba(255,45,45,0.22),transparent_24%)]" />
               <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(255,255,255,0.04),transparent_40%,rgba(0,0,0,0.22))]" />
               <div className="relative h-full w-full overflow-hidden rounded-3xl border border-white/10">
@@ -194,7 +191,7 @@ export default function SupplyChainPage() {
       {/* INTRO */}
       <section className="mx-auto grid w-full max-w-[90rem] grid-cols-1 gap-10 px-6 py-16 md:px-16 lg:grid-cols-2 lg:items-center">
         <SectionFade className="space-y-5">
-          <h2 className="bungee-regular text-4xl md:text-4xl leading-tight tracking-tight text-black font-extrabold uppercase mb-5">
+          <h2 className="bungee-regular text-2xl sm:text-3xl md:text-4xl leading-tight tracking-tight text-black font-extrabold uppercase mb-5">
             What is Commodity Tokenization?
           </h2>
           <p className="max-w-2xl text-base leading-8 text-black/70">
@@ -203,7 +200,7 @@ export default function SupplyChainPage() {
         </SectionFade>
 
         <SectionFade className="group overflow-hidden rounded-3xl border border-black/10 bg-white p-2 shadow-[0_14px_36px_rgba(0,0,0,0.08)] transition-transform duration-300 hover:scale-[1.01]">
-          <div className="relative h-[260px] overflow-hidden rounded-[1.35rem] bg-[linear-gradient(135deg,rgba(255,45,45,0.08),rgba(0,0,0,0.04))] sm:h-[330px]">
+          <div className="relative aspect-video overflow-hidden rounded-[1.35rem] bg-[linear-gradient(135deg,rgba(255,45,45,0.08),rgba(0,0,0,0.04))]">
             <Image
               src="/gold-commodity/What is Commodity Tokenization.jpg"
               alt="Supply chain intro"
@@ -235,21 +232,21 @@ export default function SupplyChainPage() {
       {/* PROBLEM + SOLUTION */}
       <section className="mx-auto grid w-full max-w-[90rem] grid-cols-1 gap-10 px-6 py-16 md:px-16 lg:grid-cols-2 lg:items-center">
         <SectionFade className="space-y-5 border-l-2 border-[#ff2d2d] pl-5 md:pl-6">
-          <h2 className="font-[var(--font-space-grotesk)] text-3xl font-bold tracking-[-0.03em] text-black sm:text-4xl">
+          <h2 className="bungee-regular text-2xl sm:text-3xl md:text-4xl leading-tight tracking-tight text-black font-extrabold uppercase mb-5">
             The Problem: Commodity Ownership is Inaccessible to Most People
           </h2>
           <p className="text-base leading-8 text-black/70">
             Buying physical gold requires finding a reputable dealer, paying a premium, arranging secure storage, and accepting that selling it will be slow and involve further fees. Most commodity markets are built for institutional investors with large capital. For everyday people, accessing the value-preserving properties of gold and other commodities is either impractical or entirely impossible.
           </p>
 
-          <h3 className="bungee-regular text-3xl md:text-3xl leading-tight tracking-tight text-black font-extrabold uppercase mb-5 pt-2">How MST Fixes It </h3>
+          <h3 className="bungee-regular text-xl sm:text-2xl md:text-3xl leading-tight tracking-tight text-black font-extrabold uppercase mb-5 pt-2">How MST Fixes It </h3>
           <p className="text-base leading-8 text-black/70">
             On MST Blockchain, a verified custodian holds the physical commodity in a secure, auditable reserve. Equivalent digital tokens are issued on-chain , each one representing a real, redeemable amount of the commodity. Users can buy, hold, transfer, or redeem tokens through a simple digital interface. Every token issuance, reserve audit, and transfer is permanently recorded on the blockchain , giving users the same transparency they would have if they could see inside the vault themselves.
           </p>
         </SectionFade>
 
         <SectionFade className="group overflow-hidden rounded-3xl border border-black/10 bg-white p-2 shadow-[0_14px_36px_rgba(0,0,0,0.08)] transition-transform duration-300 hover:scale-[1.01]">
-          <div className="relative h-[280px] overflow-hidden rounded-[1.35rem] bg-[linear-gradient(135deg,rgba(255,45,45,0.08),rgba(0,0,0,0.05))] sm:h-[340px]">
+          <div className="relative aspect-video overflow-hidden rounded-[1.35rem] bg-[linear-gradient(135deg,rgba(255,45,45,0.08),rgba(0,0,0,0.05))]">
             <Image
               src="/gold-commodity/Commodity Ownership is Inaccessible to Most People.jpg"
               alt="Problem and solution visual"
@@ -264,7 +261,7 @@ export default function SupplyChainPage() {
       {/* PROOFS */}
       <section className="mx-auto w-full max-w-[90rem] px-6 py-16 md:px-16">
         <SectionFade className="space-y-3">
-          <h2 className="bungee-regular text-4xl md:text-4xl leading-tight tracking-tight text-black font-extrabold uppercase mb-5">Proofs of Concept</h2>
+          <h2 className="bungee-regular text-2xl sm:text-3xl md:text-4xl leading-tight tracking-tight text-black font-extrabold uppercase mb-5">Proofs of Concept</h2>
           <p className="max-w-2xl text-base leading-8 text-black/68">
             Real-world examples showing how this use case works in practice across different industries and regions.
           </p>
