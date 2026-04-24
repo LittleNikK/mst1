@@ -10,10 +10,10 @@ import {
 /** * DATA CONFIGURATION
  */
 const stats = [
-  { label: "Validators", value: "120+" },
-  { label: "TPS", value: "100k+" },
-  { label: "Global Nodes", value: "15" },
-  { label: "Partners", value: "50+" },
+  { label: "Validators", value: "70,000+" },
+  { label: "TPS", value: "4000+" },
+  { label: "Global Nodes", value: "21" },
+  { label: "Avg Block Time", value: "3s" },
 ];
 
 const team = [
@@ -128,22 +128,22 @@ const advisors = [
 const features = [
   {
     title: "Scalable Infrastructure",
-    desc: "High-performance ecosystem that scales with global demand without compromising speed.",
+    desc: "MST is a Layer 1 blockchain that runs on its own dedicated network. As the ecosystem grows, the chain keeps up. More users, more transactions and the same smooth performance throughout.",
     icon: <FiCpu className="text-red-500 w-6 h-6" />,
   },
   {
     title: "Secure Transactions",
-    desc: "Advanced multi-layered cryptography ensuring military-grade safety for every asset.",
+    desc: "Every transaction on MST is validated by a distributed network of nodes working together. Think of it as a team of record keepers where no single entry can ever be faked or changed",
     icon: <FiShield className="text-red-500 w-6 h-6" />,
   },
   {
     title: "Developer Friendly",
-    desc: "Comprehensive SDKs and documentation for building complex dApps in record time.",
+    desc: "Clean APIs, proper documentation, and ready to use testing environments. We built MST so developers can go from idea to live product without spending weeks on setup and configuration.",
     icon: <FiLayers className="text-red-500 w-6 h-6" />,
   },
   {
     title: "Decentralized World",
-    desc: "A truly permissionless environment for the next wave of DeFi and NFT innovation.",
+    desc: "MST is not controlled by one company or server. It runs on a global network of node operators and developers all working together. That shared ownership makes the network stronger and more reliable over time.",
     icon: <FiGlobe className="text-red-500 w-6 h-6" />,
   },
 ];
@@ -240,12 +240,12 @@ const AboutUs = () => {
           {[
             {
               title: "Our Mission",
-              text: "To democratize finance by creating a global, permissionless infrastructure that is lightning-fast and cost-effective.",
+              text: "We are here to make blockchain practical. Not just for crypto enthusiasts or expert developers, but for any business or person who wants a reliable digital network they can actually use. MST gives developers the tools to build faster, gives businesses infrastructure they can trust, and gives everyday users a secure place to participate in the growing Web3 world.",
               icon: <FiCode className="w-10 h-10 text-red-500" />
             },
             {
               title: "Our Vision",
-              text: "A world where digital ownership is absolute, and technology empowers individuals over centralized entities.",
+              text: "We see a future where digital systems are open, transparent, and built on trust. MST is working to connect traditional technology with decentralized networks so neither world has to compromise. Our goal is to build a global platform where developers and companies can create the next generation of digital services, services that are fast, fair, and built to last.",
               icon: <FiGlobe className="w-10 h-10 text-red-500" />
             }
           ].map((item, i) => (
@@ -270,7 +270,7 @@ const AboutUs = () => {
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-20">
             <h2 className="bungee-regular text-4xl md:text-4xl leading-tight tracking-tight text-black font-extrabold uppercase mb-5">Core <span className="text-red-600">Infrastructure</span></h2>
-            <p className="text-gray-500 max-w-2xl mx-auto text-lg">Designed for builders who require high-throughput and absolute reliability.</p>
+            <p className="text-gray-500 max-w-2xl mx-auto text-lg">Every part of MST is built to handle real workloads. Here is what makes the network work the way it does.</p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {features.map((item, i) => (
@@ -294,9 +294,18 @@ const AboutUs = () => {
 
       {/* 5. MEET THE TEAM (SCREENSHOT-STYLE) */}
       <section className="bg-gray-100">
+        <div className="pt-24 pb-16 px-6 text-center">
+          <h2 className="bungee-regular text-5xl md:text-7xl leading-tight tracking-tight text-black font-extrabold uppercase mb-8">
+            The People Behind MST
+          </h2>
+          <p className="text-gray-500 max-w-3xl mx-auto text-lg md:text-xl leading-relaxed">
+            These are the people building MST from the ground up. Each one brings something different to the table and together they are shaping what blockchain infrastructure looks like for the next decade.
+          </p>
+        </div>
+
         <div className="relative bg-[#1a1a1a] py-10 text-center">
           <p className="text-sm font-black uppercase tracking-[0.42em] text-white md:text-base">
-            Meet the Core Team
+            THE ARCHITECTS
           </p>
           <span className="pointer-events-none absolute left-1/2 top-full h-0 w-0 -translate-x-1/2 border-l-[16px] border-r-[16px] border-t-[12px] border-l-transparent border-r-transparent border-t-[#1a1a1a]" />
         </div>

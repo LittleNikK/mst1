@@ -118,9 +118,9 @@ export default function SupplyChainPage() {
                 initial="hidden"
                 animate="visible"
                 transition={{ delay: 0.2 }}
-                className="text-gray-600 max-w-2xl text-lg"
+                className="text-gray-600 max-w-2xl text-lg leading-relaxed"
               >
-                Start receiving validator rewards by owning a fraction of a node , no hardware, no coding required.
+                Democratizing network security through fractional participation. MST Chain allows you to earn validator rewards by owning a share of a high-performance node. Lower the barrier to entry with zero hardware requirements, no technical expertise needed, and a seamless, automated staking process designed for everyone.
               </motion.p>
             </motion.div>
 

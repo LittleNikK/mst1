@@ -90,12 +90,12 @@ export default function TransparencyPage() {
             <h1 className="bungee-regular text-6xl md:text-6xl leading-tight tracking-tight text-black font-extrabold uppercase m-0 p-0">
               Transparency You Can Verify <span className="text-red-500">Live on MST Chain</span>
             </h1>
-            <p className="text-gray-600 text-lg mb-8">
-              Every coin, every wallet, every burn , verifiable on-chain in real time.
+            <p className="text-gray-600 text-lg mb-8 max-w-2xl">
+              Experience absolute clarity in the decentralized economy. MST Chain redefines trust by providing an immutable, real-time window into the network&apos;s heartbeat. Monitor every transaction, verify supply metrics, and track burn events with total confidence.
             </p>
-            <button className="px-8 py-3 bg-red-500 text-white rounded-xl shadow-lg hover:bg-red-600 hover:scale-105 transition-all">
+            {/* <button className="px-8 py-3 bg-red-500 text-white rounded-xl shadow-lg hover:bg-red-600 hover:scale-105 transition-all">
               Explore Transparency
-            </button>
+            </button> */}
           </motion.div>
 
           <motion.div

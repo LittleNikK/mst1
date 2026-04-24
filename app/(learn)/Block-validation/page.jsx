@@ -165,7 +165,7 @@ export default function BlockValidationPage() {
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.8, delay: 0.4 }}
                 >
-                  From transaction to final block , <span className="text-red-400">secure</span>, <span className="text-red-400">fast</span>, and <span className="text-red-400">transparent</span>.
+                  MST Chain&apos;s validation protocol ensures that every transaction is processed with maximum integrity. From the moment a transaction is broadcast to its inclusion in the final, immutable block, our network remains <span className="text-red-400">secure</span>, <span className="text-red-400">fast</span>, and <span className="text-red-400">transparent</span>—powering the next generation of decentralized trust.
                 </motion.p>
 
                 <motion.div
@@ -174,7 +174,7 @@ export default function BlockValidationPage() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.6 }}
                 >
-                  <motion.button
+                  {/* <motion.button
                     whileHover={{ scale: 1.05, y: -2 }}
                     whileTap={{ scale: 0.98 }}
                     className="group relative px-8 py-4 rounded-xl border border-red-500/50 bg-gradient-to-br from-red-500/10 to-red-500/5 backdrop-blur-xl text-red-500 font-bold text-base transition-all duration-300 overflow-hidden"
@@ -187,7 +187,7 @@ export default function BlockValidationPage() {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                       </svg>
                     </span>
-                  </motion.button>
+                  </motion.button> */}
                 </motion.div>
               </motion.div>
 

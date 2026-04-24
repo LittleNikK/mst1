@@ -96,13 +96,11 @@ export default function SolidityPage() {
               animate="visible"
               className="text-left"
             >
-              <h1 className="text-4xl md:text-6xl font-extrabold">
-                <h1 className="bungee-regular text-6xl md:text-6xl leading-tight tracking-tight text-black font-extrabold uppercase m-0 p-0">
-                  Solidity <span className="text-red-500">Powering</span> Smart Contracts on MST Chain
-                </h1>
+              <h1 className="bungee-regular text-4xl md:text-6xl leading-tight tracking-tight text-black font-extrabold uppercase m-0 p-0">
+                Solidity <span className="text-red-500">Powering</span> Smart Contracts on MST Chain
               </h1>
-              <p className="text-gray-500 mt-6 text-lg">
-                The programming language that brings decentralized applications to life.
+              <p className="text-gray-500 mt-6 text-lg max-w-2xl leading-relaxed">
+                Master the foundation of decentralized innovation. Solidity is the primary high-level language for implementing smart contracts on the MST Chain. It empowers developers to build secure, transparent, and robust decentralized applications (dApps) that redefine trust and automation in the digital world.
               </p>
             </motion.div>
 

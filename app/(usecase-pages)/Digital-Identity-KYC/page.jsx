@@ -65,7 +65,7 @@ const stats = [
   { label: 'One', value: 'Verification Needed' },
   { label: 'Instant', value: 'Onboarding Speed' },
   { label: 'Zero', value: 'Repeated Document Uploads' },
-  { label: 'Full%', value: 'User Data Control' }
+  { label: 'Full', value: 'User Data Control' }
 ];
 
 function SectionFade({ children, className = '' }) {

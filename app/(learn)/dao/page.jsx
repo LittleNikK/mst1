@@ -109,14 +109,14 @@ export default function BlockValidationPage() {
                     DAO Governance <br />
                     <span className="text-red-500">MST Chain</span>
                   </h1>
-                  <p className="text-lg md:text-xl text-gray-500 max-w-xl leading-relaxed">
-                    The MST Blockchain for Grant Program transparent. DAO Governance lets the community shape the future of the network.
+                  <p className="text-lg md:text-xl text-gray-500 max-w-2xl leading-relaxed">
+                    Empowering the community through decentralized decision-making. MST Chain&apos;s DAO Governance ensures that every stakeholder has a voice in the network&apos;s evolution. From approving grant programs to voting on critical protocol upgrades, our DAO framework provides the transparency and accountability needed to build a truly community-driven ecosystem.
                   </p>
-                  <div className="mt-10">
+                  {/* <div className="mt-10">
                     <button className="px-4 py-2 bg-red-500 text-white rounded-xl font-bold shadow-xl hover:bg-red-600 transition-all hover:scale-105">
                       Learn More
                     </button>
-                  </div>
+                  </div> */}
                 </motion.div>
 
                 <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.8 }}>

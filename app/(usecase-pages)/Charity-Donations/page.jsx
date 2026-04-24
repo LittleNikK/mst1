@@ -551,35 +551,35 @@ export default function SupplyChainPage() {
         </SectionFade>
       </section>
 
-      {/* CTA */}
-      <section className="mx-auto w-full max-w-[90rem] px-6 pb-8 md:px-16">
-        <SectionFade>
-          <div className="relative overflow-hidden rounded-3xl bg-[#ff2d2d] px-6 py-7 text-white md:px-10 md:py-9">
-            <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
-              <div className="max-w-3xl">
-                <h2 className="text-2xl font-extrabold tracking-[-0.03em] text-white sm:text-3xl">
-                  Ready to Build On-Chain Certificate on MST?
-                </h2>
-                <p className="mt-3 text-sm leading-7 text-white/85">
-                  Our team will walk you through exactly how MST&apos;s protocols , SARAL, WASMify, Klethesia, and FortunaX , deliver this use case for your organization.
-                </p>
-              </div>
+      {/* CTA
+      // <section className="mx-auto w-full max-w-[90rem] px-6 pb-8 md:px-16">
+      //   <SectionFade>
+      //     <div className="relative overflow-hidden rounded-3xl bg-[#ff2d2d] px-6 py-7 text-white md:px-10 md:py-9">
+      //       <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+      //         <div className="max-w-3xl">
+      //           <h2 className="text-2xl font-extrabold tracking-[-0.03em] text-white sm:text-3xl">
+      //             Ready to Build On-Chain Certificate on MST?
+      //           </h2>
+      //           <p className="mt-3 text-sm leading-7 text-white/85">
+      //             Our team will walk you through exactly how MST&apos;s protocols , SARAL, WASMify, Klethesia, and FortunaX , deliver this use case for your organization.
+      //           </p>
+      //         </div>
 
-              <div className="md:shrink-0">
-                <button
-                  onClick={() => {
-                    setFormType("Talk to Expert");
-                    setOpenForm(true);
-                  }}
-                  className="inline-flex w-full items-center justify-center rounded-xl bg-white px-7 py-3 text-sm font-extrabold uppercase tracking-[0.12em] text-[#ff2d2d] shadow-[0_18px_44px_rgba(0,0,0,0.18)] transition-transform duration-200 hover:scale-[1.02] md:w-auto"
-                >
-                  Contact Our Experts
-                </button>
-              </div>
-            </div>
-          </div>
-        </SectionFade>
-      </section>
+      //         <div className="md:shrink-0">
+      //           <button
+      //             onClick={() => {
+      //               setFormType("Talk to Expert");
+      //               setOpenForm(true);
+      //             }}
+      //             className="inline-flex w-full items-center justify-center rounded-xl bg-white px-7 py-3 text-sm font-extrabold uppercase tracking-[0.12em] text-[#ff2d2d] shadow-[0_18px_44px_rgba(0,0,0,0.18)] transition-transform duration-200 hover:scale-[1.02] md:w-auto"
+      //           >
+      //             Contact Our Experts
+      //           </button>
+      //         </div>
+      //       </div>
+      //     </div>
+      //   </SectionFade>
+      // </section> */}
 
       <FormModal open={openForm} setOpen={setOpenForm} formType={formType} />
     </main>
