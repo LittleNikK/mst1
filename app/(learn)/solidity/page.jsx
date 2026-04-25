@@ -167,24 +167,26 @@ export default function SolidityPage() {
               transition={{ delay: 0.25 }}
               className="relative w-full mt-12 lg:mt-0"
             >
-              {/* Outer glow */}
-              <div className="absolute inset-0 -m-6 rounded-[2rem] bg-gradient-to-br from-red-500/20 via-transparent to-red-400/10 blur-3xl -z-10" />
+              {/* Outer glow - Enhanced for better blending */}
+              <div className="absolute inset-0 -m-8 rounded-[3rem] bg-gradient-to-br from-red-600/30 via-rose-500/10 to-transparent blur-[100px] -z-10" />
               
               <motion.div 
                 animate={{ y: [-8, 8, -8] }}
                 transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-                className="relative h-[300px] md:h-[400px] lg:h-[480px] w-full rounded-[2rem] border border-red-200/50 bg-white/40 p-3 shadow-2xl backdrop-blur-sm overflow-hidden group"
+                className="relative h-[300px] md:h-[400px] lg:h-[480px] w-full rounded-[2rem] border border-red-500/30 bg-white/40 p-3 shadow-2xl backdrop-blur-sm overflow-hidden group"
               >
-                <div className="relative h-full w-full rounded-xl overflow-hidden border border-red-100/50 bg-black">
+                <div className="relative h-full w-full rounded-xl overflow-hidden border border-red-100/50 bg-gradient-to-b from-gray-900 to-black">
                   <Image
                     src="/solidity/Solidity Hero-Banner.jpg"
                     alt="Solidity hero"
                     fill
-                    className="object-cover transition-transform duration-700 group-hover:scale-105 opacity-90"
+                    className="object-cover transition-transform duration-700 group-hover:scale-105 opacity-90 [mask-image:linear-gradient(to_bottom,black_85%,transparent)]"
                     priority
                     sizes="(min-width: 1024px) 600px, 100vw"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  {/* Blending Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-white/20 via-transparent to-transparent pointer-events-none" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 </div>
               </motion.div>
             </motion.div>
@@ -230,7 +232,7 @@ export default function SolidityPage() {
                 whileInView="visible"
                 transition={{ delay: i * 0.15 }}
                 viewport={{ once: true }}
-                className="group relative bg-white p-8 rounded-[2rem] border border-gray-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgba(239,68,68,0.08)] hover:-translate-y-2 transition-all duration-500 overflow-hidden"
+                className="group relative bg-white p-8 rounded-[2rem] border border-red-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgba(239,68,68,0.08)] hover:-translate-y-2 hover:border-red-300 transition-all duration-500 overflow-hidden"
               >
                 <div className="absolute top-0 right-0 w-32 h-32 bg-red-50 rounded-full blur-[40px] opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
 
@@ -280,7 +282,7 @@ export default function SolidityPage() {
                   whileInView="visible"
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.1 }}
-                  className="group p-8 rounded-[2rem] border border-gray-200 bg-white shadow-[0_8px_30px_rgb(0,0,0,0.02)] hover:shadow-[0_15px_40px_rgba(239,68,68,0.08)] hover:border-red-200 transition-all duration-500"
+                  className="group p-8 rounded-[2rem] border border-red-100 bg-white shadow-[0_8px_30px_rgb(0,0,0,0.02)] hover:shadow-[0_15px_40px_rgba(239,68,68,0.08)] hover:border-red-400 transition-all duration-500"
                 >
                   <div className="w-12 h-12 rounded-2xl bg-red-50 text-red-600 flex items-center justify-center mb-6 group-hover:bg-red-600 group-hover:text-white transition-all duration-500 shadow-sm">
                     <item.icon className="text-xl" />
@@ -324,7 +326,7 @@ export default function SolidityPage() {
                   whileInView="visible"
                   transition={{ delay: i * 0.1 }}
                   viewport={{ once: true }}
-                  className="group relative p-10 rounded-[2.5rem] bg-white border border-gray-100 shadow-[0_10px_40px_rgba(0,0,0,0.03)] hover:shadow-[0_20px_60px_rgba(239,68,68,0.12)] hover:-translate-y-3 transition-all duration-500 overflow-hidden"
+                  className="group relative p-10 rounded-[2.5rem] bg-white border border-red-100 shadow-[0_10px_40px_rgba(0,0,0,0.03)] hover:shadow-[0_20px_60px_rgba(239,68,68,0.12)] hover:border-red-300 hover:-translate-y-3 transition-all duration-500 overflow-hidden"
                 >
                   {/* Number Watermark */}
                   <div className="absolute -bottom-4 -left-2 text-[8rem] font-black text-gray-50 opacity-100 group-hover:text-red-50 group-hover:scale-110 transition-all duration-700 pointer-events-none select-none z-0">
@@ -358,7 +360,7 @@ export default function SolidityPage() {
                 whileInView="visible"
                 transition={{ delay: 0.6 }}
                 viewport={{ once: true }}
-                className="group relative p-10 rounded-[2.5rem] bg-gradient-to-br from-red-600 to-red-500 shadow-[0_20px_40px_rgba(239,68,68,0.2)] flex flex-col items-center justify-center text-center overflow-hidden hover:scale-[1.02] transition-transform duration-500"
+                className="group relative p-10 rounded-[2.5rem] bg-gradient-to-br from-red-600 to-red-500 border border-red-400 shadow-[0_20px_40px_rgba(239,68,68,0.2)] flex flex-col items-center justify-center text-center overflow-hidden hover:scale-[1.02] transition-transform duration-500"
               >
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(255,255,255,0.2),transparent)]"></div>
                 <h3 className="bungee-regular text-2xl text-white uppercase mb-4 relative z-10 leading-tight">Your Vision <br/> Our Chain</h3>
@@ -391,7 +393,7 @@ export default function SolidityPage() {
                 whileInView="visible"
                 transition={{ delay: i * 0.1 }}
                 viewport={{ once: true }}
-                className="group p-8 rounded-[2rem] border border-gray-100 bg-white shadow-sm hover:shadow-[0_20px_40px_rgba(0,0,0,0.05)] hover:border-red-100 transition-all duration-500 cursor-pointer relative overflow-hidden flex flex-col h-full"
+                className="group p-8 rounded-[2rem] border border-red-100 bg-white shadow-sm hover:shadow-[0_20px_40px_rgba(0,0,0,0.05)] hover:border-red-400 transition-all duration-500 cursor-pointer relative overflow-hidden flex flex-col h-full"
               >
                 <div className="w-14 h-14 rounded-2xl bg-red-50 text-red-500 flex items-center justify-center mb-6 group-hover:bg-red-600 group-hover:text-white transition-all duration-500 shadow-sm">
                   <resource.icon className="text-2xl" />
@@ -407,7 +409,7 @@ export default function SolidityPage() {
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="relative rounded-[3rem] overflow-hidden bg-black text-white shadow-2xl group"
+            className="relative rounded-[3rem] overflow-hidden bg-black text-white shadow-2xl border border-white/10 group"
           >
             {/* Background Ambient Glows */}
             <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-red-600/20 blur-[100px] pointer-events-none group-hover:scale-110 transition-transform duration-1000"></div>

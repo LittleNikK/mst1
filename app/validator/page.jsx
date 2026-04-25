@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { CreditCard, PieChart, UserPlus } from "lucide-react";
 
@@ -259,58 +260,20 @@ export default function ValidatorPage() {
             transition={{ duration: 0.7, delay: 0.3 }}
             className="mt-10 flex flex-col sm:flex-row items-center gap-5 w-full sm:w-auto"
           >
-            <button className="relative w-full sm:w-auto group overflow-hidden rounded-2xl bg-red-600 px-8 py-4 font-bold uppercase tracking-[0.15em] text-white transition-all hover:scale-[1.02] active:scale-[0.98] shadow-[0_0_0_4px_rgba(239,68,68,0.1)] hover:shadow-[0_0_0_8px_rgba(239,68,68,0.25)]">
+            <Link href="https://mstblockchain.com/portal" className="relative w-full sm:w-auto group overflow-hidden rounded-2xl bg-red-600 px-10 py-4 font-bold uppercase tracking-[0.2em] text-white transition-all duration-300 hover:scale-[1.05] hover:shadow-[0_20px_50px_rgba(239,68,68,0.4)] active:scale-[0.98] flex items-center justify-center">
               <span className="relative z-10 flex items-center justify-center gap-3 text-sm">
                 Start Earning 
-                <UserPlus className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                <UserPlus className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1 group-hover:scale-110" />
               </span>
-              <div className="absolute inset-0 z-0 h-full w-full bg-gradient-to-r from-red-500 to-red-400 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-              <div className="absolute -left-[100%] top-0 z-0 h-full w-full bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform duration-700 group-hover:translate-x-[200%]" />
-            </button>
+              <div className="absolute inset-0 z-0 h-full w-full bg-gradient-to-r from-red-500 via-red-600 to-red-400 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+              {/* Enhanced Shine Effect */}
+              <div className="absolute -left-[100%] top-0 z-0 h-full w-1/2 bg-gradient-to-r from-transparent via-white/30 to-transparent transition-transform duration-1000 ease-in-out group-hover:translate-x-[400%]" />
+            </Link>
 
-            <button className="relative w-full sm:w-auto group overflow-hidden rounded-2xl bg-white/70 backdrop-blur-sm border border-red-100 px-8 py-4 font-bold uppercase tracking-[0.15em] text-gray-800 transition-all hover:bg-white active:scale-[0.98] shadow-sm hover:shadow-md">
-               <span className="relative z-10 flex items-center justify-center gap-3 text-sm">
-                View Documentation
-                <PieChart className="h-4 w-4 text-red-400 transition-transform group-hover:rotate-12 group-hover:scale-110" />
-              </span>
-            </button>
+
           </motion.div>
           
-          {/* Glassmorphic Stats Widget */}
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.5 }}
-            className="mt-14 w-full max-w-lg rounded-3xl border border-white/80 bg-white/50 p-6 backdrop-blur-xl shadow-[0_8px_40px_rgb(239,68,68,0.08)] relative overflow-hidden"
-          >
-            {/* Subtle widget glow */}
-            <div className="absolute -right-10 -top-10 h-32 w-32 rounded-full bg-red-400/10 blur-2xl" />
-            
-            <div className="relative z-10 flex flex-col sm:flex-row sm:items-center justify-between gap-6 sm:gap-4">
-              <div className="flex items-center gap-4">
-                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-red-50 to-red-100 text-red-600 shadow-inner border border-red-100">
-                  <PieChart className="h-7 w-7" />
-                </div>
-                <div>
-                  <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-gray-500">Current Est. APY</p>
-                  <p className="bungee-regular text-3xl text-black mt-1">12.5<span className="text-red-500 text-2xl">%</span></p>
-                </div>
-              </div>
-              
-              <div className="hidden sm:block h-12 w-px bg-gradient-to-b from-transparent via-red-200 to-transparent"></div>
-              
-              <div className="sm:text-right flex sm:block items-center justify-between">
-                <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-gray-500">Active Nodes</p>
-                <div className="flex items-center sm:justify-end gap-2 mt-1">
-                  <span className="relative flex h-2.5 w-2.5">
-                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
-                    <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-500" />
-                  </span>
-                  <p className="bungee-regular text-3xl text-black">1,402</p>
-                </div>
-              </div>
-            </div>
-          </motion.div>
+
         </div>
 
         {/* RIGHT VISUAL STRUCTURE */}

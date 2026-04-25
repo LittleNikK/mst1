@@ -462,57 +462,66 @@ export default function TransparencyPage() {
           </div>
         </section>
 
-        {/* FINAL CTA - REDESIGNED */}
-        <section className="py-24 md:py-32 lg:py-40 px-6 relative overflow-hidden">
-          {/* Background Elements */}
-          <div className="absolute inset-0 bg-gray-50/50 -z-20" />
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] bg-red-50 rounded-full blur-[120px] -z-10 opacity-60" />
-          
-          {/* Giant Watermark Text */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full text-center pointer-events-none -z-10 select-none overflow-hidden">
-            <span className="bungee-regular text-[8rem] sm:text-[15rem] md:text-[25rem] font-black text-black/[0.02] leading-none tracking-tighter uppercase whitespace-nowrap">
-              EXPLORER
-            </span>
-          </div>
-
-          <div className="max-w-4xl mx-auto text-center relative z-10">
+        {/* FINAL CTA - RED/WHITE/PINK THEME */}
+        <section className="py-16 md:py-20 px-6 relative overflow-hidden">
+          <div className="max-w-6xl mx-auto">
             <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              className="relative rounded-[2.5rem] overflow-hidden bg-gradient-to-br from-red-600 via-rose-500 to-pink-500 p-6 md:p-12 lg:p-14 shadow-[0_40px_100px_rgba(225,29,72,0.2)] border border-white/20"
             >
-              <div className="inline-flex items-center gap-3 px-6 py-2 rounded-full bg-black text-white text-[10px] font-black tracking-[0.3em] uppercase mb-10 shadow-2xl shadow-black/20">
-                <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
-                Public Ledger Access
-              </div>
+              {/* Decorative Background Glows */}
+              <div className="absolute -top-24 -right-24 w-96 h-96 bg-white/20 rounded-full blur-[100px] pointer-events-none" />
+              <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-rose-300/30 rounded-full blur-[100px] pointer-events-none" />
+              
+              {/* Floating Grid Pattern */}
+              <div className="absolute inset-0 opacity-10 pointer-events-none" 
+                style={{ 
+                  backgroundImage: `radial-gradient(circle at 2px 2px, rgba(255,255,255,0.3) 1px, transparent 0)`,
+                  backgroundSize: '32px 32px' 
+                }} 
+              />
 
-              <h2 className="bungee-regular text-4xl md:text-5xl lg:text-6xl leading-tight tracking-tight text-black font-extrabold uppercase mb-8">
-                Verify Everything <br className="hidden md:block" /> <span className="text-red-600">Yourself</span>
-              </h2>
-
-              <p className="text-gray-500 text-lg md:text-xl lg:text-2xl font-medium mb-12 max-w-4xl mx-auto leading-relaxed px-4 italic opacity-80">
-                Experience total decentralized transparency. Access all network data <br className="hidden lg:block" /> directly on the public ledger through our immersive block explorer.
-              </p>
-
-              <div className="flex items-center justify-center">
-                <a
-                  href="https://mstscan.com/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group relative inline-flex items-center gap-4 px-14 py-8 bg-red-600 text-white rounded-full text-sm font-black uppercase tracking-widest shadow-[0_20px_50px_rgba(239,68,68,0.3)] hover:shadow-[0_30px_70px_rgba(239,68,68,0.5)] hover:-translate-y-1 transition-all duration-500 active:scale-95 overflow-hidden"
+              <div className="relative z-10 text-center flex flex-col items-center">
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.2 }}
+                  className="inline-flex items-center gap-3 px-6 py-2 rounded-full bg-white/20 backdrop-blur-md border border-white/30 text-white text-[10px] font-black tracking-[0.3em] uppercase mb-6"
                 >
-                  <div className="absolute inset-0 bg-black translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out" />
-                  <span className="relative z-10">Launch MST Explorer</span>
-                  <FaExternalLinkAlt className="relative z-10 text-xs group-hover:translate-x-2 transition-transform duration-500" />
-                </a>
+                  <span className="relative flex h-2 w-2">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
+                    <span className="relative inline-flex rounded-full h-2 w-2 bg-white"></span>
+                  </span>
+                  Public Ledger Access
+                </motion.div>
+
+                <h2 className="bungee-regular text-3xl md:text-4xl lg:text-5xl leading-tight tracking-tight text-white font-extrabold uppercase mb-4 drop-shadow-md">
+                  Verify Everything <br className="hidden md:block" /> <span className="text-white/80">Yourself</span>
+                </h2>
+
+                <p className="text-white/90 text-base md:text-lg font-medium mb-8 max-w-2xl mx-auto leading-relaxed">
+                  Experience total decentralized transparency. Access all network data directly on the public ledger through our immersive block explorer.
+                </p>
+
+                <div className="flex items-center justify-center">
+                  <a
+                    href="https://mstscan.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group relative inline-flex items-center gap-4 px-10 py-4 bg-white text-red-600 rounded-xl text-sm font-black uppercase tracking-widest shadow-2xl shadow-red-900/20 hover:shadow-white/40 hover:-translate-y-1 transition-all duration-500 active:scale-95 overflow-hidden"
+                  >
+                    <div className="absolute inset-0 bg-rose-100 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out" />
+                    <span className="relative z-10 group-hover:text-red-700 transition-colors duration-500">Launch MST Explorer</span>
+                    <FaExternalLinkAlt className="relative z-10 text-[10px] group-hover:translate-x-2 transition-all duration-500" />
+                  </a>
+                </div>
               </div>
             </motion.div>
           </div>
-          
-          {/* Decorative Corner Orbits */}
-          <div className="absolute -bottom-20 -left-20 w-80 h-80 border border-red-100 rounded-full opacity-50" />
-          <div className="absolute -bottom-10 -left-10 w-40 h-40 border border-red-200 rounded-full opacity-30" />
         </section>
       </div>
     </main>
