@@ -1,12 +1,14 @@
 "use client";
 
-import React, { useRef } from "react";
-import { motion, useScroll, useTransform, useSpring, useMotionValue } from "framer-motion";
+import React from "react";
+import { motion } from "framer-motion";
 import Link from "next/link";
 import {
   MapPin, GraduationCap, Briefcase,
-  Gift, FileText, Handshake, Globe, Rocket, Users, Star, ArrowRight
+  Gift, FileText, Handshake, Globe, Rocket, Users, ArrowRight
 } from "lucide-react";
+import Navbar from "../components/navbar/Navbar";
+import Footer from "../components/footer/Footer";
 
 /* ================= DATA ================= */
 
@@ -15,112 +17,79 @@ const ambassadorTracks = [
     icon: MapPin,
     title: "City Ambassador",
     desc: "Lead blockchain adoption in your city by organizing meetups, workshops, and local Web3 communities. Build grassroots Web3 presence.",
-    gradient: "from-cyan-500 to-blue-500",
-    borderColor: "border-cyan-500/10",
-    textColor: "text-cyan-600",
     perks: ["Host local meetups", "Organize workshops", "Community building", "Event sponsorship"],
   },
   {
     icon: GraduationCap,
     title: "Campus Ambassador",
     desc: "Bring MST to your university through student clubs, hackathons, and Web3 learning sessions. Inspire the next generation.",
-    gradient: "from-violet-500 to-purple-500",
-    borderColor: "border-violet-500/10",
-    textColor: "text-violet-600",
     perks: ["University hackathons", "Student workshops", "Club partnerships", "Academic resources"],
   },
   {
     icon: Briefcase,
     title: "Industry Ambassador",
     desc: "Promote MST adoption within your industry and professional network for real-world blockchain use cases.",
-    gradient: "from-amber-500 to-orange-500",
-    borderColor: "border-amber-500/10",
-    textColor: "text-amber-600",
     perks: ["Industry partnerships", "Professional networking", "Enterprise outreach", "Technical consulting"],
   },
 ];
 
 const rewards = [
-  { icon: Gift, text: "Earn up to ₹10,000 + $MSTC tokens", color: "text-emerald-600", bg: "bg-emerald-500/5", border: "border-emerald-500/20" },
-  { icon: FileText, text: "Official MST Ambassador Certificate", color: "text-violet-600", bg: "bg-violet-500/5", border: "border-violet-500/20" },
-  { icon: Handshake, text: "Mentorship with Web3 experts", color: "text-cyan-600", bg: "bg-cyan-500/5", border: "border-cyan-500/20" },
-  { icon: Globe, text: "Global developer networking", color: "text-amber-600", bg: "bg-amber-500/5", border: "border-amber-500/20" },
-  { icon: Rocket, text: "Early access to MST ecosystem", color: "text-rose-600", bg: "bg-rose-500/5", border: "border-rose-500/20" },
-  { icon: Users, text: "Exclusive community events", color: "text-indigo-600", bg: "bg-indigo-500/5", border: "border-indigo-500/20" },
+  { icon: Gift, text: "Earn up to ₹10,000 + $MSTC tokens" },
+  { icon: FileText, text: "Official MST Ambassador Certificate" },
+  { icon: Handshake, text: "Mentorship with Web3 experts" },
+  { icon: Globe, text: "Global developer networking" },
+  { icon: Rocket, text: "Early access to MST ecosystem" },
+  { icon: Users, text: "Exclusive community events" },
 ];
 
 /* ================= COMPONENTS ================= */
 
 const Heading = ({ children, className = "" }) => (
-  <h2 className={`bungee-regular text-3xl sm:text-4xl md:text-6xl leading-tight tracking-tight text-black font-extrabold uppercase ${className}`}>
+  <h2 className={`bungee-regular text-3xl sm:text-4xl md:text-5xl leading-tight tracking-tight text-black font-extrabold uppercase ${className}`}>
     {children}
   </h2>
 );
 
 const TrackCard = ({ track, index }) => {
-  const cardRef = useRef(null);
-  const x = useMotionValue(0);
-  const y = useMotionValue(0);
-
-  const rotateX = useSpring(useTransform(y, [-150, 150], [7, -7]), { stiffness: 400, damping: 40 });
-  const rotateY = useSpring(useTransform(x, [-150, 150], [-7, 7]), { stiffness: 400, damping: 40 });
-
-  function handleMouseMove(e) {
-    if (!cardRef.current) return;
-    const rect = cardRef.current.getBoundingClientRect();
-    x.set(e.clientX - (rect.left + rect.width / 2));
-    y.set(e.clientY - (rect.top + rect.height / 2));
-  }
-
-  function handleMouseLeave() {
-    x.set(0);
-    y.set(0);
-  }
-
   return (
     <motion.div
-      ref={cardRef}
-      onMouseMove={handleMouseMove}
-      onMouseLeave={handleMouseLeave}
-      style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ delay: index * 0.1, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-      className="relative group h-full"
+      transition={{ delay: index * 0.1, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+      className="relative group h-full flex flex-col p-6 sm:p-8 rounded-3xl bg-white border border-black shadow-sm transition-all duration-500 hover:border-[#FF2D2D] hover:shadow-xl hover:shadow-red-500/10 hover:-translate-y-1"
     >
-      <div className="absolute -inset-[1px] bg-gradient-to-r from-transparent via-red-600/20 to-transparent rounded-[2.5rem] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-
-      <div className="relative h-full flex flex-col p-7 md:p-8 rounded-[2rem] bg-white border-2 border-slate-100 shadow-[0_4px_20px_rgba(0,0,0,0.02)] transition-all duration-500 group-hover:shadow-[0_30px_60px_rgba(220,38,38,0.06)] group-hover:border-red-600/20">
-
-        <div className={`w-12 h-12 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center mb-6 ${track.textColor} transition-all duration-500 group-hover:scale-110 group-hover:bg-red-600 group-hover:text-white group-hover:shadow-lg group-hover:shadow-red-600/20`}>
-          <track.icon size={22} />
-        </div>
-
-        <h3 className="bungee-regular text-lg sm:text-xl font-black uppercase mb-3 tracking-tight text-slate-900 transition-colors group-hover:text-red-600">
-          {track.title}
-        </h3>
-
-        <p className="text-slate-500 text-xs leading-relaxed mb-6 flex-grow font-medium">
-          {track.desc}
-        </p>
-
-        <div className="space-y-3 mb-8">
-          {track.perks.map((perk, j) => (
-            <div key={j} className="flex items-center gap-2.5 group/perk">
-              <Star size={10} className={`${track.textColor} fill-current transition-transform duration-300 group-hover/perk:scale-125`} />
-              <span className="text-[9px] font-black uppercase tracking-[0.12em] text-slate-400 group-hover/perk:text-slate-900 transition-colors">
-                {perk}
-              </span>
-            </div>
-          ))}
-        </div>
-
-        <button className="group/btn relative w-full py-4 overflow-hidden rounded-xl border-2 border-slate-100 text-[9px] font-black uppercase tracking-[0.2em] text-slate-900 transition-all hover:border-red-600 hover:text-white">
-          <span className="relative z-10">Apply as {track.title}</span>
-          <div className="absolute inset-0 bg-red-600 -translate-x-full group-hover/btn:translate-x-0 transition-transform duration-500 ease-[0.16, 1, 0.3, 1]" />
-        </button>
+      <div className="w-14 h-14 rounded-2xl bg-[#FAFAFA] border border-black flex items-center justify-center mb-6 text-black transition-all duration-500 group-hover:scale-110 group-hover:bg-[#FF2D2D] group-hover:text-white group-hover:border-[#FF2D2D]">
+        <track.icon size={24} />
       </div>
+
+      <h3 className="font-bold text-xl uppercase tracking-wider text-black mb-3 transition-colors group-hover:text-[#FF2D2D]">
+        {track.title}
+      </h3>
+
+      <p className="text-zinc-500 text-[13px] leading-relaxed mb-8 flex-grow font-medium">
+        {track.desc}
+      </p>
+
+      <div className="space-y-3 mb-8">
+        {track.perks.map((perk, j) => (
+          <div key={j} className="flex items-center gap-3">
+            <div className="w-1.5 h-1.5 rounded-full bg-[#FF2D2D]/40 group-hover:bg-[#FF2D2D] transition-colors" />
+            <span className="text-[11px] font-semibold uppercase tracking-wider text-zinc-600 group-hover:text-black transition-colors">
+              {perk}
+            </span>
+          </div>
+        ))}
+      </div>
+
+      <a 
+        href="https://forms.gle/kDHDk3rJZkehBHok9"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="block text-center relative w-full py-3.5 overflow-hidden rounded-xl border border-zinc-200 bg-[#FAFAFA] text-[10px] font-bold uppercase tracking-widest text-black transition-all group-hover:bg-[#FF2D2D] group-hover:border-[#FF2D2D] group-hover:text-white"
+      >
+        <span>Apply as {track.title}</span>
+      </a>
     </motion.div>
   );
 };
@@ -130,137 +99,96 @@ const RewardCard = ({ reward, index }) => (
     initial={{ opacity: 0, y: 20 }}
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
-    transition={{ delay: index * 0.05, duration: 0.6 }}
-    className="relative group p-6 rounded-2xl bg-slate-50 border-2 border-slate-100 flex flex-col gap-4 transition-all duration-500 hover:bg-white hover:shadow-[0_15px_30px_rgba(0,0,0,0.03)] hover:border-red-600/20"
+    transition={{ delay: index * 0.05, duration: 0.5 }}
+    className="group p-3 sm:p-4 rounded-2xl bg-gradient-to-br from-red-100 via-red-50 to-white border border-red-200 flex flex-row items-center gap-4 transition-all duration-300 hover:border-[#FF2D2D] hover:shadow-md hover:shadow-red-500/10 hover:-translate-y-1"
   >
-    <div className={`w-12 h-12 rounded-xl bg-white border border-slate-100 flex items-center justify-center ${reward.color} shadow-sm group-hover:scale-110 group-hover:bg-red-600 group-hover:text-white transition-all duration-500`}>
-      <reward.icon size={22} />
+    <div className="w-10 h-10 flex-shrink-0 rounded-xl bg-white border border-red-100 flex items-center justify-center text-[#FF2D2D] shadow-sm group-hover:scale-110 group-hover:bg-[#FF2D2D] group-hover:text-white transition-all duration-300">
+      <reward.icon size={20} />
     </div>
-    <span className="text-[10px] font-black uppercase tracking-[0.08em] leading-relaxed text-slate-500 group-hover:text-slate-900 transition-colors">
+    <span className="text-[12px] sm:text-[13px] font-bold uppercase tracking-wider leading-relaxed text-black text-left flex-1">
       {reward.text}
     </span>
-    <div className="absolute bottom-0 left-0 right-0 h-1 bg-red-600 scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
   </motion.div>
 );
 
 export default function AmbassadorPage() {
-  const containerRef = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start start", "end end"]
-  });
-
-  const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "20%"]);
-
   return (
-    <div ref={containerRef} className="min-h-screen bg-white text-slate-900 selection:bg-red-600 selection:text-white overflow-x-hidden">
+    <div className="min-h-screen bg-[#FAFAFA] text-black font-poppins selection:bg-[#FF2D2D] selection:text-white overflow-x-hidden">
+      <Navbar />
 
-      {/* Premium Background */}
-      <div className="fixed inset-0 pointer-events-none z-0">
-        <motion.div 
-          style={{ y: backgroundY }}
-          className="absolute inset-0"
+      {/* Theme Background Orbits */}
+      <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+        <motion.div
+          animate={{ rotate: [360, 0] }}
+          transition={{ duration: 60, repeat: Infinity, ease: 'linear' }}
+          className="absolute top-[5%] left-[5%] h-[320px] w-[320px] rounded-full border-[2px] border-red-300/30 pointer-events-none"
         >
-          <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-red-600/[0.03] blur-[150px] rounded-full" />
-          <div className="absolute bottom-0 left-0 w-[800px] h-[800px] bg-blue-600/[0.02] blur-[150px] rounded-full" />
-          
-          {/* User Custom Orbital 1 - Top Left */}
+          <div className="absolute bottom-[18%] right-[8%] h-[6px] w-[6px] rounded-full bg-[#FF2D2D] shadow-[0_0_10px_#ff2d2d]" />
           <motion.div
-            animate={{ rotate: [360, 0] }}
+            animate={{ rotate: [-360, 0] }}
             transition={{ duration: 60, repeat: Infinity, ease: 'linear' }}
-            className="absolute top-[10%] left-[10%] h-[320px] w-[320px] rounded-full border-[2px] border-red-300 pointer-events-none opacity-40"
-            style={{ zIndex: 1 }}
+            className="absolute left-[15%] top-[15%] flex items-center gap-2"
           >
-            <div className="absolute bottom-[18%] right-[8%] h-[6px] w-[6px] rounded-full bg-red-600 shadow-[0_0_10px_#ff2d2d]" />
-            <motion.div
-              animate={{ rotate: [-360, 0] }}
-              transition={{ duration: 60, repeat: Infinity, ease: 'linear' }}
-              className="absolute left-[15%] top-[15%] flex items-center gap-2"
-            >
-              <span className="relative flex h-1.5 w-1.5">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-red-600 opacity-75"></span>
-                <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-red-600"></span>
-              </span>
-              <span className="whitespace-nowrap text-[9px] font-black tracking-[0.2em] text-red-300 uppercase">MST BLOCKCHAIN</span>
-            </motion.div>
+            <span className="relative flex h-1.5 w-1.5">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#FF2D2D] opacity-75"></span>
+              <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-[#FF2D2D]"></span>
+            </span>
+            <span className="whitespace-nowrap text-[9px] font-black tracking-[0.2em] text-red-500/50 uppercase">MST BLOCKCHAIN</span>
           </motion.div>
+        </motion.div>
 
-          {/* User Custom Orbital 2 - Top Left area */}
-          <motion.div
-            animate={{ y: [-15, 15, -15], x: [-10, 10, -10], rotate: [0, 90, 0] }}
-            transition={{ duration: 8, repeat: Infinity, ease: 'linear' }}
-            className="absolute left-[35%] top-[35%] flex h-32 w-32 items-center justify-center rounded-full border-2 border-red-500 opacity-40 pointer-events-none"
-            style={{ zIndex: 1 }}
-          >
-            <div className="h-20 w-20 rounded-full border-2 border-red-500/20" />
-            <div className="absolute top-0 h-1.5 w-1.5 rounded-full bg-red-600 shadow-[0_0_10px_#ff2d2d]" />
-          </motion.div>
+        <motion.div
+          animate={{ y: [-15, 15, -15], x: [-10, 10, -10], rotate: [0, 90, 0] }}
+          transition={{ duration: 8, repeat: Infinity, ease: 'linear' }}
+          className="absolute left-[30%] top-[25%] flex h-32 w-32 items-center justify-center rounded-full border-2 border-red-500/20 pointer-events-none"
+        >
+          <div className="h-20 w-20 rounded-full border-2 border-red-500/10" />
+          <div className="absolute top-0 h-1.5 w-1.5 rounded-full bg-[#FF2D2D] shadow-[0_0_10px_#ff2d2d]" />
+        </motion.div>
 
-          {/* User Custom Orbital 3 - Bottom Right */}
-          <motion.div
-            animate={{ rotate: [0, 360] }}
-            transition={{ duration: 80, repeat: Infinity, ease: 'linear' }}
-            className="absolute bottom-[5%] right-[5%] h-[400px] w-[400px] rounded-full border-[2px] border-red-300 pointer-events-none opacity-30"
-            style={{ zIndex: 1 }}
-          >
-            <div className="absolute top-[18%] left-[8%] h-[8px] w-[8px] rounded-full bg-red-600 shadow-[0_0_15px_#ff2d2d]" />
-            <motion.div
-              animate={{ rotate: [360, 0] }}
-              transition={{ duration: 80, repeat: Infinity, ease: 'linear' }}
-              className="absolute right-[10%] bottom-[10%] flex items-center gap-2"
-            >
-              <span className="whitespace-nowrap text-[8px] font-black tracking-[0.3em] text-red-400 uppercase">Global Nodes</span>
-              <span className="relative flex h-2 w-2">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-red-500 opacity-75"></span>
-                <span className="relative inline-flex h-2 w-2 rounded-full bg-red-500"></span>
-              </span>
-            </motion.div>
-          </motion.div>
-
-          {/* User Custom Orbital 4 - Bottom Right area */}
-          <motion.div
-            animate={{ y: [20, -20, 20], x: [15, -15, 15], rotate: [360, 0] }}
-            transition={{ duration: 12, repeat: Infinity, ease: 'easeInOut' }}
-            className="absolute right-[25%] bottom-[20%] flex h-48 w-48 items-center justify-center rounded-full border border-red-500/10 opacity-30 pointer-events-none"
-            style={{ zIndex: 1 }}
-          >
-            <div className="h-32 w-32 rounded-full border border-red-500/5" />
-            <div className="absolute bottom-0 h-2 w-2 rounded-full bg-red-600 shadow-[0_0_12px_#ff2d2d]" />
-          </motion.div>
-
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,0,0,0.04)_1px,transparent_1px)] bg-[length:32px_32px]" />
+        <motion.div
+          animate={{ rotate: [0, 360] }}
+          transition={{ duration: 80, repeat: Infinity, ease: 'linear' }}
+          className="absolute bottom-[5%] right-[5%] h-[400px] w-[400px] rounded-full border-[2px] border-red-300/30 pointer-events-none"
+        >
+          <div className="absolute top-[18%] left-[8%] h-[8px] w-[8px] rounded-full bg-[#FF2D2D] shadow-[0_0_15px_#ff2d2d]" />
         </motion.div>
       </div>
 
       <div className="relative z-10">
-        <main className="max-w-[1400px] mx-auto px-8 md:px-16">
+        <main className="max-w-[1400px] mx-auto px-6 md:px-12">
 
           {/* Hero Section */}
-          <section className="min-h-[85vh] flex flex-col justify-center items-center text-center pt-24">
+          <section className="min-h-[85vh] flex flex-col justify-center items-center text-center pt-32 pb-16">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             >
-              <div className="inline-flex items-center gap-3 px-5 py-2 rounded-full border border-red-600/10 bg-red-50 text-red-600 text-[10px] font-black uppercase tracking-[0.3em] mb-10">
-                <span className="w-1.5 h-1.5 rounded-full bg-red-600 animate-ping" />
+              <div className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full border border-black/10 bg-white/60 backdrop-blur-sm text-black text-[10px] font-bold uppercase tracking-[0.3em] mb-10 shadow-sm">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#FF2D2D] animate-ping" />
                 Applications Open 2024
               </div>
 
-              <h1 className="bungee-regular text-4xl sm:text-6xl md:text-8xl leading-[0.95] tracking-tighter text-black font-black uppercase mb-10">
+              <h1 className="bungee-regular text-4xl sm:text-6xl md:text-7xl lg:text-8xl leading-[0.95] tracking-tight text-black font-extrabold uppercase mb-8">
                 MST Blockchain <br />
-                <span className="text-red-600">Ambassador</span> Program
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF2D2D] via-red-600 to-rose-500">Ambassador</span> Program
               </h1>
 
               <p className="text-slate-400 text-lg md:text-xl font-bold max-w-2xl mx-auto leading-relaxed mb-14 uppercase tracking-tight">
-                Become the voice of MST Blockchain in your community.   <span className="text-slate-900">Represent MST globally, earn rewards,</span> and shape the future of Web3.
+                Empowering the next generation of <span className="text-slate-900">Web3 leaders</span> to drive global institutional adoption.
               </p>
 
-              <div className="flex flex-col sm:flex-row gap-5 justify-center">
-                <button className="px-12 py-6 bg-red-600 text-white rounded-2xl font-black uppercase tracking-widest text-[10px] hover:bg-black hover:scale-105 active:scale-95 transition-all shadow-2xl shadow-red-600/20">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <a 
+                  href="https://forms.gle/kDHDk3rJZkehBHok9"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block px-8 py-3.5 bg-black text-white rounded-full font-bold uppercase tracking-widest text-[11px] hover:bg-[#FF2D2D] hover:scale-105 active:scale-95 transition-all shadow-lg shadow-black/10"
+                >
                   Start Application
-                </button>
-                <button className="px-12 py-6 border-2 border-slate-900 text-slate-900 rounded-2xl font-black uppercase tracking-widest text-[10px] hover:bg-slate-900 hover:text-white transition-all">
+                </a>
+                <button className="px-8 py-3.5 border border-black/10 bg-white/50 backdrop-blur-sm text-black rounded-full font-bold uppercase tracking-widest text-[11px] hover:border-[#FF2D2D] transition-all">
                   Program Handbook
                 </button>
               </div>
@@ -268,16 +196,16 @@ export default function AmbassadorPage() {
           </section>
 
           {/* Tracks Section */}
-          <section className="py-32">
-            <div className="flex flex-col md:flex-row justify-between items-end mb-24 gap-8">
+          <section className="py-24">
+            <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
               <div className="max-w-2xl">
-                <span className="text-red-600 text-[10px] font-black uppercase tracking-[0.5em] mb-4 block">Choose Your Role</span>
-                <Heading>Ambassador <span className="text-red-600">Tracks</span></Heading>
+                <span className="text-red-600 text-[10px] font-black uppercase tracking-[0.5em] mb-4 block">Tracks</span>
+                <Heading>Choose Your <span className="text-red-600">Path</span></Heading>
               </div>
-              
+
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 ">
               {ambassadorTracks.map((track, i) => (
                 <TrackCard key={track.title} track={track} index={i} />
               ))}
@@ -287,11 +215,11 @@ export default function AmbassadorPage() {
           {/* Rewards Section */}
           <section className="py-32 border-t border-slate-100">
             <div className="text-center mb-24">
-             
-              <Heading>Benefits & <span className="text-red-600">Rewards</span></Heading>
+              <span className="text-red-600 text-[10px] font-black uppercase tracking-[0.5em] mb-4 block">Benefits</span>
+              <Heading>Exclusive <span className="text-red-600">Perks</span></Heading>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {rewards.map((reward, i) => (
                 <RewardCard key={i} reward={reward} index={i} />
               ))}
@@ -299,35 +227,35 @@ export default function AmbassadorPage() {
           </section>
 
           {/* CTA Section */}
-          <section className="py-32">
+          <section className="py-24 mb-16">
             <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="relative rounded-[3.5rem] overflow-hidden bg-slate-900 p-16 md:p-28 text-center group"
+              className="relative rounded-[2rem] overflow-hidden bg-black p-12 md:p-24 text-center border border-zinc-800 shadow-2xl"
             >
-              <div className="absolute inset-0 pointer-events-none overflow-hidden">
-                <div className="absolute -top-1/2 -right-1/4 w-full h-full bg-red-600/20 blur-[150px] rounded-full group-hover:bg-red-600/30 transition-all duration-1000" />
-                <div className="absolute -bottom-1/2 -left-1/4 w-full h-full bg-blue-600/10 blur-[150px] rounded-full" />
-              </div>
+              {/* Subtle grid background */}
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.08)_1px,transparent_1px)] bg-[length:24px_24px]" />
 
               <div className="relative z-10 max-w-3xl mx-auto">
-                <h2 className="bungee-regular text-4xl md:text-7xl leading-[0.95] tracking-tighter text-white font-black uppercase mb-12">
+                <h2 className="bungee-regular text-4xl md:text-5xl lg:text-6xl leading-[1.1] tracking-tight text-white font-extrabold uppercase mb-8">
                   Ready to Lead the <br />
-                  <span className="text-red-600">Future?</span>
+                  <span className="text-[#FF2D2D]">Future?</span>
                 </h2>
-                <p className="text-white/50 text-lg md:text-xl font-bold mb-14 leading-relaxed uppercase tracking-tight">
+                <p className="text-zinc-400 text-sm md:text-base font-medium mb-12 leading-relaxed uppercase tracking-widest max-w-xl mx-auto">
                   Join the elite network of MST ambassadors and shape the future of institutional blockchain.
                 </p>
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-8">
-                  <button
-                      onClick={() => window.open("https://forms.gle/kDHDk3rJZkehBHok9", "_blank")}
-                      className="px-14 py-7 bg-white text-black rounded-2xl font-black uppercase tracking-widest text-[10px] hover:bg-red-600 hover:text-white hover:scale-105 active:scale-95 transition-all duration-500 shadow-2xl shadow-white/5"
-                    >
-                      Become an Ambassador
-                  </button>
-                  <Link href="/contact" className="group/link flex items-center gap-3 text-[10px] font-black uppercase tracking-[0.4em] text-white/40 hover:text-white transition-colors">
-                    Join Community <ArrowRight size={16} className="group-hover/link:translate-x-2 transition-transform" />
+                  <a 
+                    href="https://forms.gle/kDHDk3rJZkehBHok9"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-block px-14 py-7 bg-white text-black rounded-2xl font-black uppercase tracking-widest text-[10px] hover:bg-red-600 hover:text-white hover:scale-105 active:scale-95 transition-all duration-500 shadow-2xl shadow-white/5"
+                  >
+                    Become an Ambassador
+                  </a>
+                  <Link href="/contact" className="group/link flex items-center justify-center gap-3 px-10 py-4 border border-zinc-700 rounded-full text-[11px] font-bold uppercase tracking-widest text-zinc-300 hover:text-white hover:border-zinc-500 transition-colors">
+                    Join Community <ArrowRight size={14} className="group-hover/link:translate-x-1 transition-transform" />
                   </Link>
                 </div>
               </div>
@@ -335,8 +263,9 @@ export default function AmbassadorPage() {
           </section>
 
         </main>
-
       </div>
+
+      <Footer />
     </div>
   );
 }

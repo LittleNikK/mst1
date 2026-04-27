@@ -6,7 +6,7 @@ import React from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { Send, MessageCircle } from "lucide-react";
-import { FaInstagram, FaTwitter, FaLinkedin, FaFacebook, FaYoutube, FaTelegram } from "react-icons/fa";
+import { FaInstagram, FaTwitter, FaLinkedin, FaFacebook, FaYoutube, FaTelegram, FaEnvelope } from "react-icons/fa";
 import { toast } from "react-toastify";
 import { useState } from "react";
 
@@ -234,16 +234,15 @@ export default function Footer() {
                 </div>
 
                 {/* RIGHT SIDE (CONTACT + ICONS) */}
-                <div className="flex flex-col sm:flex-row items-center gap-4 flex-shrink-0 ml-0 md:ml-auto md:pl-0 lg:pl-10 mt-4 md:mt-0 w-full md:w-auto">
-                  <a
-                    href="mailto:support@mstblockchain.com"
-                    className="hover:text-red-500 cursor-pointer transition font-aeonik font-normal text-sm whitespace-nowrap"
-
-                  >
-                    support@mstblockchain.com
-                  </a>
-
+                <div className="flex flex-col sm:flex-row items-center gap-4 flex-shrink-0 ml-0 md:ml-auto md:pr-8 lg:pr-16 mt-4 md:mt-0 w-full md:w-auto">
                   <div className="flex items-center gap-3 sm:gap-4 flex-wrap justify-center">
+                    <a
+                      href="mailto:support@mstblockchain.com"
+                      aria-label="Email Support"
+                      className="w-10 h-10 rounded-full border border-red-300 flex items-center justify-center text-gray-700 hover:bg-red-500 hover:text-white transition"
+                    >
+                      <FaEnvelope size={16} className="text-current" />
+                    </a>
                     <a
                       href="https://x.com/MSTBlockchain"
                       target="_blank"
