@@ -27,12 +27,12 @@ export default function MSTExplorerFull() {
     const fetchData = async () => {
       try {
         const [blockRes, txRes] = await Promise.all([
-          fetch('https://mstscan.com/api/v2/main-page/blocks'),
-          fetch('https://mstscan.com/api/v2/main-page/transactions')
+          fetch('https://mstscan.com/api/v2/main-page/blocks').catch(() => null),
+          fetch('https://mstscan.com/api/v2/main-page/transactions').catch(() => null)
         ]);
 
-        const blockData = await blockRes.json();
-        const txData = await txRes.json();
+        const blockData = blockRes && blockRes.ok ? await blockRes.json() : { items: [] };
+        const txData = txRes && txRes.ok ? await txRes.json() : { items: [] };
 
         // ✅ BLOCKS
         const formattedBlocks = (blockData?.items || blockData || [])

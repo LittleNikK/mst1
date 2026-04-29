@@ -210,7 +210,7 @@ function BlogCard({ post, index }) {
       {/* CTA BUTTON */}
       <div className="mt-auto">
         <motion.a
-          href={`/blog/${post.slug || post.id}`}
+          href={`/blog-details/${post.slug || post.id}`}
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           className="inline-block px-5 sm:px-6 py-2.5 sm:py-3 rounded-full bg-black text-white text-sm font-bold uppercase tracking-wider shadow-lg hover:brightness-110 transition-all duration-300 hover:bg-red-500"
