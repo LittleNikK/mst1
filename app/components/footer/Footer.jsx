@@ -311,8 +311,21 @@ export default function Footer() {
             </p>
 
             <div className="flex gap-8 text-xs text-gray-500" style={{ fontFamily: 'Poppins', fontWeight: 400 }}>
-              <a href="https://mstblockchain.com/privacy" target="_blank" rel="noopener noreferrer" className="hover:text-red-500 cursor-pointer transition">Privacy Policy</a>
-              <a href="https://mstblockchain.com/terms" target="_blank" rel="noopener noreferrer" className="hover:text-red-500 cursor-pointer transition">Terms of Service</a>
+              <Link 
+                  href="/privacypolicy" 
+                  className="hover:text-red-500 cursor-pointer transition"
+              >
+                Privacy Policy
+              </Link>
+
+              <Link 
+                  href="/terms" 
+                  className="hover:text-red-500 cursor-pointer transition"
+              >
+                Terms & Conditions
+              </Link>
+
+               
             </div>
           </div>
         </div>

@@ -176,7 +176,7 @@ export default function AmbassadorPage() {
               </h1>
 
               <p className="text-slate-400 text-lg md:text-xl font-bold max-w-2xl mx-auto leading-relaxed mb-14 uppercase tracking-tight">
-                Empowering the next generation of <span className="text-slate-900">Web3 leaders</span> to drive global institutional adoption.
+                Become the voice of MST Blockchain in your community.  <span className="text-slate-900">Represent MST globally, earn rewards, and shape</span> the future of Web3.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -199,8 +199,8 @@ export default function AmbassadorPage() {
           <section className="py-24">
             <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
               <div className="max-w-2xl">
-                <span className="text-red-600 text-[10px] font-black uppercase tracking-[0.5em] mb-4 block">Tracks</span>
-                <Heading>Choose Your <span className="text-red-600">Path</span></Heading>
+                <span className="text-red-600 text-[10px] font-black uppercase tracking-[0.5em] mb-4 block">Choose Your Role</span>
+                <Heading>Ambassador  <span className="text-red-600">Tracks</span></Heading>
               </div>
 
             </div>
@@ -215,8 +215,8 @@ export default function AmbassadorPage() {
           {/* Rewards Section */}
           <section className="py-32 border-t border-slate-100">
             <div className="text-center mb-24">
-              <span className="text-red-600 text-[10px] font-black uppercase tracking-[0.5em] mb-4 block">Benefits</span>
-              <Heading>Exclusive <span className="text-red-600">Perks</span></Heading>
+              
+              <Heading>Rewards & <span className="text-red-600">Perks</span></Heading>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
