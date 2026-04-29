@@ -1,4 +1,3 @@
-"use client";
 import { Geist, Geist_Mono, Space_Grotesk, Bungee } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/navbar/Navbar";
@@ -6,7 +5,14 @@ import MstBuddy from "./components/MstBuddy/BuddyPanel";
 import Footer from "./components/footer/Footer";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-// import { useState } from "react";
+
+export const metadata = {
+  title: "MST Blockchain",
+  description: "MST Blockchain Ecosystem",
+  icons: {
+    icon: "/1.png",
+  },
+};
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,7 +36,8 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} ${spaceGrotesk.variable} ${bungee.variable} h-full antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} ${spaceGrotesk.variable} ${bungee.variable} h-full antialiased`
+    }
     >
       <body suppressHydrationWarning className="min-h-full flex flex-col">
         <Navbar />
