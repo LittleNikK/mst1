@@ -59,21 +59,11 @@ const team = [
     designation: 'Director'
   },
   {
-    name: 'Suresh Nair',
-    role: 'Chief Operating Officer (COO)',
-    image: '/assets/nigelsir.jpeg',
-    bio: 'He oversees operations at MST Blockchain, ensuring a seamless alignment between product strategy, execution, and user experience. He plays a key role in shaping how builders and community members interact with the ecosystem,making MST intuitive, accessible, and efficient at every touchpoint.',
-    bio2: 'Driven by a vision of delivering a premium and user-centric experience, he ensures that every interaction within MST reflects quality, precision, and ease of use.',
-    linkedinHandle: '@mst_Suresh',
-    linkedinHref: '#',
-    designation: 'Chief Operating Officer'
-  },
-  {
     name: 'Kalika Mishra',
     role: 'Chief Technology Officer (CTO)',
     image: '/assets/Kalika Sir.png',
-    bio: 'He leads the technology vision at MST Blockchain, driving the development of a scalable, secure, and high-performance blockchain infrastructure. She works across protocol engineering, system architecture, and integrations to ensure MST remains robust, efficient, and future-ready.',
-    bio2: 'Passionate about building cutting-edge systems, she is committed to advancing MST as a developer-friendly and production-grade Web3 ecosystem.',
+    bio: 'He leads the technology vision at MST Blockchain, driving the development of a scalable, secure, and high-performance blockchain infrastructure. He works across protocol engineering, system architecture, and integrations to ensure MST remains robust, efficient, and future-ready.',
+    bio2: 'Passionate about building cutting-edge systems, He is committed to advancing MST as a developer-friendly and production-grade Web3 ecosystem.',
     linkedinHandle: '@kalika_Prasad',
     linkedinHref: 'https://www.linkedin.com/in/kalika-prasad-mishra-036b27103?utm_source=share_via&utm_content=profile&utm_medium=member_ios',
     designation: 'Chief Technology Officer'
@@ -87,6 +77,16 @@ const team = [
     linkedinHandle: '@Ashish_Kumar_Jain',
     linkedinHref: 'https://www.linkedin.com/in/c2ashish?utm_source=share_via&utm_content=profile&utm_medium=member_ios  ',
     designation: 'Chief Marketing Officer'
+  },
+  {
+    name: 'Suresh Nair',
+    role: 'Chief Operating Officer (COO)',
+    image: '/assets/nigelsir.jpeg',
+    bio: 'He oversees operations at MST Blockchain, ensuring a seamless alignment between product strategy, execution, and user experience. He plays a key role in shaping how builders and community members interact with the ecosystem,making MST intuitive, accessible, and efficient at every touchpoint.',
+    bio2: 'Driven by a vision of delivering a premium and user-centric experience, he ensures that every interaction within MST reflects quality, precision, and ease of use.',
+    linkedinHandle: '@mst_Suresh',
+    linkedinHref: '#',
+    designation: 'Chief Operating Officer'
   },
 ];
 
@@ -303,7 +303,7 @@ const AboutUs = () => {
         <div className="mx-auto max-w-7xl px-6 py-12 md:py-24">
           <div className="grid grid-cols-1 gap-16 md:gap-32">
             {team.map((member, idx) => (
-              <motion.div 
+              <motion.div
                 key={member.name}
                 initial={{ opacity: 0, y: 100 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -334,7 +334,7 @@ const AboutUs = () => {
                 {/* Content side */}
                 <div className="w-full md:w-1/2 space-y-8">
                   <div className="space-y-4">
-                    <motion.span 
+                    <motion.span
                       initial={{ opacity: 0, x: -20 }}
                       whileInView={{ opacity: 1, x: 0 }}
                       className="inline-block text-red-600 font-black text-xs tracking-[0.4em] uppercase"
@@ -373,13 +373,13 @@ const AboutUs = () => {
             ))}
             {/* Render Advisors in the same flow */}
             {advisors.map((member, idx) => (
-              <motion.div 
+              <motion.div
                 key={member.name}
                 initial={{ opacity: 0, y: 100 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-                className={`flex flex-col md:flex-row items-center gap-16 ${ (team.length + idx) % 2 === 1 ? 'md:flex-row-reverse' : ''}`}
+                className={`flex flex-col md:flex-row items-center gap-16 ${(team.length + idx) % 2 === 1 ? 'md:flex-row-reverse' : ''}`}
               >
                 {/* Image Component */}
                 <div className="relative group w-full md:w-1/2 aspect-square max-w-[400px] lg:max-w-[500px] mx-auto md:mx-0">
@@ -403,7 +403,7 @@ const AboutUs = () => {
                 {/* Content side */}
                 <div className="w-full md:w-1/2 space-y-8">
                   <div className="space-y-4">
-                    <motion.span 
+                    <motion.span
                       initial={{ opacity: 0, x: -20 }}
                       whileInView={{ opacity: 1, x: 0 }}
                       className="inline-block text-red-600 font-black text-xs tracking-[0.4em] uppercase"

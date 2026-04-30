@@ -28,7 +28,7 @@ const proofItems = [
   {
     title: 'Concert & Festival Passes',
     description: 'Large-scale event ticketing with anti-scalping rules and post-event collectible value built into every single ticket at mint.',
-    image: '/NFT-Tickiting/Concert & Festival Passes.jpg',
+    image: '/NFT-Tickiting/Concert Festival Passes.jpg',
     alt: 'National car manufacturer supply chain'
   },
   {

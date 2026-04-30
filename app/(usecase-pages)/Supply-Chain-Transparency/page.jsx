@@ -34,13 +34,13 @@ const proofItems = [
   {
     title: 'Express Post & Shipping',
     description: 'Package custody and transfer events are recorded to improve transparency and dispute handling.',
-    image: '/supply-chain-transperancy/Express Post & Shipping.jpg',
+    image: '/supply-chain-transperancy/Express Post Shipping.jpg',
     alt: 'Express shipping supply chain'
   },
   {
     title: 'Food & Agriculture Tracking',
     description: 'Farm-to-shelf visibility helps reduce spoilage, fraud, and recall time with trusted provenance.',
-    image: '/supply-chain-transperancy/Food & Agriculture Tracking.jpg',
+    image: '/supply-chain-transperancy/Food Agriculture Tracking.jpg',
     alt: 'Food and agriculture supply chain'
   }
 ];

@@ -145,7 +145,7 @@ export default function Footer() {
                     Dev Support Forum
                   </a>
                 </li>
-                <li><Link href="#Events" className="hover:text-red-500 cursor-pointer transition font-aeonik font-normal">Events</Link></li>
+                <li><Link href="/#Events" className="hover:text-red-500 cursor-pointer transition font-aeonik font-normal">Events</Link></li>
                 <li>
                   <a
                     href="https://support.mstvalidator.com/portal/en/signin"

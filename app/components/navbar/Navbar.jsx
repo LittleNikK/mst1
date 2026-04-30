@@ -64,7 +64,7 @@ const buildResources = [
   {
     title: 'DEVELOPER RESOURCES',
     items: [
-      { label: 'Testnet', href: 'https://mstscan.com/' },
+      { label: 'Testnet', href: 'https://testnet.mstscan.com/' },
       { label: 'Faucet', href: 'https://faucet.mstblockchain.com/' },
       { label: 'Developer Docs', href: 'https://docs.mstblockchain.com/developer-docs' },
       { label: 'MST Explorer', href: 'https://mstscan.com/' }
@@ -480,7 +480,7 @@ export default function Navbar() {
   };
 
   const navLinkClass = (active) =>
-    `group relative text-sm font-medium  tracking-tight transition-colors ${active ? 'text-white' : 'text-white/50 hover:text-white'}`;
+    `group relative text-sm font-medium capitalize tracking-tight transition-colors ${active ? 'text-white' : 'text-white/50 hover:text-white'}`;
 
   const renderBuildDropdown = () => (
     <MegaMenu
@@ -566,7 +566,7 @@ export default function Navbar() {
       anchorRef={usecasesButtonRef}
       positionStrategy="fixed"
       viewportMargin={16}
-      offsetY={14} 
+      offsetY={14}
       onMouseEnter={() => requestOpenDesktopMenu('usecases')}
       onMouseLeave={requestCloseDesktopMenu}
       onItemClick={closeAllMenus}
@@ -778,8 +778,8 @@ export default function Navbar() {
               <div className="hidden lg:block relative group">
                 <div className="absolute inset-0 rounded-full bg-[#ff2d2d] opacity-20 blur-md transition-opacity duration-300 group-hover:opacity-50" />
 
-                <a
-                  href="#ecosystemSection"
+                <Link
+                  href="/#ecosystemSection"
                   className="relative inline-flex items-center space-x-2 rounded-full mb-3
       bg-gradient-to-r from-[#ff2d2d] to-[#ff4d4d] mb-2
       px-6 py-2.5 text-[11px] font-extrabold uppercase tracking-[0.15em] text-white
@@ -796,7 +796,7 @@ export default function Navbar() {
                   >
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                   </svg>
-                </a>
+                </Link>
               </div>
 
               {/* Get Started Button */}
@@ -861,7 +861,7 @@ export default function Navbar() {
               <button
                 type="button"
                 onClick={() => setMobileBuildOpen((prev) => !prev)}
-                className="flex w-full items-center justify-between rounded-xl bg-white/5 px-4 py-3 text-sm font-bold lowercase text-white transition-all hover:bg-red-500/10"
+                className="flex w-full items-center justify-between rounded-xl bg-white/5 px-4 py-3 text-sm font-bold capitalize text-white transition-all hover:bg-red-500/10"
               >
                 <span className="flex items-center gap-3">
                   <span className="h-1.5 w-1.5 rounded-full bg-red-500 shadow-sm" />
@@ -920,7 +920,7 @@ export default function Navbar() {
               <button
                 type="button"
                 onClick={() => setMobileLearnOpen((prev) => !prev)}
-                className="mt-1 flex w-full items-center justify-between rounded-xl px-4 py-3 text-sm font-bold lowercase text-white/60 transition-all hover:bg-white/5 hover:text-white"
+                className="mt-1 flex w-full items-center justify-between rounded-xl px-4 py-3 text-sm font-bold capitalize text-white/60 transition-all hover:bg-white/5 hover:text-white"
               >
                 <span className="flex items-center gap-3">
                   <span className="h-1.5 w-1.5 rounded-full bg-white/20 shadow-sm" />
@@ -963,7 +963,7 @@ export default function Navbar() {
               <button
                 type="button"
                 onClick={() => setMobileProductsOpen((prev) => !prev)}
-                className="mt-1 flex w-full items-center justify-between rounded-xl px-4 py-3 text-sm font-bold lowercase text-white/60 transition-all hover:bg-white/5 hover:text-white"
+                className="mt-1 flex w-full items-center justify-between rounded-xl px-4 py-3 text-sm font-bold capitalize text-white/60 transition-all hover:bg-white/5 hover:text-white"
               >
                 <span className="flex items-center gap-3">
                   <span className="h-1.5 w-1.5 rounded-full bg-white/20 shadow-sm" />
@@ -1024,7 +1024,7 @@ export default function Navbar() {
               <button
                 type="button"
                 onClick={() => setMobileUseCasesOpen((prev) => !prev)}
-                className="mt-1 flex w-full items-center justify-between rounded-xl px-4 py-3 text-sm font-bold lowercase text-white/60 transition-all hover:bg-white/5 hover:text-white"
+                className="mt-1 flex w-full items-center justify-between rounded-xl px-4 py-3 text-sm font-bold capitalize text-white/60 transition-all hover:bg-white/5 hover:text-white"
               >
                 <span className="flex items-center gap-3">
                   <span className="h-1.5 w-1.5 rounded-full bg-white/20 shadow-sm" />
@@ -1065,7 +1065,7 @@ export default function Navbar() {
                   <Link
                     key={item.label}
                     href={item.href}
-                    className={`flex w-full items-center justify-between rounded-xl px-4 py-3 text-sm font-bold lowercase transition-all ${item.active ? 'bg-teal-500/10 text-[#2DD4BF]' : 'text-white/60 hover:bg-white/5 hover:text-white'}`}
+                    className={`flex w-full items-center justify-between rounded-xl px-4 py-3 text-sm font-bold capitalize transition-all ${item.active ? 'bg-teal-500/10 text-[#2DD4BF]' : 'text-white/60 hover:bg-white/5 hover:text-white'}`}
                     onClick={() => setIsOpen(false)}
                   >
                     <span className="flex items-center gap-3">
@@ -1081,11 +1081,11 @@ export default function Navbar() {
 
             <div className="mt-4 px-2">
               <Link
-                href="#"
+                href="/#ecosystemSection"
                 onClick={() => setIsOpen(false)}
                 className="flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-red-500 to-red-400 px-5 py-3.5 text-xs font-bold uppercase tracking-[0.15em] text-white shadow-[0_6px_20px_rgba(255,45,45,0.35)] transition-all hover:brightness-110 active:scale-95"
               >
-                <span>explore ecosystem</span>
+                <span>Explore Ecosystem</span>
               </Link>
             </div>
             <div className="mt-4 px-2">
@@ -1094,7 +1094,7 @@ export default function Navbar() {
                 onClick={() => setIsOpen(false)}
                 className="flex w-full items-center justify-center gap-2 rounded-xl bg-white px-5 py-3.5 text-xs font-bold uppercase tracking-[0.15em] text-black shadow-[0_6px_20px_rgba(255,255,255,0.16)] transition-all hover:bg-white/90 active:scale-95"
               >
-                <span>get started</span>
+                <span>Get Started</span>
               </Link>
             </div>
           </motion.div>

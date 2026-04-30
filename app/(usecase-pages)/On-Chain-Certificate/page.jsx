@@ -40,7 +40,7 @@ const proofItems = [
   {
     title: 'Training & Event Completion',
     description: 'Course completion and conference credentials issued as permanent on-chain records — as trusted as any institutional certificate.',
-    image: '/onchain-usecase/Training & Event Completion.jpg',
+    image: '/onchain-usecase/Training Event Completion.jpg',
     alt: 'Food and agriculture supply chain'
   }
 ];
@@ -191,7 +191,7 @@ export default function SupplyChainPage() {
               className="flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-black/80 border border-white/20 text-white font-semibold hover:bg-[#ff2d2d]"
             >
               Talk to an Expert
-            </button> 
+            </button>
           </div>
 
           <div className="overflow-hidden rounded-3xl bg-black shadow-none">

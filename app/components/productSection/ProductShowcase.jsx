@@ -10,7 +10,7 @@ const logos = [
     src: "/assets/bridgekey.png",
     title: "Bridge Key",
     description:
-       "BridgeKey is a secure and powerful multi-chain wallet designed to simplify digital asset management. It enables seamless transactions, cross-chain transfers, and advanced security features, making it the perfect gateway for users entering the Web3 ecosystem.",
+      "BridgeKey is a secure and powerful multi-chain wallet designed to simplify digital asset management. It enables seamless transactions, cross-chain transfers, and advanced security features, making it the perfect gateway for users entering the Web3 ecosystem.",
     stats: { users: "85K+", downloads: "120K", reliability: "99.9%" },
     link: "https://bridgekey.io/",
   },
@@ -26,12 +26,12 @@ const logos = [
     src: "/assets/acadmey.png",
     title: "MasterStroke \n Academy",
     description:
-     "MasterStroke Academy is a next-generation learning platform focused on blockchain and Web3 development. It offers hands-on training, real-world projects, and industry-focused learning paths to help individuals build decentralized applications and grow in the Web3 space.",
+      "MasterStroke Academy is a next-generation learning platform focused on blockchain and Web3 development. It offers hands-on training, real-world projects, and industry-focused learning paths to help individuals build decentralized applications and grow in the Web3 space.",
     stats: {
-    "On-Chain Certificates": "",
-    "DApps Built": "",
-    "Web3 Builders": ""
-  },
+      "Learn by Building": "",
+      "Zero to Web3 Developer": "",
+      "Industry-Ready Skills": ""
+    },
     link: "https://masterstroke.academy/",
   },
 ];
@@ -202,7 +202,7 @@ const LogoFlipSection = () => {
                         key={key}
                         className="border-l-5 border-red-600 pl-4"
                       >
-                        <p className="text-[10px] sm:text-xs uppercase tracking-widest text-gray-600 font-bold">
+                        <p className={`text-[10px] sm:text-xs uppercase tracking-widest font-bold ${current.title.includes('Academy') ? 'text-black' : 'text-gray-600'}`}>
                           {key.replace("_", " ")}
                         </p>
                         <p className="text-lg sm:text-xl md:text-2xl bungee-regular font-mono text-black">

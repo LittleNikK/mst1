@@ -10,7 +10,12 @@ export const metadata = {
   title: "MST Blockchain",
   description: "MST Blockchain Ecosystem",
   icons: {
-    icon: "/1.png",
+    icon: [
+      { url: "/1.png", sizes: "32x32" },
+      { url: "/1.png", sizes: "16x16" },
+    ],
+    shortcut: "/1.png",
+    apple: "/1.png",
   },
 };
 

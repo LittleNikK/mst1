@@ -133,7 +133,7 @@ export default function EcosystemSection() {
             />
           </a>
 
-          <a href="grant" className="md:col-span-5 block">
+          <a href="/grant" className="md:col-span-5 block">
             <PartnerCard
               icon={Icons.grants}
               tag="Funding"

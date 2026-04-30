@@ -109,7 +109,7 @@ export default function SupplyChainPage() {
         {/* 🔴 HERO */}
         <section className="relative pt-36 pb-28 px-6 min-h-[85vh] flex items-center bg-transparent">
           <div className="relative z-10 max-w-7xl mx-auto grid lg:grid-cols-[1fr_1.1fr] gap-8 items-center w-full">
-            
+
             {/* Left Content */}
             <div className="flex flex-col items-start pr-4 pt-7">
               <motion.div
@@ -120,8 +120,8 @@ export default function SupplyChainPage() {
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-red-50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
                 <span className="relative flex h-2.5 w-2.5 items-center justify-center rounded-full bg-red-100">
-                   <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-red-400 opacity-60"></span>
-                   <span className="relative h-1.5 w-1.5 rounded-full bg-red-600"></span>
+                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-red-400 opacity-60"></span>
+                  <span className="relative h-1.5 w-1.5 rounded-full bg-red-600"></span>
                 </span>
                 <span className="relative text-[10px] font-bold uppercase tracking-[0.2em] text-gray-800">
                   Zero Hardware <span className="text-red-600 font-black">Required</span>
@@ -138,20 +138,20 @@ export default function SupplyChainPage() {
                 <span className="relative inline-block text-transparent bg-clip-text bg-gradient-to-r from-red-600 via-red-500 to-red-700 pb-2">
                   Blockchain
                   {/* Animated underline */}
-                  <motion.svg 
+                  <motion.svg
                     className="absolute -bottom-1 left-0 w-full h-4 text-red-500/30"
                     viewBox="0 0 100 10" preserveAspectRatio="none"
                   >
-                     <motion.path 
-                       d="M0 5 Q 50 10 100 5" 
-                       fill="none" 
-                       stroke="currentColor" 
-                       strokeWidth="4"
-                       strokeLinecap="round"
-                       initial={{ pathLength: 0 }}
-                       animate={{ pathLength: 1 }}
-                       transition={{ duration: 1.2, delay: 0.8, ease: "easeInOut" }}
-                     />
+                    <motion.path
+                      d="M0 5 Q 50 10 100 5"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="4"
+                      strokeLinecap="round"
+                      initial={{ pathLength: 0 }}
+                      animate={{ pathLength: 1 }}
+                      transition={{ duration: 1.2, delay: 0.8, ease: "easeInOut" }}
+                    />
                   </motion.svg>
                 </span>
               </motion.h1>
@@ -180,8 +180,8 @@ export default function SupplyChainPage() {
             >
               {/* Outer glow */}
               <div className="absolute inset-0 -m-6 rounded-[2rem] bg-gradient-to-br from-red-500/20 via-transparent to-red-400/10 blur-3xl -z-10" />
-              
-              <motion.div 
+
+              <motion.div
                 animate={{ y: [-8, 8, -8] }}
                 transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
                 className="relative h-[250px] md:h-[300px] lg:h-[360px] w-full rounded-[2rem] border border-red-200/50 bg-white/40 p-3 shadow-2xl backdrop-blur-sm overflow-hidden group"
@@ -216,11 +216,11 @@ export default function SupplyChainPage() {
           <div className="grid md:grid-cols-2 gap-10 items-center mb-16">
             <motion.div variants={fadeUp} initial="hidden" whileInView="visible" className="group relative rounded-3xl border border-red-100 bg-white p-8 md:p-10 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgb(239,68,68,0.1)] hover:border-red-300 transition-all duration-500 overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-br from-red-50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              
+
               <div className="relative z-10 w-16 h-16 flex items-center justify-center rounded-2xl bg-red-50 border border-red-100 mb-8 group-hover:bg-red-600 group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 shadow-sm">
                 <FaUserPlus className="text-2xl text-red-500 group-hover:text-white transition-colors duration-500" />
               </div>
-              
+
               <div className="relative z-10">
                 <h3 className="bungee-regular text-2xl md:text-3xl leading-tight tracking-tight text-black font-extrabold uppercase mb-4 group-hover:text-red-700 transition-colors duration-300">
                   Create <span className="text-red-500 transition-colors">Account</span>
@@ -268,11 +268,11 @@ export default function SupplyChainPage() {
 
             <motion.div variants={fadeUp} initial="hidden" whileInView="visible" className="order-1 md:order-2 group relative rounded-3xl border border-red-100 bg-white p-8 md:p-10 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgb(239,68,68,0.1)] hover:border-red-300 transition-all duration-500 overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-bl from-red-50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              
+
               <div className="relative z-10 w-16 h-16 flex items-center justify-center rounded-2xl bg-red-50 border border-red-100 mb-8 group-hover:bg-red-600 group-hover:scale-110 group-hover:-rotate-3 transition-all duration-500 shadow-sm">
                 <FaCreditCard className="text-2xl text-red-500 group-hover:text-white transition-colors duration-500" />
               </div>
-              
+
               <div className="relative z-10">
                 <h3 className="bungee-regular text-2xl md:text-3xl leading-tight tracking-tight text-black font-extrabold uppercase mb-4 group-hover:text-red-700 transition-colors duration-300">
                   Make <span className="text-red-500 transition-colors">Payment</span>
@@ -292,11 +292,11 @@ export default function SupplyChainPage() {
           <div className="grid md:grid-cols-2 gap-10 items-center">
             <motion.div variants={fadeUp} initial="hidden" whileInView="visible" className="group relative rounded-3xl border border-red-100 bg-white p-8 md:p-10 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgb(239,68,68,0.1)] hover:border-red-300 transition-all duration-500 overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-br from-red-50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              
+
               <div className="relative z-10 w-16 h-16 flex items-center justify-center rounded-2xl bg-red-50 border border-red-100 mb-8 group-hover:bg-red-600 group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 shadow-sm">
                 <FaCube className="text-2xl text-red-500 group-hover:text-white transition-colors duration-500" />
               </div>
-              
+
               <div className="relative z-10">
                 <h3 className="bungee-regular text-2xl md:text-3xl leading-tight tracking-tight text-black font-extrabold uppercase mb-4 group-hover:text-red-700 transition-colors duration-300">
                   Own Your <span className="text-red-500 transition-colors">Fraction</span>
@@ -330,45 +330,45 @@ export default function SupplyChainPage() {
         {/* 🔴 WHY SECTION */}
         <section className="py-24 px-6 relative bg-gray-50/50">
           <div className="max-w-7xl mx-auto">
-             <div className="text-center mb-16 md:mb-20">
-                <h2 className="bungee-regular text-3xl sm:text-4xl md:text-5xl leading-tight tracking-tight text-black font-extrabold uppercase m-0 p-0 inline-block relative">
-                  Why <span className="text-red-600">Fractional</span> Validators?
-                  <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 w-20 md:w-24 h-1.5 bg-gradient-to-r from-red-600 to-red-400 rounded-full"></div>
-                </h2>
-             </div>
+            <div className="text-center mb-16 md:mb-20">
+              <h2 className="bungee-regular text-3xl sm:text-4xl md:text-5xl leading-tight tracking-tight text-black font-extrabold uppercase m-0 p-0 inline-block relative">
+                Why <span className="text-red-600">Fractional</span> Validators?
+                <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 w-20 md:w-24 h-1.5 bg-gradient-to-r from-red-600 to-red-400 rounded-full"></div>
+              </h2>
+            </div>
 
-             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                {[
-                  { title: "On-Chain Ownership", text: "Fully on-chain ownership with transparent rewards.", icon: FaShieldAlt },
-                  { title: "Block Rewards", text: "Receive a share of 200 MST block rewards.", icon: FaCoins },
-                  { title: "Zero Hardware", text: "No expensive hardware or uptime needed.", icon: FaServer },
-                  { title: "Start Small", text: "Start small, even 1 fraction gets you started.", icon: FaSeedling },
-                ].map((item, i) => (
-                  <motion.div
-                    key={i}
-                    variants={fadeUp}
-                    initial="hidden"
-                    whileInView="visible"
-                    transition={{ delay: i * 0.1 }}
-                    className="group relative p-8 rounded-3xl border border-red-100/60 bg-white shadow-xl hover:shadow-[0_20px_40px_rgba(239,68,68,0.12)] hover:-translate-y-2 transition-all duration-500 overflow-hidden"
-                  >
-                    {/* Decorative corner accent */}
-                    <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-red-50 to-transparent rounded-bl-[4rem] -z-10 group-hover:scale-125 transition-transform duration-700"></div>
-                    
-                    {/* Interactive Icon Container */}
-                    <div className="w-16 h-16 rounded-2xl bg-red-50/50 border border-red-100 flex items-center justify-center mb-8 group-hover:bg-red-600 group-hover:rotate-[10deg] transition-all duration-500 shadow-sm relative overflow-hidden">
-                      <div className="absolute inset-0 bg-red-500 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out" />
-                      <item.icon className="relative z-10 text-3xl text-red-500 group-hover:text-white group-hover:scale-110 transition-all duration-500" />
-                    </div>
-                    
-                    <h3 className="bungee-regular text-xl text-black uppercase mb-3 group-hover:text-red-600 transition-colors duration-300">{item.title}</h3>
-                    <p className="text-gray-600 text-sm leading-relaxed font-medium">{item.text}</p>
-                    
-                    {/* Animated bottom border */}
-                    <div className="absolute bottom-0 left-0 w-full h-1.5 bg-gradient-to-r from-red-400 to-red-600 transform scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500 ease-out"></div>
-                  </motion.div>
-                ))}
-             </div>
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {[
+                { title: "On-Chain Ownership", text: "Fully on-chain ownership with transparent rewards.", icon: FaShieldAlt },
+                { title: "Block Rewards", text: "Receive a share of 200 MST block rewards.", icon: FaCoins },
+                { title: "Zero Hardware", text: "No expensive hardware or uptime needed.", icon: FaServer },
+                { title: "Start Small", text: "Start small, even 1 fraction gets you started.", icon: FaSeedling },
+              ].map((item, i) => (
+                <motion.div
+                  key={i}
+                  variants={fadeUp}
+                  initial="hidden"
+                  whileInView="visible"
+                  transition={{ delay: i * 0.1 }}
+                  className="group relative p-8 rounded-3xl border border-red-100/60 bg-white shadow-xl hover:shadow-[0_20px_40px_rgba(239,68,68,0.12)] hover:-translate-y-2 transition-all duration-500 overflow-hidden"
+                >
+                  {/* Decorative corner accent */}
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-red-50 to-transparent rounded-bl-[4rem] -z-10 group-hover:scale-125 transition-transform duration-700"></div>
+
+                  {/* Interactive Icon Container */}
+                  <div className="w-16 h-16 rounded-2xl bg-red-50/50 border border-red-100 flex items-center justify-center mb-8 group-hover:bg-red-600 group-hover:rotate-[10deg] transition-all duration-500 shadow-sm relative overflow-hidden">
+                    <div className="absolute inset-0 bg-red-500 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out" />
+                    <item.icon className="relative z-10 text-3xl text-red-500 group-hover:text-white group-hover:scale-110 transition-all duration-500" />
+                  </div>
+
+                  <h3 className="bungee-regular text-xl text-black uppercase mb-3 group-hover:text-red-600 transition-colors duration-300">{item.title}</h3>
+                  <p className="text-gray-600 text-sm leading-relaxed font-medium">{item.text}</p>
+
+                  {/* Animated bottom border */}
+                  <div className="absolute bottom-0 left-0 w-full h-1.5 bg-gradient-to-r from-red-400 to-red-600 transform scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500 ease-out"></div>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </section>
 
@@ -386,7 +386,7 @@ export default function SupplyChainPage() {
               </div>
 
               <h2 className="bungee-regular text-2xl sm:text-3xl md:text-4xl lg:text-[3rem] leading-[1.2] tracking-tight text-black font-extrabold uppercase mb-8 md:mb-10">
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-red-400">Blockchain Rewards</span> <br/> Without Technical Barriers
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-red-400">Blockchain Rewards</span> <br /> Without Technical Barriers
               </h2>
 
               <div className="space-y-4">
@@ -426,16 +426,7 @@ export default function SupplyChainPage() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               </div>
 
-              {/* Floating element */}
-              <div className="absolute right-0 md:-right-6 top-16 md:top-24 bg-white/90 backdrop-blur-md p-4 rounded-2xl border border-red-100 shadow-[0_20px_40px_rgba(239,68,68,0.15)] flex items-center gap-4 transform transition-all duration-700 translate-x-10 opacity-0 group-hover:-translate-x-10 group-hover:opacity-100">
-                <div className="w-10 h-10 rounded-full bg-red-100 flex items-center justify-center text-red-600 shadow-inner">
-                  <FaCoins />
-                </div>
-                <div>
-                  <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Daily Reward</p>
-                  <p className="text-lg font-black text-gray-900">+4.2 MST</p>
-                </div>
-              </div>
+
             </motion.div>
           </div>
         </section>
@@ -452,7 +443,7 @@ export default function SupplyChainPage() {
             <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-red-600/30 via-black to-black opacity-80 group-hover:opacity-100 transition-opacity duration-700"></div>
             <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-red-600/20 blur-[100px] rounded-full mix-blend-screen group-hover:scale-150 transition-transform duration-1000"></div>
             <div className="absolute top-12 right-12 w-64 h-64 bg-red-500/10 blur-[80px] rounded-full mix-blend-screen group-hover:scale-150 transition-transform duration-1000"></div>
-            
+
             <div className="relative z-10 flex flex-col items-center">
               {/* Floating Pill */}
               <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-red-500/10 border border-red-500/20 text-red-400 text-sm font-bold tracking-widest uppercase mb-4 backdrop-blur-md">
@@ -470,7 +461,7 @@ export default function SupplyChainPage() {
 
 
             </div>
-            
+
             {/* Outline Glow */}
             <div className="absolute inset-0 border border-white/10 rounded-[3rem] pointer-events-none"></div>
           </motion.div>

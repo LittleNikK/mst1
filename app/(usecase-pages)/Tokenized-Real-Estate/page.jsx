@@ -488,68 +488,62 @@ export default function SupplyChainPage() {
         </motion.div>
       </section>
 
-      {/* STEPS */}
-      <section className="w-full bg-white py-20">
-        <div className="max-w-4xl mx-auto px-6">
-          <h2 className="font-[var(--font-space-grotesk)] text-3xl font-bold tracking-[-0.03em] text-black sm:text-4xl">
-            Case Study: End-to-End Walkthrough
-          </h2>
-        </div>
+      {/* STEPS - TABULAR FORMAT */}
+      <section className="w-full bg-white py-14 sm:py-20">
+        <div className="mx-auto w-full max-w-[90rem] px-6 md:px-16">
+          <SectionFade>
+            <h2 className="bungee-regular text-2xl sm:text-3xl md:text-4xl leading-tight tracking-tight text-black font-extrabold uppercase mb-10 text-center">
+              Case Study: End-to-End Walkthrough
+            </h2>
+          </SectionFade>
 
-        <div className="max-w-4xl mx-auto px-6 relative mt-10">
-
-          {/* Vertical Line */}
-          <div className="absolute left-6 top-0 bottom-0 w-[2px] bg-gray-300" />
-
-          {/* ISSUER STEPS */}
-          <div className="space-y-10">
-            {issuerSteps.map((step, index) => (
-              <div key={index} className="flex items-start gap-6 relative">
-
-                {/* Circle */}
-                <div className="z-10 flex items-center justify-center w-10 h-10 rounded-full bg-black text-white font-semibold">
-                  {index + 1}
-                </div>
-
-                {/* Content */}
-                <div>
-                  <h4 className="font-semibold text-black">
-                    {step.title}
-                  </h4>
-                  <p className="text-gray-600 text-sm max-w-xl">
-                    {step.desc}
-                  </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+            
+            {/* CREATOR / ISSUER FLOW */}
+            <SectionFade className="h-full">
+              <div className="h-full rounded-[2.5rem] border border-black/5 bg-white p-8 sm:p-10 shadow-[0_20px_50px_rgba(0,0,0,0.06)] transition-all hover:shadow-[0_25px_60px_rgba(0,0,0,0.1)]">
+                <h3 className="bungee-regular text-xl sm:text-2xl font-bold text-black uppercase mb-10 tracking-tight">
+                  CREATOR / <span className="text-red-600">ISSUER FLOW</span>
+                </h3>
+                
+                <div className="space-y-8">
+                  {issuerSteps.map((step, index) => (
+                    <div key={index} className="flex items-start gap-5 group">
+                      <div className="flex-shrink-0 flex items-center justify-center w-8 h-8 rounded-full bg-black text-white text-xs font-bold transition-transform group-hover:scale-110">
+                        {index + 1}
+                      </div>
+                      <p className="text-gray-700 text-sm sm:text-base leading-relaxed font-medium">
+                        {step.desc}
+                      </p>
+                    </div>
+                  ))}
                 </div>
               </div>
-            ))}
-          </div>
+            </SectionFade>
 
-          {/* Spacer */}
-          <div className="h-12" />
-
-          {/* USER STEPS */}
-          <div className="space-y-10">
-            {userSteps.map((step, index) => (
-              <div key={index} className="flex items-start gap-6 relative">
-
-                {/* Circle */}
-                <div className="z-10 flex items-center justify-center w-10 h-10 rounded-full bg-red-600 text-white font-semibold">
-                  {index + 1}
-                </div>
-
-                {/* Content */}
-                <div>
-                  <h4 className="font-semibold text-black">
-                    {step.title}
-                  </h4>
-                  <p className="text-gray-600 text-sm max-w-xl">
-                    {step.desc}
-                  </p>
+            {/* USER / VERIFIER FLOW */}
+            <SectionFade className="h-full">
+              <div className="h-full rounded-[2.5rem] border border-black/5 bg-white p-8 sm:p-10 shadow-[0_20px_50px_rgba(0,0,0,0.06)] transition-all hover:shadow-[0_25px_60px_rgba(0,0,0,0.1)]">
+                <h3 className="bungee-regular text-xl sm:text-2xl font-bold text-black uppercase mb-10 tracking-tight">
+                  USER / <span className="text-red-600">VERIFIER FLOW</span>
+                </h3>
+                
+                <div className="space-y-8">
+                  {userSteps.map((step, index) => (
+                    <div key={index} className="flex items-start gap-5 group">
+                      <div className="flex-shrink-0 flex items-center justify-center w-8 h-8 rounded-full bg-red-600 text-white text-xs font-bold transition-transform group-hover:scale-110 shadow-lg shadow-red-500/20">
+                        {index + 1}
+                      </div>
+                      <p className="text-gray-700 text-sm sm:text-base leading-relaxed font-medium">
+                        {step.desc}
+                      </p>
+                    </div>
+                  ))}
                 </div>
               </div>
-            ))}
-          </div>
+            </SectionFade>
 
+          </div>
         </div>
       </section>
 

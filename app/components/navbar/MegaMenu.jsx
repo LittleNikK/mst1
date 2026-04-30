@@ -54,7 +54,7 @@ const buildResources = [
   {
     title: 'DEVELOPER RESOURCES',
     items: [
-      { label: 'Testnet', href: 'https://mstscan.com/' },
+      { label: 'Testnet', href: 'https://testnet.mstscan.com/' },
       { label: 'Faucet', href: 'https://faucet.mstblockchain.com/' },
       { label: 'Developer Docs', href: 'https://docs.mstblockchain.com/developer-docs' },
       { label: 'MST Explorer', href: 'https://mstscan.com/' }
